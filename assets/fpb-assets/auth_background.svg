@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 390 238" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs/>
+<clipPath id="ArtboardFrame">
+<rect height="238" width="390" x="0" y="0"/>
+</clipPath>
+<g clip-path="url(#ArtboardFrame)" id="auth_bg" vectornator:layerName="auth_bg">
+<g opacity="1">
+<clipPath id="ClipPath">
+<path d="M-0.594204-39.0025L389.406-39.0025L389.406-39.0025L389.406 198.997L389.406 198.997L-0.594204 198.997L-0.594204 198.997L-0.594204-39.0025L-0.594204-39.0025Z"/>
+</clipPath>
+<g clip-path="url(#ClipPath)">
+<path d="M-0.594204-39.0025L389.406-39.0025L389.406-39.0025L389.406 236.997L389.406 236.997L-0.594204 236.997L-0.594204 236.997L-0.594204-39.0025L-0.594204-39.0025Z" fill="#000000" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M-86.5942 234.997C-86.5942 163.2-28.3912 104.997 43.4058 104.997C115.203 104.997 173.406 163.2 173.406 234.997C173.406 306.794 115.203 364.997 43.4058 364.997C-28.3912 364.997-86.5942 306.794-86.5942 234.997Z" fill="#df602f" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M111.406 215.497C111.406 124.094 185.503 49.9975 276.906 49.9975C368.309 49.9975 442.406 124.094 442.406 215.497C442.406 306.9 368.309 380.997 276.906 380.997C185.503 380.997 111.406 306.9 111.406 215.497Z" fill="#5eb1eb" fill-rule="nonzero" opacity="1" stroke="none"/>
+</g>
+</g>
+</g>
+</svg>

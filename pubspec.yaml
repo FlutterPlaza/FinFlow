@@ -1,0 +1,46 @@
+name: fpb
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+  flutter: 3.3.7
+
+dependencies:
+  bloc: ^8.1.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1
+  flutter_localizations:
+    sdk: flutter
+  flutter_svg: ^1.1.6
+  intl: ^0.17.0
+  widgetbook: ^2.4.1
+
+dev_dependencies:
+  bloc_test: ^9.1.0
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.1.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  fonts:
+    - family: "Open Sans"
+      fonts:
+        - asset: assets/fonts/open_sans/OpenSans-Regular.ttf
+          weight: 600
+        - asset: assets/fonts/open_sans/OpenSans-SemiBold.ttf
+          weight: 900
+        - asset: assets/fonts/open_sans/OpenSans-Medium.ttf
+          weight: 600
+
+    - family: FpbIcons
+      fonts:
+        - asset: assets/FpbIcons/FpbIcons.ttf
+  assets:
+    - assets/fpb-assets/
