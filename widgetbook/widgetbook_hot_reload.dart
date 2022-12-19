@@ -9,7 +9,7 @@ class WidgetbookHotReload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Widgetbook.material(
+    return Widgetbook.material(   
       categories: [
         WidgetbookCategory(
           name: 'screens',
@@ -20,7 +20,7 @@ class WidgetbookHotReload extends StatelessWidget {
             ),
             WidgetbookComponent(
               name: 'sign-up',
-              useCases: [],
+              useCases: [sign_up_usecase],
             ),
             WidgetbookComponent(
               name: 'sign-up',
