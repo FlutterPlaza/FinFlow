@@ -94,4 +94,3 @@ class FpbIcons {
   static const IconData wifi_off =
       IconData(0xe824, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
-

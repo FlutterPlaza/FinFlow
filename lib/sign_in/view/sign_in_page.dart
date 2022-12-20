@@ -123,7 +123,6 @@ class _SignInPageState extends State<SignInPage>
                         physics: const BouncingScrollPhysics(),
                         controller: tabController,
                         children: [
-                          
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisSize: MainAxisSize.min,

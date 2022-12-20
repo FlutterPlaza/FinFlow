@@ -23,8 +23,8 @@ class WidgetbookHotReload extends StatelessWidget {
               useCases: [sign_up_usecase],
             ),
             WidgetbookComponent(
-              name: 'sign-up',
-              useCases: [],
+              name: 'HomePage',
+              useCases: [home_page_usecase],
             ),
             WidgetbookComponent(
               name: 'sign-up',
