@@ -5,7 +5,6 @@ import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 
-
 class SignUnPage extends StatefulWidget {
   const SignUnPage({super.key});
 
@@ -43,7 +42,7 @@ class _SignUnPageState extends State<SignUnPage>
           alignment: Alignment.bottomCenter,
           child: Container(
             height: size.height * .99,
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(18),
             decoration: BoxDecoration(
               color: Theme.of(context).backgroundColor,
               borderRadius: const BorderRadius.only(
@@ -56,18 +55,19 @@ class _SignUnPageState extends State<SignUnPage>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                      'Join Us!',
-                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                            color: AppColors.secondaryColorW,
-                            fontWeight: FontWeight.bold,
-                            fontSize: size.width * 0.043,
-                          ),),
+                  'Join Us!',
+                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                        color: AppColors.secondaryColorW,
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.037,
+                      ),
+                ),
                 const SizedBox(
-                  height: 19,
+                  height: 15,
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 8),
-                  height: size.height * 0.075,
+                  height: size.height * 0.065,
                   decoration: BoxDecoration(
                     color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.circular(20),
@@ -100,36 +100,37 @@ class _SignUnPageState extends State<SignUnPage>
                   ),
                 ),
                 const SizedBox(
-                  height: 18,
+                  height: 15,
                 ),
                 Flexible(
                   child: Form(
                     child: SizedBox(
-                      height: size.height * 0.50,
+                      height: size.height * 0.47,
                       child: TabBarView(
                         physics: const BouncingScrollPhysics(),
                         controller: tabController,
                         children: [
-                          
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              FpbTextFormField(
-                                label: 'Full Name',
-                                hint: 'Enter your full name',
-                              ),
-                              FpbTextFormField(
-                                label: 'Email',
-                                hint: 'example@mail.com',
-                                isEmail: true,
-                              ),
-                              FpbTextFormField(
-                                label: 'Password',
-                                hint: 'Enter your password',
-                                isPassword: true,
-                              ), 
-                            ],
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisSize: MainAxisSize.min,
+                              children: const [
+                                FpbTextFormField(
+                                  label: 'Full Name',
+                                  hint: 'Enter your full name',
+                                ),
+                                FpbTextFormField(
+                                  label: 'Email',
+                                  hint: 'example@mail.com',
+                                  isEmail: true,
+                                ),
+                                FpbTextFormField(
+                                  label: 'Password',
+                                  hint: 'Enter your password',
+                                  isPassword: true,
+                                ),
+                              ],
+                            ),
                           ),
                           Container(),
                           // Column(
@@ -149,13 +150,13 @@ class _SignUnPageState extends State<SignUnPage>
                 ),
                 FpbButton(label: 'Sign Up', onTap: () {}),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 14),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: const [
                       Expanded(child: Divider()),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 14),
+                        padding: EdgeInsets.symmetric(horizontal: 12),
                         child: Text('Or sign up with'),
                       ),
                       Expanded(child: Divider())
@@ -172,7 +173,7 @@ class _SignUnPageState extends State<SignUnPage>
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 27, bottom: 10),
+                  padding: const EdgeInsets.only(top: 25, bottom: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
