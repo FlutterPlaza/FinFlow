@@ -30,17 +30,17 @@ class _SignInPageState extends State<SignInPage>
     return Stack(
       children: [
         Positioned(
-          top: -size.height * .01,
+          top: -size.height * .003,
           child: SvgPicture.asset(
             SvgNames.authBackground,
             width: size.width,
-            height: size.height * 0.24,
+            height: size.height * 0.4,
           ),
         ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: size.height * .70,
+            height: size.height * .95,
             padding: const EdgeInsets.all(25),
             decoration: BoxDecoration(
               color: Theme.of(context).backgroundColor,
@@ -80,10 +80,10 @@ class _SignInPageState extends State<SignInPage>
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 8),
-                  height: size.height * 0.045,
+                  height: size.height * 0.085,
                   decoration: BoxDecoration(
                     color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   // color: Colors.red,
                   child: TabBar(
@@ -118,7 +118,7 @@ class _SignInPageState extends State<SignInPage>
                 Flexible(
                   child: Form(
                     child: SizedBox(
-                      height: size.height * 0.22,
+                      height: size.height * 0.32,
                       child: TabBarView(
                         physics: const BouncingScrollPhysics(),
                         controller: tabController,
@@ -140,16 +140,17 @@ class _SignInPageState extends State<SignInPage>
                               Text('Forgot password?'),
                             ],
                           ),
-                          Column(
-                            children: [
-                              Flexible(
-                                child: Container(
-                                  color: Colors.green,
-                                  width: double.infinity,
-                                ),
-                              )
-                            ],
-                          ),
+                          Container(),
+                          // Column(
+                          //   children: [
+                          //     Flexible(
+                          //       child: Container(
+                          //         color: Colors.green,
+                          //         width: double.infinity,
+                          //       ),
+                          //     )
+                          //   ],
+                          // ),
                         ],
                       ),
                     ),
