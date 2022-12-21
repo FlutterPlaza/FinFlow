@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/assets/fpb_svg.dart';
+import 'package:fpb/core/shared/helpers/relative_sizing.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
-import 'package:fpb/sign_in/view/sign_in_page.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Row(),
@@ -39,11 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         'Cash Balance',
                       ),
-                      const Text(
+                      Text(
                         'Unallocated',
                       ),
                     ],
@@ -55,12 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
                       Text(
-                        '\$ 1.280.45',
-                        //  style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                        //   color: AppColors.secondaryColorW,
-                        //           fontWeight: FontWeight.bold,
-                        //           fontSize: size.width * 0.043,
-                        //  ),
+                        r'$ 1.280.45',
                       ),
                       Icon(
                         FpbIcons.eye_open,
@@ -76,60 +69,54 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       ElevatedButton(
-                          // style: ButtonStyle(
-                          //   backgroundColor: MaterialStateProperty<Color>(Colors.grey)
-                          // ),
-                          onPressed: () {},
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.add,
-                                size: 5,
-                                color: Colors.blue,
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: const [
+                            Icon(
+                              Icons.add,
+                              size: 5,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              'Add money',
+                              style: TextStyle(
+                                fontSize: 7,
                               ),
-                              const Text(
-                                "Add money",
-                                style: TextStyle(
-                                  fontSize: 7,
-                                ),
-                              ),
-                            ],
-                          )),
+                            ),
+                          ],
+                        ),
+                      ),
                       const SizedBox(
                         width: 30,
                       ),
                       ElevatedButton(
-                          // style: ButtonStyle(
-                          //   backgroundColor: MaterialStateProperty<Color>(Colors.grey)
-                          // ),
-                          onPressed: () {},
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.add,
-                                size: 5,
-                                color: Colors.blue,
-                              ),
-                              const Text(
-                                "Withdraw Funds",
-                                style: TextStyle(fontSize: 7),
-                              ),
-                            ],
-                          )),
+                        onPressed: () {},
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.add,
+                              size: 5,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              'Withdraw Funds',
+                              style: TextStyle(fontSize: 7),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   )
                 ],
               ),
             ),
           ),
-          const SizedBox(
-            height: 25,
-          ),
+          SizedBox(height: 25.of(context)),
           Stack(
             children: [
               Align(
-                alignment: Alignment(1.0, .3),
+                alignment: const Alignment(1, .3),
                 child: Container(
                   height: size.height * 0.3,
                   width: size.width * 0.5,
@@ -140,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Align(
-                alignment: Alignment(.2, .2),
+                alignment: const Alignment(.2, .2),
                 child: Container(
                   height: size.height * 0.3,
                   width: size.width * 0.5,
@@ -149,16 +136,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: AppColors.accentColorW,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20.of(context)),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '\$ 320.50',
+                              r'$ 320.50',
                               style: Theme.of(context)
                                   .textTheme
                                   .displaySmall
@@ -168,17 +154,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                     fontSize: size.width * 0.043,
                                   ),
                             ),
-                            Text(
-                              "VISA",
+                            const Text(
+                              'VISA',
                               style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
                             )
                           ],
                         ),
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text("Card Number"),
+                        const Text('Card Number'),
                         const SizedBox(
                           height: 10,
                         ),
@@ -207,16 +195,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                 const Text('123')
                               ],
                             ),
-                            Column(children: [
-                              fourDots(),
-                              const SizedBox(
-                                height: 60,
-                              )
-                            ]),
+                            Column(
+                              children: [
+                                fourDots(),
+                                const SizedBox(
+                                  height: 60,
+                                )
+                              ],
+                            ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Text("1234"),
+                                const Text('1234'),
                                 const SizedBox(
                                   height: 35,
                                 ),
@@ -254,7 +244,7 @@ Widget fourDots() {
           color: AppColors.cardColorW,
         ),
       ),
-      SizedBox(width: 2),
+      const SizedBox(width: 2),
       Container(
         height: 10,
         width: 10,
@@ -263,7 +253,7 @@ Widget fourDots() {
           color: AppColors.cardColorW,
         ),
       ),
-      SizedBox(width: 2),
+      const SizedBox(width: 2),
       Container(
         height: 10,
         width: 10,
@@ -272,7 +262,7 @@ Widget fourDots() {
           color: AppColors.cardColorW,
         ),
       ),
-      SizedBox(width: 2),
+      const SizedBox(width: 2),
       Container(
         height: 10,
         width: 10,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
+import 'package:fpb/core/shared/helpers/relative_sizing.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
 
 class SignInPage extends StatefulWidget {
@@ -30,23 +31,23 @@ class _SignInPageState extends State<SignInPage>
     return Stack(
       children: [
         Positioned(
-          top: -size.height * .003,
+          top: -.035.ofHeight(context),
           child: SvgPicture.asset(
             SvgNames.authBackground,
-            width: size.width,
-            height: size.height * 0.4,
+            width: size.width.of(context),
+            height: 0.3.ofHeight(context),
           ),
         ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: size.height * .95,
-            padding: const EdgeInsets.all(25),
+            height: .7.ofHeight(context),
+            padding: EdgeInsets.all(25.of(context)),
             decoration: BoxDecoration(
               color: Theme.of(context).backgroundColor,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.of(context)),
+                topRight: Radius.circular(20.of(context)),
               ),
             ),
             child: Column(
@@ -59,35 +60,37 @@ class _SignInPageState extends State<SignInPage>
                       style: Theme.of(context).textTheme.displaySmall?.copyWith(
                             color: AppColors.secondaryColorW,
                             fontWeight: FontWeight.bold,
-                            fontSize: size.width * 0.043,
+                            fontSize: 0.025.ofWith(context),
                           ),
                     ),
                     Card(
                       color: AppColors.getShade(AppColors.accentColorW),
                       child: IconButton(
-                        iconSize: 30,
+                        iconSize: 0.005.ofWith(context),
                         onPressed: () {},
-                        icon: const Icon(
+                        icon: Icon(
                           FpbIcons.face_id,
                           color: Colors.white,
+                          size: 23.of(context),
                         ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 22,
+                SizedBox(
+                  // height: 0.01 * size.height
+                  height: 0.01.ofHeight(context),
                 ),
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 8),
-                  height: size.height * 0.085,
+                  margin: EdgeInsets.symmetric(vertical: 8.of(context)),
+                  height: 0.054.ofHeight(context),
                   decoration: BoxDecoration(
                     color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.of(context)),
                   ),
                   // color: Colors.red,
                   child: TabBar(
-                    padding: const EdgeInsets.all(8),
+                    padding: EdgeInsets.all(8.of(context)),
                     controller: tabController,
                     onTap: (_) {
                       setState(() {
@@ -112,13 +115,13 @@ class _SignInPageState extends State<SignInPage>
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 0.011.ofHeight(context),
                 ),
                 Flexible(
                   child: Form(
                     child: SizedBox(
-                      height: size.height * 0.32,
+                      height: 0.32.ofHeight(context),
                       child: TabBarView(
                         physics: const BouncingScrollPhysics(),
                         controller: tabController,
@@ -158,7 +161,7 @@ class _SignInPageState extends State<SignInPage>
                 ),
                 FpbButton(label: 'Log in', onTap: () {}),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  padding: EdgeInsets.symmetric(vertical: 16.of(context)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: const [
@@ -318,74 +321,72 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            widget.label,
-            style: Theme.of(context).textTheme.headline6,
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          TextFormField(
-            controller: widget.textController,
-            focusNode: widget.node,
-            keyboardType: widget.isEmail
-                ? TextInputType.emailAddress
-                : widget.isPassword
-                    ? TextInputType.visiblePassword
-                    : TextInputType.none,
-            obscureText: hidePassword ?? false,
-            decoration: InputDecoration(
-              // suffixIconColor:
-              suffixIcon: !widget.isPassword
-                  ? null
-                  : hidePassword!
-                      ? Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                hidePassword = !hidePassword!;
-                              });
-                            },
-                            icon: const Icon(FpbIcons.eye_closed),
-                            color: widget.node != null
-                                ? widget.node!.hasFocus
-                                    ? Theme.of(context).colorScheme.onSurface
-                                    : null
-                                : AppColors.cardColorW,
-                          ),
-                        )
-                      : Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                hidePassword = !hidePassword!;
-                              });
-                            },
-                            icon: const Icon(
-                              FpbIcons.eye_open,
-                              size: 17,
-                            ),
-                            color: widget.node != null
-                                ? widget.node!.hasFocus
-                                    ? Theme.of(context).colorScheme.onSurface
-                                    : null
-                                : AppColors.cardColorW,
-                          ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.label,
+          style: Theme.of(context).textTheme.headline6,
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        TextFormField(
+          controller: widget.textController,
+          focusNode: widget.node,
+          keyboardType: widget.isEmail
+              ? TextInputType.emailAddress
+              : widget.isPassword
+                  ? TextInputType.visiblePassword
+                  : TextInputType.none,
+          obscureText: hidePassword ?? false,
+          decoration: InputDecoration(
+            // suffixIconColor:
+            suffixIcon: !widget.isPassword
+                ? null
+                : hidePassword!
+                    ? Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              hidePassword = !hidePassword!;
+                            });
+                          },
+                          icon: const Icon(FpbIcons.eye_closed),
+                          color: widget.node != null
+                              ? widget.node!.hasFocus
+                                  ? Theme.of(context).colorScheme.onSurface
+                                  : null
+                              : AppColors.cardColorW,
                         ),
-              hintText: widget.hint,
-            ),
+                      )
+                    : Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              hidePassword = !hidePassword!;
+                            });
+                          },
+                          icon: const Icon(
+                            FpbIcons.eye_open,
+                            size: 17,
+                          ),
+                          color: widget.node != null
+                              ? widget.node!.hasFocus
+                                  ? Theme.of(context).colorScheme.onSurface
+                                  : null
+                              : AppColors.cardColorW,
+                        ),
+                      ),
+            hintText: widget.hint,
           ),
-          const SizedBox(
-            height: 16,
-          ),
-        ],
-      ),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+      ],
     );
   }
 }

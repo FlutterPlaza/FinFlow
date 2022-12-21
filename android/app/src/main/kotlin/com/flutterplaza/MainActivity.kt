@@ -1,4 +1,4 @@
-package com.flutterplaza.fpb
+package com.flutterplaza.finflow
 
 import io.flutter.embedding.android.FlutterActivity
 

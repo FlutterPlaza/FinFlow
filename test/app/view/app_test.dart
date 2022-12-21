@@ -7,13 +7,13 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpb/app/app.dart';
-import 'package:fpb/counter/counter.dart';
+import 'package:fpb/sign_in/view/sign_in_page.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
+    testWidgets('renders SignInPage', (tester) async {
       await tester.pumpWidget(const App());
-      expect(find.byType(CounterPage), findsOneWidget);
+      expect(find.byType(SignInPage), findsOneWidget);
     });
   });
 }

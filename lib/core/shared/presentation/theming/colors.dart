@@ -7,7 +7,7 @@ class AppColors {
   static Color cardColorW = const Color(0xffF0F0F0);
 
   static Color getShade(Color color, {bool darker = false, double value = .1}) {
-    assert(value >= 0 && value <= 1);
+    assert(value >= 0 && value <= 1, 'verify domain interval');
 
     final hsl = HSLColor.fromColor(color);
     final hslDark = hsl.withLightness(

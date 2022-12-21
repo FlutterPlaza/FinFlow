@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fpb/core/shared/helpers/relative_sizing.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
 import 'package:widgetbook/widgetbook.dart';
 
@@ -9,7 +10,7 @@ class WidgetbookHotReload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Widgetbook.material(   
+    return Widgetbook.material(
       categories: [
         WidgetbookCategory(
           name: 'screens',
@@ -85,7 +86,6 @@ class WidgetbookHotReload extends StatelessWidget {
 }
 
 ThemeData whiteTheme(BuildContext context) {
-  final size = MediaQuery.of(context).size;
   return ThemeData(
     primarySwatch: AppColors.getPrimaryMaterialColorWhiteTheme,
     primaryColor: AppColors.primaryColorW,
@@ -94,13 +94,13 @@ ThemeData whiteTheme(BuildContext context) {
     cardColor: AppColors.cardColorW,
     bottomAppBarColor: AppColors.getPrimaryMaterialColorWhiteTheme,
     textTheme: TextTheme(
-      headline6: const TextStyle(
-        color: Color(0xff808191),
+      headline6: TextStyle(
+        color: const Color(0xff808191),
         fontWeight: FontWeight.bold,
-        fontSize: 13,
+        fontSize: 13.of(context),
       ),
       headline5: Theme.of(context).textTheme.headline5?.copyWith(
-            fontSize: 16,
+            fontSize: 16.of(context),
           ),
     ),
     backgroundColor: Colors.white,
@@ -128,7 +128,7 @@ ThemeData whiteTheme(BuildContext context) {
     cardTheme: CardTheme(
       elevation: 1,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.of(context)),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -138,16 +138,19 @@ ThemeData whiteTheme(BuildContext context) {
       labelStyle: Theme.of(context).textTheme.caption,
       hintStyle: Theme.of(context).textTheme.caption,
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.of(context)),
         borderSide: BorderSide(color: AppColors.cardColorW, width: 1.5),
       ),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.of(context)),
         borderSide: BorderSide(color: AppColors.cardColorW),
       ),
       errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Theme.of(context).errorColor, width: 1.5),
+        borderRadius: BorderRadius.circular(12.of(context)),
+        borderSide: BorderSide(
+          color: Theme.of(context).errorColor,
+          width: 1.5.of(context),
+        ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
