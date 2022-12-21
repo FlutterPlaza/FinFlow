@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.flutterplaza.fpb">
+    package="com.flutterplaza.finflow">
    <application
         android:label="${appName}"
         android:icon="@mipmap/ic_launcher">
