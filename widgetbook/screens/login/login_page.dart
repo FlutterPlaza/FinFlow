@@ -1,4 +1,6 @@
-import 'package:fpb/homePage/HomePage.dart';
+// ignore_for_file: non_constant_identifier_names
+
+import 'package:fpb/home_screen/view/home_screen.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 import 'package:fpb/sign_up/signup_page.dart';
 import 'package:widgetbook/widgetbook.dart';

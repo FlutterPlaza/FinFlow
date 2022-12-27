@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
@@ -51,7 +50,6 @@ class _SignUnPageState extends State<SignUnPage>
               ),
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -110,27 +108,25 @@ class _SignUnPageState extends State<SignUnPage>
                         physics: const BouncingScrollPhysics(),
                         controller: tabController,
                         children: [
-                          Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisSize: MainAxisSize.min,
-                              children: const [
-                                FpbTextFormField(
-                                  label: 'Full Name',
-                                  hint: 'Enter your full name',
-                                ),
-                                FpbTextFormField(
-                                  label: 'Email',
-                                  hint: 'example@mail.com',
-                                  isEmail: true,
-                                ),
-                                FpbTextFormField(
-                                  label: 'Password',
-                                  hint: 'Enter your password',
-                                  isPassword: true,
-                                ),
-                              ],
-                            ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisSize: MainAxisSize.min,
+                            children: const [
+                              FpbTextFormField(
+                                label: 'Full Name',
+                                hint: 'Enter your full name',
+                              ),
+                              FpbTextFormField(
+                                label: 'Email',
+                                hint: 'example@mail.com',
+                                isEmail: true,
+                              ),
+                              FpbTextFormField(
+                                label: 'Password',
+                                hint: 'Enter your password',
+                                isPassword: true,
+                              ),
+                            ],
                           ),
                           Container(),
                           // Column(
