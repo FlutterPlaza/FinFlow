@@ -260,7 +260,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             ElevatedButton(
-                              
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(
                                   const Color(0xffF2F8FD),
@@ -610,10 +609,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       activityCard(),
                       const Divider(
-                            height: 0.5,
-                            color: Color(0xffE7E7E7),
-                            thickness: 0.5,
-                          ),
+                        height: 0.5,
+                        color: Color(0xffE7E7E7),
+                        thickness: 0.5,
+                      ),
                       activityCard(),
                     ],
                   ),
