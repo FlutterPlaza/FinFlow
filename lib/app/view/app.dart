@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/core/shared/helpers/relative_sizing.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
 import 'package:fpb/home_screen/home_screen.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/sign_in/view/sign_in_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -28,8 +26,8 @@ ThemeData whiteTheme(BuildContext context) {
     cardColor: AppColors.cardColorW,
     bottomAppBarColor: AppColors.getPrimaryMaterialColorWhiteTheme,
     textTheme: TextTheme(
-      headline6: TextStyle(
-        color: const Color(0xff808191),
+      headline6: const TextStyle(
+        color: Color(0xff808191),
         fontWeight: FontWeight.bold,
         fontSize: 13,
       ),

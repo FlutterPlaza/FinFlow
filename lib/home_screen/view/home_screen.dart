@@ -1,10 +1,14 @@
+// ignore_for_file: avoid_redundant_argument_values,,,, use_raw_strings,
+// omit_local_variable_types 
+//avoid_unnecessary_containers 
+// omit_local_variable_types,
+// use_raw_strings
+// omit_local_variable_types, sized_box_for_whitespace 
+//omit_local_variable_types, sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/assets/fpb_svg.dart';
-import 'package:fpb/core/shared/helpers/relative_sizing.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
-import 'package:fpb/sign_in/view/sign_in_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -62,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget activityCard() {
+    // ignore: sized_box_for_whitespace
     return Container(
       height: 55,
       child: Padding(
@@ -91,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "@john_merry",
+                      '@john_merry',
                       style: Theme.of(context).textTheme.displaySmall?.copyWith(
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
@@ -100,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                     ),
                     Text(
-                      "August 3, 3:45 pm",
+                      'August 3, 3:45 pm',
                       style: Theme.of(context).textTheme.displaySmall?.copyWith(
                             color: const Color(0xffABABAB),
                             fontWeight: FontWeight.w400,
@@ -115,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Column(
               children: [
                 Text(
-                  "- \$ 14.99",
+                  r'- $ 14.99',
                   style: Theme.of(context).textTheme.displaySmall?.copyWith(
                         color: Colors.black,
                         fontWeight: FontWeight.w400,
@@ -141,7 +146,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // ignore: omit_local_variable_types
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.cardColorW,
       body: SafeArea(
@@ -192,6 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 10,
               ),
+              // ignore: sized_box_for_whitespace
               Container(
                 height: size.height * .20,
                 width: size.width,
@@ -244,7 +251,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       color: AppColors.secondaryColorW,
                                       fontWeight: FontWeight.w600,
                                       fontSize: 28,
-                                      fontFamily: 'SF pro Displa'),
+                                      fontFamily: 'SF pro Displa',),
                             ),
                             const Icon(
                               FpbIcons.eye_open,
@@ -264,7 +271,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 backgroundColor: MaterialStateProperty.all(
                                   const Color(0xffF2F8FD),
                                 ),
-                                //padding: MaterialStateProperty.all(EdgeInsets.all(50)),
                                 textStyle: MaterialStateProperty.all(
                                   const TextStyle(
                                     fontWeight: FontWeight.w600,
@@ -354,6 +360,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(
                 height: 20,
               ),
+              // ignore: avoid_unnecessary_containers
               Container(
                 child: Stack(
                   children: [
@@ -361,7 +368,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       offset: const Offset(15, -15),
                       child: Expanded(
                         child: Container(
-                          // constraints: BoxConstraints(minWidth: 0, minHeight: 0),
                           height: size.height * 0.25,
                           width: size.width * 0.90,
                           decoration: BoxDecoration(
@@ -393,7 +399,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             right: 32,
                           ),
                           child: Column(
-                            // ignore: avoid_redundant_argument_values
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -486,7 +491,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "Empty",
+                                        'Empty',
                                         style: Theme.of(context)
                                             .textTheme
                                             .displaySmall
@@ -498,7 +503,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             ),
                                       ),
                                       Text(
-                                        "CCV",
+                                        'CCV',
                                         style: Theme.of(context)
                                             .textTheme
                                             .displaySmall
@@ -509,8 +514,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                               fontSize: 12,
                                             ),
                                       ),
-                                      const Text("        "),
-                                      const Text(" "),
+                                      const Text('        '),
+                                      const Text('  '),
                                     ],
                                   ),
                                   const SizedBox(
@@ -521,7 +526,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        "04/2025",
+                                        '04/2025',
                                         style: Theme.of(context)
                                             .textTheme
                                             .displaySmall
@@ -533,7 +538,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             ),
                                       ),
                                       Text(
-                                        "123",
+                                        '123',
                                         style: Theme.of(context)
                                             .textTheme
                                             .displaySmall
@@ -544,7 +549,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               fontSize: 14,
                                             ),
                                       ),
-                                      const Text("             "),
+                                      const Text('             '),
                                       Icon(
                                         FpbIcons.eye_open,
                                         color: AppColors.cardColorW,
@@ -630,6 +635,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Padding bottomnavbarview(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
+      // ignore: sized_box_for_whitespace
       child: Container(
         height: 46,
         child: Row(

@@ -205,7 +205,7 @@ class _SignInPageState extends State<SignInPage>
                                   .textTheme
                                   .headline5
                                   ?.copyWith(
-                                      color: Theme.of(context).primaryColor),
+                                      color: Theme.of(context).primaryColor,),
                             ),
                           ),
                         ],
