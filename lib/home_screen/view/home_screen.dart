@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_redundant_argument_values,,,, use_raw_strings,
-// omit_local_variable_types 
-//avoid_unnecessary_containers 
+// omit_local_variable_types
+//avoid_unnecessary_containers
 // omit_local_variable_types,
 // use_raw_strings
-// omit_local_variable_types, sized_box_for_whitespace 
+// omit_local_variable_types, sized_box_for_whitespace
 //omit_local_variable_types, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
@@ -248,10 +248,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                   .textTheme
                                   .displayMedium
                                   ?.copyWith(
-                                      color: AppColors.secondaryColorW,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 28,
-                                      fontFamily: 'SF pro Displa',),
+                                    color: AppColors.secondaryColorW,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 28,
+                                    fontFamily: 'SF pro Displa',
+                                  ),
                             ),
                             const Icon(
                               FpbIcons.eye_open,
