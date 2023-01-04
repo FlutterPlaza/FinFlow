@@ -28,3 +28,8 @@ void main() {
     expect(find.text('1'), findsOneWidget);
   });
 }
+
+//commands to run after code
+// flutter analyze lib test
+// dart fix --dry-run
+//flutter format lib test
