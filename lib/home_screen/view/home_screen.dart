@@ -65,85 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget activityCard() {
-    // ignore: sized_box_for_whitespace
-    return Container(
-      height: 55,
-      child: Padding(
-        padding: const EdgeInsets.only(
-          top: 10,
-          bottom: 5,
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const CircleAvatar(
-                  radius: 45,
-                  backgroundImage:
-                      NetworkImage('https://picsum.photos/200/300'),
-                  backgroundColor: Colors.transparent,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  //mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '@john_merry',
-                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14,
-                            fontFamily: 'SF Pro Display',
-                          ),
-                    ),
-                    Text(
-                      'August 3, 3:45 pm',
-                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                            color: const Color(0xffABABAB),
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            fontFamily: 'SF Pro Display',
-                          ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                Text(
-                  r'- $ 14.99',
-                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        fontFamily: 'SF Pro Display',
-                      ),
-                ),
-                const Icon(
-                  Icons.favorite_border_sharp,
-                  color: Color(0xffC5C5C5),
-                  size: 16,
-                )
-              ],
-            )
-
-            // SvgPicture.asset(
-            //   SvgNames.authBackground )
-          ],
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     // ignore: omit_local_variable_types
@@ -367,201 +288,194 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Transform.translate(
                       offset: const Offset(15, -15),
-                      child: Expanded(
-                        child: Container(
-                          height: size.height * 0.25,
-                          width: size.width * 0.90,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: const Color.fromARGB(
-                              27,
-                              223,
-                              96,
-                              47,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Transform.translate(
-                      offset: const Offset(5, 5),
                       child: Container(
                         height: size.height * 0.25,
                         width: size.width * 0.90,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: const Color(0xffDF602F),
+                          color: const Color.fromARGB(
+                            27,
+                            223,
+                            96,
+                            47,
+                          ),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            top: 21,
-                            left: 32,
-                            bottom: 13,
-                            right: 32,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    '\$ 320.50',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .displayMedium
-                                        ?.copyWith(
-                                          fontFamily: 'SF Pro Displa',
-                                          color: AppColors.cardColorW,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 28,
-                                        ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Image.asset(
-                                        'assets/fpb-assets/Vector.png',
+                      ),
+                    ),
+                    Container(
+                      height: size.height * 0.25,
+                      width: size.width * 0.90,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: const Color(0xffDF602F),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: 21,
+                          left: 32,
+                          bottom: 13,
+                          right: 32,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '\$ 320.50',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium
+                                      ?.copyWith(
+                                        fontFamily: 'SF Pro Displa',
                                         color: AppColors.cardColorW,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 28,
                                       ),
-                                      Image.asset(
-                                        'assets/fpb-assets/Vector (1).png',
-                                        color: AppColors.cardColorW,
-                                      ),
-                                      Image.asset(
-                                        'assets/fpb-assets/Vector (2).png',
-                                        color: AppColors.cardColorW,
-                                      ),
-                                      Image.asset(
-                                        'assets/fpb-assets/Vector (3).png',
-                                        color: AppColors.cardColorW,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 25,
-                              ),
-                              Text(
-                                'Card Number',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .displaySmall
-                                    ?.copyWith(
+                                ),
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/fpb-assets/Vector.png',
                                       color: AppColors.cardColorW,
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: 'open sans',
-                                      fontSize: 12,
                                     ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      fourDots(),
-                                      fourDots(),
-                                      fourDots(),
-                                      Text(
-                                        '1234',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displaySmall
-                                            ?.copyWith(
-                                              color: AppColors.cardColorW,
-                                              fontWeight: FontWeight.w600,
-                                              fontFamily: 'open sans',
-                                              fontSize: 18,
-                                            ),
-                                      ),
-                                    ],
+                                    Image.asset(
+                                      'assets/fpb-assets/Vector (1).png',
+                                      color: AppColors.cardColorW,
+                                    ),
+                                    Image.asset(
+                                      'assets/fpb-assets/Vector (2).png',
+                                      color: AppColors.cardColorW,
+                                    ),
+                                    Image.asset(
+                                      'assets/fpb-assets/Vector (3).png',
+                                      color: AppColors.cardColorW,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            Text(
+                              'Card Number',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displaySmall
+                                  ?.copyWith(
+                                    color: AppColors.cardColorW,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'open sans',
+                                    fontSize: 12,
                                   ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Empty',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displaySmall
-                                            ?.copyWith(
-                                              color: AppColors.cardColorW,
-                                              fontWeight: FontWeight.w600,
-                                              fontFamily: 'open sans',
-                                              fontSize: 12,
-                                            ),
-                                      ),
-                                      Text(
-                                        'CCV',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displaySmall
-                                            ?.copyWith(
-                                              color: AppColors.cardColorW,
-                                              fontWeight: FontWeight.w600,
-                                              fontFamily: 'open sans',
-                                              fontSize: 12,
-                                            ),
-                                      ),
-                                      const Text('        '),
-                                      const Text('  '),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        '04/2025',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displaySmall
-                                            ?.copyWith(
-                                              color: AppColors.cardColorW,
-                                              fontWeight: FontWeight.w600,
-                                              fontFamily: 'open sans',
-                                              fontSize: 14,
-                                            ),
-                                      ),
-                                      Text(
-                                        '123',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displaySmall
-                                            ?.copyWith(
-                                              color: AppColors.cardColorW,
-                                              fontWeight: FontWeight.w600,
-                                              fontFamily: 'open sans',
-                                              fontSize: 14,
-                                            ),
-                                      ),
-                                      const Text('             '),
-                                      Icon(
-                                        FpbIcons.eye_open,
-                                        color: AppColors.cardColorW,
-                                        size: 18,
-                                      )
-                                    ],
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    fourDots(),
+                                    fourDots(),
+                                    fourDots(),
+                                    Text(
+                                      '1234',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall
+                                          ?.copyWith(
+                                            color: AppColors.cardColorW,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: 'open sans',
+                                            fontSize: 18,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Empty',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall
+                                          ?.copyWith(
+                                            color: AppColors.cardColorW,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: 'open sans',
+                                            fontSize: 12,
+                                          ),
+                                    ),
+                                    Text(
+                                      'CCV',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall
+                                          ?.copyWith(
+                                            color: AppColors.cardColorW,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: 'open sans',
+                                            fontSize: 12,
+                                          ),
+                                    ),
+                                    const Text('        '),
+                                    const Text('  '),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '04/2025',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall
+                                          ?.copyWith(
+                                            color: AppColors.cardColorW,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: 'open sans',
+                                            fontSize: 14,
+                                          ),
+                                    ),
+                                    Text(
+                                      '123',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall
+                                          ?.copyWith(
+                                            color: AppColors.cardColorW,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: 'open sans',
+                                            fontSize: 14,
+                                          ),
+                                    ),
+                                    const Text('             '),
+                                    Icon(
+                                      FpbIcons.eye_open,
+                                      color: AppColors.cardColorW,
+                                      size: 18,
+                                    )
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
                         ),
                       ),
                     ),
@@ -613,13 +527,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                         ],
                       ),
-                      activityCard(),
+                      ActivityCard(
+                        context: context,
+                      ),
                       const Divider(
                         height: 0.5,
                         color: Color(0xffE7E7E7),
                         thickness: 0.5,
                       ),
-                      activityCard(),
+                      ActivityCard(
+                        context: context,
+                      ),
                     ],
                   ),
                 ),
@@ -629,11 +547,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: bottomnavbarview(context),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
+}
 
-  Padding bottomnavbarview(BuildContext context) {
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
+
+  @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int pageIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
       // ignore: sized_box_for_whitespace
@@ -756,45 +686,95 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Widget fourDots() {
-//   return Row(
-//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//     children: [
-//       Container(
-//         height: 10,
-//         width: 10,
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(20),
-//           color: AppColors.cardColorW,
-//         ),
-//       ),
-//       SizedBox(width: 2),
-//       Container(
-//         height: 10,
-//         width: 10,
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(20),
-//           color: AppColors.cardColorW,
-//         ),
-//       ),
-//       SizedBox(width: 2),
-//       Container(
-//         height: 10,
-//         width: 10,
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(20),
-//           color: AppColors.cardColorW,
-//         ),
-//       ),
-//       SizedBox(width: 2),
-//       Container(
-//         height: 10,
-//         width: 10,
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(20),
-//           color: AppColors.cardColorW,
-//         ),
-//       )
-//     ],
-//   );
-// }
+class ActivityCard extends StatelessWidget {
+  const ActivityCard({
+    super.key,
+    required this.context,
+    // required this.context,
+    // required this.context,
+  });
+
+  final BuildContext context;
+  // final BuildContext context;
+  // final BuildContext context;
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: sized_box_for_whitespace
+    return Container(
+      height: 55,
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: 10,
+          bottom: 5,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const CircleAvatar(
+                  radius: 45,
+                  backgroundImage:
+                      NetworkImage('https://picsum.photos/200/300'),
+                  backgroundColor: Colors.transparent,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  //mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '@john_merry',
+                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14,
+                            fontFamily: 'SF Pro Display',
+                          ),
+                    ),
+                    Text(
+                      'August 3, 3:45 pm',
+                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                            color: const Color(0xffABABAB),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            fontFamily: 'SF Pro Display',
+                          ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Text(
+                  r'- $ 14.99',
+                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        fontFamily: 'SF Pro Display',
+                      ),
+                ),
+                const Icon(
+                  Icons.favorite_border_sharp,
+                  color: Color(0xffC5C5C5),
+                  size: 16,
+                )
+              ],
+            )
+
+            // SvgPicture.asset(
+            //   SvgNames.authBackground )
+          ],
+        ),
+      ),
+    );
+  }
+}
