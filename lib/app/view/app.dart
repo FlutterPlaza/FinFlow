@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
 //import 'package:fpb/home_screen/home_screen.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/latest_activities_screen/view/latest_activities_screen.dart';
+import 'package:fpb/savings_screen/view/savings_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       theme: whiteTheme(context),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const LatestActivitiesPage(),
+      home: const SavingsPage(),
     );
   }
 }
