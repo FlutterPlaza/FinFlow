@@ -9,7 +9,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fpb/app/app.dart';
 import 'package:fpb/savings_screen/view/savings_page.dart';
 
-
 void main() {
   group('App', () {
     testWidgets('renders SignInPage', (tester) async {

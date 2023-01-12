@@ -77,8 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // ignore: omit_local_variable_types
     final Size size = MediaQuery.of(context).size;
 
-     // ignore: omit_local_variable_types
-     final ThemeData textStyleTheme = Theme.of(context);
+    // ignore: omit_local_variable_types
+    final ThemeData textStyleTheme = Theme.of(context);
 
     return Scaffold(
       backgroundColor: AppColors.cardColorW,
@@ -176,15 +176,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Text(
                               '\$ 1.280.45',
-                              style: textStyleTheme
-                                  .textTheme
-                                  .displaySmall
+                              style: textStyleTheme.textTheme.displaySmall
                                   ?.copyWith(
-                                    color: AppColors.secondaryColorW,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 28,
-                                    fontFamily: 'SF pro Displa',
-                                  ),
+                                color: AppColors.secondaryColorW,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 28,
+                                fontFamily: 'SF pro Displa',
+                              ),
                             ),
                             const Icon(
                               FpbIcons.eye_open,
@@ -558,8 +556,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(pageIndex: pageIndex,
-       onChanged: onChanged,),
+      bottomNavigationBar: BottomNavBar(
+        pageIndex: pageIndex,
+        onChanged: onChanged,
+      ),
     );
   }
 }
@@ -619,7 +619,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                 widget.onChanged!(1);
+                widget.onChanged!(1);
               },
               icon: widget.pageIndex == 1
                   ? Column(
@@ -648,7 +648,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-               widget.onChanged!(2);
+                widget.onChanged!(2);
               },
               icon: widget.pageIndex == 2
                   ? Column(
@@ -706,7 +706,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                 widget.onChanged!(4);
+                widget.onChanged!(4);
               },
               icon: widget.pageIndex == 4
                   ? Column(

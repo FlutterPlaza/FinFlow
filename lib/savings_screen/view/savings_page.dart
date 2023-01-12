@@ -14,7 +14,7 @@ class SavingsPage extends StatefulWidget {
 class _SavingsPageState extends State<SavingsPage> {
   int pageIndex = 1;
 
-   void onChanged(int index) {
+  void onChanged(int index) {
     setState(() {
       pageIndex = index;
     });
@@ -36,11 +36,11 @@ class _SavingsPageState extends State<SavingsPage> {
                   Text(
                     'Savings',
                     style: textStyleTheme.textTheme.displaySmall?.copyWith(
-                          color: AppColors.secondaryColorW,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'Open sans',
-                          fontSize: 32,
-                        ),
+                      color: AppColors.secondaryColorW,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Open sans',
+                      fontSize: 32,
+                    ),
                   ),
                   ElevatedButton(
                     style: ButtonStyle(
@@ -363,8 +363,9 @@ class _SavingsPageState extends State<SavingsPage> {
           ),
         ),
       ),
-      bottomNavigationBar:   BottomNavBar(
-        pageIndex: pageIndex, onChanged: onChanged,
+      bottomNavigationBar: BottomNavBar(
+        pageIndex: pageIndex,
+        onChanged: onChanged,
       ),
     );
   }
