@@ -7,13 +7,13 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpb/app/app.dart';
-import 'package:fpb/sign_in/view/sign_in_page.dart';
+import 'package:fpb/savings_screen/view/savings_page.dart';
 
 void main() {
   group('App', () {
     testWidgets('renders SignInPage', (tester) async {
       await tester.pumpWidget(const App());
-      expect(find.byType(SignInPage), findsOneWidget);
+      expect(find.byType(SavingsPage), findsOneWidget);
     });
   });
 }

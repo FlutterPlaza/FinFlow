@@ -102,7 +102,7 @@ class _LatestActivitiesPageState extends State<LatestActivitiesPage> {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(pageIndex: 0),
     );
   }
 }

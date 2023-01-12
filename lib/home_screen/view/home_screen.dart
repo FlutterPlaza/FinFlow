@@ -1,4 +1,5 @@
 // ignore_for_file: avoid_redundant_argument_values,,,, use_raw_strings,
+// must_be_immutable
 // omit_local_variable_types
 //avoid_unnecessary_containers
 // omit_local_variable_types,
@@ -21,6 +22,12 @@ class _MyHomePageState extends State<MyHomePage> {
   int pageIndex = 0;
   //PageController _pageController = PageController();
   final screens = [];
+
+  void onChanged(int index) {
+    setState(() {
+      pageIndex = index;
+    });
+  }
 
   Widget fourDots() {
     return Row(
@@ -69,6 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // ignore: omit_local_variable_types
     final Size size = MediaQuery.of(context).size;
+
+    // ignore: omit_local_variable_types
+    final ThemeData textStyleTheme = Theme.of(context);
+
     return Scaffold(
       backgroundColor: AppColors.cardColorW,
       body: SafeArea(
@@ -165,15 +176,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Text(
                               '\$ 1.280.45',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .displayMedium
+                              style: textStyleTheme.textTheme.displaySmall
                                   ?.copyWith(
-                                    color: AppColors.secondaryColorW,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 28,
-                                    fontFamily: 'SF pro Displa',
-                                  ),
+                                color: AppColors.secondaryColorW,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 28,
+                                fontFamily: 'SF pro Displa',
+                              ),
                             ),
                             const Icon(
                               FpbIcons.eye_open,
@@ -547,20 +556,26 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(
+        pageIndex: pageIndex,
+        onChanged: onChanged,
+      ),
     );
   }
 }
 
 class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({super.key});
+  const BottomNavBar({super.key, required this.pageIndex, this.onChanged});
+  final int pageIndex;
+
+  final void Function(int)? onChanged;
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int pageIndex = 0;
+  //int pageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -575,11 +590,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  pageIndex = 0;
-                });
+                widget.onChanged!(0);
               },
-              icon: pageIndex == 0
+              icon: widget.pageIndex == 0
                   ? Column(
                       children: [
                         const Icon(
@@ -606,15 +619,25 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  pageIndex = 1;
-                });
+                widget.onChanged!(1);
               },
-              icon: pageIndex == 1
-                  ? const Icon(
-                      FpbIcons.wallet_selected,
-                      color: Colors.black,
-                      size: 25,
+              icon: widget.pageIndex == 1
+                  ? Column(
+                      children: [
+                        const Icon(
+                          FpbIcons.wallet_selected,
+                          color: Colors.black,
+                          size: 25,
+                        ),
+                        Container(
+                          height: 5,
+                          width: 5,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: AppColors.secondaryColorW,
+                          ),
+                        )
+                      ],
                     )
                   : const Icon(
                       FpbIcons.wallet,
@@ -625,15 +648,25 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  pageIndex = 2;
-                });
+                widget.onChanged!(2);
               },
-              icon: pageIndex == 2
-                  ? const Icon(
-                      FpbIcons.dollar_icon,
-                      color: Colors.black,
-                      size: 25,
+              icon: widget.pageIndex == 2
+                  ? Column(
+                      children: [
+                        const Icon(
+                          FpbIcons.dollar_icon,
+                          color: Colors.black,
+                          size: 25,
+                        ),
+                        Container(
+                          height: 5,
+                          width: 5,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: AppColors.secondaryColorW,
+                          ),
+                        )
+                      ],
                     )
                   : const Icon(
                       FpbIcons.dollar_icon,
@@ -644,15 +677,25 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  pageIndex = 3;
-                });
+                widget.onChanged!(3);
               },
-              icon: pageIndex == 3
-                  ? const Icon(
-                      FpbIcons.graph_selected,
-                      color: Colors.black,
-                      size: 25,
+              icon: widget.pageIndex == 3
+                  ? Column(
+                      children: [
+                        const Icon(
+                          FpbIcons.graph_selected,
+                          color: Colors.black,
+                          size: 25,
+                        ),
+                        Container(
+                          height: 5,
+                          width: 5,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: AppColors.secondaryColorW,
+                          ),
+                        )
+                      ],
                     )
                   : const Icon(
                       FpbIcons.graph,
@@ -663,15 +706,25 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  pageIndex = 3;
-                });
+                widget.onChanged!(4);
               },
-              icon: pageIndex == 3
-                  ? const Icon(
-                      FpbIcons.search_selected,
-                      color: Colors.black,
-                      size: 25,
+              icon: widget.pageIndex == 4
+                  ? Column(
+                      children: [
+                        const Icon(
+                          FpbIcons.search_selected,
+                          color: Colors.black,
+                          size: 25,
+                        ),
+                        Container(
+                          height: 5,
+                          width: 5,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: AppColors.secondaryColorW,
+                          ),
+                        )
+                      ],
                     )
                   : const Icon(
                       FpbIcons.search,
