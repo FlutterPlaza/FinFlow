@@ -12,9 +12,18 @@ class SavingsPage extends StatefulWidget {
 }
 
 class _SavingsPageState extends State<SavingsPage> {
+  int pageIndex = 1;
+
+   void onChanged(int index) {
+    setState(() {
+      pageIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    ThemeData textStyleTheme = Theme.of(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -26,7 +35,7 @@ class _SavingsPageState extends State<SavingsPage> {
                 children: [
                   Text(
                     'Savings',
-                    style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                    style: textStyleTheme.textTheme.displaySmall?.copyWith(
                           color: AppColors.secondaryColorW,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Open sans',
@@ -354,8 +363,8 @@ class _SavingsPageState extends State<SavingsPage> {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(
-        pageIndex: 1,
+      bottomNavigationBar:   BottomNavBar(
+        pageIndex: pageIndex, onChanged: onChanged,
       ),
     );
   }

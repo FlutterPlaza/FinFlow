@@ -76,6 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // ignore: omit_local_variable_types
     final Size size = MediaQuery.of(context).size;
+
+     // ignore: omit_local_variable_types
+     final ThemeData textStyleTheme = Theme.of(context);
+
     return Scaffold(
       backgroundColor: AppColors.cardColorW,
       body: SafeArea(
@@ -172,9 +176,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Text(
                               '\$ 1.280.45',
-                              style: Theme.of(context)
+                              style: textStyleTheme
                                   .textTheme
-                                  .displayMedium
+                                  .displaySmall
                                   ?.copyWith(
                                     color: AppColors.secondaryColorW,
                                     fontWeight: FontWeight.w600,
@@ -554,7 +558,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(pageIndex: 0, onChanged: onChanged),
+      bottomNavigationBar: BottomNavBar(pageIndex: pageIndex,
+       onChanged: onChanged,),
     );
   }
 }
@@ -614,9 +619,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  widget.onChanged!(1);
-                });
+                 widget.onChanged!(1);
               },
               icon: widget.pageIndex == 1
                   ? Column(
@@ -645,9 +648,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  widget.onChanged!(2);
-                });
+               widget.onChanged!(2);
               },
               icon: widget.pageIndex == 2
                   ? Column(
@@ -676,9 +677,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  widget.onChanged!(3);
-                });
+                widget.onChanged!(3);
               },
               icon: widget.pageIndex == 3
                   ? Column(
@@ -707,9 +706,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               onPressed: () {
-                setState(() {
-                  widget.onChanged!(4);
-                });
+                 widget.onChanged!(4);
               },
               icon: widget.pageIndex == 4
                   ? Column(

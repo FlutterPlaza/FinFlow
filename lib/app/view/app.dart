@@ -18,6 +18,8 @@ class App extends StatelessWidget {
   }
 }
 
+
+
 ThemeData whiteTheme(BuildContext context) {
   return ThemeData(
     primarySwatch: AppColors.getPrimaryMaterialColorWhiteTheme,
