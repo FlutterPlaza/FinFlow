@@ -1,24 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
-//import 'package:fpb/home_screen/home_screen.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/savings_screen/view/savings_page.dart';
+import 'package:fpb/onboarding/view/onboarding_screens.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: whiteTheme(context),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const SavingsPage(),
+    return LayoutBuilder(
+      builder: (context, cts) {
+        return MaterialApp(
+          title: 'FinFlow',
+          theme: whiteTheme(context, cts),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: OnboardingPage(
+            onGetStartedPressed: () {},
+          ),
+        );
+      },
     );
   }
 }
 
-ThemeData whiteTheme(BuildContext context) {
+ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
   return ThemeData(
     primarySwatch: AppColors.getPrimaryMaterialColorWhiteTheme,
     primaryColor: AppColors.primaryColorW,
@@ -27,14 +33,26 @@ ThemeData whiteTheme(BuildContext context) {
     cardColor: AppColors.cardColorW,
     bottomAppBarColor: AppColors.getPrimaryMaterialColorWhiteTheme,
     textTheme: TextTheme(
-      headline6: const TextStyle(
-        color: Color(0xff808191),
-        fontWeight: FontWeight.bold,
-        fontSize: 13,
-      ),
-      headline5: Theme.of(context).textTheme.headline5?.copyWith(
-            fontSize: 16,
+      displayLarge: Theme.of(context).textTheme.displayLarge,
+      displayMedium: Theme.of(context).textTheme.displayMedium,
+      displaySmall: Theme.of(context).textTheme.displaySmall,
+      headlineLarge: Theme.of(context).textTheme.headlineLarge,
+      headlineMedium: Theme.of(context).textTheme.headlineMedium,
+      headlineSmall: Theme.of(context).textTheme.headline5,
+      titleLarge: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w900,
+            fontSize: cts.maxWidth * 0.056,
           ),
+      titleMedium: Theme.of(context).textTheme.titleMedium?.copyWith(
+            fontSize: cts.maxWidth * 0.048,
+          ),
+      titleSmall: Theme.of(context).textTheme.titleSmall,
+      bodyLarge: Theme.of(context).textTheme.bodyLarge,
+      bodyMedium: Theme.of(context).textTheme.bodyMedium,
+      bodySmall: Theme.of(context).textTheme.bodySmall,
+      labelLarge: Theme.of(context).textTheme.labelLarge,
+      labelMedium: Theme.of(context).textTheme.labelMedium,
+      labelSmall: Theme.of(context).textTheme.labelSmall,
     ),
     backgroundColor: Colors.white,
     buttonTheme: ButtonThemeData(
@@ -45,11 +63,12 @@ ThemeData whiteTheme(BuildContext context) {
         borderRadius: BorderRadius.circular(10),
       ),
     ),
-    elevatedButtonTheme: const ElevatedButtonThemeData(
+    elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         shape: MaterialStatePropertyAll(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius:
+                BorderRadius.all(Radius.circular(cts.maxWidth * 0.025)),
           ),
         ),
       ),

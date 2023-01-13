@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
+  flutter_hooks: ^0.18.5+1
   flutter_localizations:
     sdk: flutter
   flutter_svg: ^1.1.6
