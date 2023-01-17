@@ -1,4 +1,27 @@
 {
-    "@@locale": "en"
-   
+    "@@locale": "en",
+    "onboardingSendTitle": "Sending money easier than ever",
+    "@onboardingSendTitle": {
+        "description": "This is the title displayed on the first onboarding screen with a sending money illustration"
+    },
+    "onboardingSendDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores!",
+    "@onboardingSendDescription": {
+        "description": "This is the description displayed on the first onboarding screen with a sending money illustration"
+    },
+    "onboardingSaveTitle": "Keep track of your savings",
+    "@onboardingSaveTitle": {
+        "description": "This is the title displayed on the second onboarding screen with a saving money illustration"
+    },
+    "onboardingSaveDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores!",
+    "@onboardingSaveDescription": {
+        "description": "This is the title displayed on the second onboarding screen with a saving money illustration"
+    },
+    "onboardingTransactionTitle": "Your transactions 100% secured",
+    "@onboardingTransactionTitle": {
+        "description": "This is the title displayed on the third onboarding screen with a secured transaction money illustration"
+    },
+    "onboardingTransactionDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores!",
+    "@onboardingTransactionDescription": {
+        "description": "This is the description displayed on the third onboarding screen with a secured transaction money illustration"
+    }   
 }
