@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/onboarding/view/onboarding_screens.dart';
+import 'package:fpb/profile_screen/view/profile_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -15,9 +15,7 @@ class App extends StatelessWidget {
           theme: whiteTheme(context, cts),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          home: OnboardingPage(
-            onGetStartedPressed: () {},
-          ),
+          home: const ProfilePage(),
         );
       },
     );
