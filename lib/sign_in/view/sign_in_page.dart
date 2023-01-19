@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/shared/helpers/relative_sizing.dart';
-import 'package:fpb/core/shared/presentation/theming/colors.dart';
+import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_svg.dart';
-import 'package:fpb/core/shared/presentation/theming/colors.dart';
+import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 
 class SignUnPage extends StatefulWidget {

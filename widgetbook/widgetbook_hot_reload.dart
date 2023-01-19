@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/app/app.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 import 'home_page/home_page.dart';
@@ -15,10 +14,10 @@ class WidgetbookHotReload extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, cts) {
         return Widgetbook.material(
-          categories: [
+          directories: [
             WidgetbookCategory(
               name: 'screens',
-              widgets: [
+              children: [
                 WidgetbookComponent(
                   name: 'sign-in',
                   useCases: [sign_in_usecase],
@@ -39,7 +38,7 @@ class WidgetbookHotReload extends StatelessWidget {
             ),
             WidgetbookCategory(
               name: 'widgets',
-              widgets: [
+              children: [
                 WidgetbookComponent(
                   name: 'Button',
                   useCases: [
@@ -64,23 +63,24 @@ class WidgetbookHotReload extends StatelessWidget {
               ],
             ),
           ],
-          devices: const [
-            Apple.iPhone11,
-            Samsung.s21ultra,
-            Samsung.s10,
-            Apple.iPhone6
-          ],
+          // devices: const [
+          //   Apple.iPhone11,
+          //   Samsung.s21ultra,
+          //   Samsung.s10,
+          //   Apple.iPhone6
+          // ],
           appInfo: AppInfo(name: 'FP Bank'),
-          themes: [
-            WidgetbookTheme(
-              name: 'Light',
-              data: whiteTheme(context, cts),
-            ),
-            WidgetbookTheme(
-              name: 'Dark',
-              data: ThemeData.dark(),
-            ),
-          ],
+          // themes: [
+          //   WidgetbookTheme(
+          //     name: 'Light',
+          //     data: whiteTheme(context, cts),
+          //   ),
+          //   WidgetbookTheme(
+          //     name: 'Dark',
+          //     data: ThemeData.dark(),
+          //   ),
+          // ],
+          addons: [],
         );
       },
     );
