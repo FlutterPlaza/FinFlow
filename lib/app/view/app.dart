@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/core/shared/presentation/theming/colors.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/profile_screen/view/profile_page.dart';
+import 'package:fpb/onbarding/view/onboarding_screens.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
-@@ -15,9 +15,7 @@
+ 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -15,7 +15,8 @@ class App extends StatelessWidget {
           theme: whiteTheme(context, cts),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          home: const ProfilePage(),
+          home: OnboardingPage(
+          onGetStartedPressed: (){},
         );
       },
     );
