@@ -5,7 +5,7 @@ import 'package:fpb/profile_screen/view/profile_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
-
+@@ -15,9 +15,7 @@
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
