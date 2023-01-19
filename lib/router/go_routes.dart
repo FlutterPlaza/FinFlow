@@ -27,7 +27,7 @@ final GoRouter goRouter = GoRouter(
       // ],
     ),
     GoRoute(
-      path: 'getStarted',
+      path: '/getStarted',
       builder: (BuildContext context, GoRouterState state) {
         return const OnboardingPage();
       },
