@@ -1,4 +1,4 @@
-# FinFlow 
+# FinFlow
 
 ![coverage][coverage_badge]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
@@ -36,7 +36,7 @@ _\*Finflow works on iOS, Android, Web, and Windows._
 To run all unit and widget tests use the following command:
 
 ```sh
-$ flutter test --coverage --test-randomize-ordering-seed random
+flutter test --coverage --test-randomize-ordering-seed random
 ```
 
 To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
@@ -105,10 +105,10 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
     ...
 
     <key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>es</string>
-	</array>
+ <array>
+  <string>en</string>
+  <string>es</string>
+ </array>
 
     ...
 ```
@@ -157,4 +157,3 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 [license_link]: https://opensource.org/licenses/MIT
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
 [very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
-[very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
