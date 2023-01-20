@@ -23,11 +23,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     _UserNameChange event,
     Emitter<LoginState> emit,
   ) {
-    final username = Username.dirty(event.userName);
+    final email = Email.dirty(event.userName);
     emit(
       state.copyWith(
-        username: username,
-        status: Formz.validate([state.password, username]),
+        email: email,
+        status: Formz.validate([state.password, email]),
       ),
     );
   }
@@ -40,7 +40,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(
       state.copyWith(
         password: password,
-        status: Formz.validate([password, state.username]),
+        status: Formz.validate([password, state.email]),
       ),
     );
   }
@@ -53,7 +53,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(state.copyWith(status: FormzStatus.submissionInProgress));
       try {
         await _authenticationRepository.logIn(
-          username: state.username.value,
+          username: state.email.value,
           password: state.password.value,
         );
         emit(state.copyWith(status: FormzStatus.submissionSuccess));

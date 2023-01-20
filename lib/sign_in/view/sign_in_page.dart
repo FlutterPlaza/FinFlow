@@ -6,9 +6,10 @@ import 'package:formz/formz.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
-import 'package:fpb/core/shared/presentation/widget/my_button.dart';
-import 'package:fpb/core/shared/presentation/widget/my_textformfield.dart';
 import 'package:fpb/sign_in/application/bloc/login_bloc.dart';
+import 'package:fpb/sign_in/view/widgets/email_input.dart';
+import 'package:fpb/sign_in/view/widgets/login_button.dart';
+import 'package:fpb/sign_in/view/widgets/password_input.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -159,16 +160,8 @@ class _SignInBodyState extends State<SignInBody>
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     mainAxisSize: MainAxisSize.min,
                                     children: const [
-                                      FpbTextFormField(
-                                        label: 'Email',
-                                        hint: 'example@mail.com',
-                                        isEmail: true,
-                                      ),
-                                      FpbTextFormField(
-                                        label: 'Password',
-                                        hint: 'Enter your password',
-                                        isPassword: true,
-                                      ),
+                                      EmailInput(),
+                                      PasswordInput(),
                                       Text('Forgot password?'),
                                     ],
                                   ),
@@ -188,7 +181,7 @@ class _SignInBodyState extends State<SignInBody>
                             ),
                           ),
                         ),
-                        FpbButton(label: 'Log in', onTap: () {}),
+                        const LoginButton(),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           child: Row(

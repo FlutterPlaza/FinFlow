@@ -11,6 +11,8 @@ class FpbTextFormField extends StatefulWidget {
     this.node,
     this.isEmail = false,
     this.isPassword = false,
+    this.onChanged,
+    this.errorText,
   });
 
   final String label;
@@ -19,6 +21,8 @@ class FpbTextFormField extends StatefulWidget {
   final bool isPassword;
   final TextEditingController? textController;
   final FocusNode? node;
+  final void Function(String)? onChanged;
+  final String? errorText;
 
   @override
   State<FpbTextFormField> createState() => _FpbTextFormFieldState();
@@ -52,9 +56,12 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
               : widget.isPassword
                   ? TextInputType.visiblePassword
                   : TextInputType.none,
+          onChanged: widget.onChanged,
           obscureText: hidePassword ?? false,
           decoration: InputDecoration(
             // suffixIconColor:
+            errorText: widget.errorText,
+
             suffixIcon: !widget.isPassword
                 ? null
                 : hidePassword!

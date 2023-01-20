@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userName) usernameChanged,
+    required TResult Function(String userName) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userName)? usernameChanged,
+    TResult? Function(String userName)? emailChanged,
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userName)? usernameChanged,
+    TResult Function(String userName)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function()? submitted,
     required TResult orElse(),
@@ -40,21 +40,21 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UserNameChange value) usernameChanged,
+    required TResult Function(_UserNameChange value) emailChanged,
     required TResult Function(_PasswordChange value) passwordChanged,
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserNameChange value)? usernameChanged,
+    TResult? Function(_UserNameChange value)? emailChanged,
     TResult? Function(_PasswordChange value)? passwordChanged,
     TResult? Function(_Submitted value)? submitted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserNameChange value)? usernameChanged,
+    TResult Function(_UserNameChange value)? emailChanged,
     TResult Function(_PasswordChange value)? passwordChanged,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
@@ -121,7 +121,7 @@ class _$_UserNameChange implements _UserNameChange {
 
   @override
   String toString() {
-    return 'LoginEvent.usernameChanged(userName: $userName)';
+    return 'LoginEvent.emailChanged(userName: $userName)';
   }
 
   @override
@@ -145,33 +145,33 @@ class _$_UserNameChange implements _UserNameChange {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userName) usernameChanged,
+    required TResult Function(String userName) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function() submitted,
   }) {
-    return usernameChanged(userName);
+    return emailChanged(userName);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userName)? usernameChanged,
+    TResult? Function(String userName)? emailChanged,
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? submitted,
   }) {
-    return usernameChanged?.call(userName);
+    return emailChanged?.call(userName);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userName)? usernameChanged,
+    TResult Function(String userName)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function()? submitted,
     required TResult orElse(),
   }) {
-    if (usernameChanged != null) {
-      return usernameChanged(userName);
+    if (emailChanged != null) {
+      return emailChanged(userName);
     }
     return orElse();
   }
@@ -179,33 +179,33 @@ class _$_UserNameChange implements _UserNameChange {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UserNameChange value) usernameChanged,
+    required TResult Function(_UserNameChange value) emailChanged,
     required TResult Function(_PasswordChange value) passwordChanged,
     required TResult Function(_Submitted value) submitted,
   }) {
-    return usernameChanged(this);
+    return emailChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserNameChange value)? usernameChanged,
+    TResult? Function(_UserNameChange value)? emailChanged,
     TResult? Function(_PasswordChange value)? passwordChanged,
     TResult? Function(_Submitted value)? submitted,
   }) {
-    return usernameChanged?.call(this);
+    return emailChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserNameChange value)? usernameChanged,
+    TResult Function(_UserNameChange value)? emailChanged,
     TResult Function(_PasswordChange value)? passwordChanged,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
   }) {
-    if (usernameChanged != null) {
-      return usernameChanged(this);
+    if (emailChanged != null) {
+      return emailChanged(this);
     }
     return orElse();
   }
@@ -285,7 +285,7 @@ class _$_PasswordChange implements _PasswordChange {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userName) usernameChanged,
+    required TResult Function(String userName) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function() submitted,
   }) {
@@ -295,7 +295,7 @@ class _$_PasswordChange implements _PasswordChange {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userName)? usernameChanged,
+    TResult? Function(String userName)? emailChanged,
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? submitted,
   }) {
@@ -305,7 +305,7 @@ class _$_PasswordChange implements _PasswordChange {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userName)? usernameChanged,
+    TResult Function(String userName)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function()? submitted,
     required TResult orElse(),
@@ -319,7 +319,7 @@ class _$_PasswordChange implements _PasswordChange {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UserNameChange value) usernameChanged,
+    required TResult Function(_UserNameChange value) emailChanged,
     required TResult Function(_PasswordChange value) passwordChanged,
     required TResult Function(_Submitted value) submitted,
   }) {
@@ -329,7 +329,7 @@ class _$_PasswordChange implements _PasswordChange {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserNameChange value)? usernameChanged,
+    TResult? Function(_UserNameChange value)? emailChanged,
     TResult? Function(_PasswordChange value)? passwordChanged,
     TResult? Function(_Submitted value)? submitted,
   }) {
@@ -339,7 +339,7 @@ class _$_PasswordChange implements _PasswordChange {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserNameChange value)? usernameChanged,
+    TResult Function(_UserNameChange value)? emailChanged,
     TResult Function(_PasswordChange value)? passwordChanged,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
@@ -398,7 +398,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String userName) usernameChanged,
+    required TResult Function(String userName) emailChanged,
     required TResult Function(String password) passwordChanged,
     required TResult Function() submitted,
   }) {
@@ -408,7 +408,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String userName)? usernameChanged,
+    TResult? Function(String userName)? emailChanged,
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? submitted,
   }) {
@@ -418,7 +418,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String userName)? usernameChanged,
+    TResult Function(String userName)? emailChanged,
     TResult Function(String password)? passwordChanged,
     TResult Function()? submitted,
     required TResult orElse(),
@@ -432,7 +432,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UserNameChange value) usernameChanged,
+    required TResult Function(_UserNameChange value) emailChanged,
     required TResult Function(_PasswordChange value) passwordChanged,
     required TResult Function(_Submitted value) submitted,
   }) {
@@ -442,7 +442,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserNameChange value)? usernameChanged,
+    TResult? Function(_UserNameChange value)? emailChanged,
     TResult? Function(_PasswordChange value)? passwordChanged,
     TResult? Function(_Submitted value)? submitted,
   }) {
@@ -452,7 +452,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserNameChange value)? usernameChanged,
+    TResult Function(_UserNameChange value)? emailChanged,
     TResult Function(_PasswordChange value)? passwordChanged,
     TResult Function(_Submitted value)? submitted,
     required TResult orElse(),
@@ -471,7 +471,7 @@ abstract class _Submitted implements LoginEvent {
 /// @nodoc
 mixin _$LoginState {
   FormzStatus get status => throw _privateConstructorUsedError;
-  Username get username => throw _privateConstructorUsedError;
+  Email get email => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -485,7 +485,7 @@ abstract class $LoginStateCopyWith<$Res> {
           LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res, LoginState>;
   @useResult
-  $Res call({FormzStatus status, Username username, Password password});
+  $Res call({FormzStatus status, Email email, Password password});
 }
 
 /// @nodoc
@@ -502,7 +502,7 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   @override
   $Res call({
     Object? status = null,
-    Object? username = null,
+    Object? email = null,
     Object? password = null,
   }) {
     return _then(_value.copyWith(
@@ -510,10 +510,10 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as FormzStatus,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as Username,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as Email,
       password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -530,7 +530,7 @@ abstract class _$$_LoginStateCopyWith<$Res>
       __$$_LoginStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({FormzStatus status, Username username, Password password});
+  $Res call({FormzStatus status, Email email, Password password});
 }
 
 /// @nodoc
@@ -545,7 +545,7 @@ class __$$_LoginStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? username = null,
+    Object? email = null,
     Object? password = null,
   }) {
     return _then(_$_LoginState(
@@ -553,10 +553,10 @@ class __$$_LoginStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as FormzStatus,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as Username,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as Email,
       password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -570,7 +570,7 @@ class __$$_LoginStateCopyWithImpl<$Res>
 class _$_LoginState implements _LoginState {
   const _$_LoginState(
       {this.status = FormzStatus.pure,
-      this.username = const Username.pure(),
+      this.email = const Email.pure(),
       this.password = const Password.pure()});
 
   @override
@@ -578,14 +578,14 @@ class _$_LoginState implements _LoginState {
   final FormzStatus status;
   @override
   @JsonKey()
-  final Username username;
+  final Email email;
   @override
   @JsonKey()
   final Password password;
 
   @override
   String toString() {
-    return 'LoginState(status: $status, username: $username, password: $password)';
+    return 'LoginState(status: $status, email: $email, password: $password)';
   }
 
   @override
@@ -594,14 +594,13 @@ class _$_LoginState implements _LoginState {
         (other.runtimeType == runtimeType &&
             other is _$_LoginState &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, username, password);
+  int get hashCode => Object.hash(runtimeType, status, email, password);
 
   @JsonKey(ignore: true)
   @override
@@ -613,13 +612,13 @@ class _$_LoginState implements _LoginState {
 abstract class _LoginState implements LoginState {
   const factory _LoginState(
       {final FormzStatus status,
-      final Username username,
+      final Email email,
       final Password password}) = _$_LoginState;
 
   @override
   FormzStatus get status;
   @override
-  Username get username;
+  Email get email;
   @override
   Password get password;
   @override
