@@ -2,22 +2,18 @@ part of 'authentication_bloc.dart';
 
 @freezed
 abstract class AuthenticationState with _$AuthenticationState {
-  const factory AuthenticationState({
-    required AuthenticationStatus status,
+  const factory AuthenticationState.unknown({
+    @Default(AuthenticationStatus.unknown) AuthenticationStatus status,
+    @Default(User.empty) User user,
+  }) = _Unknown;
+
+  factory AuthenticationState.authenticated({
+    @Default(AuthenticationStatus.authenticated) AuthenticationStatus status,
     required User user,
-  }) = _AuthenticationState;
+  }) = _Authenticated;
 
-  factory AuthenticationState.unknown() => const AuthenticationState(
-        status: AuthenticationStatus.unknown,
-        user: User.empty,
-      );
-
-  factory AuthenticationState.authenticated(User user) => AuthenticationState(
-        status: AuthenticationStatus.authenticated,
-        user: user,
-      );
-  factory AuthenticationState.unAuthenticated() => const AuthenticationState(
-        status: AuthenticationStatus.unauthenticated,
-        user: User.empty,
-      );
+  factory AuthenticationState.unAuthenticated({
+    @Default(AuthenticationStatus.unauthenticated) AuthenticationStatus status,
+    @Default(User.empty) User user,
+  }) = _UnAuthenticated;
 }

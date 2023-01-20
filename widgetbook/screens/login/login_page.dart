@@ -6,6 +6,6 @@ import 'package:widgetbook/widgetbook.dart';
 WidgetbookUseCase get sign_in_usecase => WidgetbookUseCase(
       name: 'sign-in',
       builder: (context) {
-        return const SignInPage();
+        return const SignInBody();
       },
     );

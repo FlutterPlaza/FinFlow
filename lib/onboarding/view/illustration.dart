@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
+import 'package:fpb/core/shared/presentation/widget/my_button.dart';
 import 'package:fpb/onboarding/view/my_stepper.dart';
-import 'package:fpb/sign_in/view/sign_in_page.dart';
 
 class Illustration extends StatelessWidget {
   Illustration({

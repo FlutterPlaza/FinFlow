@@ -7,6 +7,7 @@ import 'package:fpb/onboarding/view/illustration.dart';
 
 class OnboardingPage extends HookWidget {
   const OnboardingPage({this.onGetStartedPressed, super.key});
+  static const routeName = '/getStarted';
   final void Function()? onGetStartedPressed;
   @override
   Widget build(BuildContext context) {
