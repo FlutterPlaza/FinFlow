@@ -1,79 +1,40 @@
 // a stateless widget that shows the splash screen with a logo and a text
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/authentication/application/bloc/authentication_bloc.dart';
-import 'package:fpb/router/go_routes.dart';
-import 'package:go_router/go_router.dart';
-import 'package:user_repository/user_repository.dart';
+import 'package:fpb/home_screen/view/home_screen.dart';
+import 'package:fpb/sign_in/view/sign_in_page.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
   static const routeName = '/';
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  late final AuthenticationRepository _authenticationRepository;
-  late final UserRepository _userRepository;
-
-  @override
-  void initState() {
-    super.initState();
-    _authenticationRepository = AuthenticationRepository();
-    _userRepository = UserRepository();
-  }
-
-  @override
-  void dispose() {
-    _authenticationRepository.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider.value(
-      value: _authenticationRepository,
-      child: BlocProvider(
-        create: (context) => AuthenticationBloc(
-          authenticationRepository: _authenticationRepository,
-          userRepository: _userRepository,
-        ),
-        child: const SplashScreenBody(),
-      ),
-    );
-  }
-}
-
-class SplashScreenBody extends StatefulWidget {
-  const SplashScreenBody({super.key});
-
-  @override
-  State<SplashScreenBody> createState() => _SplashScreenBodyState();
-}
-
-class _SplashScreenBodyState extends State<SplashScreenBody> {
-  @override
-  Widget build(BuildContext context) {
-    return BlocListener<AuthenticationBloc, AuthenticationState>(
+    return BlocConsumer<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) {
         state.map(
           unknown: (_) {},
+          authenticated: (_) {},
+          unAuthenticated: (_) {},
+        );
+      },
+      builder: (context, state) {
+        return state.map(
+          unknown: (_) {
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          },
           authenticated: (_) {
-            context.go(GoNames.homeScreen);
+            return const MyHomePage();
           },
           unAuthenticated: (_) {
-            context.go(GoNames.signInScreen);
+            return const SignInPage();
           },
         );
       },
-      child: const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
-      ),
     );
   }
 }
