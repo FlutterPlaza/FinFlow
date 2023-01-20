@@ -314,7 +314,7 @@ packages:
       name: go_router
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.2.4"
+    version: "6.0.1"
   graphs:
     dependency: transitive
     description:
@@ -783,7 +783,7 @@ packages:
     source: hosted
     version: "2.4.1"
   widgetbook_models:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: widgetbook_models
       url: "https://pub.dartlang.org"

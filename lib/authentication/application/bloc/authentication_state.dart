@@ -8,10 +8,16 @@ abstract class AuthenticationState with _$AuthenticationState {
   }) = _AuthenticationState;
 
   factory AuthenticationState.unknown() => const AuthenticationState(
-      status: AuthenticationStatus.unknown, user: User.empty,);
+        status: AuthenticationStatus.unknown,
+        user: User.empty,
+      );
 
   factory AuthenticationState.authenticated(User user) => AuthenticationState(
-      status: AuthenticationStatus.authenticated, user: user,);
+        status: AuthenticationStatus.authenticated,
+        user: user,
+      );
   factory AuthenticationState.unAuthenticated() => const AuthenticationState(
-      status: AuthenticationStatus.unauthenticated, user: User.empty,);
+        status: AuthenticationStatus.unauthenticated,
+        user: User.empty,
+      );
 }

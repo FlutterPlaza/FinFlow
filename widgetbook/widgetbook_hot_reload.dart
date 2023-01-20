@@ -71,8 +71,17 @@ class WidgetbookHotReload extends StatelessWidget {
             Apple.iPhone6
           ],
           appInfo: AppInfo(name: 'FP Bank'),
-
           lightTheme: whiteTheme(context, cts),
+          // themes: [
+          //   WidgetbookTheme(
+          //     name: 'Light',
+          //     data: whiteTheme(context, cts),
+          //   ),
+          //   WidgetbookTheme(
+          //     name: 'Dark',
+          //     data: ThemeData.dark(),
+          //   ),
+          // ],
           // addons: [],
         );
       },
