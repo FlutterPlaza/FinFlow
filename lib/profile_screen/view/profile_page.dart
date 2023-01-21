@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/core/shared/presentation/theming/colors.dart';
+import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -18,78 +18,65 @@ class _ProfilePageState extends State<ProfilePage> {
         child: LayoutBuilder(
           builder: (context, BoxConstraints box) {
             return Padding(
-              padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
+              padding: EdgeInsets.only(
+                top: box.maxHeight * 0.005,
+                left: box.maxWidth * 0.05,
+                right: box.maxWidth * 0.05,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Profile',
-                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                          fontFamily: 'open sans',
-                          fontSize: 32,
-                          fontWeight: FontWeight.w600,
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           color: const Color(0xff181818),
                         ),
                   ),
-                  // const SizedBox(
-                  //   height: 10,
-                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    // crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
                           FpbIcons.edit,
-                          size: 18,
+                          size: box.maxHeight * 0.028,
                           color: AppColors.secondaryColorW,
                         ),
                       ),
                     ],
                   ),
-                  // const SizedBox(
-                  //   height: 10,
-                  // ),
                   Column(
                     children: [
                       Center(
                         child: CircleAvatar(
-                          radius: 50,
-                          child: image ?? const FlutterLogo(size: 50),
-                          //Image.network('https://picsum.photos/200/300'),
+                          radius: box.maxHeight * 0.08,
+                          child:
+                              image ?? FlutterLogo(size: box.maxHeight * 0.1),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: box.maxHeight * 0.015,
                       ),
                       Text(
                         'John Merry',
-                        style:
-                            Theme.of(context).textTheme.displaySmall?.copyWith(
-                                  fontFamily: 'open sans',
-                                  color: AppColors.secondaryColorW,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
                       ),
-                      const SizedBox(
-                        height: 5,
+                      SizedBox(
+                        height: box.maxHeight * 0.008,
                       ),
                       Text(
                         '@john.merry',
                         style:
-                            Theme.of(context).textTheme.displayMedium?.copyWith(
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
                                   color: const Color(0xff888888),
-                                  fontFamily: 'open sans',
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
                                 ),
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: box.maxHeight * 0.03,
                   ),
                   // ignore: use_decorated_box
                   Container(
@@ -98,8 +85,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: Colors.white,
                     ),
                     child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                      padding: EdgeInsets.only(
+                        left: box.maxHeight * 0.03,
+                        top: box.maxHeight * 0.03,
+                        bottom: box.maxHeight * 0.03,
+                      ),
                       child: Column(
                         children: [
                           Row(
@@ -107,102 +97,90 @@ class _ProfilePageState extends State<ProfilePage> {
                               Icon(
                                 FpbIcons.profile,
                                 color: AppColors.accentColorW,
-                                size: 15,
+                                size: box.maxHeight * 0.025,
                               ),
-                              const SizedBox(
-                                width: 20,
+                              SizedBox(
+                                width: box.maxHeight * 0.03,
                               ),
                               Text(
                                 'Account',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .displayMedium
+                                    .titleMedium
                                     ?.copyWith(
-                                      color: AppColors.secondaryColorW,
-                                      fontFamily: 'open sans',
-                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
                             ],
                             //),
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: box.maxHeight * 0.03,
                           ),
                           Row(
                             children: [
                               Icon(
                                 FpbIcons.setting,
                                 color: AppColors.accentColorW,
-                                size: 15,
+                                size: box.maxHeight * 0.025,
                               ),
-                              const SizedBox(
-                                width: 15,
+                              SizedBox(
+                                width: box.maxHeight * 0.03,
                               ),
                               Text(
                                 'Settings',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .displayMedium
+                                    .titleMedium
                                     ?.copyWith(
-                                      color: AppColors.secondaryColorW,
-                                      fontFamily: 'open sans',
-                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: box.maxHeight * 0.03,
                           ),
                           Row(
                             children: [
                               Icon(
                                 Icons.notifications,
                                 color: AppColors.accentColorW,
-                                size: 15,
+                                size: box.maxHeight * 0.025,
                               ),
-                              const SizedBox(
-                                width: 15,
+                              SizedBox(
+                                width: box.maxHeight * 0.03,
                               ),
                               Text(
                                 'Notifications',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .displayMedium
+                                    .titleMedium
                                     ?.copyWith(
-                                      color: AppColors.secondaryColorW,
-                                      fontFamily: 'open sans',
-                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 20,
+                          SizedBox(
+                            height: box.maxHeight * 0.03,
                           ),
                           Row(
                             children: [
                               Icon(
                                 FpbIcons.credit_card,
                                 color: AppColors.accentColorW,
-                                size: 15,
+                                size: box.maxHeight * 0.025,
                               ),
-                              const SizedBox(
-                                width: 15,
+                              SizedBox(
+                                width: box.maxHeight * 0.03,
                               ),
                               Text(
                                 'Payment Method',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .displayMedium
+                                    .titleMedium
                                     ?.copyWith(
-                                      color: AppColors.secondaryColorW,
-                                      fontFamily: 'open sans',
-                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
@@ -212,37 +190,38 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: box.maxHeight * 0.015,
                   ),
                   // ignore: avoid_unnecessary_containers, use_decorated_box
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius:
+                          BorderRadius.circular(box.maxHeight * 0.025),
                       color: Colors.white,
                     ),
                     child: Padding(
-                      padding:
-                          const EdgeInsets.only(left: 20, top: 20, bottom: 20),
+                      padding: EdgeInsets.only(
+                        left: box.maxHeight * 0.03,
+                        top: box.maxHeight * 0.03,
+                        bottom: box.maxHeight * 0.03,
+                      ),
                       child: Row(
                         children: [
                           Icon(
                             FpbIcons.logout,
                             color: AppColors.accentColorW,
-                            size: 15,
+                            size: box.maxHeight * 0.025,
                           ),
-                          const SizedBox(
-                            width: 15,
+                          SizedBox(
+                            width: box.maxHeight * 0.03,
                           ),
                           Text(
                             'Log Out',
                             style: Theme.of(context)
                                 .textTheme
-                                .displayMedium
+                                .titleMedium
                                 ?.copyWith(
-                                  color: AppColors.secondaryColorW,
-                                  fontFamily: 'open sans',
-                                  fontSize: 14,
                                   fontWeight: FontWeight.w600,
                                 ),
                           ),
@@ -268,8 +247,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                 fontWeight: FontWeight.w600,
                               ),
                         ),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: box.maxHeight * 0.001,
                         ),
                         Text(
                           'Terms and Conditions',
