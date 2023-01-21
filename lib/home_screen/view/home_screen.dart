@@ -13,6 +13,7 @@ import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
+  static const String routeName = '/home';
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();

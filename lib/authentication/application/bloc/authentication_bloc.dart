@@ -16,7 +16,7 @@ class AuthenticationBloc
     required UserRepository userRepository,
   })  : _authenticationRepository = authenticationRepository,
         _userRepository = userRepository,
-        super(AuthenticationState.unknown()) {
+        super(const AuthenticationState.unknown()) {
     on<_Logout>(_onAuthenticationLogoutRequested);
     on<_StatusChange>(_onAuthenticationStatusChanged);
     _authenticationStatusSubscription = _authenticationRepository.status.listen(
@@ -45,11 +45,11 @@ class AuthenticationBloc
         final user = await _tryGetUser();
         return emit(
           user != null
-              ? AuthenticationState.authenticated(user)
+              ? AuthenticationState.authenticated(user: user)
               : AuthenticationState.unAuthenticated(),
         );
       case AuthenticationStatus.unknown:
-        return emit(AuthenticationState.unknown());
+        return emit(const AuthenticationState.unknown());
     }
   }
 
