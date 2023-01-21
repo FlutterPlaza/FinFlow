@@ -17,18 +17,27 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_svg: ^1.1.6
-  go_router: ^5.2.4
   intl: ^0.17.0
-  widgetbook: ^3.0.0-beta.7
   widgetbook_annotation:
+  authentication_repository:
+    path: packages/authentication_repository
+  user_repository:
+    path: packages/user_repository
+  formz: ^0.4.1
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.0
+  go_router: ^6.0.1
+  widgetbook:
 
 dev_dependencies:
+  widgetbook_generator:
   bloc_test: ^9.1.0
   flutter_test:
     sdk: flutter
+  freezed: ^2.2.0
   mocktail: ^0.3.0
   very_good_analysis: ^3.1.0
-  widgetbook_generator:
+  build_runner:
 
 flutter:
   uses-material-design: true

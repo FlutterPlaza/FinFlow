@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fpb/core/shared/presentation/theming/theming.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 import 'home_page/home_page.dart';
@@ -13,24 +14,24 @@ class WidgetbookHotReload extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, cts) {
-        return Widgetbook.material(
-          directories: [
+        return Widgetbook(
+          categories: [
             WidgetbookCategory(
               name: 'screens',
-              children: [
-                WidgetbookComponent(
+              widgets: [
+                WidgetbookWidget(
                   name: 'sign-in',
                   useCases: [sign_in_usecase],
                 ),
-                WidgetbookComponent(
+                WidgetbookWidget(
                   name: 'sign-up',
                   useCases: [signUpUsecase],
                 ),
-                WidgetbookComponent(
+                WidgetbookWidget(
                   name: 'HomePage',
                   useCases: [homePageUsecase],
                 ),
-                WidgetbookComponent(
+                WidgetbookWidget(
                   name: 'send-page',
                   useCases: [sendPageUsecase],
                 ),
@@ -38,8 +39,8 @@ class WidgetbookHotReload extends StatelessWidget {
             ),
             WidgetbookCategory(
               name: 'widgets',
-              children: [
-                WidgetbookComponent(
+              widgets: [
+                WidgetbookWidget(
                   name: 'Button',
                   useCases: [
                     WidgetbookUseCase(
@@ -63,13 +64,14 @@ class WidgetbookHotReload extends StatelessWidget {
               ],
             ),
           ],
-          // devices: const [
-          //   Apple.iPhone11,
-          //   Samsung.s21ultra,
-          //   Samsung.s10,
-          //   Apple.iPhone6
-          // ],
+          devices: const [
+            Apple.iPhone11,
+            Samsung.s21ultra,
+            Samsung.s10,
+            Apple.iPhone6
+          ],
           appInfo: AppInfo(name: 'FP Bank'),
+          lightTheme: whiteTheme(context, cts),
           // themes: [
           //   WidgetbookTheme(
           //     name: 'Light',
@@ -80,7 +82,7 @@ class WidgetbookHotReload extends StatelessWidget {
           //     data: ThemeData.dark(),
           //   ),
           // ],
-          addons: [],
+          // addons: [],
         );
       },
     );
