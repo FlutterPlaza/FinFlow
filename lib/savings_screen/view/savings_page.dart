@@ -1,7 +1,7 @@
 // ignore_for_file: omit_local_variable_types, prefer_final_locals
 
 import 'package:flutter/material.dart';
-import 'package:fpb/core/shared/presentation/theming/colors.dart';
+import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/home_screen/home_screen.dart';
 
 class SavingsPage extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/core/shared/presentation/theming/colors.dart';
+import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 
 /// Stepper(index: p, length: q)  p >= 0 , q > 1 && p < q
 /// ```dart
