@@ -65,18 +65,18 @@ class _SignInBodyState extends State<SignInBody>
             body: Stack(
               children: [
                 Positioned(
-                  top: -.03 * cts.maxHeight,
+                  top: -.035 * cts.maxHeight,
                   child: SvgPicture.asset(
                     SvgNames.authBackground,
                     width: cts.maxWidth,
-                    height: 0.3 * cts.maxHeight,
+                    height: 0.35 * cts.maxHeight,
                   ),
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
                     height: .8 * cts.maxHeight,
-                    padding: const EdgeInsets.all(25),
+                    padding: EdgeInsets.all(cts.maxHeight * 0.025),
                     decoration: BoxDecoration(
                       color: Theme.of(context).backgroundColor,
                       borderRadius: const BorderRadius.only(
@@ -91,36 +91,35 @@ class _SignInBodyState extends State<SignInBody>
                           children: [
                             Text(
                               'Login',
-                              style: Theme.of(context).textTheme.displayMedium,
+                              style: Theme.of(context).textTheme.titleLarge,
                             ),
                             Card(
                               color: AppColors.getShade(AppColors.accentColorW),
                               child: IconButton(
-                                iconSize: 0.005 * cts.maxWidth,
                                 onPressed: () {},
-                                icon: const Icon(
+                                icon: Icon(
                                   FpbIcons.face_id,
                                   color: Colors.white,
-                                  size: 23,
+                                  size: cts.maxHeight * 0.028,
                                 ),
                               ),
                             ),
                           ],
                         ),
                         SizedBox(
-                          // height: 0.01 * size.height
-                          height: 0.01 * cts.maxHeight,
+                          height: 0.001 * cts.maxHeight,
                         ),
                         Container(
-                          margin: const EdgeInsets.symmetric(vertical: 8),
+                          margin: EdgeInsets.symmetric(
+                            vertical: cts.maxHeight * 0.008,
+                          ),
                           height: 0.06 * cts.maxHeight,
                           decoration: BoxDecoration(
                             color: Theme.of(context).cardColor,
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          // color: Colors.red,
                           child: TabBar(
-                            padding: const EdgeInsets.all(8),
+                            padding: EdgeInsets.all(cts.maxHeight * 0.008),
                             controller: tabController,
                             onTap: (_) {
                               setState(() {
@@ -151,7 +150,7 @@ class _SignInBodyState extends State<SignInBody>
                         Flexible(
                           child: Form(
                             child: SizedBox(
-                              height: 0.32 * cts.maxHeight,
+                              height: 0.4 * cts.maxHeight,
                               child: TabBarView(
                                 physics: const BouncingScrollPhysics(),
                                 controller: tabController,
@@ -166,16 +165,6 @@ class _SignInBodyState extends State<SignInBody>
                                     ],
                                   ),
                                   Container(),
-                                  // Column(
-                                  //   children: [
-                                  //     Flexible(
-                                  //       child: Container(
-                                  //         color: Colors.green,
-                                  //         width: double.infinity,
-                                  //       ),
-                                  //     )
-                                  //   ],
-                                  // ),
                                 ],
                               ),
                             ),
@@ -183,7 +172,9 @@ class _SignInBodyState extends State<SignInBody>
                         ),
                         const LoginButton(),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          padding: EdgeInsets.symmetric(
+                            vertical: cts.maxHeight * 0.012,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: const [
@@ -206,7 +197,10 @@ class _SignInBodyState extends State<SignInBody>
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 27, bottom: 10),
+                          padding: EdgeInsets.only(
+                            top: cts.maxHeight * 0.001,
+                            bottom: 3,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -241,7 +235,7 @@ class _SignInBodyState extends State<SignInBody>
                             ),
                             Text(
                               ' Terms of use',
-                              style: Theme.of(context).textTheme.headline6,
+                              style: Theme.of(context).textTheme.headline5,
                             )
                           ],
                         ),
