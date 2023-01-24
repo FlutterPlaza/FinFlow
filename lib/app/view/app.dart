@@ -9,7 +9,7 @@ import 'package:user_repository/user_repository.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
- 
+
   @override
   State<App> createState() => _AppState();
 }
