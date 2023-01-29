@@ -10,6 +10,7 @@ import 'package:fpb/sign_in/application/bloc/login_bloc.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
+import 'package:go_router/go_router.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -69,7 +70,7 @@ class _SignInBodyState extends State<SignInBody>
                   child: SvgPicture.asset(
                     SvgNames.authBackground,
                     width: cts.maxWidth,
-                    height: 0.35 * cts.maxHeight,
+                    height: 0.4 * cts.maxHeight,
                   ),
                 ),
                 Align(
@@ -177,13 +178,15 @@ class _SignInBodyState extends State<SignInBody>
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: const [
-                              Expanded(child: Divider()),
+                            children: [
+                              const Expanded(child: Divider()),
                               Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 14),
-                                child: Text('Or Login with'),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: cts.maxWidth * 0.015,
+                                ),
+                                child: const Text('Or Login with'),
                               ),
-                              Expanded(child: Divider())
+                              const Expanded(child: Divider())
                             ],
                           ),
                         ),
@@ -199,22 +202,24 @@ class _SignInBodyState extends State<SignInBody>
                         Padding(
                           padding: EdgeInsets.only(
                             top: cts.maxHeight * 0.001,
-                            bottom: 3,
+                            bottom: cts.maxHeight * 0.0001,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 'Not a member yet?',
-                                style: Theme.of(context).textTheme.headline5,
+                                style: Theme.of(context).textTheme.titleMedium,
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.go('/latestActivities');
+                                },
                                 child: Text(
                                   'Sign Up',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline5
+                                      .titleMedium
                                       ?.copyWith(
                                         color: Theme.of(context).primaryColor,
                                       ),
@@ -228,14 +233,11 @@ class _SignInBodyState extends State<SignInBody>
                           children: [
                             Text(
                               'By continuing, you agree to our',
-                              style:
-                                  Theme.of(context).textTheme.caption?.copyWith(
-                                        fontSize: 13,
-                                      ),
+                              style: Theme.of(context).textTheme.labelMedium,
                             ),
                             Text(
                               ' Terms of use',
-                              style: Theme.of(context).textTheme.headline5,
+                              style: Theme.of(context).textTheme.labelMedium,
                             )
                           ],
                         ),
