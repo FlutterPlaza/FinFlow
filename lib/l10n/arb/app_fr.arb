@@ -1,3 +1,59 @@
 {
-    "@@locale": "fr"
+    "@@locale": "fr",
+     "signInLogInTitle": "Se Connecter",
+    "@signInLogInTitle": {
+        "description": "This is the title displayed on the sign in screen"
+    },
+    "signInEmailLogInLabel": "Se connecter par e-mail",
+    "@signInEmailLogInLabel": {
+        "description": "This is the label displayed on the sign in screen on the email log in tab"
+    },
+     "signInPhoneNumberLogInLabel": "Se connecter par telephone",
+    "@signInPhoneNumberLogInLabel": {
+        "description":"This is the label displayed on the sign in screen on the phone number tab"
+    },
+    "signInForgotPasswordText": "Mot de passe oublié?",
+    "@signInForgotPasswordText": {
+        "description":"This is the text displayed on the sign in screen after login password field"
+    },
+    "signInorLogInWithText": "Ou connectez-vous avec?",
+    "@signInPhoneNumberLogIn": {
+        "description":"This is the text displayed on the sign in screen after the log in button"
+    },
+    "signInNotAMemberYetText": "Pas encore membre?",
+    "@signInNotAMemberYetText": {
+        "description":"This is the text displayed on the sign in screen after the social media sign in icons"
+    },
+    "signInSignUpLabel": "S'inscrire",
+    "@signInSignUpLabel": {
+        "description":"This is the label displayed on the sign in screen for the sign up text  button"
+    },
+    "signInPolicyText": "En continuant, vous acceptez nos",
+    "@signInPolicyText": {
+        "description":"This is the text displayed on the sign in screen at the bottom of the page"
+    },
+    "signInTermsOfUseLabel": "Conditions d'utilisation",
+    "@signInTermsOfUseLabel": {
+        "description":"This is the label displayed on the sign in screen for the Terms of use text button"
+    },
+    "signInLogInButtonLabel": "Se Connecter",
+    "@signInLogInButtonLabel": {
+        "description":"This is the label displayed on the sign in screen for the log in button"
+    },
+    "signInEmailTextFieldLabel": "E-mail",
+    "@signInEmailTextFieldLabel": {
+        "description":"This is the label displayed on the sign in screen for the email textfield"
+    },
+    "signInEmailTextFieldHintText": "example@mail.com",
+    "@signInEmailTextFieldHintText": {
+        "description":"This is the hint text displayed on the sign in screen for the email textfield"
+    },
+    "signInPasswordFieldLabel": "Mot de passe",
+    "@signInPasswordFieldLabel": {
+        "description":"This is the label displayed on the sign in screen for the Password field"
+    },
+    "signInPasswordFieldHintText": "Entre votre mot de passe",
+    "@signInPasswordFieldHintText": {
+        "description":"This is the hint text displayed on the sign in screen for the Password field"
+    }
 }

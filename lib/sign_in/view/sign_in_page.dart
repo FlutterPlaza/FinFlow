@@ -6,6 +6,7 @@ import 'package:formz/formz.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
+import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/sign_in/application/bloc/login_bloc.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
@@ -50,6 +51,7 @@ class _SignInBodyState extends State<SignInBody>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
         if (state.status.isSubmissionFailure) {
@@ -91,7 +93,7 @@ class _SignInBodyState extends State<SignInBody>
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Login',
+                              l10n.signInLogInTitle,
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                             Card(
@@ -127,17 +129,17 @@ class _SignInBodyState extends State<SignInBody>
                                 tabController.index = _;
                               });
                             },
-                            tabs: const [
+                            tabs: [
                               Tab(
                                 child: Text(
-                                  'Email Login',
+                                  l10n.signInEmailLogInLabel,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                               Tab(
                                 child: Text(
-                                  'Phone Number Login',
+                                  l10n.signInPhoneNumberLogInLabel,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -159,10 +161,10 @@ class _SignInBodyState extends State<SignInBody>
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     mainAxisSize: MainAxisSize.min,
-                                    children: const [
-                                      EmailInput(),
-                                      PasswordInput(),
-                                      Text('Forgot password?'),
+                                    children: [
+                                      const EmailInput(),
+                                      const PasswordInput(),
+                                      Text(l10n.signInForgotPasswordText),
                                     ],
                                   ),
                                   Container(),
@@ -184,7 +186,7 @@ class _SignInBodyState extends State<SignInBody>
                                 padding: EdgeInsets.symmetric(
                                   horizontal: cts.maxWidth * 0.015,
                                 ),
-                                child: const Text('Or Login with'),
+                                child: Text(l10n.signInorLogInWithText),
                               ),
                               const Expanded(child: Divider())
                             ],
@@ -208,7 +210,7 @@ class _SignInBodyState extends State<SignInBody>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Not a member yet?',
+                                l10n.signInNotAMemberYetText,
                                 style: Theme.of(context).textTheme.titleMedium,
                               ),
                               TextButton(
@@ -216,7 +218,7 @@ class _SignInBodyState extends State<SignInBody>
                                   context.go('/latestActivities');
                                 },
                                 child: Text(
-                                  'Sign Up',
+                                  l10n.signInSignUpLabel,
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium
@@ -232,11 +234,11 @@ class _SignInBodyState extends State<SignInBody>
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'By continuing, you agree to our',
+                              l10n.signInPolicyText,
                               style: Theme.of(context).textTheme.labelMedium,
                             ),
                             Text(
-                              ' Terms of use',
+                              l10n.signInTermsOfUseLabel,
                               style: Theme.of(context).textTheme.labelMedium,
                             )
                           ],
