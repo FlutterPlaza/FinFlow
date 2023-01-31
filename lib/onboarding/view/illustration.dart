@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/core/shared/presentation/widget/my_button.dart';
+import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/my_stepper.dart';
 
 class Illustration extends StatelessWidget {
@@ -125,8 +126,9 @@ class IllustrationMessage extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: cts.maxWidth * .05),
                   child: Text(
                     title,
-                    maxLines: 1,
+                    maxLines: 2,
                     style: Theme.of(context).textTheme.titleLarge,
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 Text(
@@ -161,6 +163,7 @@ class Actions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -169,14 +172,16 @@ class Actions extends StatelessWidget {
           TextButton(
             onPressed: onSkipPressed,
             child: Text(
-              'Skip',
+              l10n.onboardingSkipLabel,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w500,
                   ),
             ),
           ),
         FpbButton(
-          label: !isLastPage ? 'Next' : 'Get Started',
+          label: !isLastPage
+              ? l10n.onboardingNextLabel
+              : l10n.onboardingGetStartedLabel,
           onTap: onNextPressed,
           width: isLastPage ? cts.maxWidth * 0.65 : cts.maxWidth * 0.6,
           height: cts.maxHeight * 0.07,

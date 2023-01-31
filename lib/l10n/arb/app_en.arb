@@ -24,6 +24,18 @@
     "@onboardingTransactionDescription": {
         "description": "This is the description displayed on the third onboarding screen with a secured transaction money illustration"
     },
+    "onboardingSkipLabel": "Skip",
+    "@onboardingSkipLabel": {
+        "description": "This is the label on the first two onboarding screens for the skip button"
+    },
+    "onboardingNextLabel": "Next",
+    "@onboardingNextLabel": {
+        "description": "This is the label on the first two onboarding screens for the next button"
+    },
+    "onboardingGetStartedLabel": "Get Started",
+    "@onboardingGetStartedLabel": {
+        "description": "This is the label on the third onboarding screen for the get started button"
+    },
     "signInLogInTitle": "Log In",
     "@signInLogInTitle": {
         "description": "This is the title displayed on the sign in screen"

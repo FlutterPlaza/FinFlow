@@ -133,14 +133,14 @@ class _SignInBodyState extends State<SignInBody>
                               Tab(
                                 child: Text(
                                   l10n.signInEmailLogInLabel,
-                                  maxLines: 1,
+                                  maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                               Tab(
                                 child: Text(
                                   l10n.signInPhoneNumberLogInLabel,
-                                  maxLines: 1,
+                                  maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               )
@@ -236,6 +236,9 @@ class _SignInBodyState extends State<SignInBody>
                             Text(
                               l10n.signInPolicyText,
                               style: Theme.of(context).textTheme.labelMedium,
+                            ),
+                            SizedBox(
+                              width: cts.maxWidth * 0.003,
                             ),
                             Text(
                               l10n.signInTermsOfUseLabel,

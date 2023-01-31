@@ -1,59 +1,95 @@
 {
     "@@locale": "fr",
-     "signInLogInTitle": "Se Connecter",
+    "onboardingSendTitle": "Envoi d'argent plus facile que jamais",
+    "@onboardingSendTitle": {
+        "description": "Il s'agit du titre affiché sur le premier écran d'accueil avec une illustration d'envoi d'argent."
+    },
+    "onboardingSendDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores!",
+    "@onboardingSendDescription": {
+        "description": "Il s'agit de la description affichée sur le premier écran d'accueil avec une illustration d'envoi d'argent."
+    },
+    "onboardingSaveTitle": "Gardez une trace de votre épargne",
+    "@onboardingSaveTitle": {
+        "description": "Il s'agit du titre affiché sur le deuxième écran d'accueil avec une illustration de l'épargne."
+    },
+    "onboardingSaveDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores!",
+    "@onboardingSaveDescription": {
+        "description": "Il s'agit du titre affiché sur le deuxième écran d'accueil avec une illustration de l'épargne."
+    },
+    "onboardingTransactionTitle": "Vos transactions sont 100% sécurisées",
+    "@onboardingTransactionTitle": {
+        "description": "Il s'agit du titre affiché sur le troisième écran d'embarquement avec une illustration de la monnaie de la transaction sécurisée."
+    },
+    "onboardingTransactionDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores!",
+    "@onboardingTransactionDescription": {
+        "description": "Il s'agit de la description affichée sur le troisième écran d'embarquement avec une illustration de la monnaie de la transaction sécurisée."
+    },
+    "onboardingSkipLabel": "Sauter",
+    "@onboardingSkipLabel": {
+        "description": "Il s'agit du libellé du bouton de saut sur les deux premiers écrans d'accueil."
+    },
+    "onboardingNextLabel": "Suivant",
+    "@onboardingNextLabel": {
+        "description": "Voici le libellé du bouton suivant sur les deux premiers écrans d'accueil"
+    },
+    "onboardingGetStartedLabel": "Commencez",
+    "@onboardingGetStartedLabel": {
+        "description": "Voici l'étiquette du troisième écran d'accueil pour le bouton Démarrer"
+    },
+     "signInLogInTitle": "Connectez-vous",
     "@signInLogInTitle": {
-        "description": "This is the title displayed on the sign in screen"
+        "description": "Il s'agit du titre affiché sur l'écran d'identification."
     },
-    "signInEmailLogInLabel": "Se connecter par e-mail",
+    "signInEmailLogInLabel": "Connexion par e-mail",
     "@signInEmailLogInLabel": {
-        "description": "This is the label displayed on the sign in screen on the email log in tab"
+        "description": "Il s'agit de l'étiquette affichée sur l'écran d'ouverture de session dans l'onglet d'ouverture de session e-mail"
     },
-     "signInPhoneNumberLogInLabel": "Se connecter par telephone",
+     "signInPhoneNumberLogInLabel": "Connexion par numéro de téléphone",
     "@signInPhoneNumberLogInLabel": {
-        "description":"This is the label displayed on the sign in screen on the phone number tab"
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'inscription dans l'onglet du numéro de téléphone"
     },
     "signInForgotPasswordText": "Mot de passe oublié?",
     "@signInForgotPasswordText": {
-        "description":"This is the text displayed on the sign in screen after login password field"
+        "description":"Il s'agit du texte affiché sur l'écran d'identification après le champ du mot de passe de connexion"
     },
     "signInorLogInWithText": "Ou connectez-vous avec?",
     "@signInPhoneNumberLogIn": {
-        "description":"This is the text displayed on the sign in screen after the log in button"
+        "description":"Il s'agit du texte affiché sur l'écran de connexion après le bouton de connexion"
     },
     "signInNotAMemberYetText": "Pas encore membre?",
     "@signInNotAMemberYetText": {
-        "description":"This is the text displayed on the sign in screen after the social media sign in icons"
+        "description":"Il s'agit du texte affiché sur l'écran de connexion après les icônes de connexion aux médias sociaux."
     },
-    "signInSignUpLabel": "S'inscrire",
+    "signInSignUpLabel": "Inscrivez-vous",
     "@signInSignUpLabel": {
-        "description":"This is the label displayed on the sign in screen for the sign up text  button"
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'inscription pour le bouton de texte d'inscription."
     },
-    "signInPolicyText": "En continuant, vous acceptez nos",
+    "signInPolicyText": "En continuant, vous acceptez notre",
     "@signInPolicyText": {
-        "description":"This is the text displayed on the sign in screen at the bottom of the page"
+        "description":"Voici le texte affiché sur l'écran d'inscription en bas de la page"
     },
     "signInTermsOfUseLabel": "Conditions d'utilisation",
     "@signInTermsOfUseLabel": {
-        "description":"This is the label displayed on the sign in screen for the Terms of use text button"
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'identification pour le bouton texte des conditions d'utilisation."
     },
-    "signInLogInButtonLabel": "Se Connecter",
+    "signInLogInButtonLabel": "Connectez-vous",
     "@signInLogInButtonLabel": {
-        "description":"This is the label displayed on the sign in screen for the log in button"
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'ouverture de session pour le bouton d'ouverture de session."
     },
     "signInEmailTextFieldLabel": "E-mail",
     "@signInEmailTextFieldLabel": {
-        "description":"This is the label displayed on the sign in screen for the email textfield"
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'inscription pour le champ de texte de l'adresse électronique."
     },
     "signInEmailTextFieldHintText": "example@mail.com",
     "@signInEmailTextFieldHintText": {
-        "description":"This is the hint text displayed on the sign in screen for the email textfield"
+        "description":"Il s'agit du texte d'indication affiché sur l'écran d'inscription pour le champ de texte de l'adresse électronique."
     },
     "signInPasswordFieldLabel": "Mot de passe",
     "@signInPasswordFieldLabel": {
-        "description":"This is the label displayed on the sign in screen for the Password field"
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'identification pour le champ Mot de passe. "
     },
     "signInPasswordFieldHintText": "Entre votre mot de passe",
     "@signInPasswordFieldHintText": {
-        "description":"This is the hint text displayed on the sign in screen for the Password field"
+        "description":"Il s'agit du texte d'indication affiché sur l'écran de connexion pour le champ Mot de passe."
     }
 }
