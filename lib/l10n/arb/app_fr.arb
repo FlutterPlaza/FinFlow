@@ -91,5 +91,41 @@
     "signInPasswordFieldHintText": "Entre votre mot de passe",
     "@signInPasswordFieldHintText": {
         "description":"Il s'agit du texte d'indication affiché sur l'écran de connexion pour le champ Mot de passe."
+    },
+     "homeScreenCashBalance": "Solde d'encaisse",
+    "@homeScreenCashBalance": {
+        "description":"Il s'agit du texte affiché sur l'écran d'accueil du premier widget de carte"
+    },
+    "homeScreenUnallocated": "Non alloué",
+    "@homeScreenUnallocated": {
+        "description":"Il s'agit du texte affiché sur l'écran d'accueil du premier widget de carte"
+    },
+    "homeScreenAddMoney": "Ajouter de l'argent",
+    "@homeScreenAddMoney": {
+        "description":"Voici le texte affiché sur l'écran d'accueil sur le premier widget de bouton élevé dans la première carte"
+    },
+    "homeScreenWithdrawFunds": "Retrait des fonds",
+    "@homeScreenWithdrawFunds": {
+        "description":"Voici le texte affiché sur l'écran d'accueil sur les widgets du premier bouton élevé de la première carte"
+    },
+    "homeScreenCardNumber": "Numéro de carte",
+    "@homeScreenCashBalance": {
+        "description":"Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
+    },
+    "homeScreenEmpty": "Vide",
+    "@homeScreenEmpty": {
+        "description":"Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
+    },
+    "homeScreenCCV": "CCV",
+    "@homeScreenCCV": {
+        "description":"Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
+    },
+    "homeScreenLatestActivitiesTitle": "Dernière activité",
+    "@homeScreenLatestActivitiesTitle": {
+        "description":"C'est le titre de la dernière carte d'activités"
+    },
+    "homeScreenDateAndTime": "3 août, 15h45",
+    "@homeScreenDateAndTime": {
+        "description":"Il s'agit du texte affiché sur l'écran d'accueil sur le widget de la carte des dernières activités."
     }
 }

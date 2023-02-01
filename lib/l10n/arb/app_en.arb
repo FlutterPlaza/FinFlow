@@ -91,5 +91,41 @@
     "signInPasswordFieldHintText": "Enter your password",
     "@signInPasswordFieldHintText": {
         "description":"This is the hint text displayed on the sign in screen for the Password field"
+    },
+     "homeScreenCashBalance": "Cash Balance",
+    "@homeScreenCashBalance": {
+        "description":"This is the text displayed on the home screen on the first card widget"
+    },
+    "homeScreenUnallocated": "Unallocated",
+    "@homeScreenUnallocated": {
+        "description":"This is the text displayed on the home screen on the first card widget"
+    },
+    "homeScreenAddMoney": "Add money",
+    "@homeScreenAddMoney": {
+        "description":"This is the text displayed on the home screen on  the first elevated button widget in the first card"
+    },
+    "homeScreenWithdrawFunds": "Withdraw Funds",
+    "@homeScreenWithdrawFunds": {
+        "description":"This is the text displayed on the home screen on the first elevated button widgets in the first card"
+    },
+    "homeScreenCardNumber": "Card Number",
+    "@homeScreenCashBalance": {
+        "description":"This is the text displayed on the home screen on the second card widget"
+    },
+    "homeScreenEmpty": "Empty",
+    "@homeScreenEmpty": {
+        "description":"This is the text displayed on the home screen on the second card widget"
+    },
+    "homeScreenCCV": "CCV",
+    "@homeScreenCCV": {
+        "description":"This is the text displayed on the home screen on the second card widget"
+    },
+    "homeScreenLatestActivitiesTitle": "Latest Activity",
+    "@homeScreenLatestActivitiesTitle": {
+        "description":"This is the title of the latest activities card"
+    },
+    "homeScreenDateAndTime": "August 3, 3:45pm",
+    "@homeScreenDateAndTime": {
+        "description":"This is the text displayed on the home screen on the lates activities card widget"
     }
 }
