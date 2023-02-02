@@ -127,5 +127,9 @@
     "homeScreenDateAndTime": "August 3, 3:45pm",
     "@homeScreenDateAndTime": {
         "description":"This is the text displayed on the home screen on the lates activities card widget"
+    },
+    "latestActivitiesTitle": "Latest Activity",
+    "@latestActivitiesTitle": {
+        "description":"This is the title of the latest activities page"
     }
 }

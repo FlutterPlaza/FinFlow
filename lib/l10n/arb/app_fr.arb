@@ -127,5 +127,9 @@
     "homeScreenDateAndTime": "3 août, 15h45",
     "@homeScreenDateAndTime": {
         "description":"Il s'agit du texte affiché sur l'écran d'accueil sur le widget de la carte des dernières activités."
+    },
+    "latestActivitiesTitle": "Dernière activité",
+    "@latestActivitiesTitle": {
+        "description":"Voici le titre de la dernière page d'activités"
     }
 }
