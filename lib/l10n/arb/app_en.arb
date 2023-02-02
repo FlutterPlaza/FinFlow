@@ -200,8 +200,32 @@
     "@profileLprofileVersionTextogOutText": {
         "description":"This is the text of the current version of the app on the profile page"
     },
-    "profileTermsAndConditionsText": "Termes et conditions",
+    "profileTermsAndConditionsText": "Terms and conditions",
     "@profileLprofileVersionTextogOutText": {
         "description":"Voici le texte des dernières conditions générales de l'application sur la page de profil"
+    },
+    "sendersProfileRequestLabel": "Request",
+    "@sendersProfileRequestLabel": {
+        "description":"This is the label of the request button on the senders profile page"
+    },
+    "sendersProfilePayLabel": "Pay",
+    "@sendersProfilePayLabel": {
+        "description":"This is the label of the pay button on the senders profile page"
+    },
+    "sendersProfileJoinedText": "Joined May 2022",
+    "@sendersProfileJoinedText": {
+        "description":"This is the text of the user's joined date on the senders profile page"
+    },
+    "sendersProfileConnectionText": "Paid by people you know",
+    "@sendersProfileConnectionText": {
+        "description":"This is the text of how connected both user's are on the senders profile page"
+    },
+    "sendersProfileContactsText": "In your contacts",
+    "@sendersProfileContactsText": {
+        "description":"This is the text showing if sender is in user's contacts or not on the senders profile page"
+    },
+    "sendersProfileHistoryText": "History",
+    "@sendersProfileContactsText": {
+        "description":"This is the text showing the sender's history on the senders profile page"
     }
 }

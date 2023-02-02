@@ -203,5 +203,29 @@
     "profileTermsAndConditionsText": "Termes et conditions",
     "@profileLprofileVersionTextogOutText": {
         "description":"This is the text of the latest terms and conditions of the app on the profile page"
+    },
+    "sendersProfileRequestLabel": "Demander",
+    "@sendersProfileRequestLabel": {
+        "description":"Il s'agit du libellé du bouton de demande sur la page de profil de l'expéditeur."
+    },
+    "sendersProfilePayLabel": "Payer",
+    "@sendersProfilePayLabel": {
+        "description":"Il s'agit du libellé du bouton de paiement sur la page de profil de l'expéditeur."
+    },
+    "sendersProfileJoinedText": "Adhésion en mai 2022",
+    "@sendersProfileJoinedText": {
+        "description":"Il s'agit du texte de la date d'adhésion de l'utilisateur sur la page de profil de l'expéditeur."
+    },
+    "sendersProfileConnectionText": "Payé par des personnes que vous connaissez",
+    "@sendersProfileConnectionText": {
+        "description":"Voici le texte indiquant le degré de connexion des deux utilisateurs sur la page de profil de l'expéditeur."
+    },
+    "sendersProfileContactsText": "Dans vos contacts",
+    "@sendersProfileContactsText": {
+        "description":"C'est le texte qui indique si l'expéditeur est dans les contacts de l'utilisateur ou non sur la page de profil de l'expéditeur"
+    },
+    "sendersProfileHistoryText": "Histoire",
+    "@sendersProfileContactsText": {
+        "description":"C'est le texte qui montre l'historique de l'expéditeur sur la page de profil de l'expéditeur."
     }
 }
