@@ -131,5 +131,45 @@
     "latestActivitiesTitle": "Latest Activity",
     "@latestActivitiesTitle": {
         "description":"This is the title of the latest activities page"
+    },
+    "savingsTitle": "Savings",
+    "@savingsTitle": {
+        "description":"This is the title of the savings page"
+    },
+         "savingsNewSavingsAccountLabel": "New Savings Account",
+    "@savingsNewSavingsAccountLabel": {
+        "description":"This is the label on the new savings account button on the savings page"
+    },
+     "savingsTimeBlockedAccounts": "Time-Blocked Accounts",
+    "@savingsTimeBlockedAccounts": {
+        "description":"This is the label of the first card widget on the savings page showing the user's time-blocked accounts"
+    },
+     "savingsMyTeslaModelXText": "My Tesla Model X",
+    "@savingsMyTeslaModelXText": {
+        "description":"This is the text of one of the time-blocked accounts on the savings page"
+    },
+     "savingsMyTeslaModelXBlockedTimelineText": "Blocked until: December 1st 2022",
+    "@savingsMyTeslaModelXBlockedTimelineText": {
+        "description":"This is the text showing the timeline of the My tesla x account on the savings page"
+    },
+    "savingsNewDroneText": "New Drone",
+    "@savingsNewDroneText": {
+        "description":"This is the text of the New Drone time-blocked account of the savings page"
+    },
+    "savingsNewDroneBlockedTimelineText": "New Drone",
+    "@savingsNewDroneBlockedTimelineText": {
+        "description":"This is the text showing the timeline of the new drone account of the savings page"
+    },
+    "savingsStandardAccountsLabel": "Standard accounts",
+    "@savingsStandardAccountsLabel": {
+        "description":"This is the label of the second card widget on the savings page"
+    },
+    "savingsMortgageText": "Mortgage",
+    "@savingsMortgageText": {
+        "description":"This is the text of the mortgage account of the standard accounts on the savings page"
+    },
+    "savingsNewDroneText": "New Drone",
+    "@savingsNewDroneText": {
+        "description":"This is the text of the new drone account of the standard accounts on the savings page"
     }
 }
