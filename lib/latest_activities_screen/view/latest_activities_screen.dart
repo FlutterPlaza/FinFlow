@@ -99,7 +99,6 @@ class _LatestActivitiesPageState extends State<LatestActivitiesPage> {
                             },
                           ),
                         ),
-
                       ],
                     ),
                   ),

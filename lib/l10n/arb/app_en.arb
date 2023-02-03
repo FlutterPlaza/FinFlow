@@ -171,5 +171,37 @@
     "savingsNewDroneText": "New Drone",
     "@savingsNewDroneText": {
         "description":"This is the text of the new drone account of the standard accounts on the savings page"
+    },
+    "profileTitle": "Profile",
+    "@profileTitle": {
+        "description":"This is the title of the user profile page"
+    },
+    "profileAccountText": "Account",
+    "@profileAccountText": {
+        "description":"This is the text of the account option on the profile page"
+    },
+    "profileSettingsText": "Settings",
+    "@profileSettingsText": {
+        "description":"This is the text of the Settings option on the profile page"
+    },
+    "profileNotificationsText": "Notifications",
+    "@profileNotificationsText": {
+        "description":"This is the text of the notifications option on the profile page"
+    },
+    "profilePaymentMethodsText": "Payment methods",
+    "@profilePaymentMethodsText": {
+        "description":"This is the text of the payment methods option on the profile page"
+    },
+    "profileLogOutText": "Log out",
+    "@profileLogOutText": {
+        "description":"This is the text of the log out option on the profile page"
+    },
+    "profileVersionText": "Version 10.2",
+    "@profileLprofileVersionTextogOutText": {
+        "description":"This is the text of the current version of the app on the profile page"
+    },
+    "profileTermsAndConditionsText": "Termes et conditions",
+    "@profileLprofileVersionTextogOutText": {
+        "description":"Voici le texte des dernières conditions générales de l'application sur la page de profil"
     }
 }
