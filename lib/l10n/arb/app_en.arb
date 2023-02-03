@@ -23,5 +23,73 @@
     "onboardingTransactionDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores!",
     "@onboardingTransactionDescription": {
         "description": "This is the description displayed on the third onboarding screen with a secured transaction money illustration"
-    }   
+    },
+    "onboardingSkipLabel": "Skip",
+    "@onboardingSkipLabel": {
+        "description": "This is the label on the first two onboarding screens for the skip button"
+    },
+    "onboardingNextLabel": "Next",
+    "@onboardingNextLabel": {
+        "description": "This is the label on the first two onboarding screens for the next button"
+    },
+    "onboardingGetStartedLabel": "Get Started",
+    "@onboardingGetStartedLabel": {
+        "description": "This is the label on the third onboarding screen for the get started button"
+    },
+    "signInLogInTitle": "Log In",
+    "@signInLogInTitle": {
+        "description": "This is the title displayed on the sign in screen"
+    }, 
+    "signInEmailLogInLabel": "Email Login",
+    "@signInEmailLogInLabel": {
+        "description": "This is the label displayed on the sign in screen on the email log in tab"
+    }, 
+    "signInPhoneNumberLogInLabel": "Phone Number Login",
+    "@signInPhoneNumberLogInLabel": {
+        "description":"This is the label displayed on the sign in screen on the phone number tab"
+    },
+    "signInForgotPasswordText": "Forgot Password?",
+    "@signInForgotPasswordText": {
+        "description":"This is the text displayed on the sign in screen after login password field"
+    },
+    "signInorLogInWithText": "Or Login with",
+    "@signInPhoneNumberLogIn": {
+        "description":"This is the text displayed on the sign in screen after the log in button"
+    },
+    "signInNotAMemberYetText": "Not a member yet?",
+    "@signInNotAMemberYetText": {
+        "description":"This is the text displayed on the sign in screen after the social media sign in icons"
+    },
+    "signInSignUpLabel": "Sign Up",
+    "@signInSignUpLabel": {
+        "description":"This is the label displayed on the sign in screen for the sign up text  button"
+    },
+    "signInPolicyText": "By continuing, you agree to our",
+    "@signInPolicyText": {
+        "description":"This is the text displayed on the sign in screen at the bottom of the page"
+    },
+    "signInTermsOfUseLabel": "Terms of Use",
+    "@signInTermsOfUseLabel": {
+        "description":"This is the label displayed on the sign in screen for the Terms of use text button"
+    },
+    "signInLogInButtonLabel": "Log In",
+    "@signInLogInButtonLabel": {
+        "description":"This is the label displayed on the sign in screen for the log in button"
+    },
+    "signInEmailTextFieldLabel": "Email",
+    "@signInEmailTextFieldLabel": {
+        "description":"This is the label displayed on the sign in screen for the email textfield"
+    },
+    "signInEmailTextFieldHintText": "example@mail.com",
+    "@signInEmailTextFieldHintText": {
+        "description":"This is the hint text displayed on the sign in screen for the email textfield"
+    },
+    "signInPasswordFieldLabel": "Password",
+    "@signInPasswordFieldLabel": {
+        "description":"This is the label displayed on the sign in screen for the Password field"
+    },
+    "signInPasswordFieldHintText": "Enter your password",
+    "@signInPasswordFieldHintText": {
+        "description":"This is the hint text displayed on the sign in screen for the Password field"
+    }
 }
