@@ -46,6 +46,7 @@
     },
      "signInPhoneNumberLogInLabel": "Connexion par numéro de téléphone",
     "@signInPhoneNumberLogInLabel": {
+
         "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription dans l'onglet du numéro de téléphone"
     },
     "signInForgotPasswordText": "Mot de passe oublié?",

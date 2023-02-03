@@ -46,7 +46,7 @@
     }, 
     "signInPhoneNumberLogInLabel": "Phone Number Login",
     "@signInPhoneNumberLogInLabel": {
-        "description": "This is the label displayed on the sign in screen on the phone number tab"
+    "description": "This is the label displayed on the sign in screen on the phone number tab"
     },
     "signInForgotPasswordText": "Forgot Password?",
     "@signInForgotPasswordText": {
@@ -131,5 +131,6 @@
     "latestActivitiesTitle": "Latest Activity",
     "@latestActivitiesTitle": {
         "description": "This is the title of the latest activities page"
+
     }
 }
