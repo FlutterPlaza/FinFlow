@@ -46,50 +46,6 @@
     }, 
     "signInPhoneNumberLogInLabel": "Phone Number Login",
     "@signInPhoneNumberLogInLabel": {
-        "description":"This is the label displayed on the sign in screen on the phone number tab"
-    },
-    "signInForgotPasswordText": "Forgot Password?",
-    "@signInForgotPasswordText": {
-        "description":"This is the text displayed on the sign in screen after login password field"
-    },
-    "signInorLogInWithText": "Or Login with",
-    "@signInPhoneNumberLogIn": {
-        "description":"This is the text displayed on the sign in screen after the log in button"
-    },
-    "signInNotAMemberYetText": "Not a member yet?",
-    "@signInNotAMemberYetText": {
-        "description":"This is the text displayed on the sign in screen after the social media sign in icons"
-    },
-    "signInSignUpLabel": "Sign Up",
-    "@signInSignUpLabel": {
-        "description":"This is the label displayed on the sign in screen for the sign up text  button"
-    },
-    "signInPolicyText": "By continuing, you agree to our",
-    "@signInPolicyText": {
-        "description":"This is the text displayed on the sign in screen at the bottom of the page"
-    },
-    "signInTermsOfUseLabel": "Terms of Use",
-    "@signInTermsOfUseLabel": {
-        "description":"This is the label displayed on the sign in screen for the Terms of use text button"
-    },
-    "signInLogInButtonLabel": "Log In",
-    "@signInLogInButtonLabel": {
-        "description":"This is the label displayed on the sign in screen for the log in button"
-    },
-    "signInEmailTextFieldLabel": "Email",
-    "@signInEmailTextFieldLabel": {
-        "description":"This is the label displayed on the sign in screen for the email textfield"
-    },
-    "signInEmailTextFieldHintText": "example@mail.com",
-    "@signInEmailTextFieldHintText": {
-        "description":"This is the hint text displayed on the sign in screen for the email textfield"
-    },
-    "signInPasswordFieldLabel": "Password",
-    "@signInPasswordFieldLabel": {
-        "description":"This is the label displayed on the sign in screen for the Password field"
-    },
-    "signInPasswordFieldHintText": "Enter your password",
-    "@signInPasswordFieldHintText": {
-        "description":"This is the hint text displayed on the sign in screen for the Password field"
+
     }
 }
