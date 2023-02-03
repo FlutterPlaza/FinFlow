@@ -38,7 +38,6 @@ class _LatestActivitiesPageState extends State<LatestActivitiesPage> {
                   //   context.go('/savings');
                   // },
                   child: Icon(
-
                     Icons.arrow_back,
                     color: AppColors.secondaryColorW,
                     size: 25,
@@ -100,6 +99,7 @@ class _LatestActivitiesPageState extends State<LatestActivitiesPage> {
                             },
                           ),
                         ),
+
                       ],
                     ),
                   ),
@@ -108,7 +108,6 @@ class _LatestActivitiesPageState extends State<LatestActivitiesPage> {
             ),
           );
         },
-
       ),
       bottomNavigationBar: const BottomNavBar(pageIndex: 0),
     );

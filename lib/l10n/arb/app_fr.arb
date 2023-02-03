@@ -46,91 +46,130 @@
     },
      "signInPhoneNumberLogInLabel": "Connexion par numéro de téléphone",
     "@signInPhoneNumberLogInLabel": {
-
-        "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription dans l'onglet du numéro de téléphone"
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'inscription dans l'onglet du numéro de téléphone"
     },
     "signInForgotPasswordText": "Mot de passe oublié?",
     "@signInForgotPasswordText": {
-        "description": "Il s'agit du texte affiché sur l'écran d'identification après le champ du mot de passe de connexion"
+        "description":"Il s'agit du texte affiché sur l'écran d'identification après le champ du mot de passe de connexion"
     },
     "signInorLogInWithText": "Ou connectez-vous avec?",
     "@signInPhoneNumberLogIn": {
-        "description": "Il s'agit du texte affiché sur l'écran de connexion après le bouton de connexion"
+        "description":"Il s'agit du texte affiché sur l'écran de connexion après le bouton de connexion"
     },
     "signInNotAMemberYetText": "Pas encore membre?",
     "@signInNotAMemberYetText": {
-        "description": "Il s'agit du texte affiché sur l'écran de connexion après les icônes de connexion aux médias sociaux."
+        "description":"Il s'agit du texte affiché sur l'écran de connexion après les icônes de connexion aux médias sociaux."
     },
     "signInSignUpLabel": "Inscrivez-vous",
     "@signInSignUpLabel": {
-        "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription pour le bouton de texte d'inscription."
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'inscription pour le bouton de texte d'inscription."
     },
     "signInPolicyText": "En continuant, vous acceptez notre",
     "@signInPolicyText": {
-        "description": "Voici le texte affiché sur l'écran d'inscription en bas de la page"
+        "description":"Voici le texte affiché sur l'écran d'inscription en bas de la page"
     },
     "signInTermsOfUseLabel": "Conditions d'utilisation",
     "@signInTermsOfUseLabel": {
-        "description": "Il s'agit de l'étiquette affichée sur l'écran d'identification pour le bouton texte des conditions d'utilisation."
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'identification pour le bouton texte des conditions d'utilisation."
     },
     "signInLogInButtonLabel": "Connectez-vous",
     "@signInLogInButtonLabel": {
-        "description": "Il s'agit de l'étiquette affichée sur l'écran d'ouverture de session pour le bouton d'ouverture de session."
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'ouverture de session pour le bouton d'ouverture de session."
     },
     "signInEmailTextFieldLabel": "E-mail",
     "@signInEmailTextFieldLabel": {
-        "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription pour le champ de texte de l'adresse électronique."
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'inscription pour le champ de texte de l'adresse électronique."
     },
     "signInEmailTextFieldHintText": "example@mail.com",
     "@signInEmailTextFieldHintText": {
-        "description": "Il s'agit du texte d'indication affiché sur l'écran d'inscription pour le champ de texte de l'adresse électronique."
+        "description":"Il s'agit du texte d'indication affiché sur l'écran d'inscription pour le champ de texte de l'adresse électronique."
     },
     "signInPasswordFieldLabel": "Mot de passe",
     "@signInPasswordFieldLabel": {
-        "description": "Il s'agit de l'étiquette affichée sur l'écran d'identification pour le champ Mot de passe. "
+        "description":"Il s'agit de l'étiquette affichée sur l'écran d'identification pour le champ Mot de passe. "
     },
     "signInPasswordFieldHintText": "Entre votre mot de passe",
     "@signInPasswordFieldHintText": {
-        "description": "Il s'agit du texte d'indication affiché sur l'écran de connexion pour le champ Mot de passe."
+        "description":"Il s'agit du texte d'indication affiché sur l'écran de connexion pour le champ Mot de passe."
     },
      "homeScreenCashBalance": "Solde d'encaisse",
     "@homeScreenCashBalance": {
-        "description": "Il s'agit du texte affiché sur l'écran d'accueil du premier widget de carte"
+        "description":"Il s'agit du texte affiché sur l'écran d'accueil du premier widget de carte"
     },
     "homeScreenUnallocated": "Non alloué",
     "@homeScreenUnallocated": {
-        "description": "Il s'agit du texte affiché sur l'écran d'accueil du premier widget de carte"
+        "description":"Il s'agit du texte affiché sur l'écran d'accueil du premier widget de carte"
     },
     "homeScreenAddMoney": "Ajouter de l'argent",
     "@homeScreenAddMoney": {
-        "description": "Voici le texte affiché sur l'écran d'accueil sur le premier widget de bouton élevé dans la première carte"
+        "description":"Voici le texte affiché sur l'écran d'accueil sur le premier widget de bouton élevé dans la première carte"
     },
     "homeScreenWithdrawFunds": "Retrait des fonds",
     "@homeScreenWithdrawFunds": {
-        "description": "Voici le texte affiché sur l'écran d'accueil sur les widgets du premier bouton élevé de la première carte"
+        "description":"Voici le texte affiché sur l'écran d'accueil sur les widgets du premier bouton élevé de la première carte"
     },
     "homeScreenCardNumber": "Numéro de carte",
     "@homeScreenCashBalance": {
-        "description": "Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
+        "description":"Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
     },
     "homeScreenEmpty": "Vide",
     "@homeScreenEmpty": {
-        "description": "Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
+        "description":"Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
     },
     "homeScreenCCV": "CCV",
     "@homeScreenCCV": {
-        "description": "Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
+        "description":"Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
     },
     "homeScreenLatestActivitiesTitle": "Dernière activité",
     "@homeScreenLatestActivitiesTitle": {
-        "description": "C'est le titre de la dernière carte d'activités"
+        "description":"C'est le titre de la dernière carte d'activités"
     },
     "homeScreenDateAndTime": "3 août, 15h45",
     "@homeScreenDateAndTime": {
-        "description": "Il s'agit du texte affiché sur l'écran d'accueil sur le widget de la carte des dernières activités."
+        "description":"Il s'agit du texte affiché sur l'écran d'accueil sur le widget de la carte des dernières activités."
     },
     "latestActivitiesTitle": "Dernière activité",
     "@latestActivitiesTitle": {
-        "description": "Voici le titre de la dernière page d'activités"
+        "description":"Voici le titre de la dernière page d'activités"
+    },
+    "savingsTitle": "Épargne",
+    "@savingsTitle": {
+        "description":"Voici le titre de la page d'épargne"
+    },
+         "savingsNewSavingsAccountLabel": "Nouveau compte d'épargne",
+    "@savingsNewSavingsAccountLabel": {
+        "description":"Voici le libellé du bouton  Nouveau compte d'épargne  de la page  Épargne ."
+    },
+     "savingsTimeBlockedAccounts": "Comptes bloqués dans le temps",
+    "@savingsTimeBlockedAccounts": {
+        "description":"Il s'agit de l'étiquette du premier widget de carte sur la page d'épargne montrant les comptes bloqués de l'utilisateur."
+    },
+     "savingsMyTeslaModelXText": "Mon modèle X Tesla",
+    "@savingsMyTeslaModelXText": {
+        "description":"Voici le texte d'un des comptes bloqués sur la page d'épargne"
+    },
+     "savingsMyTeslaModelXBlockedTimelineText": "Bloqué jusqu'au : 1er décembre 2022",
+    "@savingsMyTeslaModelXBlockedTimelineText": {
+        "description":"Voici le texte montrant la chronologie du compte Mon tesla x sur la page d'épargne"
+    },
+    "savingsNewDroneText": "Nouveau drone",
+    "@savingsNewDroneText": {
+        "description":"Voici le texte du compte-rendu de la page d'épargne du New Drone bloqué dans le temps"
+    },
+    "savingsNewDroneBlockedTimelineText": "Nouveau drone",
+    "@savingsNewDroneBlockedTimelineText": {
+        "description":"Voici le texte montrant la chronologie du nouveau compte de drone de la page d'épargne"
+    },
+    "savingsStandardAccountsLabel": "Comptes standard",
+    "@savingsStandardAccountsLabel": {
+        "description":"Voici l'étiquette du deuxième widget de carte sur la page d'épargne"
+    },
+    "savingsMortgageText": "Hypothèque",
+    "@savingsMortgageText": {
+        "description":"Voici le texte du compte hypothécaire des comptes standard de la page d'épargne"
+    },
+    "savingsNewDroneText": "Nouveau drone",
+    "@savingsNewDroneText": {
+        "description":"Voici le texte du nouveau compte de drone des comptes standard sur la page d'épargne"
     }
 }
