@@ -46,7 +46,7 @@
     }, 
     "signInPhoneNumberLogInLabel": "Phone Number Login",
     "@signInPhoneNumberLogInLabel": {
-        "description":"This is the label displayed on the sign in screen on the phone number tab"
+        "description": "This is the label displayed on the sign in screen on the phone number tab"
     },
     "signInForgotPasswordText": "Forgot Password?",
     "@signInForgotPasswordText": {
@@ -54,11 +54,11 @@
     },
     "signInorLogInWithText": "Or Login with",
     "@signInPhoneNumberLogIn": {
-        "description":"This is the text displayed on the sign in screen after the log in button"
+        "description": "This is the text displayed on the sign in screen after the log in button"
     },
     "signInNotAMemberYetText": "Not a member yet?",
     "@signInNotAMemberYetText": {
-        "description":"This is the text displayed on the sign in screen after the social media sign in icons"
+        "description": "This is the text displayed on the sign in screen after the social media sign in icons"
     },
     "signInSignUpLabel": "Sign Up",
     "@signInSignUpLabel": {
@@ -66,15 +66,15 @@
     },
     "signInPolicyText": "By continuing, you agree to our",
     "@signInPolicyText": {
-        "description":"This is the text displayed on the sign in screen at the bottom of the page"
+        "description": "This is the text displayed on the sign in screen at the bottom of the page"
     },
     "signInTermsOfUseLabel": "Terms of Use",
     "@signInTermsOfUseLabel": {
-        "description":"This is the label displayed on the sign in screen for the Terms of use text button"
+        "description": "This is the label displayed on the sign in screen for the Terms of use text button"
     },
     "signInLogInButtonLabel": "Log In",
     "@signInLogInButtonLabel": {
-        "description":"This is the label displayed on the sign in screen for the log in button"
+        "description": "This is the label displayed on the sign in screen for the log in button"
     },
     "signInEmailTextFieldLabel": "Email",
     "@signInEmailTextFieldLabel": {
@@ -82,126 +82,150 @@
     },
     "signInEmailTextFieldHintText": "example@mail.com",
     "@signInEmailTextFieldHintText": {
-        "description":"This is the hint text displayed on the sign in screen for the email textfield"
+        "description": "This is the hint text displayed on the sign in screen for the email textfield"
     },
     "signInPasswordFieldLabel": "Password",
     "@signInPasswordFieldLabel": {
-        "description":"This is the label displayed on the sign in screen for the Password field"
+        "description": "This is the label displayed on the sign in screen for the Password field"
     },
     "signInPasswordFieldHintText": "Enter your password",
     "@signInPasswordFieldHintText": {
-        "description":"This is the hint text displayed on the sign in screen for the Password field"
+        "description": "This is the hint text displayed on the sign in screen for the Password field"
     },
      "homeScreenCashBalance": "Cash Balance",
     "@homeScreenCashBalance": {
-        "description":"This is the text displayed on the home screen on the first card widget"
+        "description": "This is the text displayed on the home screen on the first card widget"
     },
     "homeScreenUnallocated": "Unallocated",
     "@homeScreenUnallocated": {
-        "description":"This is the text displayed on the home screen on the first card widget"
+        "description": "This is the text displayed on the home screen on the first card widget"
     },
     "homeScreenAddMoney": "Add money",
     "@homeScreenAddMoney": {
-        "description":"This is the text displayed on the home screen on  the first elevated button widget in the first card"
+        "description": "This is the text displayed on the home screen on  the first elevated button widget in the first card"
     },
     "homeScreenWithdrawFunds": "Withdraw Funds",
     "@homeScreenWithdrawFunds": {
-        "description":"This is the text displayed on the home screen on the first elevated button widgets in the first card"
+        "description": "This is the text displayed on the home screen on the first elevated button widgets in the first card"
     },
     "homeScreenCardNumber": "Card Number",
     "@homeScreenCashBalance": {
-        "description":"This is the text displayed on the home screen on the second card widget"
+        "description": "This is the text displayed on the home screen on the second card widget"
     },
     "homeScreenEmpty": "Empty",
     "@homeScreenEmpty": {
-        "description":"This is the text displayed on the home screen on the second card widget"
+        "description": "This is the text displayed on the home screen on the second card widget"
     },
     "homeScreenCCV": "CCV",
     "@homeScreenCCV": {
-        "description":"This is the text displayed on the home screen on the second card widget"
+        "description": "This is the text displayed on the home screen on the second card widget"
     },
     "homeScreenLatestActivitiesTitle": "Latest Activity",
     "@homeScreenLatestActivitiesTitle": {
-        "description":"This is the title of the latest activities card"
+        "description": "This is the title of the latest activities card"
     },
     "homeScreenDateAndTime": "August 3, 3:45pm",
     "@homeScreenDateAndTime": {
-        "description":"This is the text displayed on the home screen on the lates activities card widget"
+        "description": "This is the text displayed on the home screen on the lates activities card widget"
     },
     "latestActivitiesTitle": "Latest Activity",
     "@latestActivitiesTitle": {
-        "description":"This is the title of the latest activities page"
+        "description": "This is the title of the latest activities page"
     },
     "savingsTitle": "Savings",
     "@savingsTitle": {
-        "description":"This is the title of the savings page"
+        "description": "This is the title of the savings page"
     },
-         "savingsNewSavingsAccountLabel": "New Savings Account",
+    "savingsNewSavingsAccountLabel": "New Savings Account",
     "@savingsNewSavingsAccountLabel": {
-        "description":"This is the label on the new savings account button on the savings page"
+        "description": "This is the label on the new savings account button on the savings page"
     },
      "savingsTimeBlockedAccounts": "Time-Blocked Accounts",
     "@savingsTimeBlockedAccounts": {
-        "description":"This is the label of the first card widget on the savings page showing the user's time-blocked accounts"
+        "description": "This is the label of the first card widget on the savings page showing the user's time-blocked accounts"
     },
      "savingsMyTeslaModelXText": "My Tesla Model X",
     "@savingsMyTeslaModelXText": {
-        "description":"This is the text of one of the time-blocked accounts on the savings page"
+        "description": "This is the text of one of the time-blocked accounts on the savings page"
     },
      "savingsMyTeslaModelXBlockedTimelineText": "Blocked until: December 1st 2022",
     "@savingsMyTeslaModelXBlockedTimelineText": {
-        "description":"This is the text showing the timeline of the My tesla x account on the savings page"
+        "description": "This is the text showing the timeline of the My tesla x account on the savings page"
     },
     "savingsNewDroneText": "New Drone",
     "@savingsNewDroneText": {
-        "description":"This is the text of the New Drone time-blocked account of the savings page"
+        "description": "This is the text of the New Drone time-blocked account of the savings page"
     },
     "savingsNewDroneBlockedTimelineText": "New Drone",
     "@savingsNewDroneBlockedTimelineText": {
-        "description":"This is the text showing the timeline of the new drone account of the savings page"
+        "description": "This is the text showing the timeline of the new drone account of the savings page"
     },
     "savingsStandardAccountsLabel": "Standard accounts",
     "@savingsStandardAccountsLabel": {
-        "description":"This is the label of the second card widget on the savings page"
+        "description": "This is the label of the second card widget on the savings page"
     },
     "savingsMortgageText": "Mortgage",
     "@savingsMortgageText": {
-        "description":"This is the text of the mortgage account of the standard accounts on the savings page"
+        "description": "This is the text of the mortgage account of the standard accounts on the savings page"
     },
     "savingsNewDroneText": "New Drone",
     "@savingsNewDroneText": {
-        "description":"This is the text of the new drone account of the standard accounts on the savings page"
+        "description": "This is the text of the new drone account of the standard accounts on the savings page"
     },
     "profileTitle": "Profile",
     "@profileTitle": {
-        "description":"This is the title of the user profile page"
+        "description": "This is the title of the user profile page"
     },
     "profileAccountText": "Account",
     "@profileAccountText": {
-        "description":"This is the text of the account option on the profile page"
+        "description": "This is the text of the account option on the profile page"
     },
     "profileSettingsText": "Settings",
     "@profileSettingsText": {
-        "description":"This is the text of the Settings option on the profile page"
+        "description": "This is the text of the Settings option on the profile page"
     },
     "profileNotificationsText": "Notifications",
     "@profileNotificationsText": {
-        "description":"This is the text of the notifications option on the profile page"
+        "description": "This is the text of the notifications option on the profile page"
     },
     "profilePaymentMethodsText": "Payment methods",
     "@profilePaymentMethodsText": {
-        "description":"This is the text of the payment methods option on the profile page"
+        "description": "This is the text of the payment methods option on the profile page"
     },
     "profileLogOutText": "Log out",
     "@profileLogOutText": {
-        "description":"This is the text of the log out option on the profile page"
+        "description": "This is the text of the log out option on the profile page"
     },
     "profileVersionText": "Version 10.2",
     "@profileLprofileVersionTextogOutText": {
-        "description":"This is the text of the current version of the app on the profile page"
+        "description": "This is the text of the current version of the app on the profile page"
     },
-    "profileTermsAndConditionsText": "Termes et conditions",
+    "profileTermsAndConditionsText": "Terms and conditions",
     "@profileLprofileVersionTextogOutText": {
-        "description":"Voici le texte des dernières conditions générales de l'application sur la page de profil"
+        "description": "Voici le texte des dernières conditions générales de l'application sur la page de profil"
+    },
+    "sendersProfileRequestLabel": "Request",
+    "@sendersProfileRequestLabel": {
+        "description": "This is the label of the request button on the senders profile page"
+    },
+    "sendersProfilePayLabel": "Pay",
+    "@sendersProfilePayLabel": {
+        "description": "This is the label of the pay button on the senders profile page"
+    },
+    "sendersProfileJoinedText": "Joined May 2022",
+    "@sendersProfileJoinedText": {
+        "description": "This is the text of the user's joined date on the senders profile page"
+    },
+    "sendersProfileConnectionText": "Paid by people you know",
+    "@sendersProfileConnectionText": {
+        "description": "This is the text of how connected both user's are on the senders profile page"
+    },
+    "sendersProfileContactsText": "In your contacts",
+    "@sendersProfileContactsText": {
+        "description": "This is the text showing if sender is in user's contacts or not on the senders profile page"
+    },
+    "sendersProfileHistoryText": "History",
+    "@sendersProfileContactsText": {
+        "description": "This is the text showing the sender's history on the senders profile page"
     }
 }
