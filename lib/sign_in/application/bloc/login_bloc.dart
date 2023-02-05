@@ -1,23 +1,26 @@
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
+import 'package:fpb/authentication_with_firebase/domain/i_auth_facade.dart';
 import 'package:fpb/sign_in/domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
 part 'login_bloc.freezed.dart';
 
+@singleton
+@injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc({
-    required AuthenticationRepository authenticationRepository,
+    required IAuthFacade authenticationRepository,
   })  : _authenticationRepository = authenticationRepository,
         super(const LoginState()) {
     on<_UserNameChange>(_onUsernameChanged);
     on<_PasswordChange>(_onPasswordChanged);
     on<_Submitted>(_onSubmitted);
   }
-  final AuthenticationRepository _authenticationRepository;
+  final IAuthFacade _authenticationRepository;
 
   void _onUsernameChanged(
     _UserNameChange event,
@@ -52,11 +55,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     if (state.status.isValidated) {
       emit(state.copyWith(status: FormzStatus.submissionInProgress));
       try {
-        await _authenticationRepository.logIn(
-          username: state.email.value,
+        final failureOrUser =
+            await _authenticationRepository.signInWithEmailAndPassword(
+          email: state.email.value,
           password: state.password.value,
         );
-        emit(state.copyWith(status: FormzStatus.submissionSuccess));
+        failureOrUser.fold(
+          (failure) =>
+              emit(state.copyWith(status: FormzStatus.submissionFailure)),
+          (user) => emit(state.copyWith(status: FormzStatus.submissionSuccess)),
+        );
       } catch (_) {
         emit(state.copyWith(status: FormzStatus.submissionFailure));
       }
