@@ -36,7 +36,7 @@
     "@onboardingGetStartedLabel": {
         "description": "Voici l'étiquette du troisième écran d'accueil pour le bouton Démarrer"
     },
-     "signInLogInTitle": "Connectez-vous",
+    "signInLogInTitle": "Connectez-vous",
     "@signInLogInTitle": {
         "description": "Il s'agit du titre affiché sur l'écran d'identification."
     },
@@ -44,7 +44,7 @@
     "@signInEmailLogInLabel": {
         "description": "Il s'agit de l'étiquette affichée sur l'écran d'ouverture de session dans l'onglet d'ouverture de session e-mail"
     },
-     "signInPhoneNumberLogInLabel": "Connexion par numéro de téléphone",
+    "signInPhoneNumberLogInLabel": "Connexion par numéro de téléphone",
     "@signInPhoneNumberLogInLabel": {
         "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription dans l'onglet du numéro de téléphone"
     },
@@ -92,7 +92,7 @@
     "@signInPasswordFieldHintText": {
         "description": "Il s'agit du texte d'indication affiché sur l'écran de connexion pour le champ Mot de passe."
     },
-     "homeScreenCashBalance": "Solde d'encaisse",
+    "homeScreenCashBalance": "Solde d'encaisse",
     "@homeScreenCashBalance": {
         "description": "Il s'agit du texte affiché sur l'écran d'accueil du premier widget de carte"
     },
@@ -127,11 +127,7 @@
     "homeScreenDateAndTime": "3 août, 15h45",
     "@homeScreenDateAndTime": {
         "description": "Il s'agit du texte affiché sur l'écran d'accueil sur le widget de la carte des dernières activités."
-    },
-    "latestActivitiesTitle": "Dernière activité",
-    "@latestActivitiesTitle": {
-        "description": "Voici le titre de la dernière page d'activités"
-    },
+    }, 
     "savingsTitle": "Épargne",
     "@savingsTitle": {
         "description": "Voici le titre de la page d'épargne"
@@ -140,15 +136,15 @@
     "@savingsNewSavingsAccountLabel": {
         "description": "Voici le libellé du bouton  Nouveau compte d'épargne  de la page  Épargne ."
     },
-     "savingsTimeBlockedAccounts": "Comptes bloqués dans le temps",
+    "savingsTimeBlockedAccounts": "Comptes bloqués dans le temps",
     "@savingsTimeBlockedAccounts": {
         "description": "Il s'agit de l'étiquette du premier widget de carte sur la page d'épargne montrant les comptes bloqués de l'utilisateur."
     },
-     "savingsMyTeslaModelXText": "Mon modèle X Tesla",
+    "savingsMyTeslaModelXText": "Mon modèle X Tesla",
     "@savingsMyTeslaModelXText": {
         "description": "Voici le texte d'un des comptes bloqués sur la page d'épargne"
     },
-     "savingsMyTeslaModelXBlockedTimelineText": "Bloqué jusqu'au : 1er décembre 2022",
+    "savingsMyTeslaModelXBlockedTimelineText": "Bloqué jusqu'au : 1er décembre 2022",
     "@savingsMyTeslaModelXBlockedTimelineText": {
         "description": "Voici le texte montrant la chronologie du compte Mon tesla x sur la page d'épargne"
     },
@@ -195,14 +191,10 @@
     "profileLogOutText": "Déconnecter",
     "@profileLogOutText": {
         "description": "Voici le texte de l'option de déconnexion sur la page de profil"
-    },
-    "profileVersionText": "Version 10.2",
-    "@profileLprofileVersionTextogOutText": {
-        "description": "Voici le texte de la version actuelle de l'application sur la page de profil"
-    },
+    }, 
     "profileTermsAndConditionsText": "Termes et conditions",
     "@profileLprofileVersionTextogOutText": {
-        "description": "This is the text of the latest terms and conditions of the app on the profile page"
+        "description": "Voici le texte des dernières conditions générales de l'application sur la page de profil"
     },
     "sendersProfileRequestLabel": "Demander",
     "@sendersProfileRequestLabel": {
@@ -211,10 +203,6 @@
     "sendersProfilePayLabel": "Payer",
     "@sendersProfilePayLabel": {
         "description": "Il s'agit du libellé du bouton de paiement sur la page de profil de l'expéditeur."
-    },
-    "sendersProfileJoinedText": "Adhésion en mai 2022",
-    "@sendersProfileJoinedText": {
-        "description": "Il s'agit du texte de la date d'adhésion de l'utilisateur sur la page de profil de l'expéditeur."
     },
     "sendersProfileConnectionText": "Payé par des personnes que vous connaissez",
     "@sendersProfileConnectionText": {
@@ -227,5 +215,33 @@
     "sendersProfileHistoryText": "Histoire",
     "@sendersProfileContactsText": {
         "description": "C'est le texte qui montre l'historique de l'expéditeur sur la page de profil de l'expéditeur."
+    },
+    "signUpJoinUsTitle": "Rejoignez-nous!",
+    "@signUpJoinUsTitle": {
+        "description": "Il s'agit du titre affiché sur l'écran d'inscription."
+    }, 
+    "signUpEmailSignupLabel": "Inscription par e-mail",
+    "@signUpEmailSignupLabel": {
+        "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription dans l'onglet d'inscription par e-mail"
+    }, 
+    "signUpPhoneNumberSignupLabel": "Inscription par numéro de téléphone",
+    "@signUpPhoneNumberSignupLabel": {
+        "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription, dans l'onglet Numéro de téléphone."
+    },
+    "signUpFullNameTextFielLabel": "Nom et prénom",
+    "@signUpFullNameTextFielLabel": {
+        "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription pour le champ de texte du nom."
+    },
+    "signUpFullNameTextFielHintText": "Entrez votre nom complet",
+    "@signUpFullNameTextFielHintText": {
+        "description": "Il s'agit du texte d'indication affiché sur l'écran d'inscription pour le champ de texte du nom."
+    },
+    "signUporSignupWithText": "Ou inscrivez-vous sur",
+    "@signUporSignupWithText": {
+        "description": "Il s'agit du texte affiché sur l'écran d'inscription après le bouton d'inscription."
+    },
+    "signUpAlreadyAMemberText": "Déjà membre?",
+    "@signUpAlreadyAMemberText": {
+        "description": "Il s'agit du texte affiché sur l'écran d'inscription après les boutons d'icône de médias sociaux."
     }
 }
