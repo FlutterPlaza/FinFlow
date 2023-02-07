@@ -65,7 +65,7 @@ class _LatestActivitiesPageState extends State<LatestActivitiesPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              l10n.latestActivitiesTitle,
+                              l10n.homeScreenLatestActivitiesTitle,
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                             Container(
