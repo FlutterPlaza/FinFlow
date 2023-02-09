@@ -62,7 +62,7 @@ class _SignUnPageState extends State<SignUnPage>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        l10n.signUpJoinUsTitle,
+                        l10n.signUpRegisterTitle,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       SizedBox(
@@ -89,15 +89,15 @@ class _SignUnPageState extends State<SignUnPage>
                           tabs: [
                             Tab(
                               child: Text(
-                                l10n.signUpEmailSignupLabel,
-                                maxLines: 2,
+                                l10n.signInEmailLogInLabel,
+                                maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             Tab(
                               child: Text(
-                                l10n.signUpPhoneNumberSignupLabel,
-                                maxLines: 2,
+                                l10n.signInPhoneNumberLogInLabel,
+                                maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             )
@@ -199,7 +199,7 @@ class _SignUnPageState extends State<SignUnPage>
                             TextButton(
                               onPressed: () {},
                               child: Text(
-                                l10n.signInLogInTitle,
+                                l10n.signInLogInButtonLabel,
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium

@@ -238,7 +238,7 @@ class _SignInBodyState extends State<SignInBody>
                               style: Theme.of(context).textTheme.labelMedium,
                             ),
                             SizedBox(
-                              width: cts.maxWidth * 0.003,
+                              width: cts.maxWidth * 0.003, 
                             ),
                             Text(
                               l10n.signInTermsOfUseLabel,

@@ -19,7 +19,7 @@ class LoginButton extends StatelessWidget {
         return FormzStatus.submissionInProgress == state.status
             ? const FpbButton(label: 'Log in', onTap: null)
             : FpbButton(
-                label: l10n.signInEmailLogInLabel,
+                label: l10n.signInLogInButtonLabel,
                 onTap: () =>
                     context.read<LoginBloc>().add(const LoginEvent.submitted()),
               );
