@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:fpb/home_screen/home_screen.dart';
 import 'package:fpb/onboarding/onboarding.dart';
 import 'package:fpb/sign_in/sign_in.dart';
+import 'package:fpb/sign_up/signup_page.dart';
 import 'package:go_router/go_router.dart';
 
 /// The route configuration.
 final GoRouter goRouter = GoRouter(
   routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Home();
+      },
+    ),
     GoRoute(
       // initial route '/'
       path: SplashScreen.routeName,
@@ -15,9 +22,24 @@ final GoRouter goRouter = GoRouter(
       },
     ),
     GoRoute(
-      path: MyHomePage.routeName,
+      name: 'login',
+      path: SignIn.routeName,
       builder: (BuildContext context, GoRouterState state) {
-        return const MyHomePage();
+        return const SignIn();
+      },
+    ),
+    GoRoute(
+      name: 'signup',
+      path: SignUp.routeName,
+      builder: (BuildContext context, GoRouterState state) {
+        return const SignUp();
+      },
+    ),
+    GoRoute(
+      name: 'home',
+      path: Home.routeName,
+      builder: (BuildContext context, GoRouterState state) {
+        return const Home();
       },
       // routes: <RouteBase>[
       //   GoRoute(
@@ -29,7 +51,7 @@ final GoRouter goRouter = GoRouter(
       // ],
     ),
     GoRoute(
-      path: SignInPage.routeName,
+      path: SignIn.routeName,
       builder: (BuildContext context, GoRouterState state) {
         return const SignInBody();
       },
@@ -45,7 +67,7 @@ final GoRouter goRouter = GoRouter(
 
 class GoNames {
   static const splashScreen = SplashScreen.routeName;
-  static const homeScreen = MyHomePage.routeName;
-  static const signInScreen = SignInPage.routeName;
+  static const homeScreen = Home.routeName;
+  static const signInScreen = SignIn.routeName;
   static const onboardingScreen = OnboardingPage.routeName;
 }
