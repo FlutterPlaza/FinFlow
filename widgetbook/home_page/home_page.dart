@@ -4,6 +4,6 @@ import 'package:widgetbook/widgetbook.dart';
 WidgetbookUseCase get homePageUsecase => WidgetbookUseCase(
       name: 'home-page_usecase',
       builder: (context) {
-        return const MyHomePage();
+        return const Home();
       },
     );
