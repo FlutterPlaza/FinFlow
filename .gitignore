@@ -129,3 +129,8 @@ app.*.map.json
 
 # ignore melos generated files
 pubspec_overrides.yaml
+
+
+# ignore google-services.json
+android/**/google-services.json
+ios/Runner/GoogleService-Info.plist
