@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "802889434819",
+    "project_id": "finflow-dev",
+    "storage_bucket": "finflow-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802889434819:android:1e6fd61fdd81c8da7ec476",
+        "android_client_info": {
+          "package_name": "com.flutterplaza.finflow.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802889434819-015rls2csdjflnvrf8e2ffvfugno64vf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterplaza.finflow.dev",
+            "certificate_hash": "a35b956d17f18671ca19a167f8a0ed4da6e15608"
+          }
+        },
+        {
+          "client_id": "802889434819-p77o14219fcn81o5g6o3nletjan6od4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterplaza.finflow.dev",
+            "certificate_hash": "ab4effff4274d5aafa119d27a72d84aaef71f29f"
+          }
+        },
+        {
+          "client_id": "802889434819-umrjna8s3vum6nq5apt6csao68li37s2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGxbjnzj7ruNcZEkeWcCEADt5d6Y_oakI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802889434819-m6tjast20ccgbk3tm1flidurdq11g343.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "802889434819-jbhq53quia2q03qj3qq0uihur6gpbgqm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterplaza.finflow.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
