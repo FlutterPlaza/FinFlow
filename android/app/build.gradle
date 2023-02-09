@@ -114,11 +114,9 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-<<<<<<< HEAD
     implementation 'com.android.support:multidex:1.0.3'
     implementation platform('com.google.firebase:firebase-bom:31.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
-=======
     implementation 'com.android.support:multidex:2.0.1'
 
 // Import the Firebase BoM
@@ -130,5 +128,4 @@ dependencies {
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
->>>>>>> 144f057 (chore: configure firebase on android)
 }

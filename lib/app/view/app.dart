@@ -2,7 +2,10 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fpb/authentication_mock_without_backend/application/bloc/authentication_bloc.dart';
+import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
 import 'package:fpb/core/shared/presentation/theming/themes/theme.dart';
+import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/router/go_routes.dart';
 import 'package:fpb/sign_in/application/bloc/login_bloc.dart';
@@ -41,10 +44,13 @@ class App extends StatelessWidget {
               userRepository: _userRepository,
             ),
           ),
-          BlocProvider<LoginBloc>(
-            create: (context) => LoginBloc(
-              authenticationRepository: _authenticationRepository,
-            ),
+          BlocProvider(
+            create: (context) =>
+                getIt<AuthBloc>()..add(const AuthEvent.triggerAuthRequest()),
+          ),
+          BlocProvider(
+            create: (context) =>
+                getIt<LoginBloc>()..add(const LoginEvent.submitted()),
           ),
           BlocProvider<AuthenticationBloc>(
             create: (context) => AuthenticationBloc(
