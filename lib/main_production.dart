@@ -18,7 +18,7 @@ Future<void> main() async {
 
   await Firebase.initializeApp();
 // Configure injection
- await configureInjection(Env.production);
+  await configureInjection(Env.production);
   await bootstrap(
     () => App(),
   );

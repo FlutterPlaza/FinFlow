@@ -22,15 +22,15 @@ import 'package:fpb/authentication_with_firebase/infrastructure/firebase_auth_fa
     as _i16;
 import 'package:fpb/authentication_with_firebase/injectable_module_for_firebase.dart'
     as _i19;
+import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart'
+    as _i14;
+import 'package:fpb/authentication_with_google/domain/i_google_repository_facade.dart'
+    as _i8;
+import 'package:fpb/authentication_with_google/infrastructure/google_authentication_repository.dart'
+    as _i9;
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart'
     as _i18;
 import 'package:fpb/core/settings/cached.dart' as _i13;
-import 'package:fpb/sign_in_with_google/application/google_auth_bloc/google_sign_in_bloc.dart'
-    as _i14;
-import 'package:fpb/sign_in_with_google/domain/i_google_repository_facade.dart'
-    as _i8;
-import 'package:fpb/sign_in_with_google/infrastructure/google_authentication_repository.dart'
-    as _i9;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i7;
 import 'package:injectable/injectable.dart' as _i2;

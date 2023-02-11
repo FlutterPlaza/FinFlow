@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
+import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/injection.dart';
@@ -11,8 +12,7 @@ import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
-import 'package:fpb/sign_in_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
-import 'package:fpb/sign_up/signup_page.dart';
+import 'package:fpb/sign_up/view/signup_page.dart';
 import 'package:go_router/go_router.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -238,7 +238,6 @@ class _SignInBodyState extends State<SignInBody>
                                       color: Theme.of(context).primaryColor,
                                     ),
                               ),
-
                             ),
                           ],
                         ),
