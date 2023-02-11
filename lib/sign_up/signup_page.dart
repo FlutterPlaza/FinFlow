@@ -1,19 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_svg.dart';
+import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
+import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/core/shared/presentation/widget/my_button.dart';
 import 'package:fpb/core/shared/presentation/widget/my_textformfield.dart';
-import 'package:fpb/l10n/l10n.dart';
+import 'package:fpb/injection.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
+import 'package:fpb/sign_in_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:fpb/sign_in/sign_in.dart';
 
-class SignUnPage extends StatefulWidget {
-  const SignUnPage({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
+  static const routeName = '/signup';
   @override
-  State<SignUnPage> createState() => _SignUnPageState();
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<GoogleSignInBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<EmailPasswordBloc>(),
+        ),
+      ],
+      child: SignUpBody(),
+    );
+  }
 }
 
-class _SignUnPageState extends State<SignUnPage>
+class SignUpBody extends StatefulWidget {
+  const SignUpBody({super.key});
+
+  @override
+  State<SignUpBody> createState() => _SignUpBodyState();
+}
+
+class _SignUpBodyState extends State<SignUpBody>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
   @override
@@ -28,18 +54,39 @@ class _SignUnPageState extends State<SignUnPage>
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
-    return LayoutBuilder(
-      builder: (context, BoxConstraints box) {
-        return Scaffold(
-          body: Stack(
-            children: [
-              Positioned(
-                top: -.02 * box.maxHeight,
-                child: SvgPicture.asset(
-                  SvgNames.authBackground,
-                  width: box.maxWidth,
-                  height: box.maxHeight * 0.4,
+    final size = MediaQuery.of(context).size;
+    return Scaffold(
+      body: Stack(children: [
+        Positioned(
+          top: -size.height * .003,
+          child: SvgPicture.asset(
+            SvgNames.authBackground,
+            width: size.width,
+            height: size.height * 0.4,
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            height: size.height * .99,
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+              color: Theme.of(context).backgroundColor,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Join Us!',
+                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                        color: AppColors.secondaryColorW,
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.width * 0.037,
+                      ),
                 ),
               ),
               Align(
@@ -175,40 +222,43 @@ class _SignUnPageState extends State<SignUnPage>
                           ],
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          IconLogin(svg: SvgNames.google, onTap: () {}),
-                          IconLogin(svg: SvgNames.facebook, onTap: () {}),
-                          IconLogin(svg: SvgNames.twitter, onTap: () {}),
-                          IconLogin(svg: SvgNames.apple, onTap: () {}),
-                        ],
+                      Expanded(child: Divider())
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconLogin(
+                      svg: SvgNames.google,
+                      onTap: () => context
+                          .read<GoogleSignInBloc>()
+                          .add(GoogleSignInEvent.signIn()),
+                    ),
+                    IconLogin(svg: SvgNames.facebook, onTap: () {}),
+                    IconLogin(svg: SvgNames.twitter, onTap: () {}),
+                    IconLogin(svg: SvgNames.apple, onTap: () {}),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 25, bottom: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already a member?',
+                        style: Theme.of(context).textTheme.headline5,
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: box.maxHeight * .001,
-                          //bottom: box.maxHeight * .0001,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              l10n.signUpAlreadyAMemberText,
-                              style: Theme.of(context).textTheme.titleMedium,
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                l10n.signInLogInButtonLabel,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
-                                    ?.copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                    ),
-                              ),
-                            ),
-                          ],
+                      TextButton(
+                        onPressed: () {
+                          context.pushReplacement(SignInScreen.routeName);
+                        },
+                        child: Text(
+                          'Login',
+                          style:
+                              Theme.of(context).textTheme.headline5?.copyWith(
+                                    color: Theme.of(context).primaryColor,
+                                  ),
                         ),
                       ),
                     ],
@@ -217,8 +267,8 @@ class _SignUnPageState extends State<SignUnPage>
               )
             ],
           ),
-        );
-      },
+        )
+      ]),
     );
   }
 }

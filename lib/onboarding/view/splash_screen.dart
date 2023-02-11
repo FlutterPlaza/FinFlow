@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final cached = getIt<Cached>();
     return WillPopScope(
-      onWillPop: () async => false,
+      onWillPop: () async => true,
       child: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           state.map(
@@ -34,14 +34,16 @@ class SplashScreen extends StatelessWidget {
               );
             },
             authenticated: (_) {
-              return const MyHomePage();
+              return Home(
+                user: _.user,
+              );
             },
             unauthenticated: (_) {
               if (cached.firstTimeUser) {
                 cached.firstTimeUser = false;
                 return const OnboardingPage();
               }
-              return const SignInPage();
+              return const SignInScreen();
             },
           );
         },

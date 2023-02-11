@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'login_bloc.dart';
+part of 'email_password_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$LoginEvent {
+mixin _$EmailPasswordEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String userName) emailChanged,
@@ -63,16 +63,16 @@ mixin _$LoginEvent {
 }
 
 /// @nodoc
-abstract class $LoginEventCopyWith<$Res> {
-  factory $LoginEventCopyWith(
-          LoginEvent value, $Res Function(LoginEvent) then) =
-      _$LoginEventCopyWithImpl<$Res, LoginEvent>;
+abstract class $EmailPasswordEventCopyWith<$Res> {
+  factory $EmailPasswordEventCopyWith(
+          EmailPasswordEvent value, $Res Function(EmailPasswordEvent) then) =
+      _$EmailPasswordEventCopyWithImpl<$Res, EmailPasswordEvent>;
 }
 
 /// @nodoc
-class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
-    implements $LoginEventCopyWith<$Res> {
-  _$LoginEventCopyWithImpl(this._value, this._then);
+class _$EmailPasswordEventCopyWithImpl<$Res, $Val extends EmailPasswordEvent>
+    implements $EmailPasswordEventCopyWith<$Res> {
+  _$EmailPasswordEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -91,7 +91,7 @@ abstract class _$$_UserNameChangeCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UserNameChangeCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_UserNameChange>
+    extends _$EmailPasswordEventCopyWithImpl<$Res, _$_UserNameChange>
     implements _$$_UserNameChangeCopyWith<$Res> {
   __$$_UserNameChangeCopyWithImpl(
       _$_UserNameChange _value, $Res Function(_$_UserNameChange) _then)
@@ -121,7 +121,7 @@ class _$_UserNameChange implements _UserNameChange {
 
   @override
   String toString() {
-    return 'LoginEvent.emailChanged(userName: $userName)';
+    return 'EmailPasswordEvent.emailChanged(userName: $userName)';
   }
 
   @override
@@ -211,7 +211,7 @@ class _$_UserNameChange implements _UserNameChange {
   }
 }
 
-abstract class _UserNameChange implements LoginEvent {
+abstract class _UserNameChange implements EmailPasswordEvent {
   const factory _UserNameChange(final String userName) = _$_UserNameChange;
 
   String get userName;
@@ -231,7 +231,7 @@ abstract class _$$_PasswordChangeCopyWith<$Res> {
 
 /// @nodoc
 class __$$_PasswordChangeCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_PasswordChange>
+    extends _$EmailPasswordEventCopyWithImpl<$Res, _$_PasswordChange>
     implements _$$_PasswordChangeCopyWith<$Res> {
   __$$_PasswordChangeCopyWithImpl(
       _$_PasswordChange _value, $Res Function(_$_PasswordChange) _then)
@@ -261,7 +261,7 @@ class _$_PasswordChange implements _PasswordChange {
 
   @override
   String toString() {
-    return 'LoginEvent.passwordChanged(password: $password)';
+    return 'EmailPasswordEvent.passwordChanged(password: $password)';
   }
 
   @override
@@ -351,7 +351,7 @@ class _$_PasswordChange implements _PasswordChange {
   }
 }
 
-abstract class _PasswordChange implements LoginEvent {
+abstract class _PasswordChange implements EmailPasswordEvent {
   const factory _PasswordChange(final String password) = _$_PasswordChange;
 
   String get password;
@@ -369,7 +369,7 @@ abstract class _$$_SubmittedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_SubmittedCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_Submitted>
+    extends _$EmailPasswordEventCopyWithImpl<$Res, _$_Submitted>
     implements _$$_SubmittedCopyWith<$Res> {
   __$$_SubmittedCopyWithImpl(
       _$_Submitted _value, $Res Function(_$_Submitted) _then)
@@ -383,7 +383,7 @@ class _$_Submitted implements _Submitted {
 
   @override
   String toString() {
-    return 'LoginEvent.submitted()';
+    return 'EmailPasswordEvent.submitted()';
   }
 
   @override
@@ -464,34 +464,34 @@ class _$_Submitted implements _Submitted {
   }
 }
 
-abstract class _Submitted implements LoginEvent {
+abstract class _Submitted implements EmailPasswordEvent {
   const factory _Submitted() = _$_Submitted;
 }
 
 /// @nodoc
-mixin _$LoginState {
+mixin _$EmailPasswordState {
   FormzStatus get status => throw _privateConstructorUsedError;
   Email get email => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LoginStateCopyWith<LoginState> get copyWith =>
+  $EmailPasswordStateCopyWith<EmailPasswordState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginStateCopyWith<$Res> {
-  factory $LoginStateCopyWith(
-          LoginState value, $Res Function(LoginState) then) =
-      _$LoginStateCopyWithImpl<$Res, LoginState>;
+abstract class $EmailPasswordStateCopyWith<$Res> {
+  factory $EmailPasswordStateCopyWith(
+          EmailPasswordState value, $Res Function(EmailPasswordState) then) =
+      _$EmailPasswordStateCopyWithImpl<$Res, EmailPasswordState>;
   @useResult
   $Res call({FormzStatus status, Email email, Password password});
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
-    implements $LoginStateCopyWith<$Res> {
-  _$LoginStateCopyWithImpl(this._value, this._then);
+class _$EmailPasswordStateCopyWithImpl<$Res, $Val extends EmailPasswordState>
+    implements $EmailPasswordStateCopyWith<$Res> {
+  _$EmailPasswordStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -523,22 +523,22 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
 }
 
 /// @nodoc
-abstract class _$$_LoginStateCopyWith<$Res>
-    implements $LoginStateCopyWith<$Res> {
-  factory _$$_LoginStateCopyWith(
-          _$_LoginState value, $Res Function(_$_LoginState) then) =
-      __$$_LoginStateCopyWithImpl<$Res>;
+abstract class _$$_EmailPasswordStateCopyWith<$Res>
+    implements $EmailPasswordStateCopyWith<$Res> {
+  factory _$$_EmailPasswordStateCopyWith(_$_EmailPasswordState value,
+          $Res Function(_$_EmailPasswordState) then) =
+      __$$_EmailPasswordStateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({FormzStatus status, Email email, Password password});
 }
 
 /// @nodoc
-class __$$_LoginStateCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_LoginState>
-    implements _$$_LoginStateCopyWith<$Res> {
-  __$$_LoginStateCopyWithImpl(
-      _$_LoginState _value, $Res Function(_$_LoginState) _then)
+class __$$_EmailPasswordStateCopyWithImpl<$Res>
+    extends _$EmailPasswordStateCopyWithImpl<$Res, _$_EmailPasswordState>
+    implements _$$_EmailPasswordStateCopyWith<$Res> {
+  __$$_EmailPasswordStateCopyWithImpl(
+      _$_EmailPasswordState _value, $Res Function(_$_EmailPasswordState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -548,7 +548,7 @@ class __$$_LoginStateCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$_LoginState(
+    return _then(_$_EmailPasswordState(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -567,8 +567,8 @@ class __$$_LoginStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoginState implements _LoginState {
-  const _$_LoginState(
+class _$_EmailPasswordState implements _EmailPasswordState {
+  const _$_EmailPasswordState(
       {this.status = FormzStatus.pure,
       this.email = const Email.pure(),
       this.password = const Password.pure()});
@@ -585,14 +585,14 @@ class _$_LoginState implements _LoginState {
 
   @override
   String toString() {
-    return 'LoginState(status: $status, email: $email, password: $password)';
+    return 'EmailPasswordState(status: $status, email: $email, password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoginState &&
+            other is _$_EmailPasswordState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
@@ -605,15 +605,16 @@ class _$_LoginState implements _LoginState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
-      __$$_LoginStateCopyWithImpl<_$_LoginState>(this, _$identity);
+  _$$_EmailPasswordStateCopyWith<_$_EmailPasswordState> get copyWith =>
+      __$$_EmailPasswordStateCopyWithImpl<_$_EmailPasswordState>(
+          this, _$identity);
 }
 
-abstract class _LoginState implements LoginState {
-  const factory _LoginState(
+abstract class _EmailPasswordState implements EmailPasswordState {
+  const factory _EmailPasswordState(
       {final FormzStatus status,
       final Email email,
-      final Password password}) = _$_LoginState;
+      final Password password}) = _$_EmailPasswordState;
 
   @override
   FormzStatus get status;
@@ -623,6 +624,6 @@ abstract class _LoginState implements LoginState {
   Password get password;
   @override
   @JsonKey(ignore: true)
-  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
+  _$$_EmailPasswordStateCopyWith<_$_EmailPasswordState> get copyWith =>
       throw _privateConstructorUsedError;
 }

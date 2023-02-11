@@ -16,10 +16,10 @@ Future<void> main() async {
    * before using any plugins if the code is executed before runApp. */
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Firebase
   await Firebase.initializeApp();
-
 // Configure injection
-  await configureInjection(Env.production);
-  await bootstrap(() => const App());
+ await configureInjection(Env.production);
+  await bootstrap(
+    () => App(),
+  );
 }
