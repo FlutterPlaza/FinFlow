@@ -110,7 +110,7 @@ class SendersProfilePage extends StatelessWidget {
                 ),
                 SettingsOptions(
                   icon: FpbIcons.calendar,
-                  text: l10n.sendersProfileJoinedText,
+                  text: 'Joined May 2022',
                   box: box,
                 ),
                 SizedBox(

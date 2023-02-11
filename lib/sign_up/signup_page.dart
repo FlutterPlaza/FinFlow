@@ -88,100 +88,139 @@ class _SignUpBodyState extends State<SignUpBody>
                         fontSize: size.width * 0.037,
                       ),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(vertical: 8),
-                  height: size.height * 0.065,
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: box.maxHeight * .85,
+                  padding: EdgeInsets.only(
+                    top: box.maxHeight * .025,
+                    left: box.maxHeight * .025,
+                    right: box.maxHeight * .025,
+                  ),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  // color: Colors.red,
-                  child: TabBar(
-                    padding: const EdgeInsets.all(8),
-                    controller: tabController,
-                    onTap: (_) {
-                      setState(() {
-                        tabController.index = _;
-                      });
-                    },
-                    tabs: const [
-                      Tab(
-                        child: Text(
-                          'Email Signup',
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      Tab(
-                        child: Text(
-                          'Phone Number Signup',
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Flexible(
-                  child: Form(
-                    child: SizedBox(
-                      height: size.height * 0.47,
-                      child: TabBarView(
-                        physics: const BouncingScrollPhysics(),
-                        controller: tabController,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              FpbTextFormField(
-                                label: 'Full Name',
-                                hint: 'Enter your full name',
-                              ),
-                              FpbTextFormField(
-                                label: 'Email',
-                                hint: 'example@mail.com',
-                                isEmail: true,
-                              ),
-                              FpbTextFormField(
-                                label: 'Password',
-                                hint: 'Enter your password',
-                                isPassword: true,
-                              ),
-                            ],
-                          ),
-                          Container(),
-                          // Column(
-                          //   children: [
-                          //     Flexible(
-                          //       child: Container(
-                          //         color: Colors.green,
-                          //         width: double.infinity,
-                          //       ),
-                          //     )
-                          //   ],
-                          // ),
-                        ],
-                      ),
+                    color: Theme.of(context).backgroundColor,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
                     ),
                   ),
-                ),
-                FpbButton(label: 'Sign Up', onTap: () {}),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      Expanded(child: Divider()),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        l10n.signUpRegisterTitle,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      SizedBox(
+                        height: box.maxHeight * 0.001,
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          vertical: box.maxHeight * .008,
+                        ),
+                        height: box.maxHeight * 0.06,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).cardColor,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        // color: Colors.red,
+                        child: TabBar(
+                          padding: EdgeInsets.all(box.maxHeight * .008),
+                          controller: tabController,
+                          onTap: (_) {
+                            setState(() {
+                              tabController.index = _;
+                            });
+                          },
+                          tabs: [
+                            Tab(
+                              child: Text(
+                                l10n.signInEmailLogInLabel,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            Tab(
+                              child: Text(
+                                l10n.signInPhoneNumberLogInLabel,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: box.maxHeight * .025,
+                      ),
+                      Flexible(
+                        child: Form(
+                          child: SizedBox(
+                            height: box.maxHeight * 0.5,
+                            child: TabBarView(
+                              physics: const BouncingScrollPhysics(),
+                              controller: tabController,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    FpbTextFormField(
+                                      label: l10n.signUpFullNameTextFielLabel,
+                                      hint: l10n.signUpFullNameTextFielHintText,
+                                    ),
+                                    FpbTextFormField(
+                                      label: l10n.signInEmailTextFieldLabel,
+                                      hint: l10n.signInEmailTextFieldHintText,
+                                      isEmail: true,
+                                    ),
+                                    FpbTextFormField(
+                                      label: l10n.signInPasswordFieldLabel,
+                                      hint: l10n.signInPasswordFieldHintText,
+                                      isPassword: true,
+                                    ),
+                                  ],
+                                ),
+                                Container(),
+                                // Column(
+                                //   children: [
+                                //     Flexible(
+                                //       child: Container(
+                                //         color: Colors.green,
+                                //         width: double.infinity,
+                                //       ),
+                                //     )
+                                //   ],
+                                // ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      FpbButton(
+                        label: l10n.signInSignUpLabel,
+                        onTap: () {},
+                      ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 12),
-                        child: Text('Or sign up with'),
+                        padding: EdgeInsets.symmetric(
+                          vertical: box.maxHeight * 0.012,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            const Expanded(child: Divider()),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: box.maxHeight * .015,
+                              ),
+                              child: Text(
+                                l10n.signUporSignupWithText,
+                              ),
+                            ),
+                            const Expanded(child: Divider())
+                          ],
+                        ),
                       ),
                       Expanded(child: Divider())
                     ],
@@ -225,8 +264,8 @@ class _SignUpBodyState extends State<SignUpBody>
                     ],
                   ),
                 ),
-              ],
-            ),
+              )
+            ],
           ),
         )
       ]),
