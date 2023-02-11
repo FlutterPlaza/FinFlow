@@ -25,12 +25,20 @@ dependencies:
     path: packages/user_repository
   formz: ^0.4.1
   freezed_annotation: ^2.2.0
-  json_annotation: ^4.8.0
+  json_annotation:
+  json_serializable:
   go_router: ^6.0.1
   widgetbook:
   get_it: ^7.2.0
   injectable: ^2.1.0
   logging: ^1.1.1
+  firebase_auth:
+  firebase_core:
+  firebase_core_platform_interface: 4.5.1
+  cloud_firestore: ^4.0.2
+  google_sign_in: ^5.4.4
+  dartz: ^0.10.1
+  shared_preferences: ^2.0.17
 
 dev_dependencies:
   widgetbook_generator:
@@ -42,6 +50,8 @@ dev_dependencies:
   very_good_analysis: ^3.1.0
   build_runner:
   injectable_generator: ^2.1.3
+  firebase_auth_platform_interface: ^6.10.4
+  plugin_platform_interface: ^2.1.3
 
 flutter:
   uses-material-design: true

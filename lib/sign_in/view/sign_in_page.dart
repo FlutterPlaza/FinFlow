@@ -1,4 +1,3 @@
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,6 +5,7 @@ import 'package:formz/formz.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
+import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/sign_in/application/bloc/login_bloc.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
@@ -20,10 +20,7 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginBloc(
-        authenticationRepository:
-            RepositoryProvider.of<AuthenticationRepository>(context),
-      ),
+      create: (context) => getIt<LoginBloc>(),
       child: const SignInBody(),
     );
   }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/senders_profile_screen/senders_profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -91,36 +90,36 @@ class _ProfilePageState extends State<ProfilePage> {
                       bottom: box.maxHeight * 0.03,
                     ),
                     child: Column(
-                      children: [
-                        SettingsOptions(
-                          text: l10n.profileAccountText,
-                          icon: FpbIcons.profile,
-                          box: box,
-                        ),
-                        SizedBox(
-                          height: box.maxHeight * 0.03,
-                        ),
-                        SettingsOptions(
-                          text: l10n.profileSettingsText,
-                          icon: FpbIcons.setting,
-                          box: box,
-                        ),
-                        SizedBox(
-                          height: box.maxHeight * 0.03,
-                        ),
-                        SettingsOptions(
-                          text: l10n.profileNotificationsText,
-                          icon: Icons.notifications,
-                          box: box,
-                        ),
-                        SizedBox(
-                          height: box.maxHeight * 0.03,
-                        ),
-                        SettingsOptions(
-                          text: l10n.profilePaymentMethodsText,
-                          icon: FpbIcons.credit_card,
-                          box: box,
-                        )
+                      children: const [
+                        // SettingsOptions(
+                        //   text: l10n.profileAccountText,
+                        //   icon: FpbIcons.profile,
+                        //   box: box,
+                        // ),
+                        // SizedBox(
+                        //   height: box.maxHeight * 0.03,
+                        // ),
+                        // SettingsOptions(
+                        //   text: l10n.profileSettingsText,
+                        //   icon: FpbIcons.setting,
+                        //   box: box,
+                        // ),
+                        // SizedBox(
+                        //   height: box.maxHeight * 0.03,
+                        // ),
+                        // SettingsOptions(
+                        //   text: l10n.profileNotificationsText,
+                        //   icon: Icons.notifications,
+                        //   box: box,
+                        // ),
+                        // SizedBox(
+                        //   height: box.maxHeight * 0.03,
+                        // ),
+                        // SettingsOptions(
+                        //   text: l10n.profilePaymentMethodsText,
+                        //   icon: FpbIcons.credit_card,
+                        //   box: box,
+                        // )
                       ],
                     ),
                   ),
@@ -141,11 +140,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       top: box.maxHeight * 0.03,
                       bottom: box.maxHeight * 0.03,
                     ),
-                    child: SettingsOptions(
-                      text: l10n.profileLogOutText,
-                      icon: FpbIcons.logout,
-                      box: box,
-                    ),
+                    child: const SizedBox.shrink(),
+
+                    //  SettingsOptions(
+                    //   text: l10n.profileLogOutText,
+                    //   icon: FpbIcons.logout,
+                    //   box: box,
+                    // ),
                   ),
                 ),
                 SizedBox(

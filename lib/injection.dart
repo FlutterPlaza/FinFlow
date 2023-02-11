@@ -5,7 +5,8 @@ import 'package:injectable/injectable.dart';
 final GetIt getIt = GetIt.instance;
 
 @injectableInit
-void configureInjection(String env) => getIt.init(environment: env);
+Future<void> configureInjection(String env) async =>
+    getIt.init(environment: env);
 
 abstract class Env {
   static const development = 'development';
