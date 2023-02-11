@@ -12,6 +12,7 @@ import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -167,7 +168,49 @@ class _SignInBodyState extends State<SignInBody>
                                       Text(l10n.signInForgotPasswordText),
                                     ],
                                   ),
-                                  Container(),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            l10n.signInPhoneNumberFieldLabel,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleMedium,
+                                          ),
+                                          SizedBox(
+                                            height: cts.maxHeight * 0.02,
+                                          ),
+                                          IntlPhoneField(
+                                            flagsButtonPadding: EdgeInsets.all(
+                                              cts.maxHeight * 0.01,
+                                            ),
+                                            dropdownIconPosition:
+                                                IconPosition.trailing,
+                                            decoration: InputDecoration(
+                                              contentPadding: EdgeInsets.all(
+                                                cts.maxHeight * 0.025,
+                                              ),
+                                              labelText: '1 234 89 9000',
+                                              border: OutlineInputBorder(
+                                                borderRadius: BorderRadius.all(
+                                                  Radius.circular(
+                                                    cts.maxHeight * 0.025,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            initialCountryCode: 'US',
+                                          ),
+                                        ],
+                                      ),
+                                      const PasswordInput(),
+                                    ],
+                                  )
                                 ],
                               ),
                             ),
@@ -238,7 +281,7 @@ class _SignInBodyState extends State<SignInBody>
                               style: Theme.of(context).textTheme.labelMedium,
                             ),
                             SizedBox(
-                              width: cts.maxWidth * 0.003, 
+                              width: cts.maxWidth * 0.003,
                             ),
                             Text(
                               l10n.signInTermsOfUseLabel,
