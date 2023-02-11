@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
+import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/sign_in_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key, required this.user});

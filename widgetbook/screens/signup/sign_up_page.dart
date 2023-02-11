@@ -1,4 +1,4 @@
-import 'package:fpb/sign_up/signup_page.dart';
+import 'package:fpb/sign_up/view/signup_page.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 WidgetbookUseCase get signUpUsecase => WidgetbookUseCase(

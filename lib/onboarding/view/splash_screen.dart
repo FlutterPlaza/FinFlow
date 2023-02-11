@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
 import 'package:fpb/core/settings/cached.dart';
-import 'package:fpb/home_screen/view/home_screen.dart';
+import 'package:fpb/home/view/home_screen.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/onboarding/view/onboarding_screens.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
@@ -41,7 +41,11 @@ class SplashScreen extends StatelessWidget {
             unauthenticated: (_) {
               if (cached.firstTimeUser) {
                 cached.firstTimeUser = false;
-                return const OnboardingPage();
+                return OnboardingPage(
+                  onGetStartedPressed: () {
+                    Navigator.of(context).pushNamed(SignInScreen.routeName);
+                  },
+                );
               }
               return const SignInScreen();
             },

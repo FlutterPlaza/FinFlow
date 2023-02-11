@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
-import 'package:fpb/home_screen/view/home_screen.dart';
+import 'package:fpb/home/view/home_screen.dart';
 import 'package:fpb/l10n/l10n.dart';
 //import 'package:go_router/go_router.dart';
 //import 'package:fpb/home_screen/home_screen.dart';

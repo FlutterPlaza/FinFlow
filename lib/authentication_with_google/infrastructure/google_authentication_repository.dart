@@ -1,10 +1,10 @@
 import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
+import 'package:fpb/authentication_with_google/domain/i_google_repository_facade.dart';
 import 'package:fpb/core/failures/auth_failure.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/infrastructure/user.dto.dart';
-import 'package:fpb/sign_in_with_google/domain/i_google_repository_facade.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 

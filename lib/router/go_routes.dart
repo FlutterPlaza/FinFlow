@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/core/domain/user.dart';
-import 'package:fpb/home_screen/home_screen.dart';
+import 'package:fpb/home/home_screen.dart';
 import 'package:fpb/onboarding/onboarding.dart';
 import 'package:fpb/sign_in/sign_in.dart';
-import 'package:fpb/sign_up/signup_page.dart';
+import 'package:fpb/sign_up/view/signup_page.dart';
 import 'package:go_router/go_router.dart';
 
 /// The route configuration.
