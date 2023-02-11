@@ -238,7 +238,6 @@ class _SignInBodyState extends State<SignInBody>
                                       color: Theme.of(context).primaryColor,
                                     ),
                               ),
-
                             ),
                           ],
                         ),

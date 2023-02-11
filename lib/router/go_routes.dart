@@ -35,7 +35,7 @@ final GoRouter goRouter = GoRouter(
       path: Home.routeName,
       builder: (BuildContext context, GoRouterState state) {
         final user = state.extra as User;
-        return Home(user: state.extra as User);
+        return Home(user: user);
       },
     ),
     GoRoute(

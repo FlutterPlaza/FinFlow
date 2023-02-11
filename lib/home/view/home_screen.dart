@@ -110,22 +110,10 @@ class _HomeBodyState extends State<HomeBody> {
                           const SizedBox(
                             width: 16,
                           ),
-                          if (widget.user.photo != null)
-                            CircleAvatar(
-                              backgroundImage:
-                                  NetworkImage('${widget.user.photo}'),
-                            )
-                          else
-                            const InkWell(
-                              // onTap: (){
-                              //   context.go('/')
-                              // },
-                              child: CircleAvatar(
-                                radius: 25,
-                                backgroundColor: Colors.transparent,
-                                child: FlutterLogo(),
-                              ),
-                            ),
+                          CircleAvatar(
+                            backgroundImage:
+                                NetworkImage('${widget.user.photo}'),
+                          ),
                           IconButton(
                             icon: const Icon(
                               Icons.logout,

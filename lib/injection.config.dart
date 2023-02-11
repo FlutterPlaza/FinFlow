@@ -94,8 +94,8 @@ extension GetItInjectableX on _i1.GetIt {
   }
 }
 
-class _$InjectableModulesForFirebase
-    extends _i19.InjectableModulesForFirebase {}
+class _$InjectableModulesForFirebase extends _i19.InjectableModulesForFirebase {
+}
 
 class _$AuthenticationMockModuleInjection
     extends _i20.AuthenticationMockModuleInjection {}
