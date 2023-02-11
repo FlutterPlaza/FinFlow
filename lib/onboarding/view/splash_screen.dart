@@ -7,6 +7,7 @@ import 'package:fpb/home/view/home_screen.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/onboarding/view/onboarding_screens.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -43,7 +44,7 @@ class SplashScreen extends StatelessWidget {
                 cached.firstTimeUser = false;
                 return OnboardingPage(
                   onGetStartedPressed: () {
-                    Navigator.of(context).pushNamed(SignInScreen.routeName);
+                    context.pushReplacement(SignInScreen.routeName);
                   },
                 );
               }
