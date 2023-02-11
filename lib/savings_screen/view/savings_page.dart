@@ -123,7 +123,7 @@ class _SavingsPageState extends State<SavingsPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  l10n.savingsMyTeslaModelXText,
+                                  'My Tesla New Model X',
                                   style:
                                       Theme.of(context).textTheme.titleMedium,
                                 ),

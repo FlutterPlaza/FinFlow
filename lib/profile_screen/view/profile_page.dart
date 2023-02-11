@@ -156,7 +156,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Column(
                     children: [
                       Text(
-                        l10n.profileVersionText,
+                        'Version 10.2',
                         style: Theme.of(context).textTheme.labelMedium,
                       ),
                       SizedBox(

@@ -6,3 +6,4 @@ linter:
       - ".*config.dart"
       - ".*g.dart"
       - ".*freezed.dart"
+
