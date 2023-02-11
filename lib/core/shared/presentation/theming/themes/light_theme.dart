@@ -30,7 +30,9 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       bodyMedium: Theme.of(context).textTheme.bodyMedium,
       bodySmall: Theme.of(context).textTheme.bodySmall,
       labelLarge: Theme.of(context).textTheme.labelLarge,
-      labelMedium: Theme.of(context).textTheme.labelMedium,
+      labelMedium: Theme.of(context).textTheme.labelMedium?.copyWith(
+            color: const Color(0xffB2B3BD),
+          ),
       labelSmall: Theme.of(context).textTheme.labelSmall,
     ),
     backgroundColor: Colors.white,
@@ -51,7 +53,8 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
     ),
     dividerTheme: DividerThemeData(
       color: AppColors.cardColorW,
-      thickness: 2,
+      //color: const Color(0xff181818),
+      thickness: .4,
     ),
     cardTheme: CardTheme(
       elevation: 1,

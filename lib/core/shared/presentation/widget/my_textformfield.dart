@@ -43,7 +43,7 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
       children: [
         Text(
           widget.label,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(
           height: 8,
