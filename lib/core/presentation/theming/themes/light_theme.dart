@@ -5,8 +5,7 @@ const borderRaduis = 0.025;
 @WidgetbookTheme(name: 'Light', isDefault: true)
 ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
   final theme = Theme.of(context);
-  final style = theme.textTheme;
-  // final colors = theme.colorScheme;
+  final style = theme.textTheme; 
 
   return ThemeData(
     colorScheme: ColorScheme.light(
@@ -51,6 +50,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       ),
       titleSmall: style.titleSmall?.copyWith(
         fontSize: cts.maxWidth * 0.04,
+        color: Color(0xff808191)
       ),
       bodyLarge: style.bodyLarge?.copyWith(
         fontSize: cts.maxWidth * 0.042,
@@ -66,6 +66,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       ),
       labelMedium: style.labelMedium?.copyWith(
         fontSize: cts.maxWidth * 0.028,
+
       ),
       labelSmall: style.labelSmall?.copyWith(
         fontSize: cts.maxWidth * 0.028,

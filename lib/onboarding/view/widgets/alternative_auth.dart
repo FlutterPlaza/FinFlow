@@ -14,32 +14,34 @@ class AlternativeAuth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        IconLogin(
-          svg: SvgNames.google,
-          box: box,
-          onTap: () => context.read<GoogleSignInBloc>().add(
-                GoogleSignInEvent.signIn(),
-              ),
-        ),
-        IconLogin(
-          svg: SvgNames.facebook,
-          box: box,
-          onTap: () {},
-        ),
-        IconLogin(
-          svg: SvgNames.twitter,
-          box: box,
-          onTap: () {},
-        ),
-        IconLogin(
-          svg: SvgNames.apple,
-          box: box,
-          onTap: () {},
-        ),
-      ],
-    );
+    return Wrap(direction: Axis.horizontal, children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          IconLogin(
+            svg: SvgNames.google,
+            box: box,
+            onTap: () => context.read<GoogleSignInBloc>().add(
+                  GoogleSignInEvent.signIn(),
+                ),
+          ),
+          IconLogin(
+            svg: SvgNames.facebook,
+            box: box,
+            onTap: () {},
+          ),
+          IconLogin(
+            svg: SvgNames.twitter,
+            box: box,
+            onTap: () {},
+          ),
+          IconLogin(
+            svg: SvgNames.apple,
+            box: box,
+            onTap: () {},
+          ),
+        ],
+      ),
+    ]);
   }
 }

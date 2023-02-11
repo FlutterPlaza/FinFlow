@@ -30,7 +30,7 @@ class FpbButton extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       width: width ?? size.width,
-      height: height ?? size.height * 0.075,
+      height: height ?? size.height * 0.065,
       child: ElevatedButton(
         clipBehavior: Clip.hardEdge,
         onPressed: onTap,
