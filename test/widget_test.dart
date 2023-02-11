@@ -5,26 +5,15 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpb/app/view/app.dart';
-import 'package:fpb/sign_in_with_google/repository/google_authentication_repository.dart';
-import 'package:user_repository/user_repository.dart';
 
 void main() {
-  final authenticationRepository = AuthenticationRepository();
-  final userRepository = UserRepository();
-  final googleAuthenticationRepository = GoogleAuthenticationRepository();
-
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      App(
-        authenticationRepository: authenticationRepository,
-        userRepository: userRepository,
-        googleAuthenticationRepository: googleAuthenticationRepository,
-      ),
+      App(),
     );
 
     // Verify that our counter starts at 0.

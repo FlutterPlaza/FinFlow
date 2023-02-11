@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:fpb/authentication_with_firebase/domain/auth_failure.dart';
-import 'package:fpb/authentication_with_firebase/domain/user.dart';
+import 'package:fpb/core/failures/auth_failure.dart';
+import 'package:fpb/core/domain/user.dart';
 
 abstract class IAuthFacade {
   Future<bool> hasRegisteredBefore();

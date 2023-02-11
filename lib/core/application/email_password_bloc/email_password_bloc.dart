@@ -5,17 +5,17 @@ import 'package:fpb/sign_in/domain/domain.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'login_event.dart';
-part 'login_state.dart';
-part 'login_bloc.freezed.dart';
+part 'email_password_event.dart';
+part 'email_password_state.dart';
+part 'email_password_bloc.freezed.dart';
 
 @singleton
 @injectable
-class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc({
+class EmailPasswordBloc extends Bloc<EmailPasswordEvent, EmailPasswordState> {
+  EmailPasswordBloc({
     required IAuthFacade authenticationRepository,
   })  : _authenticationRepository = authenticationRepository,
-        super(const LoginState()) {
+        super(const EmailPasswordState()) {
     on<_UserNameChange>(_onUsernameChanged);
     on<_PasswordChange>(_onPasswordChanged);
     on<_Submitted>(_onSubmitted);
@@ -24,7 +24,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   void _onUsernameChanged(
     _UserNameChange event,
-    Emitter<LoginState> emit,
+    Emitter<EmailPasswordState> emit,
   ) {
     final email = Email.dirty(event.userName);
     emit(
@@ -37,7 +37,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   void _onPasswordChanged(
     _PasswordChange event,
-    Emitter<LoginState> emit,
+    Emitter<EmailPasswordState> emit,
   ) {
     final password = Password.dirty(event.password);
     emit(
@@ -50,7 +50,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future<void> _onSubmitted(
     _Submitted event,
-    Emitter<LoginState> emit,
+    Emitter<EmailPasswordState> emit,
   ) async {
     if (state.status.isValidated) {
       emit(state.copyWith(status: FormzStatus.submissionInProgress));

@@ -3,12 +3,17 @@ import 'dart:async';
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:user_repository/user_repository.dart';
 
 part 'authentication_event.dart';
 part 'authentication_state.dart';
 part 'authentication_bloc.freezed.dart';
 
+/// {@template authentication_bloc}
+/// BLoC which manages the user's authentication state.
+/// {@endtemplate}
+@injectable
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
   AuthenticationBloc({

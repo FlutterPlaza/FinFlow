@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
-import 'package:fpb/authentication_with_firebase/domain/auth_failure.dart';
+import 'package:fpb/core/failures/auth_failure.dart';
 import 'package:fpb/authentication_with_firebase/domain/i_auth_facade.dart';
-import 'package:fpb/authentication_with_firebase/domain/user.dart';
-import 'package:fpb/authentication_with_firebase/infrastructure/user.dto.dart';
+import 'package:fpb/core/domain/user.dart';
+import 'package:fpb/core/infrastructure/user.dto.dart';
 import 'package:fpb/core/settings/cached.dart';
 import 'package:injectable/injectable.dart';
 

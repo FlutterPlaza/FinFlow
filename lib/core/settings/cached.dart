@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:fpb/authentication_with_firebase/domain/user.dart';
-import 'package:fpb/authentication_with_firebase/infrastructure/user.dto.dart';
+import 'package:fpb/core/domain/user.dart';
+import 'package:fpb/core/infrastructure/user.dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
