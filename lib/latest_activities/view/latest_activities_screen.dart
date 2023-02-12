@@ -17,7 +17,6 @@ class LatestActivitiesPage extends StatefulWidget {
 }
 
 class _LatestActivitiesPageState extends State<LatestActivitiesPage> {
-
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;

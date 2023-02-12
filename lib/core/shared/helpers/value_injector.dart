@@ -14,7 +14,7 @@ class ValueInjector<T> extends InheritedWidget {
   }
 
   @override
-  bool updateShouldNotify(ValueInjector oldWidget) {
+  bool updateShouldNotify(ValueInjector<T> oldWidget) {
     return value != oldWidget.value;
   }
 }
