@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,11 +10,10 @@ import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dar
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
+import 'package:fpb/router/app_route.gr.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
-import 'package:fpb/sign_up/view/signup_page.dart';
-import 'package:go_router/go_router.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -227,7 +227,7 @@ class _SignInBodyState extends State<SignInBody>
                             ),
                             TextButton(
                               onPressed: () {
-                                context.pushReplacement(SignUpScreen.routeName);
+                                context.router.push(SignUpRoute());
                               },
                               child: Text(
                                 l10n.signInSignUpLabel,

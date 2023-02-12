@@ -4,6 +4,6 @@ import 'package:widgetbook/widgetbook.dart';
 WidgetbookUseCase get sendPageUsecase => WidgetbookUseCase(
       name: 'send-page_usecase',
       builder: (context) {
-        return const OnboardingPage();
+        return const OnboardingScreen();
       },
     );

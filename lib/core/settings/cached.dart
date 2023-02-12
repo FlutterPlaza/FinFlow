@@ -36,4 +36,10 @@ class Cached {
 
   bool get firstTimeUser =>
       _sharedPreferences.getBool(firstTimeUserKey) ?? true;
+
+  set setLastView(int value) {
+    _sharedPreferences.setInt('homeView', value);
+  }
+
+  int get getLastView => _sharedPreferences.getInt('homeView') ?? 0;
 }
