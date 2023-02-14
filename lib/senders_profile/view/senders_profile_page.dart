@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
-import 'package:fpb/home/view/home_screen.dart';
+import 'package:fpb/home/view/widgets/activity_card.dart';
 import 'package:fpb/l10n/l10n.dart';
 
 class SendersProfilePage extends StatelessWidget {
@@ -33,7 +33,6 @@ class SendersProfilePage extends StatelessWidget {
                 ),
                 Center(
                   child: Column(
-                    //mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CircleAvatar(
                         radius: box.maxHeight * 0.075,

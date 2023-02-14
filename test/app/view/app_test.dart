@@ -15,7 +15,7 @@ void main() {
       await tester.pumpWidget(
         App(),
       );
-      expect(find.byType(OnboardingPage), findsOneWidget);
+      expect(find.byType(OnboardingScreen), findsOneWidget);
     });
   });
 }

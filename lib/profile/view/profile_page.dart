@@ -3,15 +3,15 @@ import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/l10n/l10n.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
   static const String routeName = '/userProfile';
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfileScreenState extends State<ProfileScreen> {
   int pageIndex = 4;
 
   @override

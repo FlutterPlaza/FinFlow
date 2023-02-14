@@ -5,6 +5,6 @@ import 'package:widgetbook/widgetbook.dart';
 WidgetbookUseCase get homePageUsecase => WidgetbookUseCase(
       name: 'home-page_usecase',
       builder: (context) {
-        return Home(user: User.empty);
+        return HomeScreen(user: User.empty);
       },
     );
