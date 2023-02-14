@@ -245,8 +245,8 @@ class _SignInBodyState extends State<SignInBody>
                         )
                       ],
                     ).card(
-                      // height: (isKeyboardVisible(context) ? .95 : .8) *
-                      //     cts.maxHeight,
+                      height: (isKeyboardVisible(context) ? .95 : .8) *
+                          cts.maxHeight,
                       radiusTop: cts.maxWidth * 0.05,
                       color: theme.colorScheme.background,
                     ),

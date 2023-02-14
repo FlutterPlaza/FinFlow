@@ -2,8 +2,8 @@
     package="com.flutterplaza.finflow">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
-   <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
-   <application
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <application
         android:label="${appName}"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>

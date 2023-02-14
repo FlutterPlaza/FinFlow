@@ -35,7 +35,7 @@ class FacebookAuthenticationRepository implements IFacebookRepositoryFacade {
       if (user == null) {
         return left(const AuthFailure.userNotFound());
       }
-
+      
       return right(UserDTO.fromFirebase(user).toDomain());
     } on SocketException catch (e) {
       return left(AuthFailure.fromErrorMessage(e.message));
