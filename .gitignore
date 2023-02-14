@@ -39,6 +39,7 @@ version
 
 # packages file containing multi-root paths
 .packages.generated
+pubspec.lock
 
 # Flutter/Dart/Pub related
 **/doc/api/

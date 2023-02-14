@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
@@ -20,6 +21,9 @@ class HomeScreen extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => getIt<GoogleSignInBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<FacebookAuthBloc>(),
         ),
         BlocProvider(
           create: (context) =>

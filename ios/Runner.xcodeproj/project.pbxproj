@@ -57,6 +57,7 @@
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		8A01A250298C7D230075A705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A126438299BE90D008E2E82 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +156,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				8A126438299BE90D008E2E82 /* Runner.entitlements */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -234,6 +236,8 @@
 			mainGroup = 97C146E51CF9000F007C117D;
 			packageReferences = (
 				8A01A233298C7C8E0075A705 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8A126436299BE335008E2E82 /* XCRemoteSwiftPackageReference "flutter-login-screen-firebase-auth-facebook-login" */,
+				8A126437299BE4D0008E2E82 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 97C146EF1CF9000F007C117D /* Products */;
 			projectDirPath = "";
@@ -418,8 +422,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = Finflow;
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -550,8 +555,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = Finflow;
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -574,8 +580,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = Finflow;
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -653,8 +660,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-dev";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = "[DEV] Finflow";
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -730,8 +738,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-dev";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = "[DEV] Finflow";
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -804,8 +813,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-dev";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = "[DEV] Finflow";
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -883,8 +893,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-stg";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = "[STG] Finflow";
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -960,8 +971,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-stg";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = "[STG] Finflow";
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -1034,8 +1046,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-stg";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = KF76DSB8GZ;
+				DEVELOPMENT_TEAM = Y8BD6W633X;
 				ENABLE_BITCODE = NO;
 				FLAVOR_APP_NAME = "[STG] Finflow";
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -1092,6 +1105,22 @@
 		8A01A233298C7C8E0075A705 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		8A126436299BE335008E2E82 /* XCRemoteSwiftPackageReference "flutter-login-screen-firebase-auth-facebook-login" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/instaflutter/flutter-login-screen-firebase-auth-facebook-login";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8A126437299BE4D0008E2E82 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 9.0.0;
