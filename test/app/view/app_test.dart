@@ -12,8 +12,10 @@ import 'package:fpb/onboarding/view/onboarding_screens.dart';
 void main() {
   group('App', () {
     testWidgets('renders SignInPage', (tester) async {
-      await tester.pumpWidget(const App());
-      expect(find.byType(OnboardingPage), findsOneWidget);
+      await tester.pumpWidget(
+        App(),
+      );
+      expect(find.byType(OnboardingScreen), findsOneWidget);
     });
   });
 }

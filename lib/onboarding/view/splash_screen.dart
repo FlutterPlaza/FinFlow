@@ -1,40 +1,57 @@
 // a stateless widget that shows the splash screen with a logo and a text
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fpb/authentication/application/bloc/authentication_bloc.dart';
-import 'package:fpb/home_screen/view/home_screen.dart';
-import 'package:fpb/sign_in/view/sign_in_page.dart';
+import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
+import 'package:fpb/core/application/internet_and_time_bloc/internet_and_time_bloc.dart';
+import 'package:fpb/core/settings/cached.dart';
+import 'package:fpb/injection.dart';
+import 'package:fpb/router/app_route.gr.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
   static const routeName = '/';
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthenticationBloc, AuthenticationState>(
-      listener: (context, state) {
-        state.map(
-          unknown: (_) {},
-          authenticated: (_) {},
-          unAuthenticated: (_) {},
-        );
-      },
-      builder: (context, state) {
-        return state.map(
-          unknown: (_) {
-            return const Scaffold(
-              body: Center(
-                child: CircularProgressIndicator(),
-              ),
+    final cached = getIt<Cached>();
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<InternetAndTimeBloc, InternetAndTimeState>(
+          listenWhen: (p, c) => !c.isConnected || !c.isTimeSynced,
+          listener: (context, state) {
+            if (!state.isConnected) {
+              // _alertNoInternetDetected(context);
+            }
+            if (!state.isTimeSynced) {
+              // _alertTimeNotSyncedDetected(context);
+            }
+          },
+        ),
+        BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            state.map(
+              splash: (_) {},
+              authenticated: (_) {
+                context.router.popUntil((route) => route.isFirst);
+                context.router.push(HomeRoute(user: _.user));
+              },
+              unauthenticated: (_) {
+                context.router.popUntil((route) => route.isFirst);
+                if (cached.firstTimeUser) {
+                  context.router.push(OnboardingRoute());
+                }
+                context.router.push(SignInRoute());
+              },
             );
           },
-          authenticated: (_) {
-            return const MyHomePage();
-          },
-          unAuthenticated: (_) {
-            return const SignInPage();
-          },
-        );
-      },
+        ),
+      ],
+      child: const Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
     );
   }
 }
