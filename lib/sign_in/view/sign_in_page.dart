@@ -11,8 +11,8 @@ import 'package:fpb/sign_in/application/bloc/login_bloc.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
+import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -82,7 +82,7 @@ class _SignInBodyState extends State<SignInBody>
                     height: .8 * cts.maxHeight,
                     padding: EdgeInsets.all(cts.maxHeight * 0.025),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).backgroundColor,
+                      color: AppColors.cardColorW,
                       borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
@@ -172,41 +172,9 @@ class _SignInBodyState extends State<SignInBody>
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            l10n.signInPhoneNumberFieldLabel,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleMedium,
-                                          ),
-                                          SizedBox(
-                                            height: cts.maxHeight * 0.02,
-                                          ),
-                                          IntlPhoneField(
-                                            flagsButtonPadding: EdgeInsets.all(
-                                              cts.maxHeight * 0.01,
-                                            ),
-                                            dropdownIconPosition:
-                                                IconPosition.trailing,
-                                            decoration: InputDecoration(
-                                              contentPadding: EdgeInsets.all(
-                                                cts.maxHeight * 0.025,
-                                              ),
-                                              labelText: '1 234 89 9000',
-                                              border: OutlineInputBorder(
-                                                borderRadius: BorderRadius.all(
-                                                  Radius.circular(
-                                                    cts.maxHeight * 0.025,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            initialCountryCode: 'US',
-                                          ),
-                                        ],
+                                      PhoneNumberInput(
+                                        cts: cts,
+                                        l10n: l10n,
                                       ),
                                       const PasswordInput(),
                                     ],
