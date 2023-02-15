@@ -1,12 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/illustration.dart';
+import 'package:fpb/router/app_route.gr.dart';
 
-class OnboardingPage extends HookWidget {
-  const OnboardingPage({this.onGetStartedPressed, super.key});
+class OnboardingScreen extends HookWidget {
+  const OnboardingScreen({this.onGetStartedPressed, super.key});
   static const routeName = '/getStarted';
   final void Function()? onGetStartedPressed;
   @override
@@ -30,7 +32,11 @@ class OnboardingPage extends HookWidget {
         assetName: SvgNames.transIllustration,
         title: l10n.onboardingTransactionTitle,
         description: l10n.onboardingTransactionDescription,
-        onNextPressed: onGetStartedPressed,
+        onNextPressed: onGetStartedPressed ??
+            () {
+              context.router.popUntil((route) => route.isFirst);
+              context.router.push(SignUpRoute());
+            },
       ),
     ];
     final currentIndex = useState(0);

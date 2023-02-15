@@ -14,8 +14,11 @@ Future<void> main() async {
   /** WidgetsFlutterBinding.ensureInitialized() is required in Flutter v1.9.4+ 
    * before using any plugins if the code is executed before runApp. */
   WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
 
-// Configure injection
-  configureInjection(Env.development);
-  await bootstrap(() => const App());
+  // Configure injection
+  await configureInjection(Env.development);
+  await bootstrap(
+    () => App(),
+  );
 }

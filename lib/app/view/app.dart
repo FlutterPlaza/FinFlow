@@ -1,56 +1,46 @@
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fpb/authentication/application/bloc/authentication_bloc.dart';
+import 'package:fpb/authentication_mock_without_backend/application/bloc/authentication_bloc.dart';
+import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
+import 'package:fpb/core/application/internet_and_time_bloc/internet_and_time_bloc.dart';
 import 'package:fpb/core/shared/presentation/theming/themes/theme.dart';
+import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/router/go_routes.dart';
-import 'package:user_repository/user_repository.dart';
+import 'package:fpb/router/app_route.gr.dart';
 
-class App extends StatefulWidget {
-  const App({super.key});
+final appRouter = AppRoute();
 
-  @override
-  State<App> createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  late final AuthenticationRepository _authenticationRepository;
-  late final UserRepository _userRepository;
-
-  @override
-  void initState() {
-    super.initState();
-    _authenticationRepository = AuthenticationRepository();
-    _userRepository = UserRepository();
-  }
-
-  @override
-  void dispose() {
-    _authenticationRepository.dispose();
-    super.dispose();
-  }
+class App extends StatelessWidget {
+  const App({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider.value(
-      value: _authenticationRepository,
-      child: BlocProvider(
-        create: (context) => AuthenticationBloc(
-          authenticationRepository: _authenticationRepository,
-          userRepository: _userRepository,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthenticationBloc>(
+            create: (context) => getIt<AuthenticationBloc>()),
+        BlocProvider(create: (context) => getIt<InternetAndTimeBloc>()),
+        BlocProvider(
+          create: (context) =>
+              getIt<AuthBloc>()..add(const AuthEvent.triggerAuthRequest()),
         ),
-        child: LayoutBuilder(
-          builder: (context, cts) {
-            return MaterialApp.router(
+      ],
+      child: LayoutBuilder(
+        builder: (context, cts) {
+          return MaterialApp.router(
               title: 'FinFlow',
               theme: whiteTheme(context, cts),
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
-              routerConfig: goRouter,
-            );
-          },
-        ),
+              routeInformationParser: appRouter.defaultRouteParser(),
+              routerDelegate: appRouter.delegate(
+                navigatorObservers: () => [
+                  HeroController(),
+                ],
+              ));
+        },
       ),
     );
   }
