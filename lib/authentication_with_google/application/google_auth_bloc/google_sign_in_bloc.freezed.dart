@@ -277,8 +277,8 @@ abstract class SignOut implements GoogleSignInEvent {
 /// @nodoc
 mixin _$GoogleSignInState {
   bool get isLoading => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
-  AuthFailure? get failure => throw _privateConstructorUsedError;
+  Either<AuthFailure, User> get failureOrUser =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GoogleSignInStateCopyWith<GoogleSignInState> get copyWith =>
@@ -291,10 +291,7 @@ abstract class $GoogleSignInStateCopyWith<$Res> {
           GoogleSignInState value, $Res Function(GoogleSignInState) then) =
       _$GoogleSignInStateCopyWithImpl<$Res, GoogleSignInState>;
   @useResult
-  $Res call({bool isLoading, User user, AuthFailure? failure});
-
-  $UserCopyWith<$Res> get user;
-  $AuthFailureCopyWith<$Res>? get failure;
+  $Res call({bool isLoading, Either<AuthFailure, User> failureOrUser});
 }
 
 /// @nodoc
@@ -311,43 +308,18 @@ class _$GoogleSignInStateCopyWithImpl<$Res, $Val extends GoogleSignInState>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? user = null,
-    Object? failure = freezed,
+    Object? failureOrUser = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      failure: freezed == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as AuthFailure?,
+      failureOrUser: null == failureOrUser
+          ? _value.failureOrUser
+          : failureOrUser // ignore: cast_nullable_to_non_nullable
+              as Either<AuthFailure, User>,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AuthFailureCopyWith<$Res>? get failure {
-    if (_value.failure == null) {
-      return null;
-    }
-
-    return $AuthFailureCopyWith<$Res>(_value.failure!, (value) {
-      return _then(_value.copyWith(failure: value) as $Val);
-    });
   }
 }
 
@@ -359,12 +331,7 @@ abstract class _$$_GoogleSignInStateCopyWith<$Res>
       __$$_GoogleSignInStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, User user, AuthFailure? failure});
-
-  @override
-  $UserCopyWith<$Res> get user;
-  @override
-  $AuthFailureCopyWith<$Res>? get failure;
+  $Res call({bool isLoading, Either<AuthFailure, User> failureOrUser});
 }
 
 /// @nodoc
@@ -379,22 +346,17 @@ class __$$_GoogleSignInStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? user = null,
-    Object? failure = freezed,
+    Object? failureOrUser = null,
   }) {
     return _then(_$_GoogleSignInState(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      failure: freezed == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as AuthFailure?,
+      failureOrUser: null == failureOrUser
+          ? _value.failureOrUser
+          : failureOrUser // ignore: cast_nullable_to_non_nullable
+              as Either<AuthFailure, User>,
     ));
   }
 }
@@ -403,20 +365,18 @@ class __$$_GoogleSignInStateCopyWithImpl<$Res>
 
 class _$_GoogleSignInState implements _GoogleSignInState {
   const _$_GoogleSignInState(
-      {this.isLoading = false, this.user = User.empty, this.failure});
+      {this.isLoading = false, this.failureOrUser = const Right(User.empty)});
 
   @override
   @JsonKey()
   final bool isLoading;
   @override
   @JsonKey()
-  final User user;
-  @override
-  final AuthFailure? failure;
+  final Either<AuthFailure, User> failureOrUser;
 
   @override
   String toString() {
-    return 'GoogleSignInState(isLoading: $isLoading, user: $user, failure: $failure)';
+    return 'GoogleSignInState(isLoading: $isLoading, failureOrUser: $failureOrUser)';
   }
 
   @override
@@ -426,12 +386,12 @@ class _$_GoogleSignInState implements _GoogleSignInState {
             other is _$_GoogleSignInState &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.failure, failure) || other.failure == failure));
+            (identical(other.failureOrUser, failureOrUser) ||
+                other.failureOrUser == failureOrUser));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, user, failure);
+  int get hashCode => Object.hash(runtimeType, isLoading, failureOrUser);
 
   @JsonKey(ignore: true)
   @override
@@ -444,15 +404,12 @@ class _$_GoogleSignInState implements _GoogleSignInState {
 abstract class _GoogleSignInState implements GoogleSignInState {
   const factory _GoogleSignInState(
       {final bool isLoading,
-      final User user,
-      final AuthFailure? failure}) = _$_GoogleSignInState;
+      final Either<AuthFailure, User> failureOrUser}) = _$_GoogleSignInState;
 
   @override
   bool get isLoading;
   @override
-  User get user;
-  @override
-  AuthFailure? get failure;
+  Either<AuthFailure, User> get failureOrUser;
   @override
   @JsonKey(ignore: true)
   _$$_GoogleSignInStateCopyWith<_$_GoogleSignInState> get copyWith =>

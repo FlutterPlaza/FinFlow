@@ -13,9 +13,9 @@ class HomeContainer extends StatelessWidget {
     return BlocBuilder<HomeViewBloc, HomeViewState>(
       builder: (context, state) {
         return state.map(
-          home: (_) => DashBoard(),
+          home: (_) => DashBoard(), // -> LatestActivitiesPage(),
           savings: (_) => SavingsPage(),
-          quickCash: (_) => LatestActivitiesPage(),
+          quickCash: (_) => Container(child: Center(child: Text('budget'))),
           budget: (_) => Container(child: Center(child: Text('budget'))),
           search: (_) => Container(child: Center(child: Text('search'))),
         );

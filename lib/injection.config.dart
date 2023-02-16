@@ -119,5 +119,5 @@ class _$CoreInjectableModule extends _i24.CoreInjectableModule {}
 class _$AuthenticationMockModuleInjection
     extends _i25.AuthenticationMockModuleInjection {}
 
-class _$InjectableModulesForFirebase extends _i26.InjectableModulesForFirebase {
-}
+class _$InjectableModulesForFirebase
+    extends _i26.InjectableModulesForFirebase {}

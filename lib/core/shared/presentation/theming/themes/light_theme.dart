@@ -11,6 +11,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
     fontFamily: 'Open Sans',
     cardColor: AppColors.cardColorW,
     bottomAppBarColor: AppColors.getPrimaryMaterialColorWhiteTheme,
+    // snackBarTheme: Them,
     textTheme: TextTheme(
       displayLarge: Theme.of(context).textTheme.displayLarge,
       displayMedium: Theme.of(context).textTheme.displayMedium,
