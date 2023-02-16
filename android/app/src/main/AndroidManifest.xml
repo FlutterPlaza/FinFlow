@@ -1,10 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.flutterplaza.finflow">
+   <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+   <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
    <application
         android:label="${appName}"
         android:icon="@mipmap/ic_launcher">
         <activity
-            android:name=".MainActivity"
+            android:name="io.flutter.embedding.android.FlutterFragmentActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"

@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
+import 'package:fpb/authenticate_with_biometrics/application/bloc/biometric_auth_bloc.dart';
+import 'package:fpb/authenticate_with_biometrics/view/biometric_button.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/authentication_with_google/view/loading_indicator.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
@@ -18,6 +20,7 @@ import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
 import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
+import 'package:local_auth/local_auth.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -32,6 +35,10 @@ class SignInScreen extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt<EmailPasswordBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => BiometricAuthBloc(
+              authenticationRepository: LocalAuthentication()),
         ),
       ],
       child: SignInBody(),
