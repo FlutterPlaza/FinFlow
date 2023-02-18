@@ -37,7 +37,7 @@ dependencies:
   dartz: ^0.10.1
   shared_preferences: ^2.0.17
   firebase_auth: ^4.2.6
-  firebase_core: ^2.5.0
+  firebase_core: ^2.6.1
   equatable: ^2.0.5
   ntp: ^2.0.0
   connectivity_plus: ^3.0.3
