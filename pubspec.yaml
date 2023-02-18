@@ -32,7 +32,7 @@ dependencies:
   injectable: ^2.1.0
   logging: ^1.1.1
   firebase_core_platform_interface: ^4.5.1
-  cloud_firestore: ^4.0.2
+  cloud_firestore: ^4.4.2
   google_sign_in: ^5.4.4
   dartz: ^0.10.1
   shared_preferences: ^2.0.17
