@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
-import 'package:fpb/core/shared/presentation/widget/my_textformfield.dart';
+import 'package:fpb/core/presentation/widget/my_textformfield.dart';
 import 'package:fpb/l10n/l10n.dart';
 
 class EmailInput extends StatelessWidget {

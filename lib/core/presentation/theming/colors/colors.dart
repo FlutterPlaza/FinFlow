@@ -1,10 +1,15 @@
-import 'package:flutter/material.dart';
+part of 'package:fpb/core/presentation/theming/themes/parts.dart';
 
-class AppColors {
+class _AppColors {
   static Color primaryColorW = const Color(0xff48A2DF);
   static Color secondaryColorW = const Color(0xff000000);
-  static Color accentColorW = const Color(0xffD35220);
-  static Color cardColorW = const Color(0xffF0F0F0);
+  static Color secondaryContainerW = const Color(0xffDF602F);
+  static Color onSurfaceW = const Color(0xffD9D9D9);
+  static Color bgColorW = const Color(0xffF5F5F5); // ;
+  static Color errorContainerW = const Color(0xffFFE5E7);
+  static Color onErrorW = const Color(0xffFF000D);
+  // static Color bgColorW = const Color(0xffF7F7F7);
+  static Color onBgColorW = Color(0xffFFFFFF);
 
   static Color getShade(Color color, {bool darker = false, double value = .1}) {
     assert(value >= 0 && value <= 1, 'verify domain interval');
@@ -83,4 +88,4 @@ class AppColors {
   }
 }
 
-final cl = AppColors.getMaterialColorFromColor(AppColors.primaryColorW);
+final cl = _AppColors.getMaterialColorFromColor(_AppColors.primaryColorW);

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/l10n/l10n.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -43,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       icon: Icon(
                         FpbIcons.edit,
                         size: box.maxHeight * 0.028,
-                        color: AppColors.secondaryColorW,
+                        // color: AppColors.secondaryColorW,
                       ),
                     ),
                   ],

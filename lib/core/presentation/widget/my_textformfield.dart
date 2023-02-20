@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/core/shared/presentation/theming/theming.dart';
 
 class FpbTextFormField extends StatefulWidget {
   const FpbTextFormField({
@@ -38,12 +37,14 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           widget.label,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: textTheme.titleLarge,
         ),
         const SizedBox(
           height: 8,
@@ -76,9 +77,9 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                           icon: const Icon(FpbIcons.eye_closed),
                           color: widget.node != null
                               ? widget.node!.hasFocus
-                                  ? Theme.of(context).colorScheme.onSurface
+                                  ? theme.colorScheme.onSurface
                                   : null
-                              : AppColors.cardColorW,
+                              : theme.colorScheme.onSurface,
                         ),
                       )
                     : Padding(
@@ -95,9 +96,9 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                           ),
                           color: widget.node != null
                               ? widget.node!.hasFocus
-                                  ? Theme.of(context).colorScheme.onSurface
+                                  ? theme.colorScheme.onSurface
                                   : null
-                              : AppColors.cardColorW,
+                              : theme.colorScheme.onSurface,
                         ),
                       ),
             hintText: widget.hint,

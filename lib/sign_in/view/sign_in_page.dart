@@ -7,9 +7,10 @@ import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
-import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
+import 'package:fpb/core/presentation/extension/extensions.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
+import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
 import 'package:fpb/router/app_route.gr.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
@@ -60,12 +61,18 @@ class _SignInBodyState extends State<SignInBody>
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
+    final colors = theme.colorScheme;
 
     return BlocConsumer<GoogleSignInBloc, GoogleSignInState>(
       listener: (context, state) {
         state.failureOrUser.fold(
             (l) => ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l.message)),
+                  SnackBar(
+                      backgroundColor: theme.colorScheme.error,
+                      elevation: 0,
+                      content: Text(l.message)),
                 ),
             (r) {});
       },
@@ -73,6 +80,7 @@ class _SignInBodyState extends State<SignInBody>
         return LayoutBuilder(
           builder: (context, cts) {
             return Scaffold(
+              resizeToAvoidBottomInset: false,
               body: Stack(
                 children: [
                   Positioned(
@@ -89,7 +97,7 @@ class _SignInBodyState extends State<SignInBody>
                       height: .8 * cts.maxHeight,
                       padding: EdgeInsets.all(cts.maxHeight * 0.025),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).backgroundColor,
+                        color: theme.colorScheme.background,
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20),
@@ -102,21 +110,21 @@ class _SignInBodyState extends State<SignInBody>
                             children: [
                               Text(
                                 l10n.signInLogInTitle,
-                                style: Theme.of(context).textTheme.titleLarge,
+                                style: style.titleLarge,
                               ),
-                              Card(
-                                color: AppColors.getShade(
-                                  AppColors.accentColorW,
+                              GestureDetector(
+                                onTap: () {},
+                                child: Icon(
+                                  FpbIcons.face_id,
+                                  color: Colors.white,
+                                  size: 0.075 * cts.maxWidth,
+                                ).card(
+                                  color: colors.secondaryContainer,
+                                  radius: cts.maxWidth * 0.02,
+                                  height: cts.maxHeight * 0.06,
+                                  width: cts.maxHeight * 0.06,
                                 ),
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    FpbIcons.face_id,
-                                    color: Colors.white,
-                                    size: cts.maxHeight * 0.028,
-                                  ),
-                                ),
-                              ),
+                              )
                             ],
                           ),
                           SizedBox(
@@ -128,7 +136,7 @@ class _SignInBodyState extends State<SignInBody>
                             ),
                             height: 0.06 * cts.maxHeight,
                             decoration: BoxDecoration(
-                              color: Theme.of(context).cardColor,
+                              color: theme.cardColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: TabBar(
@@ -203,27 +211,7 @@ class _SignInBodyState extends State<SignInBody>
                               ],
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              IconLogin(
-                                svg: SvgNames.google,
-                                onTap: () =>
-                                    context.read<GoogleSignInBloc>().add(
-                                          GoogleSignInEvent.signIn(),
-                                        ),
-                              ),
-                              IconLogin(
-                                svg: SvgNames.facebook,
-                                onTap: () {},
-                              ),
-                              IconLogin(
-                                svg: SvgNames.twitter,
-                                onTap: () {},
-                              ),
-                              IconLogin(svg: SvgNames.apple, onTap: () {}),
-                            ],
-                          ),
+                          AlternativeAuth(box: cts),
                           Padding(
                             padding: EdgeInsets.only(
                               top: cts.maxHeight * 0.001,
@@ -234,8 +222,7 @@ class _SignInBodyState extends State<SignInBody>
                               children: [
                                 Text(
                                   l10n.signInNotAMemberYetText,
-                                  style:
-                                      Theme.of(context).textTheme.titleMedium,
+                                  style: style.titleMedium,
                                 ),
                                 TextButton(
                                   onPressed: () {
@@ -243,33 +230,13 @@ class _SignInBodyState extends State<SignInBody>
                                   },
                                   child: Text(
                                     l10n.signInSignUpLabel,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleMedium
-                                        ?.copyWith(
-                                          color: Theme.of(context).primaryColor,
-                                        ),
+                                    style: style.titleMedium,
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                l10n.signInPolicyText,
-                                style: Theme.of(context).textTheme.labelMedium,
-                              ),
-                              SizedBox(
-                                width: cts.maxWidth * 0.003,
-                              ),
-                              Text(
-                                l10n.signInTermsOfUseLabel,
-                                style: Theme.of(context).textTheme.labelMedium,
-                              )
-                            ],
-                          ),
+                          TermsOfUse(box: cts),
                         ],
                       ),
                     ),
@@ -284,31 +251,34 @@ class _SignInBodyState extends State<SignInBody>
   }
 }
 
-class IconLogin extends StatelessWidget {
-  const IconLogin({
+class TermsOfUse extends StatelessWidget {
+  const TermsOfUse({
     super.key,
-    required this.svg,
-    this.onTap,
+    required this.box,
   });
 
-  final String svg;
-  final void Function()? onTap;
+  final BoxConstraints box;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: 75,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: Theme.of(context).cardColor,
+    final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          l10n.signInPolicyText,
+          style: style.bodySmall,
         ),
-      ),
-      child: IconButton(
-        onPressed: onTap,
-        icon: SvgPicture.asset(svg),
-      ),
+        SizedBox(
+          width: box.maxWidth * 0.009,
+        ),
+        Text(
+          l10n.signInTermsOfUseLabel,
+          style: style.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+        )
+      ],
     );
   }
 }
