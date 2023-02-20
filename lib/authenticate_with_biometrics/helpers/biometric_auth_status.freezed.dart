@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'biometric_auth_value.dart';
+part of 'biometric_auth_status.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,12 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$BiometricAuthValue {
+mixin _$BiometricAuthStatus {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function(String errorCode) authenticationError,
     required TResult Function() authenticating,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$BiometricAuthValue {
     TResult? Function()? initial,
     TResult? Function()? authenticated,
     TResult? Function()? unAuthenticated,
+    TResult? Function(String errorCode)? authenticationError,
     TResult? Function()? authenticating,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$BiometricAuthValue {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function(String errorCode)? authenticationError,
     TResult Function()? authenticating,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$BiometricAuthValue {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_AuthenticationError value) authenticationError,
     required TResult Function(_Authenticating value) authenticating,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$BiometricAuthValue {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_UnAuthenticated value)? unAuthenticated,
+    TResult? Function(_AuthenticationError value)? authenticationError,
     TResult? Function(_Authenticating value)? authenticating,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$BiometricAuthValue {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_AuthenticationError value)? authenticationError,
     TResult Function(_Authenticating value)? authenticating,
     required TResult orElse(),
   }) =>
@@ -69,16 +75,16 @@ mixin _$BiometricAuthValue {
 }
 
 /// @nodoc
-abstract class $BiometricAuthValueCopyWith<$Res> {
-  factory $BiometricAuthValueCopyWith(
-          BiometricAuthValue value, $Res Function(BiometricAuthValue) then) =
-      _$BiometricAuthValueCopyWithImpl<$Res, BiometricAuthValue>;
+abstract class $BiometricAuthStatusCopyWith<$Res> {
+  factory $BiometricAuthStatusCopyWith(
+          BiometricAuthStatus value, $Res Function(BiometricAuthStatus) then) =
+      _$BiometricAuthStatusCopyWithImpl<$Res, BiometricAuthStatus>;
 }
 
 /// @nodoc
-class _$BiometricAuthValueCopyWithImpl<$Res, $Val extends BiometricAuthValue>
-    implements $BiometricAuthValueCopyWith<$Res> {
-  _$BiometricAuthValueCopyWithImpl(this._value, this._then);
+class _$BiometricAuthStatusCopyWithImpl<$Res, $Val extends BiometricAuthStatus>
+    implements $BiometricAuthStatusCopyWith<$Res> {
+  _$BiometricAuthStatusCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +101,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$BiometricAuthValueCopyWithImpl<$Res, _$_Initial>
+    extends _$BiometricAuthStatusCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -108,7 +114,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'BiometricAuthValue.initial()';
+    return 'BiometricAuthStatus.initial()';
   }
 
   @override
@@ -126,6 +132,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function(String errorCode) authenticationError,
     required TResult Function() authenticating,
   }) {
     return initial();
@@ -137,6 +144,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? authenticated,
     TResult? Function()? unAuthenticated,
+    TResult? Function(String errorCode)? authenticationError,
     TResult? Function()? authenticating,
   }) {
     return initial?.call();
@@ -148,6 +156,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function(String errorCode)? authenticationError,
     TResult Function()? authenticating,
     required TResult orElse(),
   }) {
@@ -163,6 +172,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_AuthenticationError value) authenticationError,
     required TResult Function(_Authenticating value) authenticating,
   }) {
     return initial(this);
@@ -174,6 +184,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_UnAuthenticated value)? unAuthenticated,
+    TResult? Function(_AuthenticationError value)? authenticationError,
     TResult? Function(_Authenticating value)? authenticating,
   }) {
     return initial?.call(this);
@@ -185,6 +196,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_AuthenticationError value)? authenticationError,
     TResult Function(_Authenticating value)? authenticating,
     required TResult orElse(),
   }) {
@@ -195,7 +207,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements BiometricAuthValue {
+abstract class _Initial implements BiometricAuthStatus {
   const factory _Initial() = _$_Initial;
 }
 
@@ -208,7 +220,7 @@ abstract class _$$_AuthenticatedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_AuthenticatedCopyWithImpl<$Res>
-    extends _$BiometricAuthValueCopyWithImpl<$Res, _$_Authenticated>
+    extends _$BiometricAuthStatusCopyWithImpl<$Res, _$_Authenticated>
     implements _$$_AuthenticatedCopyWith<$Res> {
   __$$_AuthenticatedCopyWithImpl(
       _$_Authenticated _value, $Res Function(_$_Authenticated) _then)
@@ -222,7 +234,7 @@ class _$_Authenticated implements _Authenticated {
 
   @override
   String toString() {
-    return 'BiometricAuthValue.authenticated()';
+    return 'BiometricAuthStatus.authenticated()';
   }
 
   @override
@@ -240,6 +252,7 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function(String errorCode) authenticationError,
     required TResult Function() authenticating,
   }) {
     return authenticated();
@@ -251,6 +264,7 @@ class _$_Authenticated implements _Authenticated {
     TResult? Function()? initial,
     TResult? Function()? authenticated,
     TResult? Function()? unAuthenticated,
+    TResult? Function(String errorCode)? authenticationError,
     TResult? Function()? authenticating,
   }) {
     return authenticated?.call();
@@ -262,6 +276,7 @@ class _$_Authenticated implements _Authenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function(String errorCode)? authenticationError,
     TResult Function()? authenticating,
     required TResult orElse(),
   }) {
@@ -277,6 +292,7 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_AuthenticationError value) authenticationError,
     required TResult Function(_Authenticating value) authenticating,
   }) {
     return authenticated(this);
@@ -288,6 +304,7 @@ class _$_Authenticated implements _Authenticated {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_UnAuthenticated value)? unAuthenticated,
+    TResult? Function(_AuthenticationError value)? authenticationError,
     TResult? Function(_Authenticating value)? authenticating,
   }) {
     return authenticated?.call(this);
@@ -299,6 +316,7 @@ class _$_Authenticated implements _Authenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_AuthenticationError value)? authenticationError,
     TResult Function(_Authenticating value)? authenticating,
     required TResult orElse(),
   }) {
@@ -309,7 +327,7 @@ class _$_Authenticated implements _Authenticated {
   }
 }
 
-abstract class _Authenticated implements BiometricAuthValue {
+abstract class _Authenticated implements BiometricAuthStatus {
   const factory _Authenticated() = _$_Authenticated;
 }
 
@@ -322,7 +340,7 @@ abstract class _$$_UnAuthenticatedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnAuthenticatedCopyWithImpl<$Res>
-    extends _$BiometricAuthValueCopyWithImpl<$Res, _$_UnAuthenticated>
+    extends _$BiometricAuthStatusCopyWithImpl<$Res, _$_UnAuthenticated>
     implements _$$_UnAuthenticatedCopyWith<$Res> {
   __$$_UnAuthenticatedCopyWithImpl(
       _$_UnAuthenticated _value, $Res Function(_$_UnAuthenticated) _then)
@@ -336,7 +354,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
 
   @override
   String toString() {
-    return 'BiometricAuthValue.unAuthenticated()';
+    return 'BiometricAuthStatus.unAuthenticated()';
   }
 
   @override
@@ -354,6 +372,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function(String errorCode) authenticationError,
     required TResult Function() authenticating,
   }) {
     return unAuthenticated();
@@ -365,6 +384,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     TResult? Function()? initial,
     TResult? Function()? authenticated,
     TResult? Function()? unAuthenticated,
+    TResult? Function(String errorCode)? authenticationError,
     TResult? Function()? authenticating,
   }) {
     return unAuthenticated?.call();
@@ -376,6 +396,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function(String errorCode)? authenticationError,
     TResult Function()? authenticating,
     required TResult orElse(),
   }) {
@@ -391,6 +412,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_AuthenticationError value) authenticationError,
     required TResult Function(_Authenticating value) authenticating,
   }) {
     return unAuthenticated(this);
@@ -402,6 +424,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_UnAuthenticated value)? unAuthenticated,
+    TResult? Function(_AuthenticationError value)? authenticationError,
     TResult? Function(_Authenticating value)? authenticating,
   }) {
     return unAuthenticated?.call(this);
@@ -413,6 +436,7 @@ class _$_UnAuthenticated implements _UnAuthenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_AuthenticationError value)? authenticationError,
     TResult Function(_Authenticating value)? authenticating,
     required TResult orElse(),
   }) {
@@ -423,8 +447,162 @@ class _$_UnAuthenticated implements _UnAuthenticated {
   }
 }
 
-abstract class _UnAuthenticated implements BiometricAuthValue {
+abstract class _UnAuthenticated implements BiometricAuthStatus {
   const factory _UnAuthenticated() = _$_UnAuthenticated;
+}
+
+/// @nodoc
+abstract class _$$_AuthenticationErrorCopyWith<$Res> {
+  factory _$$_AuthenticationErrorCopyWith(_$_AuthenticationError value,
+          $Res Function(_$_AuthenticationError) then) =
+      __$$_AuthenticationErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorCode});
+}
+
+/// @nodoc
+class __$$_AuthenticationErrorCopyWithImpl<$Res>
+    extends _$BiometricAuthStatusCopyWithImpl<$Res, _$_AuthenticationError>
+    implements _$$_AuthenticationErrorCopyWith<$Res> {
+  __$$_AuthenticationErrorCopyWithImpl(_$_AuthenticationError _value,
+      $Res Function(_$_AuthenticationError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorCode = null,
+  }) {
+    return _then(_$_AuthenticationError(
+      errorCode: null == errorCode
+          ? _value.errorCode
+          : errorCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AuthenticationError implements _AuthenticationError {
+  const _$_AuthenticationError({required this.errorCode});
+
+  @override
+  final String errorCode;
+
+  @override
+  String toString() {
+    return 'BiometricAuthStatus.authenticationError(errorCode: $errorCode)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AuthenticationError &&
+            (identical(other.errorCode, errorCode) ||
+                other.errorCode == errorCode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorCode);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AuthenticationErrorCopyWith<_$_AuthenticationError> get copyWith =>
+      __$$_AuthenticationErrorCopyWithImpl<_$_AuthenticationError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() unAuthenticated,
+    required TResult Function(String errorCode) authenticationError,
+    required TResult Function() authenticating,
+  }) {
+    return authenticationError(errorCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? unAuthenticated,
+    TResult? Function(String errorCode)? authenticationError,
+    TResult? Function()? authenticating,
+  }) {
+    return authenticationError?.call(errorCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unAuthenticated,
+    TResult Function(String errorCode)? authenticationError,
+    TResult Function()? authenticating,
+    required TResult orElse(),
+  }) {
+    if (authenticationError != null) {
+      return authenticationError(errorCode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_AuthenticationError value) authenticationError,
+    required TResult Function(_Authenticating value) authenticating,
+  }) {
+    return authenticationError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Authenticated value)? authenticated,
+    TResult? Function(_UnAuthenticated value)? unAuthenticated,
+    TResult? Function(_AuthenticationError value)? authenticationError,
+    TResult? Function(_Authenticating value)? authenticating,
+  }) {
+    return authenticationError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_AuthenticationError value)? authenticationError,
+    TResult Function(_Authenticating value)? authenticating,
+    required TResult orElse(),
+  }) {
+    if (authenticationError != null) {
+      return authenticationError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthenticationError implements BiometricAuthStatus {
+  const factory _AuthenticationError({required final String errorCode}) =
+      _$_AuthenticationError;
+
+  String get errorCode;
+  @JsonKey(ignore: true)
+  _$$_AuthenticationErrorCopyWith<_$_AuthenticationError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -436,7 +614,7 @@ abstract class _$$_AuthenticatingCopyWith<$Res> {
 
 /// @nodoc
 class __$$_AuthenticatingCopyWithImpl<$Res>
-    extends _$BiometricAuthValueCopyWithImpl<$Res, _$_Authenticating>
+    extends _$BiometricAuthStatusCopyWithImpl<$Res, _$_Authenticating>
     implements _$$_AuthenticatingCopyWith<$Res> {
   __$$_AuthenticatingCopyWithImpl(
       _$_Authenticating _value, $Res Function(_$_Authenticating) _then)
@@ -450,7 +628,7 @@ class _$_Authenticating implements _Authenticating {
 
   @override
   String toString() {
-    return 'BiometricAuthValue.authenticating()';
+    return 'BiometricAuthStatus.authenticating()';
   }
 
   @override
@@ -468,6 +646,7 @@ class _$_Authenticating implements _Authenticating {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function(String errorCode) authenticationError,
     required TResult Function() authenticating,
   }) {
     return authenticating();
@@ -479,6 +658,7 @@ class _$_Authenticating implements _Authenticating {
     TResult? Function()? initial,
     TResult? Function()? authenticated,
     TResult? Function()? unAuthenticated,
+    TResult? Function(String errorCode)? authenticationError,
     TResult? Function()? authenticating,
   }) {
     return authenticating?.call();
@@ -490,6 +670,7 @@ class _$_Authenticating implements _Authenticating {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function(String errorCode)? authenticationError,
     TResult Function()? authenticating,
     required TResult orElse(),
   }) {
@@ -505,6 +686,7 @@ class _$_Authenticating implements _Authenticating {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_AuthenticationError value) authenticationError,
     required TResult Function(_Authenticating value) authenticating,
   }) {
     return authenticating(this);
@@ -516,6 +698,7 @@ class _$_Authenticating implements _Authenticating {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Authenticated value)? authenticated,
     TResult? Function(_UnAuthenticated value)? unAuthenticated,
+    TResult? Function(_AuthenticationError value)? authenticationError,
     TResult? Function(_Authenticating value)? authenticating,
   }) {
     return authenticating?.call(this);
@@ -527,6 +710,7 @@ class _$_Authenticating implements _Authenticating {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_AuthenticationError value)? authenticationError,
     TResult Function(_Authenticating value)? authenticating,
     required TResult orElse(),
   }) {
@@ -537,6 +721,6 @@ class _$_Authenticating implements _Authenticating {
   }
 }
 
-abstract class _Authenticating implements BiometricAuthValue {
+abstract class _Authenticating implements BiometricAuthStatus {
   const factory _Authenticating() = _$_Authenticating;
 }

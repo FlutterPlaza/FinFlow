@@ -407,7 +407,7 @@ abstract class _CancelAuthentication implements BiometricAuthEvent {
 /// @nodoc
 mixin _$BiometricAuthState {
   bool get canAuthenticate => throw _privateConstructorUsedError;
-  BiometricAuthValue get value => throw _privateConstructorUsedError;
+  BiometricAuthStatus get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BiometricAuthStateCopyWith<BiometricAuthState> get copyWith =>
@@ -420,9 +420,9 @@ abstract class $BiometricAuthStateCopyWith<$Res> {
           BiometricAuthState value, $Res Function(BiometricAuthState) then) =
       _$BiometricAuthStateCopyWithImpl<$Res, BiometricAuthState>;
   @useResult
-  $Res call({bool canAuthenticate, BiometricAuthValue value});
+  $Res call({bool canAuthenticate, BiometricAuthStatus status});
 
-  $BiometricAuthValueCopyWith<$Res> get value;
+  $BiometricAuthStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -439,25 +439,25 @@ class _$BiometricAuthStateCopyWithImpl<$Res, $Val extends BiometricAuthState>
   @override
   $Res call({
     Object? canAuthenticate = null,
-    Object? value = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       canAuthenticate: null == canAuthenticate
           ? _value.canAuthenticate
           : canAuthenticate // ignore: cast_nullable_to_non_nullable
               as bool,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as BiometricAuthValue,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as BiometricAuthStatus,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $BiometricAuthValueCopyWith<$Res> get value {
-    return $BiometricAuthValueCopyWith<$Res>(_value.value, (value) {
-      return _then(_value.copyWith(value: value) as $Val);
+  $BiometricAuthStatusCopyWith<$Res> get status {
+    return $BiometricAuthStatusCopyWith<$Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
     });
   }
 }
@@ -470,10 +470,10 @@ abstract class _$$_BiometricAuthStateCopyWith<$Res>
       __$$_BiometricAuthStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool canAuthenticate, BiometricAuthValue value});
+  $Res call({bool canAuthenticate, BiometricAuthStatus status});
 
   @override
-  $BiometricAuthValueCopyWith<$Res> get value;
+  $BiometricAuthStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -488,17 +488,17 @@ class __$$_BiometricAuthStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? canAuthenticate = null,
-    Object? value = null,
+    Object? status = null,
   }) {
     return _then(_$_BiometricAuthState(
       canAuthenticate: null == canAuthenticate
           ? _value.canAuthenticate
           : canAuthenticate // ignore: cast_nullable_to_non_nullable
               as bool,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as BiometricAuthValue,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as BiometricAuthStatus,
     ));
   }
 }
@@ -508,7 +508,7 @@ class __$$_BiometricAuthStateCopyWithImpl<$Res>
 class _$_BiometricAuthState extends _BiometricAuthState {
   const _$_BiometricAuthState(
       {this.canAuthenticate = false,
-      this.value = const BiometricAuthValue.initial()})
+      this.status = const BiometricAuthStatus.initial()})
       : super._();
 
   @override
@@ -516,11 +516,11 @@ class _$_BiometricAuthState extends _BiometricAuthState {
   final bool canAuthenticate;
   @override
   @JsonKey()
-  final BiometricAuthValue value;
+  final BiometricAuthStatus status;
 
   @override
   String toString() {
-    return 'BiometricAuthState(canAuthenticate: $canAuthenticate, value: $value)';
+    return 'BiometricAuthState(canAuthenticate: $canAuthenticate, status: $status)';
   }
 
   @override
@@ -530,11 +530,11 @@ class _$_BiometricAuthState extends _BiometricAuthState {
             other is _$_BiometricAuthState &&
             (identical(other.canAuthenticate, canAuthenticate) ||
                 other.canAuthenticate == canAuthenticate) &&
-            (identical(other.value, value) || other.value == value));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, canAuthenticate, value);
+  int get hashCode => Object.hash(runtimeType, canAuthenticate, status);
 
   @JsonKey(ignore: true)
   @override
@@ -547,13 +547,13 @@ class _$_BiometricAuthState extends _BiometricAuthState {
 abstract class _BiometricAuthState extends BiometricAuthState {
   const factory _BiometricAuthState(
       {final bool canAuthenticate,
-      final BiometricAuthValue value}) = _$_BiometricAuthState;
+      final BiometricAuthStatus status}) = _$_BiometricAuthState;
   const _BiometricAuthState._() : super._();
 
   @override
   bool get canAuthenticate;
   @override
-  BiometricAuthValue get value;
+  BiometricAuthStatus get status;
   @override
   @JsonKey(ignore: true)
   _$$_BiometricAuthStateCopyWith<_$_BiometricAuthState> get copyWith =>

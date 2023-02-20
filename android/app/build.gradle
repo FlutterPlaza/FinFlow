@@ -129,9 +129,3 @@ dependencies {
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 }
-
-configurations {
-    all {
-        exclude group: 'androidx.lifecycle', module: 'lifecycle-viewmodel-ktx'
-    }
-}

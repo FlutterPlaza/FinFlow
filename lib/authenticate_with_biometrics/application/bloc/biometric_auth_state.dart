@@ -5,6 +5,6 @@ class BiometricAuthState with _$BiometricAuthState {
   const BiometricAuthState._();
   const factory BiometricAuthState({
     @Default(false) bool canAuthenticate,
-    @Default(BiometricAuthValue.initial()) BiometricAuthValue value,
+    @Default(BiometricAuthStatus.initial()) BiometricAuthStatus status,
   }) = _BiometricAuthState;
 }

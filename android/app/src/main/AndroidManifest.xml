@@ -5,6 +5,8 @@
    <application
         android:label="${appName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- Note that local_auth (for biometric authentication) plugin requires the use of a FragmentActivity as opposed to Activity
+        This permits the support of older android versions -->
         <activity
             android:name="io.flutter.embedding.android.FlutterFragmentActivity"
             android:exported="true"
