@@ -38,9 +38,11 @@ class SplashScreen extends StatelessWidget {
               unauthenticated: (_) {
                 context.router.popUntil((route) => route.isFirst);
                 if (cached.firstTimeUser) {
+                  cached.firstTimeUser = false;
                   context.router.push(OnboardingRoute());
+                } else {
+                  context.router.push(SignInRoute());
                 }
-                context.router.push(SignInRoute());
               },
             );
           },

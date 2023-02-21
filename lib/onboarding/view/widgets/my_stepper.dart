@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 
 /// Stepper(index: p, length: q)  p >= 0 , q > 1 && p < q
 /// ```dart
@@ -49,8 +48,8 @@ class StepBar extends StatelessWidget {
         child: Container(
           height: cts.maxWidth * 0.027,
           width: cts.maxWidth * 0.08,
-          decoration: const BoxDecoration(
-            color: Colors.black,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.secondary,
             borderRadius: BorderRadius.all(Radius.circular(5)),
           ),
         ),
@@ -75,7 +74,7 @@ class StepDot extends StatelessWidget {
         height: cts.maxWidth * 0.027,
         width: cts.maxWidth * 0.027,
         decoration: BoxDecoration(
-          color: AppColors.cardColorW,
+          color: Theme.of(context).colorScheme.onSurface,
           borderRadius: const BorderRadius.all(Radius.circular(5)),
         ),
       ),

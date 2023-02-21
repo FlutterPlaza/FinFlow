@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
-import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/home/application/home_view_bloc/home_view_bloc.dart';
 import 'package:fpb/home/view/home_container.dart';
 import 'package:fpb/home/view/widgets/bottom_nav_bar.dart';
@@ -65,7 +64,7 @@ class _HomeBodyState extends State<HomeBody> {
       },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: AppColors.cardColorW,
+        // backgroundColor: AppColors.onSurfaceW,
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints box) {
             return Column(

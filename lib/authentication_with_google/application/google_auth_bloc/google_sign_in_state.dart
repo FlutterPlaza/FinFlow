@@ -1,3 +1,5 @@
+// ignore_for_file: inference_failure_on_instance_creation
+
 part of 'google_sign_in_bloc.dart';
 
 @freezed
