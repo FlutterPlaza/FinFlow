@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
+import 'package:fpb/core/presentation/extension/extensions.dart';
 
 class FpbTextFormField extends StatefulWidget {
   const FpbTextFormField({
@@ -12,6 +13,7 @@ class FpbTextFormField extends StatefulWidget {
     this.isPassword = false,
     this.onChanged,
     this.errorText,
+    required this.box,
   });
 
   final String label;
@@ -22,6 +24,7 @@ class FpbTextFormField extends StatefulWidget {
   final FocusNode? node;
   final void Function(String)? onChanged;
   final String? errorText;
+  final BoxConstraints box;
 
   @override
   State<FpbTextFormField> createState() => _FpbTextFormFieldState();
@@ -44,10 +47,7 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
       children: [
         Text(
           widget.label,
-          style: textTheme.titleLarge,
-        ),
-        const SizedBox(
-          height: 8,
+          style: textTheme.titleSmall,
         ),
         TextFormField(
           controller: widget.textController,
@@ -59,15 +59,15 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                   : TextInputType.none,
           onChanged: widget.onChanged,
           obscureText: hidePassword ?? false,
+          style: textTheme.bodyMedium,
           decoration: InputDecoration(
-            // suffixIconColor:
             errorText: widget.errorText,
-
             suffixIcon: !widget.isPassword
                 ? null
                 : hidePassword!
                     ? Padding(
-                        padding: const EdgeInsets.only(right: 10),
+                        padding:
+                            EdgeInsets.only(right: widget.box.maxWidth * 0.05),
                         child: IconButton(
                           onPressed: () {
                             setState(() {
@@ -83,7 +83,8 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                         ),
                       )
                     : Padding(
-                        padding: const EdgeInsets.only(right: 10),
+                        padding:
+                            EdgeInsets.only(right: widget.box.maxWidth * 0.05),
                         child: IconButton(
                           onPressed: () {
                             setState(() {
@@ -92,7 +93,6 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                           },
                           icon: const Icon(
                             FpbIcons.eye_open,
-                            size: 17,
                           ),
                           color: widget.node != null
                               ? widget.node!.hasFocus
@@ -103,9 +103,11 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                       ),
             hintText: widget.hint,
           ),
-        ),
-        const SizedBox(
-          height: 16,
+        ).card(
+          height: widget.box.maxHeight * 0.11,
+          padding: EdgeInsets.symmetric(
+            vertical: widget.box.maxHeight * 0.007,
+          ),
         ),
       ],
     );

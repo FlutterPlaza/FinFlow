@@ -14,13 +14,28 @@ mixin SvgPictureX {
 }
 
 extension ContainerX on Widget {
-  Container card(
-      {double? radius, Color? color, double? height, double? width}) {
-    return Container(
+  AnimatedContainer card(
+      {double? radius,
+      Color? color,
+      double? height,
+      EdgeInsets? padding,
+      EdgeInsets? margin,
+      Duration ? animation,
+      double? width,
+      double? radiusTop}) {
+    return AnimatedContainer(
+      duration: animation?? Duration(milliseconds: 300),
       height: height,
       width: width,
+      padding: padding,
+      margin: margin,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius ?? 0), color: color),
+          borderRadius: radiusTop != null
+              ? BorderRadius.only(
+                  topLeft: Radius.circular(radiusTop),
+                  topRight: Radius.circular(radiusTop))
+              : BorderRadius.circular(radius ?? 0),
+          color: color),
       child: this,
     );
   }

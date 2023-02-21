@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/authentication_mock_without_backend/application/bloc/authentication_bloc.dart';
 import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
 import 'package:fpb/core/application/internet_and_time_bloc/internet_and_time_bloc.dart';
-import 'package:fpb/core/presentation/theming/theme.dart';
+import 'package:fpb/core/presentation/theming/themes.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/router/app_route.gr.dart';

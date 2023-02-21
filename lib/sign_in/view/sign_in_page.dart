@@ -8,6 +8,7 @@ import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
 import 'package:fpb/core/presentation/extension/extensions.dart';
+import 'package:fpb/core/shared/helpers/is_keyboard_visible.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
@@ -83,162 +84,137 @@ class _SignInBodyState extends State<SignInBody>
               resizeToAvoidBottomInset: false,
               body: Stack(
                 children: [
-                  Positioned(
-                    top: -.035 * cts.maxHeight,
-                    child: SvgPicture.asset(
-                      SvgNames.authBackground,
-                      width: cts.maxWidth,
-                      height: 0.4 * cts.maxHeight,
-                    ),
+                  BubblesTopBackGround(
+                    cts: cts,
+                    svgName: SvgNames.authBackground,
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,
-                    child: Container(
-                      height: .8 * cts.maxHeight,
-                      padding: EdgeInsets.all(cts.maxHeight * 0.025),
-                      decoration: BoxDecoration(
-                        color: theme.colorScheme.background,
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            PageTitle(
+                              title: l10n.signInLogInTitle,
+                              box: cts,
+                            ),
+                            FaceIDIcon(
+                              cts: cts,
+                            )
+                          ],
                         ),
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                l10n.signInLogInTitle,
-                                style: style.titleLarge,
+                        SizedBox(
+                          height: 0.015 * cts.maxHeight,
+                        ),
+                        TabBar(
+                          padding: EdgeInsets.all(cts.maxHeight * 0.008),
+                          controller: tabController,
+                          onTap: (_) {
+                            setState(() {
+                              tabController.index = _;
+                            });
+                          },
+                          tabs: [
+                            Tab(
+                              child: Text(
+                                l10n.signInEmailLogInLabel,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                               ),
-                              GestureDetector(
-                                onTap: () {},
-                                child: Icon(
-                                  FpbIcons.face_id,
-                                  color: Colors.white,
-                                  size: 0.075 * cts.maxWidth,
-                                ).card(
-                                  color: colors.secondaryContainer,
-                                  radius: cts.maxWidth * 0.02,
-                                  height: cts.maxHeight * 0.06,
-                                  width: cts.maxHeight * 0.06,
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 0.001 * cts.maxHeight,
-                          ),
-                          Container(
-                            margin: EdgeInsets.symmetric(
-                              vertical: cts.maxHeight * 0.008,
                             ),
-                            height: 0.06 * cts.maxHeight,
-                            decoration: BoxDecoration(
-                              color: theme.cardColor,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: TabBar(
-                              padding: EdgeInsets.all(cts.maxHeight * 0.008),
+                            Tab(
+                              child: Text(
+                                l10n.signInPhoneNumberLogInLabel,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            )
+                          ],
+                        ).card(
+                          color: theme.cardColor,
+                          margin: EdgeInsets.symmetric(
+                              vertical: cts.maxHeight * 0.008),
+                          radius: cts.maxWidth * 0.02,
+                          height: cts.maxHeight * 0.07,
+                        ),
+                        SizedBox(
+                          height: 0.011 * cts.maxHeight,
+                        ),
+                        Flexible(
+                          child: Form(
+                            child: TabBarView(
+                              physics: const BouncingScrollPhysics(),
                               controller: tabController,
-                              onTap: (_) {
-                                setState(() {
-                                  tabController.index = _;
-                                });
-                              },
-                              tabs: [
-                                Tab(
-                                  child: Text(
-                                    l10n.signInEmailLogInLabel,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                                Tab(
-                                  child: Text(
-                                    l10n.signInPhoneNumberLogInLabel,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 0.011 * cts.maxHeight,
-                          ),
-                          Flexible(
-                            child: Form(
-                              child: SizedBox(
-                                height: 0.4 * cts.maxHeight,
-                                child: TabBarView(
-                                  physics: const BouncingScrollPhysics(),
-                                  controller: tabController,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        const EmailInput(),
-                                        const PasswordInput(),
-                                        Text(l10n.signInForgotPasswordText),
-                                      ],
-                                    ),
-                                    Container(),
+                                    EmailInput(box: cts),
+                                    PasswordInput(box: cts),
+                                    Text(l10n.signInForgotPasswordText),
                                   ],
                                 ),
-                              ),
-                            ),
-                          ),
-                          const LoginButton(),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: cts.maxHeight * 0.012,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                const Expanded(child: Divider()),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: cts.maxWidth * 0.015,
-                                  ),
-                                  child: Text(l10n.signInorLogInWithText),
-                                ),
-                                const Expanded(child: Divider())
+                                Container(),
                               ],
                             ),
                           ),
-                          AlternativeAuth(box: cts),
-                          Padding(
-                            padding: EdgeInsets.only(
-                              top: cts.maxHeight * 0.001,
-                              bottom: cts.maxHeight * 0.0001,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  l10n.signInNotAMemberYetText,
+                        ),
+                        const LoginButton(),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: cts.maxHeight * 0.012,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              const Expanded(child: Divider()),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: cts.maxWidth * 0.015,
+                                ),
+                                child: Text(l10n.signInOrLogInWithText),
+                              ),
+                              const Expanded(child: Divider())
+                            ],
+                          ),
+                        ),
+                        AlternativeAuth(box: cts),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: cts.maxHeight * 0.001,
+                            bottom: cts.maxHeight * 0.0001,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                l10n.signInNotAMemberYetText,
+                                style: style.labelMedium,
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  context.router.push(SignUpRoute());
+                                },
+                                child: Text(
+                                  l10n.signInSignUpLabel,
                                   style: style.titleMedium,
                                 ),
-                                TextButton(
-                                  onPressed: () {
-                                    context.router.push(SignUpRoute());
-                                  },
-                                  child: Text(
-                                    l10n.signInSignUpLabel,
-                                    style: style.titleMedium,
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                          TermsOfUse(box: cts),
-                        ],
-                      ),
+                        ),
+                        TermsOfUse(box: cts),
+                        if (isKeyboardVisible(context))
+                          SizedBox(height: 0.1 * cts.maxHeight),
+                      ],
+                    ).card(
+                      height:  (isKeyboardVisible(context) ? .95 : .8) *
+                          cts.maxHeight,
+                      radiusTop: cts.maxWidth * 0.05,
+                      color: theme.colorScheme.background,
+                      padding: EdgeInsets.all(cts.maxHeight * 0.025),
                     ),
                   )
                 ],
@@ -247,6 +223,73 @@ class _SignInBodyState extends State<SignInBody>
           },
         );
       },
+    );
+  }
+}
+
+class FaceIDIcon extends StatelessWidget {
+  const FaceIDIcon({
+    super.key,
+    required this.cts,
+  });
+
+  final BoxConstraints cts;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Icon(
+        FpbIcons.face_id,
+        color: Colors.white,
+        size: 0.074 * cts.maxWidth,
+      ).card(
+        color: Theme.of(context).colorScheme.secondaryContainer,
+        radius: cts.maxWidth * 0.02,
+        height: cts.maxHeight * 0.06,
+        width: cts.maxHeight * 0.06,
+      ),
+    );
+  }
+}
+
+class PageTitle extends StatelessWidget {
+  const PageTitle({
+    super.key,
+    required this.title,
+    required this.box,
+  });
+  final String title;
+  final BoxConstraints box;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+          fontSize: box.maxWidth * 0.085, fontWeight: FontWeight.w700),
+    );
+  }
+}
+
+class BubblesTopBackGround extends StatelessWidget {
+  const BubblesTopBackGround({
+    super.key,
+    required this.cts,
+    required this.svgName,
+  });
+  final BoxConstraints cts;
+  final String svgName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: -.035 * cts.maxHeight,
+      child: SvgPicture.asset(
+        svgName,
+        width: cts.maxWidth,
+        height: 0.4 * cts.maxHeight,
+      ),
     );
   }
 }

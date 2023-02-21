@@ -8,11 +8,12 @@ class EmailInput extends StatelessWidget {
   const EmailInput({
     super.key,
     this.node,
-    this.textController,
+    this.textController, required this.box,
   });
 
   final FocusNode? node;
   final TextEditingController? textController;
+  final BoxConstraints box;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class EmailInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) => FpbTextFormField(
         key: const Key('Email_password_form_emailInput_textField'),
+        box: box,
         label: l10n.signInEmailTextFieldLabel,
         hint: l10n.signInEmailTextFieldHintText,
         node: node,

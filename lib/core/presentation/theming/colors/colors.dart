@@ -1,4 +1,4 @@
-part of 'package:fpb/core/presentation/theming/themes/parts.dart';
+part of 'package:fpb/core/presentation/theming/themes/theme.dart';
 
 class _AppColors {
   static Color primaryColorW = const Color(0xff48A2DF);

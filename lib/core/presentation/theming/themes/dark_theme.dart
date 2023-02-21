@@ -1,2 +1,2 @@
-part of 'parts.dart';
+part of 'theme.dart';
 

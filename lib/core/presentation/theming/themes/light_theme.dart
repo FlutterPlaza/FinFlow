@@ -1,12 +1,13 @@
-part of 'parts.dart';
+part of 'theme.dart';
 
-const borderRaduis = 0.032;
+const borderRaduis = 0.025;
 
 @WidgetbookTheme(name: 'Light', isDefault: true)
 ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
   final theme = Theme.of(context);
   final style = theme.textTheme;
   final colors = theme.colorScheme;
+
   return ThemeData(
     colorScheme: ColorScheme.light(
       primary: _AppColors.primaryColorW,
@@ -95,6 +96,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
         borderRadius: BorderRadius.circular(cts.maxWidth * borderRaduis),
       ),
     ),
+
     inputDecorationTheme: InputDecorationTheme(
       focusColor: Colors.red,
       labelStyle: style.bodySmall,
@@ -122,6 +124,8 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
         ),
       ),
       errorMaxLines: 1,
+      contentPadding: EdgeInsets.symmetric(
+          horizontal: cts.maxWidth * 0.035, vertical: cts.maxWidth * 0.05),
     ),
     scaffoldBackgroundColor: _AppColors.bgColorW,
     tabBarTheme: TabBarTheme(
@@ -130,11 +134,13 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       unselectedLabelColor: theme.colorScheme.onSurface,
       labelColor: theme.colorScheme.onBackground,
       indicator: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(cts.maxWidth * 0.01)),
+        borderRadius:
+            BorderRadius.all(Radius.circular(cts.maxWidth * borderRaduis)),
         color: theme.shadowColor,
       ),
       indicatorSize: TabBarIndicatorSize.tab,
     ),
+
     iconTheme: IconThemeData(
       color: theme.colorScheme.onSurface,
       size: cts.maxWidth * 0.05,

@@ -192,6 +192,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                                           .signUpFullNameTextFielLabel,
                                                       hint: l10n
                                                           .signUpFullNameTextFielHintText,
+                                                      box: box,
                                                     ),
                                                     FpbTextFormField(
                                                       label: l10n
@@ -199,6 +200,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                                       hint: l10n
                                                           .signInEmailTextFieldHintText,
                                                       isEmail: true,
+                                                      box: box,
                                                     ),
                                                     FpbTextFormField(
                                                       label: l10n
@@ -206,6 +208,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                                       hint: l10n
                                                           .signInPasswordFieldHintText,
                                                       isPassword: true,
+                                                      box: box,
                                                     ),
                                                   ],
                                                 ),
