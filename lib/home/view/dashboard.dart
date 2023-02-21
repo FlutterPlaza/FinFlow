@@ -5,7 +5,6 @@ import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
-import 'package:fpb/core/shared/presentation/theming/theming.dart';
 import 'package:fpb/home/view/widgets/activity_card.dart';
 import 'package:fpb/home/view/widgets/four_dot.dart';
 import 'package:fpb/l10n/l10n.dart';
@@ -59,7 +58,7 @@ class DashBoard extends StatelessWidget {
                       Icon(
                         FpbIcons.eye_open,
                         size: 20,
-                        color: AppColors.secondaryColorW,
+                        // color: _AppColors.secondaryColorW,
                       ),
                       SizedBox(
                         width: box.maxWidth * 0.03,
@@ -80,7 +79,7 @@ class DashBoard extends StatelessWidget {
                       Icon(
                         FpbIcons.notification,
                         size: 20,
-                        color: AppColors.secondaryColorW,
+                        // color: _AppColors.secondaryColorW,
                       ),
                     ],
                   )
@@ -196,7 +195,7 @@ class DashBoard extends StatelessWidget {
                                         .textTheme
                                         .displayMedium
                                         ?.copyWith(
-                                          color: AppColors.primaryColorW,
+                                          // color: _AppColors.primaryColorW,
                                           //fontWeight: FontWeight.bold,
                                           fontSize: 12,
                                           fontFamily: 'open sans',
@@ -239,7 +238,7 @@ class DashBoard extends StatelessWidget {
                                         .textTheme
                                         .displaySmall
                                         ?.copyWith(
-                                          color: AppColors.primaryColorW,
+                                          // color: _AppColors.primaryColorW,
                                           //fontWeight: FontWeight.bold,
                                           fontSize: 12,
                                         ),
@@ -304,26 +303,26 @@ class DashBoard extends StatelessWidget {
                                       .textTheme
                                       .titleLarge
                                       ?.copyWith(
-                                        color: AppColors.cardColorW,
+                                        // color: _AppColors.onSurfaceW,
                                       ),
                                 ),
                                 Row(
                                   children: [
                                     Image.asset(
                                       'assets/fpb-assets/visa_v_icon.png',
-                                      color: AppColors.cardColorW,
+                                      // color: _AppColors.onSurfaceW,
                                     ),
                                     Image.asset(
                                       'assets/fpb-assets/visa_i_icon.png',
-                                      color: AppColors.cardColorW,
+                                      // color: _AppColors.onSurfaceW,
                                     ),
                                     Image.asset(
                                       'assets/fpb-assets/visa_s_icon.png',
-                                      color: AppColors.cardColorW,
+                                      // color: _AppColors.onSurfaceW,
                                     ),
                                     Image.asset(
                                       'assets/fpb-assets/visa_a_icon.png',
-                                      color: AppColors.cardColorW,
+                                      // color: _AppColors.onSurfaceW,
                                     ),
                                   ],
                                 ),
@@ -338,7 +337,7 @@ class DashBoard extends StatelessWidget {
                                   .textTheme
                                   .labelMedium
                                   ?.copyWith(
-                                    color: AppColors.cardColorW,
+                                    // color: _AppColors.onSurfaceW,
                                   ),
                             ),
                             SizedBox(
@@ -359,7 +358,7 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .titleMedium
                                           ?.copyWith(
-                                            color: AppColors.cardColorW,
+                                            // color: _AppColors.onSurfaceW,
                                           ),
                                     ),
                                   ],
@@ -378,7 +377,7 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .labelMedium
                                           ?.copyWith(
-                                            color: AppColors.cardColorW,
+                                            // color: _AppColors.onSurfaceW,
                                           ),
                                     ),
                                     Text(
@@ -387,7 +386,7 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .labelMedium
                                           ?.copyWith(
-                                            color: AppColors.cardColorW,
+                                            // color: _AppColors.onSurfaceW,
                                           ),
                                     ),
                                     const Text('        '),
@@ -407,7 +406,7 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .titleSmall
                                           ?.copyWith(
-                                            color: AppColors.cardColorW,
+                                            // color: _AppColors.onSurfaceW,
                                           ),
                                     ),
                                     Text(
@@ -416,13 +415,13 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .titleSmall
                                           ?.copyWith(
-                                            color: AppColors.cardColorW,
+                                            // color: _AppColors.onSurfaceW,
                                           ),
                                     ),
                                     const Text('             '),
                                     Icon(
                                       FpbIcons.eye_open,
-                                      color: AppColors.cardColorW,
+                                      // color: _AppColors.onSurfaceW,
                                       size: 18,
                                     )
                                   ],

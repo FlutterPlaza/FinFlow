@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:fpb/authentication_with_google/domain/i_google_repository_facade.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/failures/auth_failure.dart';
