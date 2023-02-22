@@ -20,11 +20,11 @@ extension ContainerX on Widget {
       double? height,
       EdgeInsets? padding,
       EdgeInsets? margin,
-      Duration ? animation,
+      Duration? animation,
       double? width,
       double? radiusTop}) {
     return AnimatedContainer(
-      duration: animation?? Duration(milliseconds: 300),
+      duration: animation ?? Duration(milliseconds: 300),
       height: height,
       width: width,
       padding: padding,
