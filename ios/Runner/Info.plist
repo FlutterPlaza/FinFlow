@@ -29,6 +29,7 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<!-- Facebook Configurations Starts -->
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -49,6 +50,23 @@
 		<string>fbapi</string>
 		<string>fb-messenger-share-api</string>
 	</array>
+	<!-- Facebook Configurations Ends -->
+	<!-- Twitter Configurations Starts -->
+	<key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string></string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <!-- Registered Callback URLs in TwitterApp -->
+          <string>example</string>
+        </array>
+      </dict>
+    </array>
+    <!-- Facebook Configurations Ends -->
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

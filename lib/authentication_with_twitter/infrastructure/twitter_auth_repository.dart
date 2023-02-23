@@ -3,32 +3,39 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:flutter/services.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:fpb/authentication_with_facebook/domain/i_facebook_repository_facade.dart';
+import 'package:fpb/authentication_with_twitter/domain/i_twitter_repository_facade.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/failures/auth_failure.dart';
 import 'package:fpb/core/infrastructure/user.dto.dart';
 import 'package:injectable/injectable.dart';
+import 'package:twitter_login/twitter_login.dart';
 
-@LazySingleton(as: IFacebookRepositoryFacade)
-class FacebookAuthenticationRepository implements IFacebookRepositoryFacade {
-  final FacebookAuth _facebookAuth;
+@LazySingleton(as: ITwitterRepositoryFacade)
+class TwitterAuthenticationRepository implements ITwitterRepositoryFacade {
   final FirebaseAuth _firebaseAuth;
 
-  FacebookAuthenticationRepository(this._facebookAuth, this._firebaseAuth);
+  TwitterAuthenticationRepository(this._firebaseAuth);
 
   @override
-  Future<Either<AuthFailure, User>> signInWithFacebook() async {
+  Future<Either<AuthFailure, User>> signInWithTwitter() async {
     try {
+      // Create a TwitterLogin instance
+      final twitterLogin = new TwitterLogin(
+          apiKey: '<your consumer key>',
+          apiSecretKey: ' <your consumer secret>',
+          redirectURI: '<your_scheme>://');
+
       // Trigger the sign-in flow
-      final LoginResult loginResult = await FacebookAuth.instance.login();
+      final authResult = await twitterLogin.login();
 
       // Create a credential from the access token
-      final OAuthCredential facebookAuthCredential =
-          FacebookAuthProvider.credential(loginResult.accessToken!.token);
+      final twitterAuthCredential = TwitterAuthProvider.credential(
+        accessToken: authResult.authToken!,
+        secret: authResult.authTokenSecret!,
+      );
 
       final userCredential =
-          await _firebaseAuth.signInWithCredential(facebookAuthCredential);
+          await _firebaseAuth.signInWithCredential(twitterAuthCredential);
 
       final user = userCredential.user;
 
@@ -53,7 +60,7 @@ class FacebookAuthenticationRepository implements IFacebookRepositoryFacade {
     try {
       await Future.wait([
         _firebaseAuth.signOut(),
-        _facebookAuth.logOut(),
+        // _facebookAuth.logOut(),
       ]);
 
       return right(unit);
