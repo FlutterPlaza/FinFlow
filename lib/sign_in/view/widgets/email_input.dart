@@ -8,7 +8,8 @@ class EmailInput extends StatelessWidget {
   const EmailInput({
     super.key,
     this.node,
-    this.textController, required this.box,
+    this.textController,
+    required this.box,
   });
 
   final FocusNode? node;

@@ -6,7 +6,7 @@ const borderRaduis = 0.025;
 ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
   final theme = Theme.of(context);
   final style = theme.textTheme;
-  final colors = theme.colorScheme;
+  // final colors = theme.colorScheme;
 
   return ThemeData(
     colorScheme: ColorScheme.light(

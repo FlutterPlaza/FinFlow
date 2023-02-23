@@ -303,8 +303,8 @@ class DashBoard extends StatelessWidget {
                                       .textTheme
                                       .titleLarge
                                       ?.copyWith(
-                                        // color: _AppColors.onSurfaceW,
-                                      ),
+                                          // color: _AppColors.onSurfaceW,
+                                          ),
                                 ),
                                 Row(
                                   children: [
@@ -337,8 +337,8 @@ class DashBoard extends StatelessWidget {
                                   .textTheme
                                   .labelMedium
                                   ?.copyWith(
-                                    // color: _AppColors.onSurfaceW,
-                                  ),
+                                      // color: _AppColors.onSurfaceW,
+                                      ),
                             ),
                             SizedBox(
                               height: box.maxHeight * 0.008,
@@ -358,8 +358,8 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .titleMedium
                                           ?.copyWith(
-                                            // color: _AppColors.onSurfaceW,
-                                          ),
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
                                     ),
                                   ],
                                 ),
@@ -377,8 +377,8 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .labelMedium
                                           ?.copyWith(
-                                            // color: _AppColors.onSurfaceW,
-                                          ),
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
                                     ),
                                     Text(
                                       'CCV',
@@ -386,8 +386,8 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .labelMedium
                                           ?.copyWith(
-                                            // color: _AppColors.onSurfaceW,
-                                          ),
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
                                     ),
                                     const Text('        '),
                                     const Text('  '),
@@ -406,8 +406,8 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .titleSmall
                                           ?.copyWith(
-                                            // color: _AppColors.onSurfaceW,
-                                          ),
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
                                     ),
                                     Text(
                                       '123',
@@ -415,8 +415,8 @@ class DashBoard extends StatelessWidget {
                                           .textTheme
                                           .titleSmall
                                           ?.copyWith(
-                                            // color: _AppColors.onSurfaceW,
-                                          ),
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
                                     ),
                                     const Text('             '),
                                     Icon(

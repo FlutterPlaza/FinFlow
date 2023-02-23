@@ -39,53 +39,53 @@ class _AppColors {
     return MaterialColor(color.value, colorShades);
   }
 
-  static MaterialColor get getPrimaryMaterialColorWhiteTheme {
-    final colorShades = <int, Color>{
-      50: getShade(primaryColorW, value: 0.5),
-      100: getShade(primaryColorW, value: 0.4),
-      200: getShade(primaryColorW, value: 0.3),
-      300: getShade(primaryColorW, value: 0.2),
-      400: getShade(primaryColorW),
-      500: primaryColorW,
-      600: getShade(primaryColorW, darker: true),
-      700: getShade(primaryColorW, value: 0.15, darker: true),
-      800: getShade(primaryColorW, value: 0.2, darker: true),
-      900: getShade(primaryColorW, value: 0.25, darker: true),
-    };
-    return MaterialColor(primaryColorW.value, colorShades);
-  }
+  // static MaterialColor get getPrimaryMaterialColorWhiteTheme {
+  //   final colorShades = <int, Color>{
+  //     50: getShade(primaryColorW, value: 0.5),
+  //     100: getShade(primaryColorW, value: 0.4),
+  //     200: getShade(primaryColorW, value: 0.3),
+  //     300: getShade(primaryColorW, value: 0.2),
+  //     400: getShade(primaryColorW),
+  //     500: primaryColorW,
+  //     600: getShade(primaryColorW, darker: true),
+  //     700: getShade(primaryColorW, value: 0.15, darker: true),
+  //     800: getShade(primaryColorW, value: 0.2, darker: true),
+  //     900: getShade(primaryColorW, value: 0.25, darker: true),
+  //   };
+  //   return MaterialColor(primaryColorW.value, colorShades);
+  // }
 
-  static MaterialColor get getPrimaryMaterialColorDarkTheme {
-    final colorShades = <int, Color>{
-      50: getShade(primaryColorW, value: 0.5),
-      100: getShade(primaryColorW, value: 0.4),
-      200: getShade(primaryColorW, value: 0.3),
-      300: getShade(primaryColorW, value: 0.2),
-      400: getShade(primaryColorW),
-      500: primaryColorW,
-      600: getShade(primaryColorW, darker: true),
-      700: getShade(primaryColorW, value: 0.15, darker: true),
-      800: getShade(primaryColorW, value: 0.2, darker: true),
-      900: getShade(primaryColorW, value: 0.25, darker: true),
-    };
-    return MaterialColor(primaryColorW.value, colorShades);
-  }
+  // static MaterialColor get getPrimaryMaterialColorDarkTheme {
+  //   final colorShades = <int, Color>{
+  //     50: getShade(primaryColorW, value: 0.5),
+  //     100: getShade(primaryColorW, value: 0.4),
+  //     200: getShade(primaryColorW, value: 0.3),
+  //     300: getShade(primaryColorW, value: 0.2),
+  //     400: getShade(primaryColorW),
+  //     500: primaryColorW,
+  //     600: getShade(primaryColorW, darker: true),
+  //     700: getShade(primaryColorW, value: 0.15, darker: true),
+  //     800: getShade(primaryColorW, value: 0.2, darker: true),
+  //     900: getShade(primaryColorW, value: 0.25, darker: true),
+  //   };
+  //   return MaterialColor(primaryColorW.value, colorShades);
+  // }
 
-  static MaterialColor get getMaterialColor {
-    final colorShades = <int, Color>{
-      50: getShade(primaryColorW, value: 0.5),
-      100: getShade(primaryColorW, value: 0.4),
-      200: getShade(primaryColorW, value: 0.3),
-      300: getShade(primaryColorW, value: 0.2),
-      400: getShade(primaryColorW),
-      500: primaryColorW,
-      600: getShade(primaryColorW, darker: true),
-      700: getShade(primaryColorW, value: 0.15, darker: true),
-      800: getShade(primaryColorW, value: 0.2, darker: true),
-      900: getShade(primaryColorW, value: 0.25, darker: true),
-    };
-    return MaterialColor(primaryColorW.value, colorShades);
-  }
+  // static MaterialColor get getMaterialColor {
+  //   final colorShades = <int, Color>{
+  //     50: getShade(primaryColorW, value: 0.5),
+  //     100: getShade(primaryColorW, value: 0.4),
+  //     200: getShade(primaryColorW, value: 0.3),
+  //     300: getShade(primaryColorW, value: 0.2),
+  //     400: getShade(primaryColorW),
+  //     500: primaryColorW,
+  //     600: getShade(primaryColorW, darker: true),
+  //     700: getShade(primaryColorW, value: 0.15, darker: true),
+  //     800: getShade(primaryColorW, value: 0.2, darker: true),
+  //     900: getShade(primaryColorW, value: 0.25, darker: true),
+  //   };
+  //   return MaterialColor(primaryColorW.value, colorShades);
+  // }
 }
 
 final cl = _AppColors.getMaterialColorFromColor(_AppColors.primaryColorW);
