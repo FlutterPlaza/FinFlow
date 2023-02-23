@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/domain/user.dart';
+import 'package:fpb/core/presentation/animations/slide_up_route_transition.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
+import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/home/view/widgets/activity_card.dart';
 import 'package:fpb/home/view/widgets/four_dot.dart';
-import 'package:fpb/l10n/l10n.dart';
+import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
 
 class DashBoard extends StatelessWidget {
   const DashBoard({super.key});
@@ -27,9 +30,26 @@ class DashBoard extends StatelessWidget {
           bottom: box.maxHeight * 0.02,
           top: box.maxHeight * 0.08,
         ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
+        child: NotificationListener<ScrollEndNotification>(
+          onNotification: (scrollEnd) {
+            final metrics = scrollEnd.metrics;
+            if (metrics.atEdge) {
+              bool isTop = metrics.pixels == 0;
+              // check if scroll is at the bottom
+              if (!isTop) {
+                // run animation on pageRouteBuilder
+                Navigator.push(
+                  context,
+                  SlideUpRoute(
+                    widget: LatestActivitiesPage(),
+                  ),
+                );
+              }
+            }
+            return true;
+          },
+          child: SingleChildScrollView(
+            child: Column(children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -472,6 +492,247 @@ class DashBoard extends StatelessWidget {
                           )
                         ],
                       ),
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: 15,
+                          itemBuilder: (context, index) {
+                            // ignore: avoid_unnecessary_containers
+                            return Column(
+                              children: [
+                                ActivityCard(
+                                  context: context,
+                                  box: box,
+                                ),
+                                const Divider(),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: box.maxHeight * 0.05,
+              ),
+
+              // ignore: avoid_unnecessary_containers
+              Container(
+                child: Stack(
+                  children: [
+                    Transform.translate(
+                      offset: const Offset(15, -15),
+                      child: Container(
+                        height: box.maxHeight * 0.25,
+                        width: box.maxWidth - 40,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: const Color.fromARGB(
+                            27,
+                            223,
+                            96,
+                            47,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: box.maxHeight * 0.25,
+                      width: box.maxWidth - 40,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: const Color(0xffDF602F),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          top: box.maxHeight * 0.025,
+                          left: box.maxHeight * 0.025,
+                          bottom: box.maxHeight * 0.025,
+                          right: box.maxHeight * 0.025,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '\$ 320.50',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge
+                                      ?.copyWith(
+                                          // color: _AppColors.onSurfaceW,
+                                          ),
+                                ),
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/fpb-assets/visa_v_icon.png',
+                                      // color: _AppColors.onSurfaceW,
+                                    ),
+                                    Image.asset(
+                                      'assets/fpb-assets/visa_i_icon.png',
+                                      // color: _AppColors.onSurfaceW,
+                                    ),
+                                    Image.asset(
+                                      'assets/fpb-assets/visa_s_icon.png',
+                                      // color: _AppColors.onSurfaceW,
+                                    ),
+                                    Image.asset(
+                                      'assets/fpb-assets/visa_a_icon.png',
+                                      // color: _AppColors.onSurfaceW,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: box.maxHeight * 0.02,
+                            ),
+                            Text(
+                              l10n.homeScreenCardNumber,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelMedium
+                                  ?.copyWith(
+                                      // color: _AppColors.onSurfaceW,
+                                      ),
+                            ),
+                            SizedBox(
+                              height: box.maxHeight * 0.008,
+                            ),
+                            Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    FourDots(),
+                                    FourDots(),
+                                    FourDots(),
+                                    Text(
+                                      '1234',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.copyWith(
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: box.maxHeight * 0.015,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      l10n.homeScreenEmpty,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelMedium
+                                          ?.copyWith(
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
+                                    ),
+                                    Text(
+                                      'CCV',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelMedium
+                                          ?.copyWith(
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
+                                    ),
+                                    const Text('        '),
+                                    const Text('  '),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: box.maxHeight * 0.001,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      '04/2025',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleSmall
+                                          ?.copyWith(
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
+                                    ),
+                                    Text(
+                                      '123',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleSmall
+                                          ?.copyWith(
+                                              // color: _AppColors.onSurfaceW,
+                                              ),
+                                    ),
+                                    const Text('             '),
+                                    Icon(
+                                      FpbIcons.eye_open,
+                                      // color: _AppColors.onSurfaceW,
+                                      size: 18,
+                                    )
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: box.maxHeight * 0.025,
+              ),
+              Container(
+                height: box.maxHeight * 0.25,
+                width: box.maxWidth,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    left: box.maxHeight * 0.025,
+                    top: box.maxHeight * 0.020,
+                    bottom: box.maxHeight * 0.01,
+                    right: box.maxHeight * 0.025,
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            l10n.homeScreenLatestActivitiesTitle,
+                            style: Theme.of(context).textTheme.titleSmall,
+                          ),
+                          Container(
+                            height: box.maxHeight * 0.03,
+                            width: box.maxHeight * 0.03,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              color: const Color(0xffEAEAEA),
+                            ),
+                            child: const Center(child: Text('2')),
+                          )
+                        ],
+                      ),
                       ActivityCard(
                         context: context,
                         box: box,
@@ -485,7 +746,7 @@ class DashBoard extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
+            ]),
           ),
         ),
       );
