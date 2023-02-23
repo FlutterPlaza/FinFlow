@@ -32,7 +32,7 @@ class App extends StatelessWidget {
         builder: (context, cts) {
           return MaterialApp.router(
               title: 'FinFlow',
-              theme: whiteTheme(context, cts),
+              // theme: whiteTheme(context, cts),
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
               routeInformationParser: appRouter.defaultRouteParser(),
