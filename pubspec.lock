@@ -484,14 +484,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  go_router:
-    dependency: transitive
-    description:
-      name: go_router
-      sha256: "25ae21384b758eb80daff113fe8bfb785c2dd17b69fe4885008fe764b26fd1ca"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.1"
   google_fonts:
     dependency: "direct main"
     description:
@@ -1164,10 +1156,10 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: c42a3d414d19c008d90f0b6df669c18bb151c5f3012ed073498d96cf133e9caf
+      sha256: "137c4af10146e3a48c7f3d241b7af06c17b3df4b6c3e708c7a5c9a508c6af209"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.1"
+    version: "1.0.3"
   widgetbook_annotation:
     dependency: "direct main"
     description:

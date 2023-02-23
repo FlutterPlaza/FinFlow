@@ -3,10 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
+import 'package:fpb/core/domain/user.dart' as _i9;
 import 'package:fpb/core/presentation/extension/extensions.dart';
 import 'package:fpb/core/shared/helpers/is_keyboard_visible.dart';
 import 'package:fpb/injection.dart';
@@ -210,7 +212,7 @@ class _SignInBodyState extends State<SignInBody>
                           SizedBox(height: 0.1 * cts.maxHeight),
                       ],
                     ).card(
-                      height:  (isKeyboardVisible(context) ? .95 : .8) *
+                      height: (isKeyboardVisible(context) ? .95 : .8) *
                           cts.maxHeight,
                       radiusTop: cts.maxWidth * 0.05,
                       color: theme.colorScheme.background,
