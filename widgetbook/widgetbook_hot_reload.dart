@@ -19,48 +19,48 @@ class WidgetbookHotReload extends StatelessWidget {
             WidgetbookCategory(
               name: 'screens',
               widgets: [
-                // WidgetbookWidget(
-                //   name: 'sign-in',
-                //   useCases: [sign_in_usecase],
-                // ),
-                // WidgetbookWidget(
-                //   name: 'sign-up',
-                //   useCases: [signUpUsecase],
-                // ),
-                // WidgetbookWidget(
-                //   name: 'HomePage',
-                //   useCases: [homePageUsecase],
-                // ),
-                // WidgetbookWidget(
-                //   name: 'send-page',
-                //   useCases: [sendPageUsecase],
-                // ),
+                WidgetbookWidget(
+                  name: 'sign-in',
+                  useCases: [sign_in_usecase],
+                ),
+                WidgetbookWidget(
+                  name: 'sign-up',
+                  useCases: [signUpUsecase],
+                ),
+                WidgetbookWidget(
+                  name: 'HomePage',
+                  useCases: [homePageUsecase],
+                ),
+                WidgetbookWidget(
+                  name: 'send-page',
+                  useCases: [sendPageUsecase],
+                ),
               ],
             ),
             WidgetbookCategory(
               name: 'widgets',
               widgets: [
-                // WidgetbookWidget(
-                //   name: 'Button',
-                //   useCases: [
-                //     WidgetbookUseCase(
-                //       name: 'elevated',
-                //       builder: (context) => ElevatedButton(
-                //         onPressed: () {},
-                //         child: const Text('Widgetbook'),
-                //       ),
-                //     ),
-                //     WidgetbookUseCase(
-                //       name: 'Text button',
-                //       builder: (context) {
-                //         return TextButton(
-                //           onPressed: () {},
-                //           child: const Text('Text Button'),
-                //         );
-                //       },
-                //     ),
-                //   ],
-                // ),
+                WidgetbookWidget(
+                  name: 'Button',
+                  useCases: [
+                    WidgetbookUseCase(
+                      name: 'elevated',
+                      builder: (context) => ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Widgetbook'),
+                      ),
+                    ),
+                    WidgetbookUseCase(
+                      name: 'Text button',
+                      builder: (context) {
+                        return TextButton(
+                          onPressed: () {},
+                          child: const Text('Text Button'),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
@@ -71,7 +71,7 @@ class WidgetbookHotReload extends StatelessWidget {
             Apple.iPhone6
           ],
           appInfo: AppInfo(name: 'FP Bank'),
-          // lightTheme: whiteTheme(context, cts),
+          lightTheme: whiteTheme(context, cts),
           // themes: [
           //   WidgetbookTheme(
           //     name: 'Light',
