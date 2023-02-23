@@ -1,6 +1,8 @@
 import 'dart:developer';
+import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
+import 'package:flutter/services.dart';
 import 'package:fpb/authentication_with_google/domain/i_google_repository_facade.dart';
 import 'package:fpb/core/failures/auth_failure.dart';
 import 'package:fpb/core/domain/user.dart';
@@ -40,6 +42,10 @@ class GoogleAuthenticationRepository implements IGoogleRepositoryFacade {
         return left(const AuthFailure.userNotFound());
       }
       return right(UserDTO.fromFirebase(user).toDomain());
+    } on SocketException catch (e) {
+      return left(AuthFailure.fromErrorMessage(e.message));
+    } on PlatformException catch (e) {
+      return left(AuthFailure.fromErrorMessage(e.code));
     } on FirebaseAuthException catch (e) {
       return left(AuthFailure.fromErrorMessage(e.code));
     } on FirebaseException catch (e) {
@@ -59,6 +65,10 @@ class GoogleAuthenticationRepository implements IGoogleRepositoryFacade {
       ]);
 
       return right(unit);
+    } on SocketException catch (e) {
+      return left(AuthFailure.fromErrorMessage(e.message));
+    } on PlatformException catch (e) {
+      return left(AuthFailure.fromErrorMessage(e.code));
     } on FirebaseAuthException catch (e) {
       return left(AuthFailure.fromErrorMessage(e.code));
     } on FirebaseException catch (e) {

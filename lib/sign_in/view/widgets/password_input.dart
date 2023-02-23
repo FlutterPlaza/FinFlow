@@ -8,12 +8,13 @@ class PasswordInput extends StatelessWidget {
   const PasswordInput({
     super.key,
     this.node,
-    this.textController, required this.box,
+    this.textController,
+    required this.box,
   });
 
   final FocusNode? node;
   final TextEditingController? textController;
-  final BoxConstraints box; 
+  final BoxConstraints box;
 
   @override
   Widget build(BuildContext context) {
