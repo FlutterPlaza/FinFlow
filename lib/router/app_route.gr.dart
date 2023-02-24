@@ -11,44 +11,45 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i7;
-import 'package:flutter/material.dart' as _i8;
+import 'package:auto_route/auto_route.dart' as _i8;
+import 'package:flutter/material.dart' as _i9;
 
-import '../core/domain/user.dart' as _i9;
+import '../core/domain/user.dart' as _i10;
+import '../email_confirmation/email_confirmation_page.dart' as _i6;
 import '../home/view/home_screen.dart' as _i4;
 import '../onboarding/view/onboarding_screens.dart' as _i5;
 import '../onboarding/view/splash_screen.dart' as _i1;
-import '../profile/view/profile_page.dart' as _i6;
+import '../profile/view/profile_page.dart' as _i7;
 import '../sign_in/view/sign_in_page.dart' as _i2;
 import '../sign_up/view/signup_page.dart' as _i3;
 
-class AppRoute extends _i7.RootStackRouter {
-  AppRoute([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
+class AppRoute extends _i8.RootStackRouter {
+  AppRoute([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i7.PageFactory> pagesMap = {
+  final Map<String, _i8.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.SplashScreen(),
       );
     },
     SignInRoute.name: (routeData) {
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.SignInScreen(),
       );
     },
     SignUpRoute.name: (routeData) {
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i3.SignUpScreen(),
       );
     },
     HomeRoute.name: (routeData) {
       final args = routeData.argsAs<HomeRouteArgs>();
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i4.HomeScreen(
           key: args.key,
@@ -59,7 +60,7 @@ class AppRoute extends _i7.RootStackRouter {
     OnboardingRoute.name: (routeData) {
       final args = routeData.argsAs<OnboardingRouteArgs>(
           orElse: () => const OnboardingRouteArgs());
-      return _i7.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i5.OnboardingScreen(
           onGetStartedPressed: args.onGetStartedPressed,
@@ -67,49 +68,59 @@ class AppRoute extends _i7.RootStackRouter {
         ),
       );
     },
-    ProfileRoute.name: (routeData) {
-      return _i7.MaterialPageX<dynamic>(
+    EmailConfirmationRoute.name: (routeData) {
+      return _i8.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i6.ProfileScreen(),
+        child: const _i6.EmailConfirmationScreen(),
+      );
+    },
+    ProfileRoute.name: (routeData) {
+      return _i8.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i7.ProfileScreen(),
       );
     },
   };
 
   @override
-  List<_i7.RouteConfig> get routes => [
-        _i7.RouteConfig(
+  List<_i8.RouteConfig> get routes => [
+        _i8.RouteConfig(
           SplashRoute.name,
           path: '/',
         ),
-        _i7.RouteConfig(
+        _i8.RouteConfig(
           SignInRoute.name,
           path: '/sign-in-screen',
         ),
-        _i7.RouteConfig(
+        _i8.RouteConfig(
           SignUpRoute.name,
           path: '/sign-up-screen',
         ),
-        _i7.RouteConfig(
+        _i8.RouteConfig(
           HomeRoute.name,
           path: '/home-screen',
           children: [
-            _i7.RouteConfig(
+            _i8.RouteConfig(
               ProfileRoute.name,
               path: 'profile-screen',
               parent: HomeRoute.name,
             )
           ],
         ),
-        _i7.RouteConfig(
+        _i8.RouteConfig(
           OnboardingRoute.name,
           path: '/onboarding-screen',
+        ),
+        _i8.RouteConfig(
+          EmailConfirmationRoute.name,
+          path: '/email-confirmation-screen',
         ),
       ];
 }
 
 /// generated route for
 /// [_i1.SplashScreen]
-class SplashRoute extends _i7.PageRouteInfo<void> {
+class SplashRoute extends _i8.PageRouteInfo<void> {
   const SplashRoute()
       : super(
           SplashRoute.name,
@@ -121,7 +132,7 @@ class SplashRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.SignInScreen]
-class SignInRoute extends _i7.PageRouteInfo<void> {
+class SignInRoute extends _i8.PageRouteInfo<void> {
   const SignInRoute()
       : super(
           SignInRoute.name,
@@ -133,7 +144,7 @@ class SignInRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.SignUpScreen]
-class SignUpRoute extends _i7.PageRouteInfo<void> {
+class SignUpRoute extends _i8.PageRouteInfo<void> {
   const SignUpRoute()
       : super(
           SignUpRoute.name,
@@ -145,11 +156,11 @@ class SignUpRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.HomeScreen]
-class HomeRoute extends _i7.PageRouteInfo<HomeRouteArgs> {
+class HomeRoute extends _i8.PageRouteInfo<HomeRouteArgs> {
   HomeRoute({
-    _i8.Key? key,
-    required _i9.User user,
-    List<_i7.PageRouteInfo>? children,
+    _i9.Key? key,
+    required _i10.User user,
+    List<_i8.PageRouteInfo>? children,
   }) : super(
           HomeRoute.name,
           path: '/home-screen',
@@ -169,9 +180,9 @@ class HomeRouteArgs {
     required this.user,
   });
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
-  final _i9.User user;
+  final _i10.User user;
 
   @override
   String toString() {
@@ -181,10 +192,10 @@ class HomeRouteArgs {
 
 /// generated route for
 /// [_i5.OnboardingScreen]
-class OnboardingRoute extends _i7.PageRouteInfo<OnboardingRouteArgs> {
+class OnboardingRoute extends _i8.PageRouteInfo<OnboardingRouteArgs> {
   OnboardingRoute({
     void Function()? onGetStartedPressed,
-    _i8.Key? key,
+    _i9.Key? key,
   }) : super(
           OnboardingRoute.name,
           path: '/onboarding-screen',
@@ -205,7 +216,7 @@ class OnboardingRouteArgs {
 
   final void Function()? onGetStartedPressed;
 
-  final _i8.Key? key;
+  final _i9.Key? key;
 
   @override
   String toString() {
@@ -214,8 +225,20 @@ class OnboardingRouteArgs {
 }
 
 /// generated route for
-/// [_i6.ProfileScreen]
-class ProfileRoute extends _i7.PageRouteInfo<void> {
+/// [_i6.EmailConfirmationScreen]
+class EmailConfirmationRoute extends _i8.PageRouteInfo<void> {
+  const EmailConfirmationRoute()
+      : super(
+          EmailConfirmationRoute.name,
+          path: '/email-confirmation-screen',
+        );
+
+  static const String name = 'EmailConfirmationRoute';
+}
+
+/// generated route for
+/// [_i7.ProfileScreen]
+class ProfileRoute extends _i8.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
           ProfileRoute.name,
