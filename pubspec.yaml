@@ -16,7 +16,7 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   flutter_localizations:
     sdk: flutter
-  flutter_svg: ^2.0.1
+  flutter_svg: ^2.0.2
   intl: ^0.17.0
   widgetbook_annotation:
   authentication_repository:
