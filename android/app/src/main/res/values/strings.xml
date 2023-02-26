@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="facebook_app_id">3360223350910534</string>
+<string name="fb_login_protocol_scheme">fb3360223350910534</string>
+<string name="facebook_client_token">94f4cd4ae9d2905e92464b618eb60270</string>
+    <string name="app_name">FinFlow</string>
+
+</resources>

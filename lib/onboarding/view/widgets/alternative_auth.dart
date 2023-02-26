@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/assets/fpb_svg.dart';
+import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/presentation/widget/icon_login.dart';
 
@@ -27,7 +28,9 @@ class AlternativeAuth extends StatelessWidget {
         IconLogin(
           svg: SvgNames.facebook,
           box: box,
-          onTap: () {},
+          onTap: () {
+            context.read<FacebookAuthBloc>().add(FacebookAuthEvent.signIn());
+          },
         ),
         IconLogin(
           svg: SvgNames.twitter,
