@@ -8,6 +8,7 @@ environment:
   flutter: 3.3.7
 
 dependencies:
+  intl_phone_field: ^3.1.0 
   bloc: ^8.1.1
   device_preview: ^1.1.0
   flutter:

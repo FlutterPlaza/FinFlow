@@ -17,6 +17,7 @@ import 'package:fpb/router/app_route.gr.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
+import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -161,7 +162,15 @@ class _SignInBodyState extends State<SignInBody>
                                           Text(l10n.signInForgotPasswordText),
                                         ],
                                       ),
-                                      Container(),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          PhoneNumberInput(
+                                              l10n: l10n, cts: cts),
+                                          PasswordInput(box: cts),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                 ),

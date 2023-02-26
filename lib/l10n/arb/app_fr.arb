@@ -92,6 +92,10 @@
     "@signInPasswordFieldHintText": {
         "description": "Il s'agit du texte d'indication affiché sur l'écran de connexion pour le champ Mot de passe."
     },
+    "signInPhoneNumberFieldLabel": "Numéro de Téléphone",
+    "@signInPhoneNumberFieldLabel": {
+        "description": "Il s'agit de l'étiquette affichée sur l'écran d'ouverture de session pour le champ Numéro de téléphone."
+    },
     "homeScreenCashBalance": "Solde d'encaisse",
     "@homeScreenCashBalance": {
         "description": "Il s'agit du texte affiché sur l'écran d'accueil du premier widget de carte"
