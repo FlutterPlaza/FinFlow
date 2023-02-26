@@ -77,7 +77,6 @@ class _SignInBodyState extends State<SignInBody>
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final style = theme.textTheme;
-    final colors = theme.colorScheme;
     // final colors = theme.colorScheme;
 
     return BlocConsumer<GoogleSignInBloc, GoogleSignInState>(
