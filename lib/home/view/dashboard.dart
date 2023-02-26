@@ -52,81 +52,81 @@ class DashBoard extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        const SizedBox(
-                          width: 16,
-                        ),
-                        CircleAvatar(
-                          backgroundImage: NetworkImage('${user.photo}'),
-                        ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.logout,
-                          ),
-                          color: Colors.blueGrey,
-                          onPressed: () => context
-                              .read<GoogleSignInBloc>()
-                              .add(GoogleSignInEvent.signOut()),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          FpbIcons.eye_open,
-                          size: 20,
-                          // color: _AppColors.secondaryColorW,
-                        ),
-                        SizedBox(
-                          width: box.maxWidth * 0.03,
-                        ),
-                        Container(
-                          height: 42,
-                          width: 42,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Image.asset(
-                            'assets/fpb-assets/scan_icon.png',
-                          ),
-                        ),
-                        SizedBox(
-                          width: box.maxWidth * 0.03,
-                        ),
-                        Icon(
-                          FpbIcons.notification,
-                          size: 20,
-                          // color: _AppColors.secondaryColorW,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Row(
+                //       children: [
+                //         const SizedBox(
+                //           width: 16,
+                //         ),
+                //         CircleAvatar(
+                //           backgroundImage: NetworkImage('${user.photo}'),
+                //         ),
+                //         IconButton(
+                //           icon: const Icon(
+                //             Icons.logout,
+                //           ),
+                //           color: Colors.blueGrey,
+                //           onPressed: () => context
+                //               .read<GoogleSignInBloc>()
+                //               .add(GoogleSignInEvent.signOut()),
+                //         ),
+                //       ],
+                //     ),
+                //     Row(
+                //       //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //       children: [
+                //         Icon(
+                //           FpbIcons.eye_open,
+                //           size: 20,
+                //           // color: _AppColors.secondaryColorW,
+                //         ),
+                //         SizedBox(
+                //           width: box.maxWidth * 0.03,
+                //         ),
+                //         Container(
+                //           height: 42,
+                //           width: 42,
+                //           decoration: BoxDecoration(
+                //             borderRadius: BorderRadius.circular(50),
+                //           ),
+                //           child: Image.asset(
+                //             'assets/fpb-assets/scan_icon.png',
+                //           ),
+                //         ),
+                //         SizedBox(
+                //           width: box.maxWidth * 0.03,
+                //         ),
+                //         Icon(
+                //           FpbIcons.notification,
+                //           size: 20,
+                //           // color: _AppColors.secondaryColorW,
+                //         ),
+                //       ],
+                //     )
+                //   ],
+                // ),
                 SizedBox(
                   height: box.maxWidth * 0.01,
                 ),
                 // ignore: sized_box_for_whitespace
-                Row(
-                  children: [
-                    const SizedBox(
-                      width: 16,
-                    ),
-                    Text('Name: ${user.name}'),
-                  ],
-                ),
-                Row(
-                  children: [
-                    const SizedBox(
-                      width: 16,
-                    ),
-                    Text('Email: ${user.email}'),
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     const SizedBox(
+                //       width: 16,
+                //     ),
+                //     Text('Name: ${user.name}'),
+                //   ],
+                // ),
+                // Row(
+                //   children: [
+                //     const SizedBox(
+                //       width: 16,
+                //     ),
+                //     Text('Email: ${user.email}'),
+                //   ],
+                // ),
                 const SizedBox(
                   height: 16,
                 ),

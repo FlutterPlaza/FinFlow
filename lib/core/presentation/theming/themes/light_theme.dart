@@ -12,9 +12,16 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       primary: _AppColors.primaryColorW,
       onPrimary: _AppColors.onSurfaceW,
       primaryContainer: _AppColors.primaryColorW,
+      onPrimaryContainer: _AppColors.onSurfaceW,
       secondary: _AppColors.secondaryColorW,
       onSecondary: _AppColors.primaryColorW,
       secondaryContainer: _AppColors.secondaryContainerW,
+      tertiary: _AppColors.onSurfaceW,
+      onTertiary: Colors.red,  // set to odd color so we can see which component in the UI is affected
+      onTertiaryContainer: Colors.blue, // set to odd color so we can see which component in the UI is affected
+      inverseSurface: Colors.green, // set to odd color so we can see which component in the UI is affected
+      inversePrimary: Colors.yellow, // set to odd color so we can see which component in the UI is affected
+      outline: Colors.purple, // set to odd color so we can see which component in the UI is affected
       surface: _AppColors.bgColorW,
       onSurface: _AppColors.onSurfaceW,
       background: _AppColors.bgColorW,
@@ -131,12 +138,13 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
     ),
     scaffoldBackgroundColor: _AppColors.onSurfaceW,
     tabBarTheme: TabBarTheme(
-      overlayColor: MaterialStateProperty.all(Colors.blue),
-      // indicatorColor: Colors.black,
+      indicatorColor: Colors
+          .purple, // _AppColors.onSurfaceW, // theme.colorScheme.onSurface,
       labelStyle: style.bodySmall,
       unselectedLabelStyle: style.bodySmall,
       unselectedLabelColor: theme.colorScheme.onSurface,
       labelColor: theme.colorScheme.onBackground,
+      dividerColor: Colors.purple,
       indicator: BoxDecoration(
         borderRadius:
             BorderRadius.all(Radius.circular(cts.maxWidth * borderRaduis)),
