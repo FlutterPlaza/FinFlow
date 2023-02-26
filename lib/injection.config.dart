@@ -14,28 +14,28 @@ import 'package:firebase_core/firebase_core.dart' as _i5;
 import 'package:fpb/authentication_mock_without_backend/application/bloc/authentication_bloc.dart'
     as _i14;
 import 'package:fpb/authentication_mock_without_backend/infrastructure/authentication_mock_module_injection.dart'
-    as _i25;
+    as _i26;
 import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart'
     as _i20;
 import 'package:fpb/authentication_with_firebase/domain/i_auth_facade.dart'
     as _i17;
-import 'package:fpb/authentication_with_firebase/infrastructure/firebase_auth_injectable_module.dart'
-    as _i27;
 import 'package:fpb/authentication_with_firebase/infrastructure/firebase_auth_facade_impl.dart'
     as _i18;
+import 'package:fpb/authentication_with_firebase/infrastructure/firebase_auth_injectable_module.dart'
+    as _i27;
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart'
     as _i16;
 import 'package:fpb/authentication_with_google/domain/i_google_repository_facade.dart'
     as _i9;
 import 'package:fpb/authentication_with_google/infrastructure/google_authentication_injectable_module.dart'
-    as _i26;
+    as _i24;
 import 'package:fpb/authentication_with_google/infrastructure/google_authentication_repository.dart'
     as _i10;
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart'
     as _i21;
 import 'package:fpb/core/application/internet_and_time_bloc/internet_and_time_bloc.dart'
     as _i23;
-import 'package:fpb/core/infrastructure/core_injectable_module.dart' as _i24;
+import 'package:fpb/core/infrastructure/core_injectable_module.dart' as _i25;
 import 'package:fpb/core/settings/app_settings_helper.dart' as _i19;
 import 'package:fpb/core/settings/cached.dart' as _i15;
 import 'package:fpb/home/application/home_view_bloc/home_view_bloc.dart'
@@ -45,12 +45,12 @@ import 'package:google_sign_in/google_sign_in.dart' as _i8;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:ntp/ntp.dart' as _i11;
 import 'package:shared_preferences/shared_preferences.dart' as _i12;
-import 'package:user_repository/user_repository.dart' as _i13;
+import 'package:user_repository/user_repository.dart'
+    as _i13; // ignore_for_file: unnecessary_lambdas
 
-/// ignore_for_file: unnecessary_lambdas
-/// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: lines_longer_than_80_chars
 extension GetItInjectableX on _i1.GetIt {
-  /// initializes the registration of main-scope dependencies inside of [GetIt]
+  // initializes the registration of main-scope dependencies inside of GetIt
   Future<_i1.GetIt> init({
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
@@ -118,13 +118,13 @@ extension GetItInjectableX on _i1.GetIt {
   }
 }
 
-class _$CoreInjectableModule extends _i24.CoreInjectableModule {}
+class _$GoogleAuthenticationInjectableModule
+    extends _i24.GoogleAuthenticationInjectableModule {}
+
+class _$CoreInjectableModule extends _i25.CoreInjectableModule {}
 
 class _$AuthenticationMockModuleInjection
-    extends _i25.AuthenticationMockModuleInjection {}
-
-class _$GoogleAuthenticationInjectableModule
-    extends _i26.GoogleAuthenticationInjectableModule {}
+    extends _i26.AuthenticationMockModuleInjection {}
 
 class _$FirebaseAuthInjectableModule
     extends _i27.FirebaseAuthInjectableModule {}

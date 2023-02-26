@@ -48,6 +48,8 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>NSFaceIDUsageDescription</key>
+  <string>Uses the biometric information to authorize access to the app in place of a PIN/phone number</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
     <!-- Google Sign-in Section -->
