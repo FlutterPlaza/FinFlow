@@ -28,7 +28,7 @@ dependencies:
   freezed_annotation: ^2.2.0
   json_annotation:
   json_serializable:
-  widgetbook:
+  widgetbook: ^1.0.3
   get_it: ^7.2.0
   injectable: ^2.1.0
   logging: ^1.1.1
