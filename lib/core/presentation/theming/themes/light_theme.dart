@@ -10,16 +10,16 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
   return ThemeData(
     colorScheme: ColorScheme.light(
       primary: _AppColors.primaryColorW,
+      onPrimary: _AppColors.onSurfaceW,
       primaryContainer: _AppColors.primaryColorW,
       secondary: _AppColors.secondaryColorW,
+      onSecondary: _AppColors.primaryColorW,
       secondaryContainer: _AppColors.secondaryContainerW,
       surface: _AppColors.bgColorW,
-      background: _AppColors.bgColorW,
-      error: _AppColors.primaryColorW,
-      onPrimary: _AppColors.onSurfaceW,
-      onSecondary: _AppColors.primaryColorW,
       onSurface: _AppColors.onSurfaceW,
-      onBackground: _AppColors.surfacerW,
+      background: _AppColors.bgColorW,
+      onBackground: _AppColors.onBgColorW,
+      error: _AppColors.primaryColorW,
       onError: _AppColors.onErrorW,
       errorContainer: _AppColors.errorContainerW,
 
@@ -50,7 +50,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       ),
       titleSmall: style.titleSmall?.copyWith(
         fontSize: cts.maxWidth * 0.04,
-        color: _AppColors.onBgW,
+        color: _AppColors.onSurfaceW,
       ),
       bodyLarge: style.bodyLarge?.copyWith(
         fontSize: cts.maxWidth * 0.042,
@@ -99,7 +99,9 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
 
     inputDecorationTheme: InputDecorationTheme(
       focusColor: Colors.red,
-      labelStyle: style.bodySmall,
+      labelStyle: style.bodySmall?.copyWith(
+        color: _AppColors.onSurfaceW,
+      ),
       hintStyle: style.bodySmall,
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(cts.maxWidth * borderRaduis),
@@ -127,8 +129,10 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       contentPadding: EdgeInsets.symmetric(
           horizontal: cts.maxWidth * 0.035, vertical: cts.maxWidth * 0.05),
     ),
-    scaffoldBackgroundColor: _AppColors.bgColorW,
+    scaffoldBackgroundColor: _AppColors.onSurfaceW,
     tabBarTheme: TabBarTheme(
+      overlayColor: MaterialStateProperty.all(Colors.blue),
+      // indicatorColor: Colors.black,
       labelStyle: style.bodySmall,
       unselectedLabelStyle: style.bodySmall,
       unselectedLabelColor: theme.colorScheme.onSurface,
@@ -136,7 +140,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       indicator: BoxDecoration(
         borderRadius:
             BorderRadius.all(Radius.circular(cts.maxWidth * borderRaduis)),
-        color: theme.shadowColor,
+        color: _AppColors.secondaryColorW,
       ),
       indicatorSize: TabBarIndicatorSize.tab,
     ),
