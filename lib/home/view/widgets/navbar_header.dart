@@ -55,10 +55,10 @@ class NavHeader extends StatelessWidget {
                     'assets/fpb-assets/scan_icon.png',
                   ),
                 ),
-                // Icon(
-                //   FpbIcons.notification,
-                //   size: 20,
-                // ),
+                Icon(
+                  FpbIcons.notification,
+                  size: 20,
+                ),
               ],
             ),
           )
