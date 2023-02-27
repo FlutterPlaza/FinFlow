@@ -22,9 +22,9 @@ class FpbButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final text = Text(
       label,
-      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+      style: Theme.of(context).textTheme.titleMedium?.copyWith(
             color: Colors.white,
-            fontWeight: FontWeight.w400,
+            // fontWeight: FontWeight.w400,
           ),
     );
     final size = MediaQuery.of(context).size;

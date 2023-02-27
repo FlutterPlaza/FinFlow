@@ -36,7 +36,7 @@
     "@onboardingGetStartedLabel": {
         "description": "This is the label on the third onboarding screen for the get started button"
     },
-    "signInLogInTitle": "Login With",
+    "signInLogInTitle": "Login",
     "@signInLogInTitle": {
         "description": "This is the title displayed on the sign in screen"
     }, 
@@ -52,7 +52,7 @@
     "@signInForgotPasswordText": {
         "description": "This is the text displayed on the sign in screen after login password field"
     },
-    "signInorLogInWithText": "Or Login with",
+    "signInOrLogInWithText": "Or Login with",
     "@signInPhoneNumberLogIn": {
         "description": "This is the text displayed on the sign in screen after the log in button"
     },

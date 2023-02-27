@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/home/application/home_view_bloc/home_view_bloc.dart';
 import 'package:fpb/home/view/dashboard.dart';
-import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
+import 'package:fpb/home/view/user_seacrh.dart';
 import 'package:fpb/savings/view/savings_page.dart';
 
 class HomeContainer extends StatelessWidget {
@@ -13,11 +13,11 @@ class HomeContainer extends StatelessWidget {
     return BlocBuilder<HomeViewBloc, HomeViewState>(
       builder: (context, state) {
         return state.map(
-          home: (_) => DashBoard(),
+          home: (_) => DashBoard(), // -> LatestActivitiesPage(),
           savings: (_) => SavingsPage(),
-          quickCash: (_) => LatestActivitiesPage(),
+          quickCash: (_) => Container(child: Center(child: Text('budget'))),
           budget: (_) => Container(child: Center(child: Text('budget'))),
-          search: (_) => Container(child: Center(child: Text('search'))),
+          search: (_) => UserSearch(),
         );
       },
     );

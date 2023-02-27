@@ -2,7 +2,6 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/router/app_route.gr.dart';
 
@@ -26,7 +25,8 @@ class _SavingsPageState extends State<SavingsPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    ThemeData textStyleTheme = Theme.of(context);
+    final theme = Theme.of(context);
+    final colors = theme.colorScheme;
     return LayoutBuilder(
       builder: (context, box) {
         return Padding(
@@ -42,13 +42,12 @@ class _SavingsPageState extends State<SavingsPage> {
                 children: [
                   Text(
                     l10n.savingsTitle,
-                    style: textStyleTheme.textTheme.titleLarge,
+                    style: theme.textTheme.titleLarge,
                   ),
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                        AppColors.secondaryColorW,
-                      ),
+                      backgroundColor:
+                          MaterialStateProperty.all(colors.secondary),
                     ),
                     onPressed: () {
                       context.router.push(ProfileRoute());
@@ -67,7 +66,7 @@ class _SavingsPageState extends State<SavingsPage> {
                           l10n.savingsNewSavingsAccountLabel,
                           style:
                               Theme.of(context).textTheme.titleSmall?.copyWith(
-                                    color: AppColors.cardColorW,
+                                  // color: AppColors.onSurfaceW,
                                   ),
                         ),
                       ],

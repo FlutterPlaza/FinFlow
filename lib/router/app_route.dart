@@ -1,5 +1,7 @@
 import 'package:auto_route/annotations.dart';
+
 import 'package:fpb/home/view/home_screen.dart';
+import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
 import 'package:fpb/onboarding/view/onboarding_screens.dart';
 import 'package:fpb/onboarding/view/splash_screen.dart';
 import 'package:fpb/profile/view/profile_page.dart';
@@ -14,6 +16,7 @@ import 'package:fpb/sign_up/view/signup_page.dart';
     AutoRoute(page: SignUpScreen),
     AutoRoute(page: HomeScreen, children: [
       AutoRoute(page: ProfileScreen),
+      AutoRoute(page: LatestActivitiesPage),
     ]),
     AutoRoute(page: OnboardingScreen),
   ],
