@@ -18,6 +18,7 @@ import 'package:fpb/router/app_route.gr.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
+import 'package:fpb/core/domain/user.dart' as _i9;
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -100,9 +101,27 @@ class _SignInBodyState extends State<SignInBody>
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  PageTitle(
-                                    title: l10n.signInLogInTitle,
-                                    box: cts,
+                                  InkWell(
+                                    onTap: () => {
+                                      context.router.push(
+                                        HomeRoute(
+                                          user: _i9.User(
+                                            id: '108904873933543363282',
+                                            isNewUser: true,
+                                            photo:
+                                                "https://lh3.googleusercontent.com/a/AEdFTp7RAnM35n8dIcB7eZo4tAjXnJynSB7pFKcA5sMzdw=s96-c",
+                                            providerId: "providerId",
+                                            name: "Desking",
+                                            email: "desking2000@gmail.com",
+                                            phoneNumber: "676186454",
+                                          ),
+                                        ),
+                                      ),
+                                    },
+                                    child: PageTitle(
+                                      title: l10n.signInLogInTitle,
+                                      box: cts,
+                                    ),
                                   ),
                                   FaceIDIcon(
                                     cts: cts,
