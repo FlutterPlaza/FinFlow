@@ -66,7 +66,8 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                   : TextInputType.text,
           onChanged: widget.onChanged,
           obscureText: hidePassword ?? false,
-          style: textTheme.bodyMedium,
+          style: textTheme
+              .titleSmall, //bodyMedium //.copyWith(color: colors.onSurface),
           decoration: InputDecoration(
             errorText: widget.errorText,
             suffixIcon: !widget.isPassword

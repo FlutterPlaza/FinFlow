@@ -7,15 +7,14 @@ part 'search_user_event.dart';
 class SearchUserBloc extends Bloc<SearchUserEvent, SearchUserState> {
   SearchUserBloc(super.initialState);
 
-  @override
   SearchUserState get initialState => SearchUserState.initial();
 
   @override
   void onTransition(Transition<SearchUserEvent, SearchUserState> transition) {
+    super.onTransition(transition);
     print(transition.toString());
   }
 
-  @override
   Stream<SearchUserState> mapEventToState(SearchUserEvent event) async* {
     yield SearchUserState.loading();
 
@@ -29,7 +28,7 @@ class SearchUserBloc extends Bloc<SearchUserEvent, SearchUserState> {
 
   Future<List<User>> _getSearchResults(String query) async {
     // Simulating network latency
-    await Future.delayed(Duration(seconds: 1));
+    // await Future.delayed(Duration(seconds: 1));
     return [
       User(
         id: '108904873933543363282',

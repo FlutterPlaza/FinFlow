@@ -48,11 +48,11 @@
     "@signInPhoneNumberLogInLabel": {
         "description": "This is the label displayed on the sign in screen on the phone number tab"
     },
-    "signInForgotPasswordText": "Forgot Password?",
+    "signInForgotPasswordText": "Forgot password?",
     "@signInForgotPasswordText": {
         "description": "This is the text displayed on the sign in screen after login password field"
     },
-    "signInOrLogInWithText": "Or Login with",
+    "signInOrLogInWithText": "Or login with",
     "@signInPhoneNumberLogIn": {
         "description": "This is the text displayed on the sign in screen after the log in button"
     },
@@ -87,6 +87,10 @@
     "signInPasswordFieldLabel": "Password",
     "@signInPasswordFieldLabel": {
         "description": "This is the label displayed on the sign in screen for the Password field"
+    },
+    "signInPhoneNumberFieldLabel": "Phone Number",
+    "@signInPhoneNumberFieldLabel": {
+        "description": "This is the label displayed on the sign in screen for the Phone number field"
     },
     "signInPasswordFieldHintText": "Enter your password",
     "@signInPasswordFieldHintText": {

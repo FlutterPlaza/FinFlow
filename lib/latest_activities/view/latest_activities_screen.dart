@@ -1,10 +1,6 @@
-// ignore_for_file: omit_local_variable_types, prefer_final_locals
-
 import 'package:flutter/material.dart';
 import 'package:fpb/home/view/widgets/activity_card.dart';
 import 'package:fpb/l10n/l10n.dart';
-//import 'package:go_router/go_router.dart';
-//import 'package:fpb/home_screen/home_screen.dart';
 
 class LatestActivitiesPage extends StatelessWidget {
   const LatestActivitiesPage({super.key});
