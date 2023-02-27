@@ -20,7 +20,6 @@ class NavHeader extends StatelessWidget {
       width: box.maxWidth,
       padding: EdgeInsets.symmetric(
         horizontal: box.maxWidth * 0.025,
-        vertical: box.maxHeight * 0.015,
       ),
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,
@@ -31,12 +30,12 @@ class NavHeader extends StatelessWidget {
           ),
           Container(
             child: Wrap(
-              spacing: box.maxWidth * 0.01,
+              spacing: box.maxWidth * 0.02,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 Container(
-                  height: 42,
-                  width: 42,
+                  height: box.maxHeight * 0.08,
+                  width: box.maxWidth * 0.08,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                   ),
@@ -47,7 +46,6 @@ class NavHeader extends StatelessWidget {
                 Icon(
                   FpbIcons.notification,
                   size: 20,
-                  // color: _AppColors.secondaryColorW,
                 ),
               ],
             ),

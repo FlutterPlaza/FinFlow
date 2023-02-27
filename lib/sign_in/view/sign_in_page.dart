@@ -101,27 +101,9 @@ class _SignInBodyState extends State<SignInBody>
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  InkWell(
-                                    onTap: () => {
-                                      context.router.push(
-                                        HomeRoute(
-                                          user: _i9.User(
-                                            id: '108904873933543363282',
-                                            isNewUser: true,
-                                            photo:
-                                                "https://lh3.googleusercontent.com/a/AEdFTp7RAnM35n8dIcB7eZo4tAjXnJynSB7pFKcA5sMzdw=s96-c",
-                                            providerId: "providerId",
-                                            name: "Desking",
-                                            email: "desking2000@gmail.com",
-                                            phoneNumber: "676186454",
-                                          ),
-                                        ),
-                                      ),
-                                    },
-                                    child: PageTitle(
-                                      title: l10n.signInLogInTitle,
-                                      box: cts,
-                                    ),
+                                  PageTitle(
+                                    title: l10n.signInLogInTitle,
+                                    box: cts,
                                   ),
                                   FaceIDIcon(
                                     cts: cts,

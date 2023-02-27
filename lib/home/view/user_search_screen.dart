@@ -5,9 +5,10 @@ import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
 import 'package:fpb/home/view/widgets/navbar_header.dart';
 import 'package:fpb/home/view/widgets/search_input.dart';
+import 'package:fpb/home/view/widgets/user_search_list.dart';
 
-class UserSearch extends StatelessWidget {
-  const UserSearch({super.key});
+class UserSearchScreen extends StatelessWidget {
+  const UserSearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class UserSearch extends StatelessWidget {
     }
     return LayoutBuilder(builder: (context, box) {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: SingleChildScrollView(
               child: Column(
@@ -24,8 +26,10 @@ class UserSearch extends StatelessWidget {
               NavHeader(
                 box: box,
               ),
-              Container(),
               SearchInputWidget(
+                box: box,
+              ),
+              UserSearchList(
                 box: box,
               ),
             ],
