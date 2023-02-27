@@ -25,6 +25,7 @@ class UserSearchScreen extends StatelessWidget {
             children: [
               NavHeader(
                 box: box,
+                showSearchIcon: true,
               ),
               SearchInputWidget(
                 box: box,

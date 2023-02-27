@@ -17,7 +17,7 @@ class SearchInputWidget extends StatelessWidget {
     return Container(
       width: box.maxWidth,
       padding: EdgeInsets.symmetric(
-        horizontal: box.maxWidth * 0.025,
+        horizontal: box.maxWidth * 0.04,
         vertical: box.maxHeight * 0.01,
       ),
       child: Column(

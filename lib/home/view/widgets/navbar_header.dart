@@ -6,9 +6,14 @@ import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
 
 class NavHeader extends StatelessWidget {
-  const NavHeader({super.key, required this.box});
+  const NavHeader({
+    super.key,
+    required this.box,
+    this.showSearchIcon = false,
+  });
 
   final BoxConstraints box;
+  final bool showSearchIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +24,10 @@ class NavHeader extends StatelessWidget {
     return Container(
       width: box.maxWidth,
       padding: EdgeInsets.symmetric(
-        horizontal: box.maxWidth * 0.025,
+        horizontal: box.maxWidth * 0.04,
+        vertical: box.maxHeight * 0.025,
       ),
+      // color: Colors.red,
       child: Wrap(
         alignment: WrapAlignment.spaceBetween,
         crossAxisAlignment: WrapCrossAlignment.center,
@@ -33,20 +40,25 @@ class NavHeader extends StatelessWidget {
               spacing: box.maxWidth * 0.02,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                Container(
-                  height: box.maxHeight * 0.08,
-                  width: box.maxWidth * 0.08,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
+                showSearchIcon
+                    ? InkWell(
+                        onTap: () => print('Navigate to search scren'),
+                        child: Icon(
+                          FpbIcons.search,
+                          size: 20,
+                        ),
+                      )
+                    : SizedBox(),
+                SizedBox(
+                  height: box.maxHeight * 0.05,
                   child: Image.asset(
                     'assets/fpb-assets/scan_icon.png',
                   ),
                 ),
-                Icon(
-                  FpbIcons.notification,
-                  size: 20,
-                ),
+                // Icon(
+                //   FpbIcons.notification,
+                //   size: 20,
+                // ),
               ],
             ),
           )
