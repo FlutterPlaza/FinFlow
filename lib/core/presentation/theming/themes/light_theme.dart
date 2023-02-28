@@ -17,11 +17,16 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       onSecondary: _AppColors.primaryColorW,
       secondaryContainer: _AppColors.secondaryContainerW,
       tertiary: _AppColors.onSurfaceW,
-      onTertiary: Colors.red,  // set to odd color so we can see which component in the UI is affected
-      onTertiaryContainer: Colors.blue, // set to odd color so we can see which component in the UI is affected
-      inverseSurface: Colors.green, // set to odd color so we can see which component in the UI is affected
-      inversePrimary: Colors.yellow, // set to odd color so we can see which component in the UI is affected
-      outline: Colors.purple, // set to odd color so we can see which component in the UI is affected
+      onTertiary: Colors
+          .red, // set to odd color so we can see which component in the UI is affected
+      onTertiaryContainer: Colors
+          .blue, // set to odd color so we can see which component in the UI is affected
+      inverseSurface: Colors
+          .green, // set to odd color so we can see which component in the UI is affected
+      inversePrimary: Colors
+          .yellow, // set to odd color so we can see which component in the UI is affected
+      outline: Colors
+          .purple, // set to odd color so we can see which component in the UI is affected
       surface: _AppColors.bgColorW,
       onSurface: _AppColors.onSurfaceW,
       background: _AppColors.bgColorW,

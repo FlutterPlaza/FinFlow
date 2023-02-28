@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
-
 class PhoneNumberInput extends StatelessWidget {
   const PhoneNumberInput({
     super.key,

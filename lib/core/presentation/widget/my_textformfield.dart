@@ -13,6 +13,7 @@ class FpbTextFormField extends StatefulWidget {
     this.isPassword = false,
     this.onChanged,
     this.errorText,
+    this.showLabelText = true,
     required this.box,
   });
 
@@ -25,6 +26,7 @@ class FpbTextFormField extends StatefulWidget {
   final void Function(String)? onChanged;
   final String? errorText;
   final BoxConstraints box;
+  final bool showLabelText;
 
   @override
   State<FpbTextFormField> createState() => _FpbTextFormFieldState();
@@ -32,10 +34,13 @@ class FpbTextFormField extends StatefulWidget {
 
 class _FpbTextFormFieldState extends State<FpbTextFormField> {
   late bool? hidePassword;
+  bool? showLabel;
+
   @override
   void initState() {
     super.initState();
     hidePassword = widget.isPassword ? false : null;
+    showLabel = widget.showLabelText ? true : false;
   }
 
   @override
@@ -45,10 +50,12 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.label,
-          style: textTheme.titleSmall,
-        ),
+        showLabel == true
+            ? Text(
+                widget.label,
+                style: textTheme.titleSmall,
+              )
+            : SizedBox(),
         TextFormField(
           controller: widget.textController,
           focusNode: widget.node,
@@ -56,7 +63,7 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
               ? TextInputType.emailAddress
               : widget.isPassword
                   ? TextInputType.visiblePassword
-                  : TextInputType.none,
+                  : TextInputType.text,
           onChanged: widget.onChanged,
           obscureText: hidePassword ?? false,
           style: textTheme

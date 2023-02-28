@@ -20,7 +20,7 @@ class BiometricButton extends StatelessWidget {
             .read<BiometricAuthBloc>()
             .add(const BiometricAuthEvent.checkSupport());
         return Card(
-          color:  Colors.grey,
+          color: Colors.grey,
           child: IconButton(
             onPressed: state.canAuthenticate
                 ? () => context
