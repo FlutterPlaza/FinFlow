@@ -10,6 +10,7 @@ import 'package:fpb/authenticate_with_biometrics/application/bloc/biometric_auth
 import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/authentication_with_google/view/loading_indicator.dart';
+import 'package:fpb/authentication_with_twitter/application/twitter_authentication/twitter_authentication_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
 import 'package:fpb/core/presentation/extension/extensions.dart';
 import 'package:fpb/core/shared/helpers/is_keyboard_visible.dart';
@@ -36,6 +37,9 @@ class SignInScreen extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt<FacebookAuthBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<TwitterAuthenticationBloc>(),
         ),
         BlocProvider(
           create: (context) => getIt<EmailPasswordBloc>(),
@@ -245,8 +249,8 @@ class _SignInBodyState extends State<SignInBody>
                         )
                       ],
                     ).card(
-                      // height: (isKeyboardVisible(context) ? .95 : .8) *
-                      //     cts.maxHeight,
+                      height: (isKeyboardVisible(context) ? .95 : .8) *
+                          cts.maxHeight,
                       radiusTop: cts.maxWidth * 0.05,
                       color: theme.colorScheme.background,
                     ),
