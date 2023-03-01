@@ -47,8 +47,8 @@ class AppRoute extends _i8.RootStackRouter {
         child: const _i3.SignUpScreen(),
       );
     },
-    HomeRoute.name: (routeData) {
-      final args = routeData.argsAs<HomeRouteArgs>();
+    HomeRouter.name: (routeData) {
+      final args = routeData.argsAs<HomeRouterArgs>();
       return _i8.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i4.HomeScreen(
@@ -97,18 +97,18 @@ class AppRoute extends _i8.RootStackRouter {
           path: '/sign-up-screen',
         ),
         _i8.RouteConfig(
-          HomeRoute.name,
+          HomeRouter.name,
           path: '/home-screen',
           children: [
             _i8.RouteConfig(
               ProfileRoute.name,
-              path: 'profile-screen',
-              parent: HomeRoute.name,
+              path: 'profile',
+              parent: HomeRouter.name,
             ),
             _i8.RouteConfig(
               LatestActivitiesPage.name,
-              path: 'latest-activities-page',
-              parent: HomeRoute.name,
+              path: 'latestActivities',
+              parent: HomeRouter.name,
             ),
           ],
         ),
@@ -157,26 +157,26 @@ class SignUpRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.HomeScreen]
-class HomeRoute extends _i8.PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({
+class HomeRouter extends _i8.PageRouteInfo<HomeRouterArgs> {
+  HomeRouter({
     _i9.Key? key,
     required _i10.User user,
     List<_i8.PageRouteInfo>? children,
   }) : super(
-          HomeRoute.name,
+          HomeRouter.name,
           path: '/home-screen',
-          args: HomeRouteArgs(
+          args: HomeRouterArgs(
             key: key,
             user: user,
           ),
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'HomeRouter';
 }
 
-class HomeRouteArgs {
-  const HomeRouteArgs({
+class HomeRouterArgs {
+  const HomeRouterArgs({
     this.key,
     required this.user,
   });
@@ -187,7 +187,7 @@ class HomeRouteArgs {
 
   @override
   String toString() {
-    return 'HomeRouteArgs{key: $key, user: $user}';
+    return 'HomeRouterArgs{key: $key, user: $user}';
   }
 }
 
@@ -231,7 +231,7 @@ class ProfileRoute extends _i8.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
           ProfileRoute.name,
-          path: 'profile-screen',
+          path: 'profile',
         );
 
   static const String name = 'ProfileRoute';
@@ -243,7 +243,7 @@ class LatestActivitiesPage extends _i8.PageRouteInfo<void> {
   const LatestActivitiesPage()
       : super(
           LatestActivitiesPage.name,
-          path: 'latest-activities-page',
+          path: 'latestActivities',
         );
 
   static const String name = 'LatestActivitiesPage';

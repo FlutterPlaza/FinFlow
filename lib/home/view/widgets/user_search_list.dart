@@ -78,6 +78,7 @@ class UserSearchList extends StatelessWidget {
               ),
             ),
           ),
+
           VerticalSpacingWidget(
             box: box,
             height: box.maxHeight * 0.015,
@@ -125,6 +126,33 @@ class UserSearchList extends StatelessWidget {
                     box: box,
                     fullName: 'Amanda',
                     username: 'amanda',
+                    userPhoto: '',
+                    onChanged: (value) {
+                      print(value);
+                    },
+                  ),
+                  UserRadioSelect(
+                    box: box,
+                    fullName: 'Desking La',
+                    username: 'desking',
+                    userPhoto: '',
+                    onChanged: (value) {
+                      print(value);
+                    },
+                  ),
+                  UserRadioSelect(
+                    box: box,
+                    fullName: 'Desking La',
+                    username: 'desking',
+                    userPhoto: '',
+                    onChanged: (value) {
+                      print(value);
+                    },
+                  ),
+                  UserRadioSelect(
+                    box: box,
+                    fullName: 'Desking La',
+                    username: 'desking',
                     userPhoto: '',
                     onChanged: (value) {
                       print(value);

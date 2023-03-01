@@ -24,6 +24,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           children: [
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 0;
@@ -36,10 +37,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
                         Icon(
                           FpbIcons.home_selected,
                           color: colors.secondary,
+                          // size: ,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
                             color: colors.secondary,
@@ -49,11 +51,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.home,
-                      color: colors.onSurface,
+                      color: Colors.grey[500],
                     ),
             ),
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 1;
@@ -68,8 +71,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                           color: colors.secondary,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
                             color: colors.secondary,
@@ -79,11 +82,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.wallet,
-                      color: colors.onSurface,
+                      color: Colors.grey[500],
                     ),
             ),
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 2;
@@ -98,8 +102,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                           color: colors.secondary,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
                             color: colors.secondary,
@@ -109,11 +113,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.dollar_icon,
-                      color: colors.onSurface,
+                      color: Colors.grey[500],
                     ),
             ),
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 3;
@@ -128,8 +133,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                           color: colors.secondary,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
                             color: colors.secondary,
@@ -139,11 +144,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.graph,
-                      color: colors.onSurface,
+                      color: Colors.grey[500],
                     ),
             ),
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 4;
@@ -158,8 +164,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                           color: Colors.black,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius:
                                 BorderRadius.circular(box.maxWidth * 0.005),
@@ -170,7 +176,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.search,
-                      color: colors.onSurface,
+                      color: Colors.grey[500],
                     ),
             ),
           ],
