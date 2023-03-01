@@ -9,6 +9,16 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
 
   return ThemeData(
     brightness: Brightness.light,
+    appBarTheme: AppBarTheme(
+      foregroundColor: _AppColors.secondaryColorW,
+      color: _AppColors.onSurfaceW,
+      elevation: 0,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: _AppColors.onSurfaceW,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
+      ),
+    ),
     colorScheme: ColorScheme.light(
       primary: _AppColors.primaryColorW,
       onPrimary: _AppColors.onSurfaceW,
