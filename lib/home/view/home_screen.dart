@@ -77,9 +77,10 @@ class _HomeBodyState extends State<HomeBody> {
                   height: box.maxHeight * 0.93,
                   child: HomeContainer(),
                 ),
-                SizedBox(
-                  height: box.maxHeight * 0.07,
-                  child: BottomNavBar(),
+                Expanded(
+                  child: SizedBox(
+                    child: BottomNavBar(),
+                  ),
                 ),
               ],
             );

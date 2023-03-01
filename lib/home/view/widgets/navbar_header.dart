@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
+import 'package:fpb/router/app_route.gr.dart';
 
 class NavHeader extends StatelessWidget {
   const NavHeader({
@@ -42,7 +44,11 @@ class NavHeader extends StatelessWidget {
               children: [
                 showSearchIcon
                     ? InkWell(
-                        onTap: () => print('Navigate to search scren'),
+                        onTap: () {
+                          context.pushRoute(
+                            LatestActivitiesPage(),
+                          );
+                        },
                         child: Icon(
                           FpbIcons.search,
                           size: 20,

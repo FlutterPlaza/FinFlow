@@ -8,6 +8,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
   final style = theme.textTheme;
 
   return ThemeData(
+    brightness: Brightness.light,
     colorScheme: ColorScheme.light(
       primary: _AppColors.primaryColorW,
       onPrimary: _AppColors.onSurfaceW,
@@ -142,6 +143,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
           horizontal: cts.maxWidth * 0.035, vertical: cts.maxWidth * 0.05),
     ),
     scaffoldBackgroundColor: _AppColors.onSurfaceW,
+    // scaffoldBackgroundColor: _AppColors.dark,
     tabBarTheme: TabBarTheme(
       indicatorColor: Colors
           .purple, // _AppColors.onSurfaceW, // theme.colorScheme.onSurface,
@@ -160,7 +162,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
 
     iconTheme: IconThemeData(
       color: theme.colorScheme.onSurface,
-      size: cts.maxWidth * 0.05,
+      size: cts.maxWidth * 0.07,
     ),
   );
 }

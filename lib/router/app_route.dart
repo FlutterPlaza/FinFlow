@@ -14,10 +14,20 @@ import 'package:fpb/sign_up/view/signup_page.dart';
     AutoRoute(page: SplashScreen, initial: true),
     AutoRoute(page: SignInScreen),
     AutoRoute(page: SignUpScreen),
-    AutoRoute(page: HomeScreen, children: [
-      AutoRoute(page: ProfileScreen),
-      AutoRoute(page: LatestActivitiesPage),
-    ]),
+    AutoRoute(
+      name: 'HomeRouter',
+      page: HomeScreen,
+      children: [
+        AutoRoute(
+          path: 'profile',
+          page: ProfileScreen,
+        ),
+        AutoRoute(
+          path: 'latestActivities',
+          page: LatestActivitiesPage,
+        ),
+      ],
+    ),
     AutoRoute(page: OnboardingScreen),
   ],
 )
