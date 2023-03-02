@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,12 +5,15 @@ import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/authentication_with_google/view/loading_indicator.dart';
+import 'package:fpb/authentication_with_phone_number/phone_number_bloc/phone_number_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
-import 'package:fpb/core/presentation/widget/fpb_button.dart';
-import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
+import 'package:fpb/sign_up/view/email_address_tab_view.dart';
+import 'package:fpb/sign_up/view/phone_number_tab_view.dart';
+import 'package:fpb/sign_up/view/sign_up_text_button.dart';
+import 'package:fpb/sign_up/widgets/signup_tab_bar.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -29,6 +31,9 @@ class SignUpScreen extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt<EmailPasswordBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<PhoneNumberBloc>(),
         ),
       ],
       child: SignUpBody(),
@@ -86,223 +91,140 @@ class _SignUpBodyState extends State<SignUpBody>
                           ),
                         ),
                         Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              height: box.maxHeight * .94,
-                              padding: const EdgeInsets.all(18),
-                              decoration: BoxDecoration(
-                                color: theme.colorScheme.background,
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
-                                ),
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            height: box.maxHeight * .94,
+                            padding: const EdgeInsets.all(18),
+                            decoration: BoxDecoration(
+                              color: theme.colorScheme.background,
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
                               ),
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Join Us!',
-                                      style: textTheme.displaySmall?.copyWith(
-                                        color: theme.colorScheme.onBackground,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: box.maxWidth * 0.037,
-                                      ),
+                            ),
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Join Us!',
+                                    style: textTheme.displaySmall?.copyWith(
+                                      color: theme.colorScheme.onBackground,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: box.maxWidth * 0.037,
                                     ),
-                                    Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Container(
-                                        height: box.maxHeight * .85,
-                                        padding: EdgeInsets.only(
-                                          top: box.maxHeight * .025,
-                                          left: box.maxHeight * .025,
-                                          right: box.maxHeight * .025,
+                                  ),
+                                  Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Container(
+                                      height: box.maxHeight * .85,
+                                      padding: EdgeInsets.only(
+                                        top: box.maxHeight * .025,
+                                        left: box.maxHeight * .025,
+                                        right: box.maxHeight * .025,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: theme.colorScheme.background,
+                                        borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(20),
+                                          topRight: Radius.circular(20),
                                         ),
-                                        decoration: BoxDecoration(
-                                          color: theme.colorScheme.background,
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(20),
-                                            topRight: Radius.circular(20),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            l10n.signUpRegisterTitle,
+                                            style: textTheme.titleLarge,
                                           ),
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              l10n.signUpRegisterTitle,
-                                              style: textTheme.titleLarge,
-                                            ),
-                                            SizedBox(
-                                              height: box.maxHeight * 0.001,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.symmetric(
-                                                vertical: box.maxHeight * .008,
-                                              ),
-                                              height: box.maxHeight * 0.06,
-                                              decoration: BoxDecoration(
-                                                color: theme.cardColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              // color: Colors.red,
-                                              child: TabBar(
-                                                padding: EdgeInsets.all(
-                                                    box.maxHeight * .008),
-                                                controller: tabController,
-                                                onTap: (_) {
-                                                  setState(() {
-                                                    tabController.index = _;
-                                                  });
-                                                },
-                                                tabs: [
-                                                  Tab(
-                                                    child: Text(
-                                                      l10n.signInEmailLogInLabel,
-                                                      maxLines: 1,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
+                                          SizedBox(
+                                            height: box.maxHeight * 0.001,
+                                          ),
+                                          SignUpTabBar(
+                                              box: box,
+                                              tabController: tabController,
+                                              onChanged: (int index) {
+                                                setState(() {
+                                                  tabController.index = index;
+                                                });
+                                              }),
+                                          SizedBox(
+                                            height: box.maxHeight * .025,
+                                          ),
+                                          Flexible(
+                                            child: Form(
+                                              child: SizedBox(
+                                                height: box.maxHeight * 0.5,
+                                                child: TabBarView(
+                                                  physics:
+                                                      const BouncingScrollPhysics(),
+                                                  controller: tabController,
+                                                  children: [
+                                                    EmailAddressTabView(
+                                                      l10n: l10n,
+                                                      box: box,
                                                     ),
-                                                  ),
-                                                  Tab(
-                                                    child: Text(
-                                                      l10n.signInPhoneNumberLogInLabel,
-                                                      maxLines: 1,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
+                                                    PhoneNumberTabView(
+                                                      box: box,
+                                                      l10n: l10n,
+                                                      tabController:
+                                                          tabController,
                                                     ),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: box.maxHeight * .025,
-                                            ),
-                                            Flexible(
-                                              child: Form(
-                                                child: SizedBox(
-                                                  height: box.maxHeight * 0.5,
-                                                  child: TabBarView(
-                                                    physics:
-                                                        const BouncingScrollPhysics(),
-                                                    controller: tabController,
-                                                    children: [
-                                                      Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .end,
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        children: [
-                                                          FpbTextFormField(
-                                                            label: l10n
-                                                                .signUpFullNameTextFieldLabel,
-                                                            hint: l10n
-                                                                .signUpFullNameTextFieldHintText,
-                                                            box: box,
-                                                          ),
-                                                          FpbTextFormField(
-                                                            label: l10n
-                                                                .signInEmailTextFieldLabel,
-                                                            hint: l10n
-                                                                .signInEmailTextFieldHintText,
-                                                            isEmail: true,
-                                                            box: box,
-                                                          ),
-                                                          FpbTextFormField(
-                                                            label: l10n
-                                                                .signInPasswordFieldLabel,
-                                                            hint: l10n
-                                                                .signInPasswordFieldHintText,
-                                                            isPassword: true,
-                                                            box: box,
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Container(),
-                                                      // Column(
-                                                      //   children: [
-                                                      //     Flexible(
-                                                      //       child: Container(
-                                                      //         color: Colors.green,
-                                                      //         width: double.infinity,
-                                                      //       ),
-                                                      //     )
-                                                      //   ],
-                                                      // ),
-                                                    ],
-                                                  ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
-                                            FpbButton(
-                                              label: l10n.signInSignUpLabel,
-                                              onTap: () {},
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: box.maxHeight * 0.012,
                                             ),
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                vertical: box.maxHeight * 0.012,
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  const Expanded(
-                                                      child: Divider()),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                      horizontal:
-                                                          box.maxHeight * .015,
-                                                    ),
-                                                    child: Text(
-                                                      l10n.signUpOrSignupWithText,
-                                                    ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                const Expanded(
+                                                    child: Divider()),
+                                                Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal:
+                                                        box.maxHeight * .015,
                                                   ),
-                                                  const Expanded(
-                                                      child: Divider())
-                                                ],
-                                              ),
+                                                  child: Text(
+                                                    l10n.signUpOrSignupWithText,
+                                                  ),
+                                                ),
+                                                const Expanded(child: Divider())
+                                              ],
                                             ),
-                                            AlternativeAuth(box: box),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  top: 25, bottom: 8),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'Already a member?',
-                                                    style:
-                                                        textTheme.headlineSmall,
-                                                  ),
-                                                  TextButton(
-                                                    onPressed: () {
-                                                      context.router.pop();
-                                                      // context.router
-                                                      //     .push(SignInRoute());
-                                                    },
-                                                    child: Text(
-                                                      'Login',
-                                                      style: textTheme
-                                                          .headlineSmall
-                                                          ?.copyWith(
-                                                        color:
-                                                            theme.primaryColor,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
+                                          ),
+                                          AlternativeAuth(box: box),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 25, bottom: 8),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Already a member?',
+                                                  style:
+                                                      textTheme.headlineSmall,
+                                                ),
+                                                AuthTextButton(
+                                                    buttonLabel: 'Login',
+                                                    textTheme: textTheme,
+                                                    theme: theme,),
+                                              ],
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ]),
-                            ))
+                                  ),
+                                ]),
+                          ),
+                        ),
                       ],
                     ),
                   );

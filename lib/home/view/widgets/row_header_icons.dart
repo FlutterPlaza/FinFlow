@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/core/presentation/animations/slide_up_route_transition.dart';
-import 'package:fpb/qr_code_screen/view/qr_code_screen.dart';
 import 'package:fpb/router/app_route.gr.dart';
 
 class RowHeaderIcons extends StatelessWidget {

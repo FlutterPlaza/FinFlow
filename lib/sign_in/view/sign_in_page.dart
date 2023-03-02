@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -60,16 +59,14 @@ class SignInBody extends StatefulWidget {
 class _SignInBodyState extends State<SignInBody>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
-  final user = FirebaseAuth.instance.currentUser;
 
   @override
   void initState() {
-    super.initState();
-
     tabController = TabController(
       length: 2,
       vsync: this,
     );
+    super.initState();
   }
 
   @override
@@ -82,13 +79,15 @@ class _SignInBodyState extends State<SignInBody>
     return BlocConsumer<GoogleSignInBloc, GoogleSignInState>(
       listener: (context, state) {
         state.failureOrUser.fold(
-            (l) => ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      backgroundColor: theme.colorScheme.error,
-                      elevation: 0,
-                      content: Text(l.message)),
-                ),
-            (r) {});
+          (l) => ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: theme.colorScheme.error,
+              elevation: 0,
+              content: Text(l.message),
+            ),
+          ),
+          (r) {},
+        );
       },
       builder: (context, state) {
         return LayoutBuilder(
@@ -169,7 +168,7 @@ class _SignInBodyState extends State<SignInBody>
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           EmailInput(box: cts),
-                                          PasswordInput(box: cts),
+                                          PasswordInput(box: cts, tabController: tabController.index,),
                                           Text(l10n.signInForgotPasswordText),
                                         ],
                                       ),
@@ -177,16 +176,15 @@ class _SignInBodyState extends State<SignInBody>
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          PhoneNumberInput(
-                                              l10n: l10n, cts: cts),
-                                          PasswordInput(box: cts),
+                                          PhoneNumberInput(l10n: l10n, cts: cts),
+                                          PasswordInput(box: cts, tabController: tabController.index),
                                         ],
                                       ),
                                     ],
                                   ),
                                 ),
                               ),
-                              const LoginButton(),
+                              tabController.index == 0 ? LoginButton(tabController: tabController.index) : SizedBox(),
                               Padding(
                                 padding: EdgeInsets.symmetric(
                                   vertical: cts.maxHeight * 0.012,

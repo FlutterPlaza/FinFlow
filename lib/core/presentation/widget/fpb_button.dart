@@ -9,6 +9,7 @@ class FpbButton extends StatelessWidget {
     this.height,
     this.width,
     this.leading,
+    this.heading,
     this.spaceAround = false,
     this.backgroundColor,
     this.borderSideColor,
@@ -21,6 +22,7 @@ class FpbButton extends StatelessWidget {
   final double? height;
   final double? width;
   final Widget? leading;
+  final Widget? heading;
   final bool spaceAround;
   final Color? backgroundColor;
   final Color? borderSideColor;
@@ -43,7 +45,7 @@ class FpbButton extends StatelessWidget {
               ? MainAxisAlignment.spaceAround
               : MainAxisAlignment.spaceBetween,
           children: [
-            leading ?? const SizedBox.shrink(),
+            heading ?? const SizedBox.shrink(),
             Text(
               label,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
