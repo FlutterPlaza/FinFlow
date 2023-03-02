@@ -12,6 +12,8 @@ import 'package:fpb/core/presentation/widget/my_textformfield.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
+import 'package:fpb/sign_in/view/widgets/password_input.dart';
+import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -219,17 +221,21 @@ class _SignUpBodyState extends State<SignUpBody>
                                                           ),
                                                         ],
                                                       ),
-                                                      Container(),
-                                                      // Column(
-                                                      //   children: [
-                                                      //     Flexible(
-                                                      //       child: Container(
-                                                      //         color: Colors.green,
-                                                      //         width: double.infinity,
-                                                      //       ),
-                                                      //     )
-                                                      //   ],
-                                                      // ),
+                                                      Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          PhoneNumberInput(
+                                                              l10n: l10n,
+                                                              cts: box),
+                                                          PasswordInput(
+                                                              box: box,
+                                                              tabController:
+                                                                  tabController
+                                                                      .index),
+                                                        ],
+                                                      ),
                                                     ],
                                                   ),
                                                 ),
