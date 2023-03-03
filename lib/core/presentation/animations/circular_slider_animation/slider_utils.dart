@@ -6,7 +6,7 @@ double percentageToRadians(double percentage) => ((2 * pi * percentage) / 100);
 double radiansToPercentage(double radians) {
   var normalized = radians < 0 ? -radians : 2 * pi - radians;
   var percentage = ((100 * normalized) / (2 * pi));
-  // TODO we have an inconsistency of pi/2 in terms of percentage and radians
+  // we have an inconsistency of pi/2 in terms of percentage and radians
   return (percentage + 25) % 100;
 }
 
