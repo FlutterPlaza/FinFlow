@@ -9,6 +9,8 @@ class FpbButton extends StatelessWidget {
     this.heading,
     this.height,
     this.width,
+    this.leading,
+    this.spaceAround = false,
   });
 
   final String label;
@@ -17,6 +19,8 @@ class FpbButton extends StatelessWidget {
   final Widget? heading;
   final double? height;
   final double? width;
+  final Widget? leading;
+  final bool spaceAround;
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +39,16 @@ class FpbButton extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         onPressed: onTap,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: spaceAround
+              ? MainAxisAlignment.spaceAround
+              : MainAxisAlignment.spaceBetween,
           children: [
+            leading != null
+                ? Transform.translate(
+                    offset: const Offset(-10, 0),
+                    child: leading,
+                  )
+                : const SizedBox(),
             heading ?? const SizedBox.shrink(),
             text,
             if (trailing != null)

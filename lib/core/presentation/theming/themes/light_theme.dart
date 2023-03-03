@@ -73,7 +73,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       ),
       titleSmall: style.titleSmall?.copyWith(
         fontSize: cts.maxWidth * 0.04,
-        color: _AppColors.onSurfaceW,
+        color: _AppColors.greyLight,
       ),
       bodyLarge: style.bodyLarge?.copyWith(
         fontSize: cts.maxWidth * 0.042,
@@ -171,7 +171,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
     ),
 
     iconTheme: IconThemeData(
-      color: theme.colorScheme.onSurface,
+      color: _AppColors.greyLight,
       size: cts.maxWidth * 0.07,
     ),
   );

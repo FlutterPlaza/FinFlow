@@ -51,7 +51,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.home,
-                      color: Colors.grey[500],
                     ),
             ),
             IconButton(
@@ -82,7 +81,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.wallet,
-                      color: Colors.grey[500],
                     ),
             ),
             IconButton(
@@ -113,7 +111,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.dollar_icon,
-                      color: Colors.grey[500],
                     ),
             ),
             IconButton(
@@ -144,7 +141,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.graph,
-                      color: Colors.grey[500],
+                      //
                     ),
             ),
             IconButton(
@@ -176,7 +173,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     )
                   : Icon(
                       FpbIcons.search,
-                      color: Colors.grey[500],
                     ),
             ),
           ],
