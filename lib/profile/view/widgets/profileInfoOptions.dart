@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/l10n/l10n.dart';
 
 class ProfileInfoOptions extends StatelessWidget {
   const ProfileInfoOptions({
@@ -34,7 +33,9 @@ class ProfileInfoOptions extends StatelessWidget {
                 width: box.maxWidth * .03,
               ),
               Text(text,
-              style: style.titleMedium,)
+              style: style.titleMedium?.copyWith(
+                fontWeight: FontWeight.w600
+              ),)
           ],
         ),
       ),

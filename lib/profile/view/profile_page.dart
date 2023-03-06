@@ -28,43 +28,45 @@ class _ProfileScreenState extends State<ProfileScreen> {
               left: box.maxHeight * 0.03,
               right: box.maxHeight * 0.03,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TitleText(
-                  box: box,
-                  l10n: l10n), 
-                SizedBox(
-                  height: box.maxHeight * 0.03,
-                ),
-                UserPic(
-                  box: box),
-                SizedBox(
-                  height: box.maxHeight * 0.01,
-                ),
-                Center(
-                  child: UserName(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                    TitleText(
+                      box: box,
+                      l10n: l10n), 
+                  SizedBox(
+                    height: box.maxHeight * 0.03,
+                  ),
+                  UserPic(
                     box: box),
-                ),
-                SizedBox(
-                  height: box.maxHeight * 0.03,
-                ),
-                UserProfileOptions(
-                  box: box,
-                  l10n: l10n),
-                SizedBox(
-                  height: box.maxHeight * 0.02,
-                ),
-                LogOutOption(
-                  box:box,
-                  l10n: l10n),
-                SizedBox(
-                  height: box.maxHeight * 0.1,
-                ),
-                AppVersion(
-                  box: box,
-                  l10n: l10n)
-              ],
+                  SizedBox(
+                    height: box.maxHeight * 0.01,
+                  ),
+                  Center(
+                    child: UserName(
+                      box: box),
+                  ),
+                  SizedBox(
+                    height: box.maxHeight * 0.03,
+                  ),
+                  UserProfileOptions(
+                    box: box,
+                    l10n: l10n),
+                  SizedBox(
+                    height: box.maxHeight * 0.02,
+                  ),
+                  LogOutOption(
+                    box:box,
+                    l10n: l10n),
+                  SizedBox(
+                    height: box.maxHeight * 0.1,
+                  ),
+                  AppVersion(
+                    box: box,
+                    l10n: l10n)
+                ],
+              ),
             ),
           );
         },
@@ -250,7 +252,9 @@ class UserName extends StatelessWidget {
       children: [
     Text(
     'John Merry',
-    style: style.titleMedium,
+    style: style.titleMedium?.copyWith(
+      fontWeight: FontWeight.w600
+    ),
     ),
     Text(
     '@john.merry',
@@ -278,7 +282,10 @@ class TitleText extends StatelessWidget {
     final style = theme.textTheme;
     return Text(
       l10n.profileTitle,
-      style: style.titleLarge,
+      style: style.displayLarge?.copyWith(
+        color: theme.colorScheme.secondary,
+        fontWeight: FontWeight.w600
+      ),
     );
   }
 }
