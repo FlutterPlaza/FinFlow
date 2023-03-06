@@ -35,8 +35,8 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
           .green, // set to odd color so we can see which component in the UI is affected
       inversePrimary: Colors
           .yellow, // set to odd color so we can see which component in the UI is affected
-      outline: Colors
-          .purple, // set to odd color so we can see which component in the UI is affected
+      outline: _AppColors
+          .lightGrey, // set to odd color so we can see which component in the UI is affected
       surface: _AppColors.bgColorW,
       onSurface: _AppColors.onSurfaceW,
       background: _AppColors.bgColorW,

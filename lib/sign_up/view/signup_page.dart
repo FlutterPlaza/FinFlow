@@ -7,8 +7,8 @@ import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/authentication_with_google/view/loading_indicator.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
-import 'package:fpb/core/presentation/widget/my_button.dart';
-import 'package:fpb/core/presentation/widget/my_textformfield.dart';
+import 'package:fpb/core/presentation/widget/fpb_button.dart';
+import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
