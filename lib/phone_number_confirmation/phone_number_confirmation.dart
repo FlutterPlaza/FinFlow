@@ -4,17 +4,18 @@ import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/presentation/widget/my_button.dart';
 import 'package:fpb/l10n/l10n.dart';
 
-class EmailConfirmationScreen extends StatefulWidget {
-  static const routeName = '/emailConfirmation';
+class PhoneNumberConfirmationScreen extends StatefulWidget {
+  static const routeName = '/phoneNumberConfirmation';
 
-  const EmailConfirmationScreen({super.key});
+  const PhoneNumberConfirmationScreen({super.key});
 
   @override
-  State<EmailConfirmationScreen> createState() =>
-      _EmailConfirmationScreenState();
+  State<PhoneNumberConfirmationScreen> createState() =>
+      _PhoneNumberConfirmationScreenState();
 }
 
-class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
+class _PhoneNumberConfirmationScreenState
+    extends State<PhoneNumberConfirmationScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -44,7 +45,7 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
                             height: box.maxHeight * .05,
                           ),
                           Text(
-                            l10n.confirmEmailTitleText,
+                            l10n.confirmPhoneNumberTitleText,
                             style: style.titleLarge
                                 ?.copyWith(fontSize: box.maxHeight * .045),
                             textAlign: TextAlign.center,
@@ -54,7 +55,7 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
                               textAlign: TextAlign.center,
                               text: TextSpan(children: <TextSpan>[
                                 TextSpan(
-                                  text: l10n.confirmEmailBodyContentStart,
+                                  text: l10n.confirmPhoneNumberBodyContentStart,
                                   style: style.titleMedium,
                                 ),
                                 TextSpan(
@@ -132,7 +133,7 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               FpbButton(
-                                label: l10n.confirmEmailResendButton,
+                                label: l10n.confirmPhoneNumberResendOtpButton,
                                 onTap: () {},
                                 backgroundColor: colors.scrim,
                                 borderSideColor: colors.outline,

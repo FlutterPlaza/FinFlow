@@ -9,6 +9,9 @@ class FpbButton extends StatelessWidget {
     this.heading,
     this.height,
     this.width,
+    this.backgroundColor,
+    this.borderSideColor,
+    this.textColor,
   });
 
   final String label;
@@ -17,16 +20,12 @@ class FpbButton extends StatelessWidget {
   final Widget? heading;
   final double? height;
   final double? width;
+  final Color? backgroundColor;
+  final Color? borderSideColor;
+  final Color? textColor;
 
   @override
   Widget build(BuildContext context) {
-    final text = Text(
-      label,
-      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            color: Colors.white,
-            // fontWeight: FontWeight.w400,
-          ),
-    );
     final size = MediaQuery.of(context).size;
     return SizedBox(
       width: width ?? size.width,
@@ -38,7 +37,13 @@ class FpbButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             heading ?? const SizedBox.shrink(),
-            text,
+            Text(
+              label,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: textColor,
+                    // fontWeight: FontWeight.w400,
+                  ),
+            ),
             if (trailing != null)
               Transform.translate(
                 offset: const Offset(-15, 0),
@@ -47,6 +52,13 @@ class FpbButton extends StatelessWidget {
             else
               const SizedBox.shrink()
           ],
+        ),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(backgroundColor!),
+          side: MaterialStateProperty.all(
+            BorderSide(
+                color: borderSideColor!, width: 1.0, style: BorderStyle.solid),
+          ),
         ),
       ),
     );
