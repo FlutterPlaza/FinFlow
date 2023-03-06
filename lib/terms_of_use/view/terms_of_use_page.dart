@@ -12,9 +12,9 @@ class TermsOfUsePage extends StatefulWidget {
 }
 
 class _TermsOfUsePageState extends State<TermsOfUsePage> {
-   late final WebViewController controller;
+  late final WebViewController controller;
 
- @override
+  @override
   void initState() {
     super.initState();
     controller = WebViewController()
@@ -23,60 +23,53 @@ class _TermsOfUsePageState extends State<TermsOfUsePage> {
       );
   }
 
-@override
+  @override
   Widget build(BuildContext context) {
-    
     final l10n = context.l10n;
-    final theme = Theme.of(context); 
+    final theme = Theme.of(context);
     final style = theme.textTheme;
-    return LayoutBuilder(
-      builder: (context, BoxConstraints box){
-    //appBar: AppBar(title: const Text('Flutter Simple Example')),
-    return Scaffold(
-      backgroundColor: theme.colorScheme.background,
-      body: SafeArea(
-        child: Stack(
-          children:[
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: box.maxHeight * .025,
-                    horizontal: box.maxHeight * .025
+    return LayoutBuilder(builder: (context, BoxConstraints box) {
+      //appBar: AppBar(title: const Text('Flutter Simple Example')),
+      return Scaffold(
+        backgroundColor: theme.colorScheme.background,
+        body: SafeArea(
+          child: Stack(children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  vertical: box.maxHeight * .025,
+                  horizontal: box.maxHeight * .025),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TitleText(style: style, text: l10n.termsOfUseTitle),
+                  SizedBox(
+                    height: box.maxHeight * .03,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TitleText(style: style,
-                text: l10n.termsOfUseTitle),
-                SizedBox(
-                  height: box.maxHeight * .03,
-                ),
-                Text(l10n.termsOfUseText,
-                style: style.titleMedium,),
-                SizedBox(
-                  height: box.maxHeight * .02,
-                ),
-                WebviewContainer(
-                  controller: controller,
-                  box: box),
-              ],
+                  Text(
+                    l10n.termsOfUseText,
+                    style: style.titleMedium,
+                  ),
+                  SizedBox(
+                    height: box.maxHeight * .02,
+                  ),
+                  WebviewContainer(controller: controller, box: box),
+                ],
+              ),
             ),
-                ),
-          SubmitAndCancelBtn(
-            theme: theme,
-            box: box,)
-       ] ),
-      ),
-    );
-   } );   
+            SubmitAndCancelBtn(
+              theme: theme,
+              box: box,
+            )
+          ]),
+        ),
+      );
+    });
   }
 }
 
 class WebviewContainer extends StatelessWidget {
-  const WebviewContainer({
-    super.key,
-    required this.controller,
-    required this.box
-  });
+  const WebviewContainer(
+      {super.key, required this.controller, required this.box});
 
   final WebViewController controller;
   final BoxConstraints box;
@@ -86,19 +79,13 @@ class WebviewContainer extends StatelessWidget {
     return Container(
       height: box.maxHeight * .75,
       width: box.maxWidth,
-      child: WebViewWidget(
-        controller: controller
-        ),
-            );
+      child: WebViewWidget(controller: controller),
+    );
   }
 }
 
 class TitleText extends StatelessWidget {
-  const TitleText({
-    super.key,
-    required this.style,
-    required this.text
-  });
+  const TitleText({super.key, required this.style, required this.text});
 
   final TextTheme style;
   final String text;
@@ -106,8 +93,10 @@ class TitleText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(text,
-      style: style.titleLarge,),
+      child: Text(
+        text,
+        style: style.titleLarge,
+      ),
     );
   }
 }

@@ -1,24 +1,17 @@
-
 import 'package:flutter/material.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/terms_of_use/view/widgets/terms_of_use_btn.dart';
 
-
 class SubmitAndCancelBtn extends StatelessWidget {
-  const SubmitAndCancelBtn({
-    super.key,
-    required this.theme,
-    required this.box
-  });
+  const SubmitAndCancelBtn({super.key, required this.theme, required this.box});
 
   final ThemeData theme;
   final BoxConstraints box;
 
   @override
   Widget build(BuildContext context) {
-
     final l10n = context.l10n;
-    
+
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
@@ -26,9 +19,7 @@ class SubmitAndCancelBtn extends StatelessWidget {
         width: box.maxWidth,
         color: theme.colorScheme.background,
         child: Padding(
-          padding:   EdgeInsets.symmetric(
-            horizontal: box.maxHeight * .015
-          ),
+          padding: EdgeInsets.symmetric(horizontal: box.maxHeight * .015),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,9 +29,9 @@ class SubmitAndCancelBtn extends StatelessWidget {
                 textColor: theme.colorScheme.secondary,
                 backgroundColor: theme.colorScheme.background,
                 borderColor: theme.colorScheme.secondary,
-                box: box,),
-
-                termsOfUseBtn(
+                box: box,
+              ),
+              termsOfUseBtn(
                   text: l10n.termsOfUseSubmitBtn,
                   textColor: theme.colorScheme.background,
                   backgroundColor: theme.colorScheme.primary,
