@@ -48,8 +48,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
     setState(() {
       initTime = _generateRandomTime();
       endTime = _generateRandomTime();
-      print({'Gen': _generateRandomTime()});
-      print({'Time': _generateRandomTime()});
+      // print({'Gen': _generateRandomTime()});
+      // print({'Time': _generateRandomTime()});
       inBedTime = initTime;
       outBedTime = endTime;
     });
