@@ -22,6 +22,7 @@ class EmailInput extends StatelessWidget {
     return BlocBuilder<EmailPasswordBloc, EmailPasswordState>(
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) => FpbTextFormField(
+        
         key: const Key('Email_password_form_emailInput_textField'),
         box: box,
         label: l10n.signInEmailTextFieldLabel,
