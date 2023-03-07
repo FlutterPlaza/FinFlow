@@ -6,7 +6,6 @@ class FpbButton extends StatelessWidget {
     required this.label,
     required this.onTap,
     this.trailing,
-    this.heading,
     this.height,
     this.width,
     this.leading,
@@ -16,7 +15,6 @@ class FpbButton extends StatelessWidget {
   final String label;
   final void Function()? onTap;
   final Widget? trailing;
-  final Widget? heading;
   final double? height;
   final double? width;
   final Widget? leading;
@@ -48,8 +46,7 @@ class FpbButton extends StatelessWidget {
                     offset: const Offset(-10, 0),
                     child: leading,
                   )
-                : const SizedBox(),
-            heading ?? const SizedBox.shrink(),
+                : const SizedBox.shrink(),
             text,
             if (trailing != null)
               Transform.translate(

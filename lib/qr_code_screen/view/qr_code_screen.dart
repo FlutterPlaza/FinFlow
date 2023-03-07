@@ -9,7 +9,9 @@ class QrCodeScreen extends StatelessWidget {
       builder: (BuildContext context, BoxConstraints box) {
         return Scaffold(
           body: Center(
-            child: Text('QRcode'),
+            child: Text(
+              'QRcode',
+            ),
           ),
         );
       },
