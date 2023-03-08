@@ -30,6 +30,7 @@ class QrTabBarViewWidget extends StatelessWidget {
         ),
         MyQrCode(
           box: box,
+          qrKey: qrKey!,
         ),
       ],
     );

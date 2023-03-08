@@ -48,6 +48,8 @@ dependencies:
   flutter_facebook_auth: ^5.0.7
   qr_code_scanner: ^1.0.1
   qr_flutter: ^4.0.0
+  path_provider: ^2.0.13
+  share_plus: ^6.3.1
 
 dev_dependencies:
   widgetbook_generator:
