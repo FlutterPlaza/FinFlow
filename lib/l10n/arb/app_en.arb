@@ -231,5 +231,33 @@
     "signUpAlreadyAMemberText": "Already a member?",
     "@signUpAlreadyAMemberText": {
         "description": "This is the text displayed on the sign up screen after the social media icon buttons"
+    },
+    "confirmPhoneNumberTitleText": "Enter Pin\nCode",
+    "@confirmPhoneNumberTitleText": {
+        "description": "This is the main title on the phone number confirmation screen"
+    },
+    "confirmPhoneNumberBodyContentStart": "We’ve sent you a confirmation email containing ",
+    "@confirmPhoneNumberBodyContentStart": {
+        "description": "This is the first part of the content found on the body of the confirmation screen, just below the main title"
+    },
+    "confirmPhoneNumberBodyContentMid": "validation code. ",
+    "@confirmPhoneNumberBodyContentMid": {
+        "description": "This is the middle part in bold of the content found on the body of the confirmation screen"
+    },
+    "confirmPhoneNumberBodyContentEnd": "Please enter the code.",
+    "@confirmPhoneNumberBodyContentEnd": {
+        "description": "This is the last part of the content found on the body of the confirmation screen"
+    },
+    "confirmPhoneNumberResendOtpButton": "Resend OTP Code",
+    "@confirmPhoneNumberResendOtpButton": {
+        "description": "This is the text label on the resend button on the confirmation screen"
+    },
+    "confirmPhoneNumberNeedHelpLink": "Need help?",
+    "@confirmPhoneNumberNeedHelpLink": {
+        "description": "This is the text label for the Need help link in the dark section of the confirmation screen "
+    },
+    "confirmPhoneNumberContactUs": " Contact us",
+    "@confirmPhoneNumberContactUs": {
+        "description": "This is the text label for the contact us link in the dark section of the confirmation screen"
     }
 }

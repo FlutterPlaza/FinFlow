@@ -13,6 +13,8 @@ class _AppColors {
   // static Color surfacerW = Color(0xffFFFFFF);
   static Color onSurfaceW = Color(0xff888888); // const Color(0xff808191);
 
+  static Color lightGrey = Color(0xffA7A7A7);
+
   static Color getShade(Color color, {bool darker = false, double value = .1}) {
     assert(value >= 0 && value <= 1, 'verify domain interval');
 
