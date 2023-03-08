@@ -10,6 +10,7 @@ import 'package:fpb/authenticate_with_biometrics/application/bloc/biometric_auth
 import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/authentication_with_google/view/loading_indicator.dart';
+import 'package:fpb/authentication_with_phone_number/authentication_with_phone_number_bloc/phone_number_authentication_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
 import 'package:fpb/core/presentation/extension/extensions.dart';
 import 'package:fpb/core/shared/helpers/is_keyboard_visible.dart';
@@ -44,6 +45,9 @@ class SignInScreen extends StatelessWidget {
           create: (context) => BiometricAuthBloc(
               authenticationRepository: LocalAuthentication()),
         ),
+        BlocProvider(
+          create: (context) => getIt<PhoneAuthBloc>(),
+        ),
       ],
       child: SignInBody(),
     );
@@ -60,16 +64,19 @@ class SignInBody extends StatefulWidget {
 class _SignInBodyState extends State<SignInBody>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
-  final user = FirebaseAuth.instance.currentUser;
+  late TextEditingController _otpCodeController;
+  late final User user;
+  late VerifySentOtpEvent event;
 
   @override
   void initState() {
-    super.initState();
+    _otpCodeController = TextEditingController();
 
     tabController = TabController(
       length: 2,
       vsync: this,
     );
+    super.initState();
   }
 
   @override
@@ -82,13 +89,15 @@ class _SignInBodyState extends State<SignInBody>
     return BlocConsumer<GoogleSignInBloc, GoogleSignInState>(
       listener: (context, state) {
         state.failureOrUser.fold(
-            (l) => ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      backgroundColor: theme.colorScheme.error,
-                      elevation: 0,
-                      content: Text(l.message)),
-                ),
-            (r) {});
+          (l) => ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: theme.colorScheme.error,
+              elevation: 0,
+              content: Text(l.message),
+            ),
+          ),
+          (r) {},
+        );
       },
       builder: (context, state) {
         return LayoutBuilder(
@@ -169,7 +178,7 @@ class _SignInBodyState extends State<SignInBody>
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           EmailInput(box: cts),
-                                          PasswordInput(box: cts),
+                                          PasswordInput(box: cts, tabController: tabController.index,),
                                           Text(l10n.signInForgotPasswordText),
                                         ],
                                       ),
@@ -179,14 +188,14 @@ class _SignInBodyState extends State<SignInBody>
                                         children: [
                                           PhoneNumberInput(
                                               l10n: l10n, cts: cts),
-                                          PasswordInput(box: cts),
+                                          PasswordInput(box: cts, tabController: tabController.index),
                                         ],
                                       ),
                                     ],
                                   ),
                                 ),
                               ),
-                              const LoginButton(),
+                              LoginButton(tabController: tabController.index),
                               Padding(
                                 padding: EdgeInsets.symmetric(
                                   vertical: cts.maxHeight * 0.012,
