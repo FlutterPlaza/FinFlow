@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 import 'package:fpb/core/shared/helpers/capture_qrcode.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 
 class MyQrCode extends StatelessWidget {
   const MyQrCode({
@@ -23,7 +24,10 @@ class MyQrCode extends StatelessWidget {
             width: box.maxWidth,
             child: Text(
               "My QR Code",
-              style: Theme.of(context).textTheme.titleMedium,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onTertiary,
+                fontSize: box.maxWidth * 0.056,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -52,8 +56,11 @@ class MyQrCode extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "La Desmond",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  "John Doe",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onTertiary,
+                    fontSize: box.maxWidth * 0.056,
+                  ),
                   textAlign: TextAlign.center,
                 ),
                 GestureDetector(
@@ -63,8 +70,12 @@ class MyQrCode extends StatelessWidget {
                     );
                   },
                   child: Text(
-                    "@La Desmond",
-                    style: Theme.of(context).textTheme.titleMedium,
+                    "@johndoe",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onTertiary.withOpacity(0.5),
+                      fontSize: box.maxWidth * 0.04,
+                      fontWeight: FontWeight.normal,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),

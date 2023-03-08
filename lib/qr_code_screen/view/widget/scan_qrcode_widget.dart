@@ -24,7 +24,11 @@ class ScanQrCodeWidget extends StatelessWidget {
             width: box.maxWidth,
             child: Text(
               "Scan a code",
-              style: Theme.of(context).textTheme.titleMedium,
+              style: TextStyle(
+                color:
+                    Theme.of(context).colorScheme.onTertiary,
+                fontSize: box.maxWidth * 0.056,
+              ),
               textAlign: TextAlign.center,
             ),
           ),

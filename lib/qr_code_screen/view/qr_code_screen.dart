@@ -3,15 +3,15 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
+
 import 'package:fpb/core/presentation/extension/extensions.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 import 'package:fpb/core/shared/helpers/capture_qrcode.dart';
 import 'package:fpb/core/shared/helpers/read_qrcode_data.dart';
 import 'package:fpb/home/view/widgets/custom_appbar.dart';
-import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/qr_code_screen/view/widget/qr_tabbar_view_widget.dart';
 import 'package:fpb/qr_code_screen/view/widget/tabbar_widget.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class QrCodeScreen extends StatefulWidget {
   const QrCodeScreen({super.key});
@@ -54,8 +54,6 @@ class _QrCodeScreenState extends State<QrCodeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
-    final theme = Theme.of(context);
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints box) {
         return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -131,7 +129,12 @@ class _QrCodeScreenState extends State<QrCodeScreen>
                             onTap: () => context.router.navigateBack(),
                             child: Text(
                               "Cancel",
-                              style: Theme.of(context).textTheme.titleMedium,
+                              style: TextStyle(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onTertiary,
+                                fontSize: box.maxWidth * 0.05,
+                              ),
                               textAlign: TextAlign.center,
                             ),
                           ),
