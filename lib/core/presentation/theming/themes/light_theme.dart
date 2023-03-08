@@ -70,6 +70,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       ),
       titleMedium: style.titleMedium?.copyWith(
         fontSize: cts.maxWidth * 0.048,
+        color: _AppColors.bgColorW,
       ),
       titleSmall: style.titleSmall?.copyWith(
         fontSize: cts.maxWidth * 0.04,

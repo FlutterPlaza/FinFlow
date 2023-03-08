@@ -18,14 +18,13 @@ class ScanQrCodeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.red,
       child: Column(
         children: [
           SizedBox(
             width: box.maxWidth,
             child: Text(
               "Scan a code",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.center,
             ),
           ),

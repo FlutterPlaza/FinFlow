@@ -2,8 +2,10 @@ import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fpb/core/presentation/extension/extensions.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
+import 'package:fpb/core/shared/helpers/capture_qrcode.dart';
 import 'package:fpb/core/shared/helpers/read_qrcode_data.dart';
 import 'package:fpb/home/view/widgets/custom_appbar.dart';
 import 'package:fpb/l10n/l10n.dart';
@@ -56,69 +58,93 @@ class _QrCodeScreenState extends State<QrCodeScreen>
     final theme = Theme.of(context);
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints box) {
-        return Scaffold(
-          appBar: CustomAppBar(
-            showArrow: true,
-            titleChildWidget: Text(''),
-            actionChildWidget: [],
+        return AnnotatedRegion<SystemUiOverlayStyle>(
+          value: SystemUiOverlayStyle(
+            statusBarColor: Colors.black,
+            statusBarIconBrightness: Brightness.light, // light icon for iOS
+            statusBarBrightness: Brightness.light, // set light icon for android
           ),
-          body: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: QrTabBarViewWidget(
-                    tabController: tabController,
-                    box: box,
-                    qrKey: qrKey,
-                    onCodeCreated: (QRViewController) {
-                      scanning ? _doNothing : readQrcodeData;
-                    },
-                  ),
-                ),
-                Container(
-                  width: box.maxWidth * 0.95,
-                  child: Column(
-                    children: [
-                      TabbarWidget(
-                        box: box,
-                        tabController: tabController,
-                        onTap: (_) {
-                          setState(() {
-                            tabController.index = _;
-                          });
+          child: Scaffold(
+            backgroundColor: Colors.black,
+            appBar: CustomAppBar(
+              showArrow: true,
+              titleChildWidget: Text(''),
+              actionChildWidget: [
+                tabController.index == 1
+                    ? IconButton(
+                        onPressed: () async {
+                          await captureAndShareScreen(
+                            qrKey,
+                          );
                         },
-                      ).card(
-                        color: theme.cardColor,
-                        margin: EdgeInsets.symmetric(
-                          vertical: box.maxHeight * 0.008,
+                        icon: Icon(
+                          Icons.share,
+                          size: 24,
                         ),
-                        radius: box.maxWidth * 0.02,
-                        height: box.maxHeight * 0.07,
-                      ),
-                      VerticalSpacingWidget(
-                        box: box,
-                        height: box.maxHeight * 0.02,
-                      ),
-                      SizedBox(
-                        width: box.maxWidth,
-                        child: GestureDetector(
-                          onTap: () => context.router.navigateBack(),
-                          child: Text(
-                            "Cancel",
-                            style: Theme.of(context).textTheme.bodyLarge,
-                            textAlign: TextAlign.center,
+                      )
+                    : SizedBox.shrink(),
+              ],
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.white,
+            ),
+            body: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: QrTabBarViewWidget(
+                      tabController: tabController,
+                      box: box,
+                      qrKey: qrKey,
+                      onCodeCreated: (QRViewController) {
+                        scanning ? _doNothing : readQrcodeData;
+                      },
+                    ),
+                  ),
+                  Container(
+                    width: box.maxWidth * 0.95,
+                    child: Column(
+                      children: [
+                        TabbarWidget(
+                          box: box,
+                          tabController: tabController,
+                          onTap: (_) {
+                            setState(() {
+                              tabController.index = _;
+                            });
+                          },
+                        ).card(
+                          color: Color(0xFF272727),
+                          margin: EdgeInsets.symmetric(
+                            vertical: box.maxHeight * 0.008,
+                          ),
+                          radius: box.maxWidth * 0.02,
+                          height: box.maxHeight * 0.07,
+                        ),
+                        VerticalSpacingWidget(
+                          box: box,
+                          height: box.maxHeight * 0.02,
+                        ),
+                        SizedBox(
+                          width: box.maxWidth,
+                          child: GestureDetector(
+                            onTap: () => context.router.navigateBack(),
+                            child: Text(
+                              "Cancel",
+                              style: Theme.of(context).textTheme.titleMedium,
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ),
-                      ),
-                      VerticalSpacingWidget(
-                        box: box,
-                        height: box.maxHeight * 0.1,
-                      ),
-                    ],
+                        VerticalSpacingWidget(
+                          box: box,
+                          height: box.maxHeight * 0.1,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         );

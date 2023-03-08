@@ -17,8 +17,16 @@ class TabbarWidget extends StatelessWidget {
     // final l10n = context.l10n;
     return TabBar(
       padding: EdgeInsets.all(box.maxHeight * 0.008),
+      labelColor: Colors.black,
+      unselectedLabelColor: Colors.white,
       controller: tabController,
       onTap: onTap,
+      indicator: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(
+          box.maxWidth * 0.01,
+        ),
+      ),
       tabs: [
         Tab(
           child: Text(

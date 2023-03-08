@@ -23,7 +23,7 @@ class MyQrCode extends StatelessWidget {
             width: box.maxWidth,
             child: Text(
               "My QR Code",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.center,
             ),
           ),
@@ -43,6 +43,7 @@ class MyQrCode extends StatelessWidget {
                 version: QrVersions.auto,
                 size: box.maxHeight * 0.3,
                 gapless: false,
+                foregroundColor: Colors.white,
               ),
             ),
           ),
@@ -52,16 +53,18 @@ class MyQrCode extends StatelessWidget {
               children: [
                 Text(
                   "La Desmond",
-                  style: Theme.of(context).textTheme.displaySmall,
+                  style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
                 ),
                 GestureDetector(
-                  onTap: () => captureAndShareScreen(
-                    qrKey,
-                  ),
+                  onTap: () async {
+                    await captureAndShareScreen(
+                      qrKey,
+                    );
+                  },
                   child: Text(
                     "@La Desmond",
-                    style: Theme.of(context).textTheme.displaySmall,
+                    style: Theme.of(context).textTheme.titleMedium,
                     textAlign: TextAlign.center,
                   ),
                 ),

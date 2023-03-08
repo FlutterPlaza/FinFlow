@@ -5,12 +5,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget titleChildWidget;
   final List<Widget> actionChildWidget;
   final bool showArrow;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
 
   CustomAppBar({
     this.height = kToolbarHeight,
     required this.titleChildWidget,
     required this.actionChildWidget,
     this.showArrow = false,
+    this.backgroundColor,
+    this.foregroundColor,
   });
 
   @override
@@ -23,6 +27,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: showArrow,
       title: titleChildWidget,
       actions: actionChildWidget,
+      backgroundColor: backgroundColor,
+      foregroundColor: foregroundColor,
     );
   }
 }

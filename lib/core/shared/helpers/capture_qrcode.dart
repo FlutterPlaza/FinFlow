@@ -20,7 +20,7 @@ Future<void> captureAndShareScreen(GlobalKey globalKey) async {
     await file.writeAsBytes(pngBytes);
 
     // share image
-    Share.shareXFiles(
+    await Share.shareXFiles(
       [XFile('/data/user/0/com.flutterplaza.finflow/cache/image.png')],
       text: 'Here is my QR code',
     );
