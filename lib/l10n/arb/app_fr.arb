@@ -235,5 +235,37 @@
     "signUpAlreadyAMemberText": "Déjà membre?",
     "@signUpAlreadyAMemberText": {
         "description": "Il s'agit du texte affiché sur l'écran d'inscription après les boutons d'icône de médias sociaux."
+    },
+    "contactUsTitle": "Contactez nous",
+    "@contactUsTitle": {
+        "description": "C'est le titre de la page de contact"
+    },
+    "contactUsNameTextFieldLabel": "Nom",
+    "@contactUsNameTextFieldLabel": {
+        "description": "Il s'agit de l'étiquette du champ de texte Nom de la page Contactez-nous."
+    },
+    "contactUsNameTextFieldHintText": "Entrez votre nom",
+    "@contactUsNameTextFieldHintText": {
+        "description": "Il s'agit du texte de l'indice du champ de texte Nom de la page Contactez-nous."
+    },
+    "contactUsMessageTextFieldLabel": "Message",
+    "@contactUsMessageTextFieldLabel": {
+        "description": "Il s'agit de l'étiquette du champ de texte du message de la page nous contacter"
+    },
+    "contactUsMessageTextFieldHintText": "laisser un message...",
+    "@contactUsMessageTextFieldHintText": {
+        "description": "Il s'agit du texte de l'indice du message textformfield de la page nous contacter"
+    },
+    "contactUsSubmitBtnLabel": "Envoyer",
+    "@contactUsSubmitBtnLabel": {
+        "description": "Il s'agit de l'étiquette du bouton d'envoi de la page nous contacter"
+    },
+    "contactUsNameErrorText": "Veuillez entrer votre nom",
+    "@contactUsNameErrorText": {
+        "description": "Il s'agit du texte d'erreur affiché lorsque la validation du champ de formulaire Nom de la page Contactez-nous échoue."
+    },
+    "contactUsEmailErrorText": "Veuillez entrer votre adresse e-mail",
+    "@contactUsEmailErrorText": {
+        "description": "Il s'agit du texte d'erreur affiché en cas d'échec de la validation du champ de texte email de la page contactez-nous"
     }
 }

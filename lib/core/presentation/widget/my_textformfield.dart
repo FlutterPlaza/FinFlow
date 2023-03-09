@@ -3,19 +3,19 @@ import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/core/presentation/extension/extensions.dart';
 
 class FpbTextFormField extends StatefulWidget {
-  const FpbTextFormField({
-    super.key,
-    required this.label,
-    required this.hint,
-    this.textController,
-    this.node,
-    this.isEmail = false,
-    this.isPassword = false,
-    this.onChanged,
-    this.errorText,
-    this.showLabelText = true,
-    required this.box,
-  });
+  const FpbTextFormField(
+      {super.key,
+      required this.label,
+      required this.hint,
+      this.textController,
+      this.node,
+      this.isEmail = false,
+      this.isPassword = false,
+      this.onChanged,
+      this.errorText,
+      this.showLabelText = true,
+      required this.box,
+      this.validator});
 
   final String label;
   final String hint;
@@ -27,6 +27,7 @@ class FpbTextFormField extends StatefulWidget {
   final String? errorText;
   final BoxConstraints box;
   final bool showLabelText;
+  final String? Function(String?)? validator;
 
   @override
   State<FpbTextFormField> createState() => _FpbTextFormFieldState();
@@ -57,6 +58,7 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
               )
             : SizedBox(),
         TextFormField(
+          validator: widget.validator,
           controller: widget.textController,
           focusNode: widget.node,
           keyboardType: widget.isEmail

@@ -231,5 +231,37 @@
     "signUpAlreadyAMemberText": "Already a member?",
     "@signUpAlreadyAMemberText": {
         "description": "This is the text displayed on the sign up screen after the social media icon buttons"
+    },
+    "contactUsTitle": "Contact us",
+    "@contactUsTitle": {
+        "description": "This is the title of the contact us page"
+    },
+    "contactUsNameTextFieldLabel": "Name",
+    "@contactUsNameTextFieldLabel": {
+        "description": "This is the label of the Name textformfield of the contact us page"
+    },
+    "contactUsNameTextFieldHintText": "Enter your name",
+    "@contactUsNameTextFieldHintText": {
+        "description": "This is the hint text of the Name textformfield of the contact us page"
+    },
+    "contactUsMessageTextFieldLabel": "Message",
+    "@contactUsMessageTextFieldLabel": {
+        "description": "This is the label of the message textformfield of the contact us page"
+    },
+    "contactUsMessageTextFieldHintText": "leave a message...",
+    "@contactUsMessageTextFieldHintText": {
+        "description": "This is the hint text of the message textformfield of the contact us page"
+    },
+    "contactUsSubmitBtnLabel": "Submit",
+    "@contactUsSubmitBtnLabel": {
+        "description": "This is the label of the submit button of the contact us page"
+    },
+    "contactUsNameErrorText": "Please enter your name",
+    "@contactUsNameErrorText": {
+        "description": "This is the error text displayed when validation for the name textform field, of the contact us page fails"
+    },
+    "contactUsEmailErrorText": "Please enter your email",
+    "@contactUsEmailErrorText": {
+        "description": "This is the error text displayed when validation for the email textform field, of the contact us page fails"
     }
 }
