@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/home/application/home_view_bloc/home_view_bloc.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -15,6 +14,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int pageIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colors = theme.colorScheme;
+    final readBloc = context.read<HomeViewBloc>();
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints box) {
         return Row(
@@ -22,139 +24,134 @@ class _BottomNavBarState extends State<BottomNavBar> {
           children: [
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 0;
                 });
-                context.read<HomeViewBloc>().add(HomeViewEvent.home());
+                readBloc.add(HomeViewEvent.home());
               },
               icon: pageIndex == 0
                   ? Column(
                       children: [
-                        const Icon(
+                        Icon(
                           FpbIcons.home_selected,
-                          color: Colors.black,
-                          size: 25,
+                          color: colors.secondary,
+                          // size: ,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: AppColors.secondaryColorW,
+                            color: colors.secondary,
                           ),
                         )
                       ],
                     )
-                  : const Icon(
+                  : Icon(
                       FpbIcons.home,
-                      color: Colors.grey,
-                      size: 25,
                     ),
             ),
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 1;
                 });
-                context.read<HomeViewBloc>().add(HomeViewEvent.savings());
+                readBloc.add(HomeViewEvent.savings());
               },
               icon: pageIndex == 1
                   ? Column(
                       children: [
-                        const Icon(
+                        Icon(
                           FpbIcons.wallet_selected,
-                          color: Colors.black,
-                          size: 25,
+                          color: colors.secondary,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: AppColors.secondaryColorW,
+                            color: colors.secondary,
                           ),
                         )
                       ],
                     )
-                  : const Icon(
+                  : Icon(
                       FpbIcons.wallet,
-                      color: Colors.grey,
-                      size: 25,
                     ),
             ),
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 2;
                 });
-                context.read<HomeViewBloc>().add(HomeViewEvent.quickCash());
+                readBloc.add(HomeViewEvent.quickCash());
               },
               icon: pageIndex == 2
                   ? Column(
                       children: [
-                        const Icon(
+                        Icon(
                           FpbIcons.dollar_icon,
-                          color: Colors.black,
-                          size: 25,
+                          color: colors.secondary,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: AppColors.secondaryColorW,
+                            color: colors.secondary,
                           ),
                         )
                       ],
                     )
-                  : const Icon(
+                  : Icon(
                       FpbIcons.dollar_icon,
-                      color: Colors.grey,
-                      size: 25,
                     ),
             ),
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 3;
                 });
-                context.read<HomeViewBloc>().add(HomeViewEvent.budget());
+                readBloc.add(HomeViewEvent.budget());
               },
               icon: pageIndex == 3
                   ? Column(
                       children: [
-                        const Icon(
+                        Icon(
                           FpbIcons.graph_selected,
-                          color: Colors.black,
-                          size: 25,
+                          color: colors.secondary,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: AppColors.secondaryColorW,
+                            color: colors.secondary,
                           ),
                         )
                       ],
                     )
-                  : const Icon(
+                  : Icon(
                       FpbIcons.graph,
-                      color: Colors.grey,
-                      size: 25,
+                      //
                     ),
             ),
             IconButton(
               enableFeedback: false,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 setState(() {
                   pageIndex = 4;
                 });
-                context.read<HomeViewBloc>().add(HomeViewEvent.search());
+                readBloc.add(HomeViewEvent.search());
               },
               icon: pageIndex == 4
                   ? Column(
@@ -162,22 +159,20 @@ class _BottomNavBarState extends State<BottomNavBar> {
                         const Icon(
                           FpbIcons.search_selected,
                           color: Colors.black,
-                          size: 25,
                         ),
                         Container(
-                          height: box.maxHeight * 0.005,
-                          width: box.maxHeight * 0.005,
+                          height: box.maxHeight * 0.05,
+                          width: box.maxHeight * 0.05,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: AppColors.secondaryColorW,
+                            borderRadius:
+                                BorderRadius.circular(box.maxWidth * 0.005),
+                            color: colors.secondary,
                           ),
                         )
                       ],
                     )
-                  : const Icon(
+                  : Icon(
                       FpbIcons.search,
-                      color: Colors.grey,
-                      size: 25,
                     ),
             ),
           ],

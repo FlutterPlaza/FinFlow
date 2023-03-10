@@ -39,6 +39,7 @@ version
 
 # packages file containing multi-root paths
 .packages.generated
+pubspec.lock
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -133,4 +134,4 @@ pubspec_overrides.yaml
 
 # ignore google-services.json
 android/**/google-services.json
-ios/Runner/GoogleService-Info.plist
+ios/**/GoogleService-Info.plist

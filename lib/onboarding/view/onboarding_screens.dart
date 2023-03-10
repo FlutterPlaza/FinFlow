@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:fpb/assets/fpb_svg.dart';
-import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/illustration.dart';
 import 'package:fpb/router/app_route.gr.dart';
@@ -14,17 +13,18 @@ class OnboardingScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-
+    final theme = Theme.of(context);
+    final colors = theme.colorScheme;
     final listIllustration = [
       Illustration(
         assetName: SvgNames.sendIllustration,
-        illustrationBgColor: AppColors.primaryColorW,
+        illustrationBgColor: colors.primary,
         title: l10n.onboardingSendTitle,
         description: l10n.onboardingSendDescription,
       ),
       Illustration(
         assetName: SvgNames.saveIllustration,
-        illustrationBgColor: AppColors.accentColorW,
+        illustrationBgColor: colors.secondaryContainer,
         title: l10n.onboardingSaveTitle,
         description: l10n.onboardingSaveDescription,
       ),
@@ -35,7 +35,7 @@ class OnboardingScreen extends HookWidget {
         onNextPressed: onGetStartedPressed ??
             () {
               context.router.popUntil((route) => route.isFirst);
-              context.router.push(SignUpRoute());
+              context.router.push(SignInRoute());
             },
       ),
     ];

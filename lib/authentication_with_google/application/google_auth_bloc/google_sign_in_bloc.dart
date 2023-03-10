@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:fpb/authentication_with_google/domain/i_google_repository_facade.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/failures/auth_failure.dart';
@@ -23,12 +24,13 @@ class GoogleSignInBloc extends Bloc<GoogleSignInEvent, GoogleSignInState> {
     SignIn event,
     Emitter<GoogleSignInState> emit,
   ) async {
-    emit(state.copyWith(isLoading: true));
+    emit(GoogleSignInState(isLoading: true));
     final failureOrUser = await authenticationRepository.signInWithGoogle();
     failureOrUser.fold(
-      (failure) => emit(state.copyWith(failure: failure, isLoading: false)),
+      (failure) => emit(
+          GoogleSignInState(failureOrUser: left(failure), isLoading: false)),
       (user) =>
-          emit(state.copyWith(user: user, isLoading: false, failure: null)),
+          emit(GoogleSignInState(isLoading: false, failureOrUser: right(user))),
     );
   }
 
@@ -36,12 +38,13 @@ class GoogleSignInBloc extends Bloc<GoogleSignInEvent, GoogleSignInState> {
     SignOut event,
     Emitter<GoogleSignInState> emit,
   ) async {
-    emit(state.copyWith(isLoading: true));
+    emit(GoogleSignInState(isLoading: true));
     final failureOrUnit = await authenticationRepository.signOut();
     failureOrUnit.fold(
-      (failure) => emit(state.copyWith(failure: failure, isLoading: false)),
-      (unit) => emit(
-          state.copyWith(user: User.empty, isLoading: false, failure: null)),
+      (failure) => emit(
+          GoogleSignInState(failureOrUser: left(failure), isLoading: false)),
+      (unit) => emit(GoogleSignInState(
+          isLoading: false, failureOrUser: right(User.empty))),
     );
   }
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/core/shared/presentation/theming/theming.dart';
 
 class FourDots extends StatelessWidget {
   const FourDots({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colors = theme.colorScheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -14,7 +15,7 @@ class FourDots extends StatelessWidget {
           width: 10,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: AppColors.cardColorW,
+            color: colors.onSurface,
           ),
         ),
         const SizedBox(width: 2),
@@ -23,7 +24,7 @@ class FourDots extends StatelessWidget {
           width: 10,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: AppColors.cardColorW,
+            color: colors.onSurface,
           ),
         ),
         const SizedBox(width: 2),
@@ -32,7 +33,7 @@ class FourDots extends StatelessWidget {
           width: 10,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: AppColors.cardColorW,
+            color: colors.onSurface,
           ),
         ),
         const SizedBox(width: 2),
@@ -41,7 +42,7 @@ class FourDots extends StatelessWidget {
           width: 10,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: AppColors.cardColorW,
+            color: colors.onSurface,
           ),
         )
       ],

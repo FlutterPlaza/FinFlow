@@ -3,17 +3,25 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
+import 'package:fpb/authenticate_with_biometrics/application/bloc/biometric_auth_bloc.dart';
+import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
+import 'package:fpb/authentication_with_google/view/loading_indicator.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
-import 'package:fpb/core/shared/presentation/theming/colors/colors.dart';
+import 'package:fpb/core/presentation/extension/extensions.dart';
+import 'package:fpb/core/shared/helpers/is_keyboard_visible.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
+import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
 import 'package:fpb/router/app_route.gr.dart';
 import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/login_button.dart';
 import 'package:fpb/sign_in/view/widgets/password_input.dart';
+import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
+import 'package:local_auth/local_auth.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -27,7 +35,14 @@ class SignInScreen extends StatelessWidget {
           create: (context) => getIt<GoogleSignInBloc>(),
         ),
         BlocProvider(
+          create: (context) => getIt<FacebookAuthBloc>(),
+        ),
+        BlocProvider(
           create: (context) => getIt<EmailPasswordBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => BiometricAuthBloc(
+              authenticationRepository: LocalAuthentication()),
         ),
       ],
       child: SignInBody(),
@@ -60,241 +75,284 @@ class _SignInBodyState extends State<SignInBody>
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
+    // final colors = theme.colorScheme;
 
-    return LayoutBuilder(
-      builder: (context, cts) {
-        return Scaffold(
-          body: Stack(
-            children: [
-              Positioned(
-                top: -.035 * cts.maxHeight,
-                child: SvgPicture.asset(
-                  SvgNames.authBackground,
-                  width: cts.maxWidth,
-                  height: 0.4 * cts.maxHeight,
+    return BlocConsumer<GoogleSignInBloc, GoogleSignInState>(
+      listener: (context, state) {
+        state.failureOrUser.fold(
+            (l) => ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      backgroundColor: theme.colorScheme.error,
+                      elevation: 0,
+                      content: Text(l.message)),
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: .8 * cts.maxHeight,
-                  padding: EdgeInsets.all(cts.maxHeight * 0.025),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).backgroundColor,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            l10n.signInLogInTitle,
-                            style: Theme.of(context).textTheme.titleLarge,
-                          ),
-                          Card(
-                            color: AppColors.getShade(
-                              AppColors.accentColorW,
-                            ),
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                FpbIcons.face_id,
-                                color: Colors.white,
-                                size: cts.maxHeight * 0.028,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 0.001 * cts.maxHeight,
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(
-                          vertical: cts.maxHeight * 0.008,
+            (r) {});
+      },
+      builder: (context, state) {
+        return LayoutBuilder(
+          builder: (context, cts) {
+            return state.isLoading
+                ? LoadingIndicator()
+                : Scaffold(
+                    resizeToAvoidBottomInset: false,
+                    body: Stack(
+                      children: [
+                        BubblesTopBackGround(
+                          cts: cts,
+                          svgName: SvgNames.authBackground,
                         ),
-                        height: 0.06 * cts.maxHeight,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).cardColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: TabBar(
-                          padding: EdgeInsets.all(cts.maxHeight * 0.008),
-                          controller: tabController,
-                          onTap: (_) {
-                            setState(() {
-                              tabController.index = _;
-                            });
-                          },
-                          tabs: [
-                            Tab(
-                              child: Text(
-                                l10n.signInEmailLogInLabel,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  PageTitle(
+                                    title: l10n.signInLogInTitle,
+                                    box: cts,
+                                  ),
+                                  FaceIDIcon(
+                                    cts: cts,
+                                  )
+                                ],
                               ),
-                            ),
-                            Tab(
-                              child: Text(
-                                l10n.signInPhoneNumberLogInLabel,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
+                              SizedBox(
+                                height: 0.015 * cts.maxHeight,
                               ),
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 0.011 * cts.maxHeight,
-                      ),
-                      Flexible(
-                        child: Form(
-                          child: SizedBox(
-                            height: 0.4 * cts.maxHeight,
-                            child: TabBarView(
-                              physics: const BouncingScrollPhysics(),
-                              controller: tabController,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  mainAxisSize: MainAxisSize.min,
+                              TabBar(
+                                padding: EdgeInsets.all(cts.maxHeight * 0.008),
+                                controller: tabController,
+                                onTap: (_) {
+                                  setState(() {
+                                    tabController.index = _;
+                                  });
+                                },
+                                tabs: [
+                                  Tab(
+                                    child: Text(
+                                      l10n.signInEmailLogInLabel,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  Tab(
+                                    child: Text(
+                                      l10n.signInPhoneNumberLogInLabel,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  )
+                                ],
+                              ).card(
+                                color: theme.cardColor,
+                                margin: EdgeInsets.symmetric(
+                                    vertical: cts.maxHeight * 0.008),
+                                radius: cts.maxWidth * 0.02,
+                                height: cts.maxHeight * 0.07,
+                              ),
+                              SizedBox(
+                                height: 0.011 * cts.maxHeight,
+                              ),
+                              Flexible(
+                                child: Form(
+                                  child: TabBarView(
+                                    physics: const BouncingScrollPhysics(),
+                                    controller: tabController,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          EmailInput(box: cts),
+                                          PasswordInput(box: cts),
+                                          Text(l10n.signInForgotPasswordText),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          PhoneNumberInput(
+                                              l10n: l10n, cts: cts),
+                                          PasswordInput(box: cts),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              const LoginButton(),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: cts.maxHeight * 0.012,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    const EmailInput(),
-                                    const PasswordInput(),
-                                    Text(l10n.signInForgotPasswordText),
+                                    const Expanded(child: Divider()),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: cts.maxWidth * 0.015,
+                                      ),
+                                      child: Text(l10n.signInOrLogInWithText),
+                                    ),
+                                    const Expanded(child: Divider())
                                   ],
                                 ),
-                                Container(),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      const LoginButton(),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: cts.maxHeight * 0.012,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            const Expanded(child: Divider()),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: cts.maxWidth * 0.015,
                               ),
-                              child: Text(l10n.signInorLogInWithText),
-                            ),
-                            const Expanded(child: Divider())
-                          ],
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          IconLogin(
-                            svg: SvgNames.google,
-                            onTap: () => context.read<GoogleSignInBloc>().add(
-                                  GoogleSignInEvent.signIn(),
+                              AlternativeAuth(box: cts),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  top: cts.maxHeight * 0.001,
+                                  bottom: cts.maxHeight * 0.0001,
                                 ),
-                          ),
-                          IconLogin(
-                            svg: SvgNames.facebook,
-                            onTap: () {},
-                          ),
-                          IconLogin(
-                            svg: SvgNames.twitter,
-                            onTap: () {},
-                          ),
-                          IconLogin(svg: SvgNames.apple, onTap: () {}),
-                        ],
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: cts.maxHeight * 0.001,
-                          bottom: cts.maxHeight * 0.0001,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              l10n.signInNotAMemberYetText,
-                              style: Theme.of(context).textTheme.titleMedium,
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                context.router.push(SignUpRoute());
-                              },
-                              child: Text(
-                                l10n.signInSignUpLabel,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
-                                    ?.copyWith(
-                                      color: Theme.of(context).primaryColor,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      l10n.signInNotAMemberYetText,
+                                      style: style.labelMedium,
                                     ),
+                                    TextButton(
+                                      onPressed: () {
+                                        context.router.push(SignUpRoute());
+                                      },
+                                      child: Text(
+                                        l10n.signInSignUpLabel,
+                                        style: style.titleMedium,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            l10n.signInPolicyText,
-                            style: Theme.of(context).textTheme.labelMedium,
+                              TermsOfUse(box: cts),
+                              if (isKeyboardVisible(context))
+                                SizedBox(height: 0.1 * cts.maxHeight),
+                            ],
+                          ).card(
+                            height: (isKeyboardVisible(context) ? .95 : .8) *
+                                cts.maxHeight,
+                            radiusTop: cts.maxWidth * 0.05,
+                            color: theme.colorScheme.background,
+                            padding: EdgeInsets.all(cts.maxHeight * 0.025),
                           ),
-                          SizedBox(
-                            width: cts.maxWidth * 0.003,
-                          ),
-                          Text(
-                            l10n.signInTermsOfUseLabel,
-                            style: Theme.of(context).textTheme.labelMedium,
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
+                        )
+                      ],
+                    ).card(
+                      // height: (isKeyboardVisible(context) ? .95 : .8) *
+                      //     cts.maxHeight,
+                      radiusTop: cts.maxWidth * 0.05,
+                      color: theme.colorScheme.background,
+                    ),
+                  );
+          },
         );
       },
     );
   }
 }
 
-class IconLogin extends StatelessWidget {
-  const IconLogin({
+class FaceIDIcon extends StatelessWidget {
+  const FaceIDIcon({
     super.key,
-    required this.svg,
-    this.onTap,
+    required this.cts,
   });
 
-  final String svg;
-  final void Function()? onTap;
+  final BoxConstraints cts;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: 75,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: Theme.of(context).cardColor,
+    return GestureDetector(
+      onTap: () {},
+      child: Icon(
+        FpbIcons.face_id,
+        color: Colors.white,
+        size: 0.074 * cts.maxWidth,
+      ).card(
+        color: Theme.of(context).colorScheme.secondaryContainer,
+        radius: cts.maxWidth * 0.02,
+        height: cts.maxHeight * 0.06,
+        width: cts.maxHeight * 0.06,
+      ),
+    );
+  }
+}
+
+class PageTitle extends StatelessWidget {
+  const PageTitle({
+    super.key,
+    required this.title,
+    required this.box,
+  });
+  final String title;
+  final BoxConstraints box;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+          fontSize: box.maxWidth * 0.085, fontWeight: FontWeight.w700),
+    );
+  }
+}
+
+class BubblesTopBackGround extends StatelessWidget {
+  const BubblesTopBackGround({
+    super.key,
+    required this.cts,
+    required this.svgName,
+  });
+  final BoxConstraints cts;
+  final String svgName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: -.035 * cts.maxHeight,
+      child: SvgPicture.asset(
+        svgName,
+        width: cts.maxWidth,
+        height: 0.4 * cts.maxHeight,
+      ),
+    );
+  }
+}
+
+class TermsOfUse extends StatelessWidget {
+  const TermsOfUse({
+    super.key,
+    required this.box,
+  });
+
+  final BoxConstraints box;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          l10n.signInPolicyText,
+          style: style.bodySmall,
         ),
-      ),
-      child: IconButton(
-        onPressed: onTap,
-        icon: SvgPicture.asset(svg),
-      ),
+        SizedBox(
+          width: box.maxWidth * 0.009,
+        ),
+        Text(
+          l10n.signInTermsOfUseLabel,
+          style: style.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+        )
+      ],
     );
   }
 }

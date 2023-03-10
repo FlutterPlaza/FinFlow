@@ -33,14 +33,16 @@ class SplashScreen extends StatelessWidget {
               splash: (_) {},
               authenticated: (_) {
                 context.router.popUntil((route) => route.isFirst);
-                context.router.push(HomeRoute(user: _.user));
+                context.router.push(HomeRouter(user: _.user));
               },
               unauthenticated: (_) {
                 context.router.popUntil((route) => route.isFirst);
                 if (cached.firstTimeUser) {
+                  cached.firstTimeUser = false;
                   context.router.push(OnboardingRoute());
+                } else {
+                  context.router.push(SignInRoute());
                 }
-                context.router.push(SignInRoute());
               },
             );
           },

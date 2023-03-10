@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
-import 'package:fpb/core/shared/presentation/widget/my_textformfield.dart';
+import 'package:fpb/core/presentation/widget/my_textformfield.dart';
 import 'package:fpb/l10n/l10n.dart';
 
 class PasswordInput extends StatelessWidget {
@@ -9,10 +9,12 @@ class PasswordInput extends StatelessWidget {
     super.key,
     this.node,
     this.textController,
+    required this.box,
   });
 
   final FocusNode? node;
   final TextEditingController? textController;
+  final BoxConstraints box;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,7 @@ class PasswordInput extends StatelessWidget {
       builder: (context, state) => FpbTextFormField(
         key: const Key('Email_password_form_passwordInput_textField'),
         label: l10n.signInPasswordFieldLabel,
+        box: box,
         hint: l10n.signInPasswordFieldHintText,
         isPassword: true,
         node: node,

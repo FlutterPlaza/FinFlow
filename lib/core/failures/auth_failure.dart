@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'auth_failure.freezed.dart';
 
 @freezed
@@ -48,6 +49,9 @@ abstract class AuthFailure with _$AuthFailure implements Exception {
   const factory AuthFailure.invalidVerificationId(
       {@Default('The verification ID used to create the phone auth credential is invalid.')
           String message}) = InvalidVerificationId;
+  // const factory AuthFailure.incorrectSHA(
+  //         {@Default('Incorrect setup of SHA1 & SHA256 keys') String message}) =
+  //     IncorrectSHA;
   factory AuthFailure.fromErrorMessage(String message) {
     switch (message) {
       case 'invalid-email':
@@ -76,6 +80,8 @@ abstract class AuthFailure with _$AuthFailure implements Exception {
         return AuthFailure.invalidVerificationCode();
       case 'invalid-verification-id':
         return AuthFailure.invalidVerificationId();
+      // case 'sign_in_failed':
+      //   return AuthFailure.incorrectSHA();
       default:
         return AuthFailure.unexpected();
     }
