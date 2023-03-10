@@ -11,8 +11,8 @@ class _AppColors {
   static Color onBgColorW = Color(0xffD9D9D9);
   // static Color surfaceW = const Color(0xffF5F5F5); // ;
   // static Color surfacerW = Color(0xffFFFFFF);
-  static Color onSurfaceW = Color(0xfff7f7f7); // const Color(0xff808191);
   
+  static Color onSurfaceW = Color(0xfff7f7f7); // const Color(0xff808191);
   static Color greyLight = Color(0xFFABABAB);
 
   static Color getShade(Color color, {bool darker = false, double value = .1}) {
