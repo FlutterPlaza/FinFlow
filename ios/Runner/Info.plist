@@ -17,10 +17,10 @@
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
-		<string>es</string>
+		<string>fr</string>
 	</array>
 	<key>CFBundleName</key>
-	<string>Fpb</string>
+	<string>$(FLAVOR_APP_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -32,9 +32,11 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>3360223350910534</string>
+				<string>com.googleusercontent.apps.802889434819-jbhq53quia2q03qj3qq0uihur6gpbgqm</string>
 			</array>
 		</dict>
 	</array>
@@ -43,7 +45,7 @@
 	<key>FacebookClientToken</key>
 	<string>94f4cd4ae9d2905e92464b618eb60270</string>
 	<key>FacebookDisplayName</key>
-	<string>FinFlow</string>
+	<string>$(FLAVOR_APP_NAME)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -70,23 +72,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  <key>NSFaceIDUsageDescription</key>
-  <string>Uses the biometric information to authorize access to the app in place of a PIN/phone number</string>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Uses the biometric information to authorize access to the app in place of a PIN/phone number</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-    <!-- Google Sign-in Section -->
-    <key>CFBundleURLTypes</key>
-    <array>
-    	<dict>
-    		<key>CFBundleTypeRole</key>
-    		<string>Editor</string>
-    		<key>CFBundleURLSchemes</key>
-    		<array>
-    			<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
-    			<string>com.googleusercontent.apps.802889434819-jbhq53quia2q03qj3qq0uihur6gpbgqm</string>
-    		</array>
-    	</dict>
-    </array>
-    <!-- End of the Google Sign-in Section -->
 </dict>
 </plist>
