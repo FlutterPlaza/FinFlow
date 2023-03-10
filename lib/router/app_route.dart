@@ -23,11 +23,11 @@ import 'package:fpb/sign_up/view/signup_page.dart';
           path: 'profile',
           page: ProfileScreen,
         ),
-        AutoRoute(
-          path: 'latestActivities',
-          page: LatestActivitiesPage,
-        ),
       ],
+    ),
+    AutoRoute(
+      path: 'latestActivities',
+      page: LatestActivitiesPage,
     ),
     AutoRoute(
       page: QrCodeScreen,

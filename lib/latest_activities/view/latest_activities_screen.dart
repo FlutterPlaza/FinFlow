@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/home/view/widgets/activity_card.dart';
+import 'package:fpb/home/view/widgets/custom_appbar.dart';
 import 'package:fpb/l10n/l10n.dart';
 
 class LatestActivitiesPage extends StatelessWidget {
@@ -13,27 +14,15 @@ class LatestActivitiesPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints box) {
         return Scaffold(
-          body: Padding(
-            padding: EdgeInsets.all(box.maxHeight * 0.025),
+          appBar: CustomAppBar(
+            showArrow: true,
+            titleChildWidget: Text(''),
+            actionChildWidget: [],
+          ),
+          body: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: box.maxHeight * 0.1,
-                ),
-                InkWell(
-                  // onTap: () {
-                  //   context.go('/savings');
-                  // },
-                  child: Icon(
-                    Icons.arrow_back,
-                    // color: AppColors.secondaryColorW,
-                    size: 25,
-                  ),
-                ),
-                SizedBox(
-                  height: box.maxHeight * 0.025,
-                ),
                 Container(
                   height: box.maxHeight * .75,
                   width: box.maxHeight * .9,

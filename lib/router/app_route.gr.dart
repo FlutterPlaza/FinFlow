@@ -16,11 +16,11 @@ import 'package:flutter/material.dart' as _i10;
 
 import '../core/domain/user.dart' as _i11;
 import '../home/view/home_screen.dart' as _i4;
-import '../latest_activities/view/latest_activities_screen.dart' as _i8;
-import '../onboarding/view/onboarding_screens.dart' as _i6;
+import '../latest_activities/view/latest_activities_screen.dart' as _i5;
+import '../onboarding/view/onboarding_screens.dart' as _i7;
 import '../onboarding/view/splash_screen.dart' as _i1;
-import '../profile/view/profile_page.dart' as _i7;
-import '../qr_code_screen/view/qr_code_screen.dart' as _i5;
+import '../profile/view/profile_page.dart' as _i8;
+import '../qr_code_screen/view/qr_code_screen.dart' as _i6;
 import '../sign_in/view/sign_in_page.dart' as _i2;
 import '../sign_up/view/signup_page.dart' as _i3;
 
@@ -58,10 +58,16 @@ class AppRoute extends _i9.RootStackRouter {
         ),
       );
     },
+    LatestActivitiesPage.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i5.LatestActivitiesPage(),
+      );
+    },
     QrCodeRoute.name: (routeData) {
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i5.QrCodeScreen(),
+        child: const _i6.QrCodeScreen(),
       );
     },
     OnboardingRoute.name: (routeData) {
@@ -69,7 +75,7 @@ class AppRoute extends _i9.RootStackRouter {
           orElse: () => const OnboardingRouteArgs());
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i6.OnboardingScreen(
+        child: _i7.OnboardingScreen(
           onGetStartedPressed: args.onGetStartedPressed,
           key: args.key,
         ),
@@ -78,13 +84,7 @@ class AppRoute extends _i9.RootStackRouter {
     ProfileRoute.name: (routeData) {
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i7.ProfileScreen(),
-      );
-    },
-    LatestActivitiesPage.name: (routeData) {
-      return _i9.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i8.LatestActivitiesPage(),
+        child: const _i8.ProfileScreen(),
       );
     },
   };
@@ -111,13 +111,12 @@ class AppRoute extends _i9.RootStackRouter {
               ProfileRoute.name,
               path: 'profile',
               parent: HomeRouter.name,
-            ),
-            _i9.RouteConfig(
-              LatestActivitiesPage.name,
-              path: 'latestActivities',
-              parent: HomeRouter.name,
-            ),
+            )
           ],
+        ),
+        _i9.RouteConfig(
+          LatestActivitiesPage.name,
+          path: 'latestActivities',
         ),
         _i9.RouteConfig(
           QrCodeRoute.name,
@@ -203,7 +202,19 @@ class HomeRouterArgs {
 }
 
 /// generated route for
-/// [_i5.QrCodeScreen]
+/// [_i5.LatestActivitiesPage]
+class LatestActivitiesPage extends _i9.PageRouteInfo<void> {
+  const LatestActivitiesPage()
+      : super(
+          LatestActivitiesPage.name,
+          path: 'latestActivities',
+        );
+
+  static const String name = 'LatestActivitiesPage';
+}
+
+/// generated route for
+/// [_i6.QrCodeScreen]
 class QrCodeRoute extends _i9.PageRouteInfo<void> {
   const QrCodeRoute()
       : super(
@@ -215,7 +226,7 @@ class QrCodeRoute extends _i9.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.OnboardingScreen]
+/// [_i7.OnboardingScreen]
 class OnboardingRoute extends _i9.PageRouteInfo<OnboardingRouteArgs> {
   OnboardingRoute({
     void Function()? onGetStartedPressed,
@@ -249,7 +260,7 @@ class OnboardingRouteArgs {
 }
 
 /// generated route for
-/// [_i7.ProfileScreen]
+/// [_i8.ProfileScreen]
 class ProfileRoute extends _i9.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
@@ -258,16 +269,4 @@ class ProfileRoute extends _i9.PageRouteInfo<void> {
         );
 
   static const String name = 'ProfileRoute';
-}
-
-/// generated route for
-/// [_i8.LatestActivitiesPage]
-class LatestActivitiesPage extends _i9.PageRouteInfo<void> {
-  const LatestActivitiesPage()
-      : super(
-          LatestActivitiesPage.name,
-          path: 'latestActivities',
-        );
-
-  static const String name = 'LatestActivitiesPage';
 }

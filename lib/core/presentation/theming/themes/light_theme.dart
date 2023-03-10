@@ -28,8 +28,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       onSecondary: _AppColors.primaryColorW,
       secondaryContainer: _AppColors.secondaryContainerW,
       tertiary: _AppColors.onSurfaceW,
-      onTertiary: Colors
-          .red, // set to odd color so we can see which component in the UI is affected
+      onTertiary: _AppColors.onSurfaceW, // use for static code (qrCode screen)
       onTertiaryContainer: Colors
           .blue, // set to odd color so we can see which component in the UI is affected
       inverseSurface: Colors
@@ -70,7 +69,6 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       ),
       titleMedium: style.titleMedium?.copyWith(
         fontSize: cts.maxWidth * 0.048,
-        // color: _AppColors.bgColorW,
       ),
       titleSmall: style.titleSmall?.copyWith(
         fontSize: cts.maxWidth * 0.04,
