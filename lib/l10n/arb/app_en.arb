@@ -231,5 +231,22 @@
     "signUpAlreadyAMemberText": "Already a member?",
     "@signUpAlreadyAMemberText": {
         "description": "This is the text displayed on the sign up screen after the social media icon buttons"
+    },
+    "termsOfUseTitle": "Terms and Conditions",
+    "@termsOfUseTitle": {
+        "description": "This is the title displayed on the terms of use screen"
+    },
+    "termsOfUseText": "Last updated January 2022",
+    "@termsOfUseText": {
+        "description": "This is the text displayed on the terms of use screen displaying when it was last updated"
+    },
+    "termsOfUseCancelBtn": "Cancel",
+    "@termsOfUseCancelBtn": {
+        "description": "This is the text displayed on the cancel button of the terms of use screen"
+    },
+    "termsOfUseSubmitBtn": "Submit",
+    "@termsOfUseSubmitBtn": {
+        "description": "This is the text displayed on the submit button of the terms of use screen"
     }
 }
+ 
