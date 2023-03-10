@@ -11,45 +11,46 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i8;
-import 'package:flutter/material.dart' as _i9;
+import 'package:auto_route/auto_route.dart' as _i9;
+import 'package:flutter/material.dart' as _i10;
 
-import '../core/domain/user.dart' as _i10;
+import '../core/domain/user.dart' as _i11;
 import '../home/view/home_screen.dart' as _i4;
-import '../latest_activities/view/latest_activities_screen.dart' as _i7;
-import '../onboarding/view/onboarding_screens.dart' as _i5;
+import '../latest_activities/view/latest_activities_screen.dart' as _i5;
+import '../onboarding/view/onboarding_screens.dart' as _i7;
 import '../onboarding/view/splash_screen.dart' as _i1;
-import '../profile/view/profile_page.dart' as _i6;
+import '../profile/view/profile_page.dart' as _i8;
+import '../qr_code_screen/view/qr_code_screen.dart' as _i6;
 import '../sign_in/view/sign_in_page.dart' as _i2;
 import '../sign_up/view/signup_page.dart' as _i3;
 
-class AppRoute extends _i8.RootStackRouter {
-  AppRoute([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
+class AppRoute extends _i9.RootStackRouter {
+  AppRoute([_i10.GlobalKey<_i10.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i8.PageFactory> pagesMap = {
+  final Map<String, _i9.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.SplashScreen(),
       );
     },
     SignInRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.SignInScreen(),
       );
     },
     SignUpRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i3.SignUpScreen(),
       );
     },
     HomeRouter.name: (routeData) {
       final args = routeData.argsAs<HomeRouterArgs>();
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i4.HomeScreen(
           key: args.key,
@@ -57,62 +58,71 @@ class AppRoute extends _i8.RootStackRouter {
         ),
       );
     },
+    LatestActivitiesPage.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i5.LatestActivitiesPage(),
+      );
+    },
+    QrCodeRoute.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i6.QrCodeScreen(),
+      );
+    },
     OnboardingRoute.name: (routeData) {
       final args = routeData.argsAs<OnboardingRouteArgs>(
           orElse: () => const OnboardingRouteArgs());
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i5.OnboardingScreen(
+        child: _i7.OnboardingScreen(
           onGetStartedPressed: args.onGetStartedPressed,
           key: args.key,
         ),
       );
     },
     ProfileRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i6.ProfileScreen(),
-      );
-    },
-    LatestActivitiesPage.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i7.LatestActivitiesPage(),
+        child: const _i8.ProfileScreen(),
       );
     },
   };
 
   @override
-  List<_i8.RouteConfig> get routes => [
-        _i8.RouteConfig(
+  List<_i9.RouteConfig> get routes => [
+        _i9.RouteConfig(
           SplashRoute.name,
           path: '/',
         ),
-        _i8.RouteConfig(
+        _i9.RouteConfig(
           SignInRoute.name,
           path: '/sign-in-screen',
         ),
-        _i8.RouteConfig(
+        _i9.RouteConfig(
           SignUpRoute.name,
           path: '/sign-up-screen',
         ),
-        _i8.RouteConfig(
+        _i9.RouteConfig(
           HomeRouter.name,
           path: '/home-screen',
           children: [
-            _i8.RouteConfig(
+            _i9.RouteConfig(
               ProfileRoute.name,
               path: 'profile',
               parent: HomeRouter.name,
-            ),
-            _i8.RouteConfig(
-              LatestActivitiesPage.name,
-              path: 'latestActivities',
-              parent: HomeRouter.name,
-            ),
+            )
           ],
         ),
-        _i8.RouteConfig(
+        _i9.RouteConfig(
+          LatestActivitiesPage.name,
+          path: 'latestActivities',
+        ),
+        _i9.RouteConfig(
+          QrCodeRoute.name,
+          path: '/qr-code-screen',
+        ),
+        _i9.RouteConfig(
           OnboardingRoute.name,
           path: '/onboarding-screen',
         ),
@@ -121,7 +131,7 @@ class AppRoute extends _i8.RootStackRouter {
 
 /// generated route for
 /// [_i1.SplashScreen]
-class SplashRoute extends _i8.PageRouteInfo<void> {
+class SplashRoute extends _i9.PageRouteInfo<void> {
   const SplashRoute()
       : super(
           SplashRoute.name,
@@ -133,7 +143,7 @@ class SplashRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.SignInScreen]
-class SignInRoute extends _i8.PageRouteInfo<void> {
+class SignInRoute extends _i9.PageRouteInfo<void> {
   const SignInRoute()
       : super(
           SignInRoute.name,
@@ -145,7 +155,7 @@ class SignInRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.SignUpScreen]
-class SignUpRoute extends _i8.PageRouteInfo<void> {
+class SignUpRoute extends _i9.PageRouteInfo<void> {
   const SignUpRoute()
       : super(
           SignUpRoute.name,
@@ -157,11 +167,11 @@ class SignUpRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.HomeScreen]
-class HomeRouter extends _i8.PageRouteInfo<HomeRouterArgs> {
+class HomeRouter extends _i9.PageRouteInfo<HomeRouterArgs> {
   HomeRouter({
-    _i9.Key? key,
-    required _i10.User user,
-    List<_i8.PageRouteInfo>? children,
+    _i10.Key? key,
+    required _i11.User user,
+    List<_i9.PageRouteInfo>? children,
   }) : super(
           HomeRouter.name,
           path: '/home-screen',
@@ -181,9 +191,9 @@ class HomeRouterArgs {
     required this.user,
   });
 
-  final _i9.Key? key;
+  final _i10.Key? key;
 
-  final _i10.User user;
+  final _i11.User user;
 
   @override
   String toString() {
@@ -192,11 +202,35 @@ class HomeRouterArgs {
 }
 
 /// generated route for
-/// [_i5.OnboardingScreen]
-class OnboardingRoute extends _i8.PageRouteInfo<OnboardingRouteArgs> {
+/// [_i5.LatestActivitiesPage]
+class LatestActivitiesPage extends _i9.PageRouteInfo<void> {
+  const LatestActivitiesPage()
+      : super(
+          LatestActivitiesPage.name,
+          path: 'latestActivities',
+        );
+
+  static const String name = 'LatestActivitiesPage';
+}
+
+/// generated route for
+/// [_i6.QrCodeScreen]
+class QrCodeRoute extends _i9.PageRouteInfo<void> {
+  const QrCodeRoute()
+      : super(
+          QrCodeRoute.name,
+          path: '/qr-code-screen',
+        );
+
+  static const String name = 'QrCodeRoute';
+}
+
+/// generated route for
+/// [_i7.OnboardingScreen]
+class OnboardingRoute extends _i9.PageRouteInfo<OnboardingRouteArgs> {
   OnboardingRoute({
     void Function()? onGetStartedPressed,
-    _i9.Key? key,
+    _i10.Key? key,
   }) : super(
           OnboardingRoute.name,
           path: '/onboarding-screen',
@@ -217,7 +251,7 @@ class OnboardingRouteArgs {
 
   final void Function()? onGetStartedPressed;
 
-  final _i9.Key? key;
+  final _i10.Key? key;
 
   @override
   String toString() {
@@ -226,8 +260,8 @@ class OnboardingRouteArgs {
 }
 
 /// generated route for
-/// [_i6.ProfileScreen]
-class ProfileRoute extends _i8.PageRouteInfo<void> {
+/// [_i8.ProfileScreen]
+class ProfileRoute extends _i9.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
           ProfileRoute.name,
@@ -235,16 +269,4 @@ class ProfileRoute extends _i8.PageRouteInfo<void> {
         );
 
   static const String name = 'ProfileRoute';
-}
-
-/// generated route for
-/// [_i7.LatestActivitiesPage]
-class LatestActivitiesPage extends _i8.PageRouteInfo<void> {
-  const LatestActivitiesPage()
-      : super(
-          LatestActivitiesPage.name,
-          path: 'latestActivities',
-        );
-
-  static const String name = 'LatestActivitiesPage';
 }

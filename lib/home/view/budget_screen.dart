@@ -28,6 +28,12 @@ class _BudgetScreenState extends State<BudgetScreen> {
   late int initTime;
   late int endTime;
 
+  // amount of money
+  // late int initTime;
+  // late int endTime;
+
+
+
   late int inBedTime;
   late int outBedTime;
   int days = 0;
@@ -42,8 +48,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
     setState(() {
       initTime = _generateRandomTime();
       endTime = _generateRandomTime();
-      print({'Gen': _generateRandomTime()});
-      print({'Time': _generateRandomTime()});
+      // print({'Gen': _generateRandomTime()});
+      // print({'Time': _generateRandomTime()});
       inBedTime = initTime;
       outBedTime = endTime;
     });
@@ -96,8 +102,10 @@ class _BudgetScreenState extends State<BudgetScreen> {
                     width: box.maxWidth,
                     child: DoubleCircularSlider(
                       288,
-                      initTime,
-                      endTime,
+                      0,
+                      0,
+                      // initTime,
+                      // endTime,
                       height: box.maxHeight * 0.3,
                       width: box.maxWidth * 0.4,
                       primarySectors: 6,

@@ -5,6 +5,7 @@ import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
 import 'package:fpb/onboarding/view/onboarding_screens.dart';
 import 'package:fpb/onboarding/view/splash_screen.dart';
 import 'package:fpb/profile/view/profile_page.dart';
+import 'package:fpb/qr_code_screen/view/qr_code_screen.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 import 'package:fpb/sign_up/view/signup_page.dart';
 
@@ -22,11 +23,14 @@ import 'package:fpb/sign_up/view/signup_page.dart';
           path: 'profile',
           page: ProfileScreen,
         ),
-        AutoRoute(
-          path: 'latestActivities',
-          page: LatestActivitiesPage,
-        ),
       ],
+    ),
+    AutoRoute(
+      path: 'latestActivities',
+      page: LatestActivitiesPage,
+    ),
+    AutoRoute(
+      page: QrCodeScreen,
     ),
     AutoRoute(page: OnboardingScreen),
   ],
