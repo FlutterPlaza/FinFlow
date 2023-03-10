@@ -52,7 +52,7 @@
     "@signInForgotPasswordText": {
         "description": "Il s'agit du texte affiché sur l'écran d'identification après le champ du mot de passe de connexion"
     },
-    "signInorLogInWithText": "Ou connectez-vous avec?",
+    "signInOrLogInWithText": "Ou connectez-vous avec?",
     "@signInPhoneNumberLogIn": {
         "description": "Il s'agit du texte affiché sur l'écran de connexion après le bouton de connexion"
     },
@@ -113,7 +113,7 @@
         "description": "Voici le texte affiché sur l'écran d'accueil sur les widgets du premier bouton élevé de la première carte"
     },
     "homeScreenCardNumber": "Numéro de carte",
-    "@homeScreenCashBalance": {
+    "@homeScreenCardNumber": {
         "description": "Voici le texte affiché sur l'écran d'accueil du widget de la deuxième carte"
     },
     "homeScreenEmpty": "Vide",
@@ -164,10 +164,6 @@
     "@savingsMortgageText": {
         "description": "Voici le texte du compte hypothécaire des comptes standard de la page d'épargne"
     },
-    "savingsNewDroneText": "Nouveau drone",
-    "@savingsNewDroneText": {
-        "description": "Voici le texte du nouveau compte de drone des comptes standard sur la page d'épargne"
-    },
     "profileTitle": "Profil",
     "@profileTitle": {
         "description": "Il s'agit du titre de la page du profil de l'utilisateur"
@@ -193,7 +189,7 @@
         "description": "Voici le texte de l'option de déconnexion sur la page de profil"
     }, 
     "profileTermsAndConditionsText": "Termes et conditions",
-    "@profileLprofileVersionTextogOutText": {
+    "@profileTermsAndConditionsText": {
         "description": "Voici le texte des dernières conditions générales de l'application sur la page de profil"
     },
     "sendersProfileRequestLabel": "Demander",
@@ -213,23 +209,23 @@
         "description": "C'est le texte qui indique si l'expéditeur est dans les contacts de l'utilisateur ou non sur la page de profil de l'expéditeur"
     },
     "sendersProfileHistoryText": "Histoire",
-    "@sendersProfileContactsText": {
+    "@sendersProfileHistoryText": {
         "description": "C'est le texte qui montre l'historique de l'expéditeur sur la page de profil de l'expéditeur."
     },
     "signUpRegisterTitle": "S'inscrire avec",
     "@signUpRegisterTitle": {
         "description": "Il s'agit du titre affiché sur l'écran d'inscription."
     },
-    "signUpFullNameTextFielLabel": "Nom et prénom",
-    "@signUpFullNameTextFielLabel": {
+    "signUpFullNameTextFieldLabel": "Nom et prénom",
+    "@signUpFullNameTextFieldLabel": {
         "description": "Il s'agit de l'étiquette affichée sur l'écran d'inscription pour le champ de texte du nom."
     },
-    "signUpFullNameTextFielHintText": "Entrez votre nom complet",
-    "@signUpFullNameTextFielHintText": {
+    "signUpFullNameTextFieldHintText": "Entrez votre nom complet",
+    "@signUpFullNameTextFieldHintText": {
         "description": "Il s'agit du texte d'indication affiché sur l'écran d'inscription pour le champ de texte du nom."
     },
-    "signUporSignupWithText": "Ou inscrivez-vous sur",
-    "@signUporSignupWithText": {
+    "signUpOrSignupWithText": "Ou inscrivez-vous sur",
+    "@signUpOrSignupWithText": {
         "description": "Il s'agit du texte affiché sur l'écran d'inscription après le bouton d'inscription."
     },
     "signUpAlreadyAMemberText": "Déjà membre?",
@@ -251,6 +247,41 @@
     "termsOfUseSubmitBtn": "Envoyer",
     "@termsOfUseSubmitBtn": {
         "description": "Il s'agit du texte affiché sur le bouton d'envoi de l'écran des conditions d'utilisation."
+    "confirmPhoneNumberTitleText": "Saisir le\nCode Pin",
+    "@confirmPhoneNumberTitleText": {
+        "description": "Il s'agit du titre principal de l'écran de confirmation du numéro de téléphone."
+    },
+    "confirmPhoneNumberBodyContentStart": "Nous vous avons envoyé un e-mail de confirmation contenant ",
+    "@confirmPhoneNumberBodyContentStart": {
+        "description": "Il s'agit de la première partie du contenu qui se trouve dans le corps de l'écran de confirmation, juste en dessous du titre principal."
+    },
+    "confirmPhoneNumberBodyContentMid": "code de validation. ",
+    "@confirmPhoneNumberBodyContentMid": {
+        "description": "Il s'agit de la partie centrale en gras du contenu du corps de l'écran de confirmation."
+    },
+    "confirmPhoneNumberBodyContentEnd": "Veuillez saisir le code.",
+    "@confirmPhoneNumberBodyContentEnd": {
+        "description": "Il s'agit de la dernière partie du contenu figurant dans le corps de l'écran de confirmation."
+    },
+    "confirmPhoneNumberResendOtpButton": "Renvoyer le code OTP",
+    "@confirmPhoneNumberResendOtpButton": {
+        "description": "Il s'agit de l'étiquette de texte sur le bouton de renvoi dans l'écran de confirmation."
+    },
+    "confirmPhoneNumberNeedHelpLink": "Besoin d'aide? ",
+    "@confirmPhoneNumberNeedHelpLink": {
+        "description": "Il s'agit de l'étiquette de texte pour le lien \"Besoin d'aide\" dans la partie sombre de l'écran de confirmation."
+    },
+    "confirmPhoneNumberContactUs": "Contactez nous",
+    "@confirmPhoneNumberContactUs": {
+        "description": "Il s'agit de l'étiquette de texte pour le lien \"contactez-nous\" dans la partie sombre de l'écran de confirmation."
+    },
+    "saveMoneyWithBucketScreenTitle": "Complétez votre épargne",
+    "@saveMoneyWithBucketScreenTitle": {
+        "description": "Il s'agit du titre principal de l'écran \"économiser de l'argent avec un seau\"."
+    },
+    "saveMoneyWithBucketSaveButton": "Sauvegarder",
+    "@saveMoneyWithBucketSaveButton": {
+        "description": "Il s'agit de l'intitulé du bouton \"économiser\" de l'écran \"sauvegarder de l'argent avec un seau\"."
     }
 }
  
