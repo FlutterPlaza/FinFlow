@@ -235,5 +235,22 @@
     "signUpAlreadyAMemberText": "Déjà membre?",
     "@signUpAlreadyAMemberText": {
         "description": "Il s'agit du texte affiché sur l'écran d'inscription après les boutons d'icône de médias sociaux."
+    },
+    "termsOfUseTitle": "Termes et Conditions",
+    "@termsOfUseTitle": {
+        "description": "C'est le titre affiché sur l'écran des conditions d'utilisation"
+    },
+    "termsOfUseText": "Dernière mise à jour Janvier 2022",
+    "@termsOfUseText": {
+        "description": "Voici le texte affiché sur l'écran des conditions d'utilisation indiquant la date de la dernière mise à jour."
+    },
+    "termsOfUseCancelBtn": "Annuler",
+    "@termsOfUseCancelBtn": {
+        "description": "Il s'agit du texte affiché sur le bouton d'annulation de l'écran des conditions d'utilisation."
+    },
+    "termsOfUseSubmitBtn": "Envoyer",
+    "@termsOfUseSubmitBtn": {
+        "description": "Il s'agit du texte affiché sur le bouton d'envoi de l'écran des conditions d'utilisation."
     }
 }
+ 
