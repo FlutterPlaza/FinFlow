@@ -247,6 +247,7 @@
     "termsOfUseSubmitBtn": "Submit",
     "@termsOfUseSubmitBtn": {
         "description": "This is the text displayed on the submit button of the terms of use screen"
+    },
     "confirmPhoneNumberTitleText": "Enter Pin\nCode",
     "@confirmPhoneNumberTitleText": {
         "description": "This is the main title on the phone number confirmation screen"

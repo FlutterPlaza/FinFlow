@@ -247,6 +247,7 @@
     "termsOfUseSubmitBtn": "Envoyer",
     "@termsOfUseSubmitBtn": {
         "description": "Il s'agit du texte affiché sur le bouton d'envoi de l'écran des conditions d'utilisation."
+    },
     "confirmPhoneNumberTitleText": "Saisir le\nCode Pin",
     "@confirmPhoneNumberTitleText": {
         "description": "Il s'agit du titre principal de l'écran de confirmation du numéro de téléphone."
