@@ -21,6 +21,9 @@ import '../onboarding/view/onboarding_screens.dart' as _i7;
 import '../onboarding/view/splash_screen.dart' as _i1;
 import '../profile/view/profile_page.dart' as _i8;
 import '../qr_code_screen/view/qr_code_screen.dart' as _i6;
+import '../home/view/home_screen.dart' as _i5;
+import '../latest_activities/view/latest_activities_screen.dart' as _i8;
+import '../savings/save_money_with_bucket/save_money_with_bucket.dart' as _i4;
 import '../sign_in/view/sign_in_page.dart' as _i2;
 import '../sign_up/view/signup_page.dart' as _i3;
 
@@ -48,11 +51,17 @@ class AppRoute extends _i9.RootStackRouter {
         child: const _i3.SignUpScreen(),
       );
     },
+    SaveMoneyRoute.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i4.SaveMoneyScreen(),
+      );
+    },
     HomeRouter.name: (routeData) {
       final args = routeData.argsAs<HomeRouterArgs>();
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i4.HomeScreen(
+        child: _i5.HomeScreen(
           key: args.key,
           user: args.user,
         ),
@@ -75,7 +84,7 @@ class AppRoute extends _i9.RootStackRouter {
           orElse: () => const OnboardingRouteArgs());
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i7.OnboardingScreen(
+        child: _i6.OnboardingScreen(
           onGetStartedPressed: args.onGetStartedPressed,
           key: args.key,
         ),
@@ -84,7 +93,13 @@ class AppRoute extends _i9.RootStackRouter {
     ProfileRoute.name: (routeData) {
       return _i9.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i8.ProfileScreen(),
+        child: const _i7.ProfileScreen(),
+      );
+    },
+    LatestActivitiesPage.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i8.LatestActivitiesPage(),
       );
     },
   };
@@ -104,6 +119,10 @@ class AppRoute extends _i9.RootStackRouter {
           path: '/sign-up-screen',
         ),
         _i9.RouteConfig(
+          SaveMoneyRoute.name,
+          path: '/save-money-screen',
+        ),
+        _i9.RouteConfig(
           HomeRouter.name,
           path: '/home-screen',
           children: [
@@ -121,6 +140,15 @@ class AppRoute extends _i9.RootStackRouter {
         _i9.RouteConfig(
           QrCodeRoute.name,
           path: '/qr-code-screen',
+        ),
+        _i9.RouteConfig(
+            ),
+            _i9.RouteConfig(
+              LatestActivitiesPage.name,
+              path: 'latestActivities',
+              parent: HomeRouter.name,
+            ),
+          ],
         ),
         _i9.RouteConfig(
           OnboardingRoute.name,
@@ -166,7 +194,19 @@ class SignUpRoute extends _i9.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.HomeScreen]
+/// [_i4.SaveMoneyScreen]
+class SaveMoneyRoute extends _i9.PageRouteInfo<void> {
+  const SaveMoneyRoute()
+      : super(
+          SaveMoneyRoute.name,
+          path: '/save-money-screen',
+        );
+
+  static const String name = 'SaveMoneyRoute';
+}
+
+/// generated route for
+/// [_i5.HomeScreen]
 class HomeRouter extends _i9.PageRouteInfo<HomeRouterArgs> {
   HomeRouter({
     _i10.Key? key,
@@ -227,6 +267,7 @@ class QrCodeRoute extends _i9.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.OnboardingScreen]
+/// [_i6.OnboardingScreen]
 class OnboardingRoute extends _i9.PageRouteInfo<OnboardingRouteArgs> {
   OnboardingRoute({
     void Function()? onGetStartedPressed,
@@ -261,6 +302,7 @@ class OnboardingRouteArgs {
 
 /// generated route for
 /// [_i8.ProfileScreen]
+/// [_i7.ProfileScreen]
 class ProfileRoute extends _i9.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
@@ -269,4 +311,16 @@ class ProfileRoute extends _i9.PageRouteInfo<void> {
         );
 
   static const String name = 'ProfileRoute';
+}
+
+/// generated route for
+/// [_i8.LatestActivitiesPage]
+class LatestActivitiesPage extends _i9.PageRouteInfo<void> {
+  const LatestActivitiesPage()
+      : super(
+          LatestActivitiesPage.name,
+          path: 'latestActivities',
+        );
+
+  static const String name = 'LatestActivitiesPage';
 }
