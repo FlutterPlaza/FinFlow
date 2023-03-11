@@ -46,17 +46,22 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
+    
+    //final bodytext = TextStyle( color: Colors.black);
+    final customBodyMedium = theme.textTheme.bodyMedium?.copyWith(color: Colors.black);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         showLabel == true
             ? Text(
                 widget.label,
-                style: textTheme.titleSmall,
+                style: customBodyMedium,
+                
               )
             : SizedBox(),
         TextFormField(
+          
+
           controller: widget.textController,
           focusNode: widget.node,
           keyboardType: widget.isEmail
@@ -66,9 +71,9 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                   : TextInputType.text,
           onChanged: widget.onChanged,
           obscureText: hidePassword ?? false,
-          style: textTheme
-              .titleSmall, //bodyMedium //.copyWith(color: colors.onSurface),
+          style: customBodyMedium, //bodyMedium //.copyWith(color: colors.onSurface),
           decoration: InputDecoration(
+            
             errorText: widget.errorText,
             suffixIcon: !widget.isPassword
                 ? null
