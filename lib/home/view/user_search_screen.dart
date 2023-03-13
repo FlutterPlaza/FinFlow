@@ -5,7 +5,6 @@ import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
 import 'package:fpb/home/view/widgets/custom_appbar.dart';
 import 'package:fpb/home/view/widgets/row_header_icons.dart';
-import 'package:fpb/home/view/widgets/search_input.dart';
 import 'package:fpb/home/view/widgets/user_search_list.dart';
 
 class UserSearchScreen extends StatelessWidget {
@@ -19,26 +18,29 @@ class UserSearchScreen extends StatelessWidget {
     }
     return LayoutBuilder(builder: (context, box) {
       return SafeArea(
-        child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          appBar: CustomAppBar(
-            titleChildWidget: CircleAvatar(
-              backgroundImage: NetworkImage('${user.photo}'),
-            ),
-            actionChildWidget: [
-              RowHeaderIcons(),
-            ],
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                SearchInputWidget(
-                  box: box,
-                ),
-                UserSearchList(
-                  box: box,
-                ),
+        child: GestureDetector(
+          onTap: () {
+            // close keyboard
+            FocusScope.of(context).unfocus();
+          },
+          child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            appBar: CustomAppBar(
+              titleChildWidget: CircleAvatar(
+                backgroundImage: NetworkImage('${user.photo}'),
+              ),
+              actionChildWidget: [
+                RowHeaderIcons(),
               ],
+            ),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  UserSearchList(
+                    box: box,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
