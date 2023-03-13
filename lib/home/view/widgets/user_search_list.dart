@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
-import 'package:fpb/home/view/widgets/user_radio_select.dart';
+import 'package:fpb/home/view/widgets/search_input.dart';
+import 'package:fpb/core/presentation/widget/selected_user_item.dart';
+import 'package:fpb/home/view/widgets/user_check_select.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
 import 'package:fpb/core/domain/user.dart';
@@ -53,6 +55,12 @@ class _UserSearchListState extends State<UserSearchList> {
   // recently sent list
   List<User> recentSentUsers = [];
 
+  // checkbox state
+  bool selectUser = false;
+
+  // list of selected users
+  List<User> userSelected = [];
+
   @override
   Widget build(BuildContext context) {
     final user = ValueInjector.of<User>(context)?.value ?? User.empty;
@@ -68,6 +76,39 @@ class _UserSearchListState extends State<UserSearchList> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SearchInputWidget(
+            box: widget.box,
+          ),
+          // display list of selected users
+          Container(
+            padding: EdgeInsets.symmetric(
+              vertical: widget.box.maxWidth * 0.02,
+            ),
+            width: widget.box.maxWidth,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Wrap(
+                spacing: 5.0,
+                children: userSelected
+                    .map(
+                      (e) => SelectedUserItem(
+                        box: widget.box,
+                        userPhoto: e.photo,
+                        username: e.name,
+                        onTap: () {
+                          userSelected.remove(e);
+                          setState(() {});
+                        },
+                      ),
+                    )
+                    .toList(),
+              ),
+            ),
+          ),
+          VerticalSpacingWidget(
+            box: widget.box,
+            height: widget.box.maxHeight * 0.02,
+          ),
           Text(
             'Recently sent',
             style: TextStyle(
@@ -89,13 +130,26 @@ class _UserSearchListState extends State<UserSearchList> {
               child: Column(
                 children: users
                     .map(
-                      (e) => UserRadioSelect(
+                      (e) => UserCheckSelect(
                         box: widget.box,
                         fullName: e.name,
                         username: e.name,
                         userPhoto: '${e.photo}',
-                        onChanged: (value) {
-                          print(value);
+                        checked: userSelected.contains(e) ? true : false,
+                        onChanged: (bool? value) {
+                          // check if item adde - if yes then remove
+                          if (userSelected.contains(e)) {
+                            userSelected.remove(e);
+                            setState(() {
+                              selectUser = value!;
+                            });
+                          } else {
+                            // add use to userSelected
+                            userSelected.add(e);
+                            setState(() {
+                              selectUser = value!;
+                            });
+                          }
                         },
                       ),
                     )
@@ -129,13 +183,26 @@ class _UserSearchListState extends State<UserSearchList> {
               child: Column(
                 children: users
                     .map(
-                      (e) => UserRadioSelect(
+                      (e) => UserCheckSelect(
                         box: widget.box,
                         fullName: e.name,
                         username: e.name,
                         userPhoto: '${e.photo}',
-                        onChanged: (value) {
-                          print(value);
+                        checked: userSelected.contains(e) ? true : false,
+                        onChanged: (bool? value) {
+                          // check if item adde - if yes then remove
+                          if (userSelected.contains(e)) {
+                            userSelected.remove(e);
+                            setState(() {
+                              selectUser = value!;
+                            });
+                          } else {
+                            // add use to userSelected
+                            userSelected.add(e);
+                            setState(() {
+                              selectUser = value!;
+                            });
+                          }
                         },
                       ),
                     )

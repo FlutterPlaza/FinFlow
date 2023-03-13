@@ -17,10 +17,6 @@ class SearchInputWidget extends StatelessWidget {
     // final l10n = context.l10n;
     return Container(
       width: box.maxWidth,
-      padding: EdgeInsets.symmetric(
-        horizontal: box.maxWidth * 0.04,
-        vertical: box.maxHeight * 0.01,
-      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

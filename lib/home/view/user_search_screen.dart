@@ -5,7 +5,6 @@ import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
 import 'package:fpb/home/view/widgets/custom_appbar.dart';
 import 'package:fpb/home/view/widgets/row_header_icons.dart';
-import 'package:fpb/home/view/widgets/search_input.dart';
 import 'package:fpb/home/view/widgets/user_search_list.dart';
 
 class UserSearchScreen extends StatelessWidget {
@@ -37,9 +36,6 @@ class UserSearchScreen extends StatelessWidget {
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  SearchInputWidget(
-                    box: box,
-                  ),
                   UserSearchList(
                     box: box,
                   ),
