@@ -19,26 +19,32 @@ class UserSearchScreen extends StatelessWidget {
     }
     return LayoutBuilder(builder: (context, box) {
       return SafeArea(
-        child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          appBar: CustomAppBar(
-            titleChildWidget: CircleAvatar(
-              backgroundImage: NetworkImage('${user.photo}'),
-            ),
-            actionChildWidget: [
-              RowHeaderIcons(),
-            ],
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                SearchInputWidget(
-                  box: box,
-                ),
-                UserSearchList(
-                  box: box,
-                ),
+        child: GestureDetector(
+          onTap: () {
+            // close keyboard
+            FocusScope.of(context).unfocus();
+          },
+          child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            appBar: CustomAppBar(
+              titleChildWidget: CircleAvatar(
+                backgroundImage: NetworkImage('${user.photo}'),
+              ),
+              actionChildWidget: [
+                RowHeaderIcons(),
               ],
+            ),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SearchInputWidget(
+                    box: box,
+                  ),
+                  UserSearchList(
+                    box: box,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
