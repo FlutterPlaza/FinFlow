@@ -196,9 +196,9 @@ class _SignUpBodyState extends State<SignUpBody>
                                                         children: [
                                                           FpbTextFormField(
                                                             label: l10n
-                                                                .signUpFullNameTextFielLabel,
+                                                                .signUpFullNameTextFieldLabel,
                                                             hint: l10n
-                                                                .signUpFullNameTextFielHintText,
+                                                                .signUpFullNameTextFieldHintText,
                                                             box: box,
                                                           ),
                                                           FpbTextFormField(
@@ -257,7 +257,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                                           box.maxHeight * .015,
                                                     ),
                                                     child: Text(
-                                                      l10n.signUporSignupWithText,
+                                                      l10n.signUpOrSignupWithText,
                                                     ),
                                                   ),
                                                   const Expanded(

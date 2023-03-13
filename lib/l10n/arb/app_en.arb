@@ -113,7 +113,7 @@
         "description": "This is the text displayed on the home screen on the first elevated button widgets in the first card"
     },
     "homeScreenCardNumber": "Card Number",
-    "@homeScreenCashBalance": {
+    "@homeScreenCardNumber": {
         "description": "This is the text displayed on the home screen on the second card widget"
     },
     "homeScreenEmpty": "Empty",
@@ -189,7 +189,7 @@
         "description": "This is the text of the log out option on the profile page"
     }, 
     "profileTermsAndConditionsText": "Terms and conditions",
-    "@profileLprofileVersionTextogOutText": {
+    "@profileTermsAndConditionsText": {
         "description": "This is the text of the latest terms and conditions of the app on the profile page"
     },
     "sendersProfileRequestLabel": "Request",
@@ -209,23 +209,23 @@
         "description": "This is the text showing if sender is in user's contacts or not on the senders profile page"
     },
     "sendersProfileHistoryText": "History",
-    "@sendersProfileContactsText": {
+    "@sendersProfileHistoryText": {
         "description": "This is the text showing the sender's history on the senders profile page"
     },
     "signUpRegisterTitle": "Register With",
     "@signUpRegisterTitle": {
         "description": "This is the title displayed on the sign up screen"
     }, 
-    "signUpFullNameTextFielLabel": "Full Name",
-    "@signUpFullNameTextFielLabel": {
+    "signUpFullNameTextFieldLabel": "Full Name",
+    "@signUpFullNameTextFieldLabel": {
         "description": "This is the label displayed on the sign up screen for the name textfield"
     },
-    "signUpFullNameTextFielHintText": "Enter your full name",
-    "@signUpFullNameTextFielHintText": {
+    "signUpFullNameTextFieldHintText": "Enter your full name",
+    "@signUpFullNameTextFieldHintText": {
         "description": "This is the hint text displayed on the sign up screen for the name textfield"
     },
-    "signUporSignupWithText": "Or sign up with",
-    "@signUporSignupWithText": {
+    "signUpOrSignupWithText": "Or sign up with",
+    "@signUpOrSignupWithText": {
         "description": "This is the text displayed on the sign up screen after the sign up button"
     },
     "signUpAlreadyAMemberText": "Already a member?",
@@ -247,6 +247,43 @@
     "termsOfUseSubmitBtn": "Submit",
     "@termsOfUseSubmitBtn": {
         "description": "This is the text displayed on the submit button of the terms of use screen"
+    },
+    "confirmPhoneNumberTitleText": "Enter Pin\nCode",
+    "@confirmPhoneNumberTitleText": {
+        "description": "This is the main title on the phone number confirmation screen"
+    },
+    "confirmPhoneNumberBodyContentStart": "We’ve sent you a confirmation email containing ",
+    "@confirmPhoneNumberBodyContentStart": {
+        "description": "This is the first part of the content found on the body of the confirmation screen, just below the main title"
+    },
+    "confirmPhoneNumberBodyContentMid": "validation code. ",
+    "@confirmPhoneNumberBodyContentMid": {
+        "description": "This is the middle part in bold of the content found on the body of the confirmation screen"
+    },
+    "confirmPhoneNumberBodyContentEnd": "Please enter the code.",
+    "@confirmPhoneNumberBodyContentEnd": {
+        "description": "This is the last part of the content found on the body of the confirmation screen"
+    },
+    "confirmPhoneNumberResendOtpButton": "Resend OTP Code",
+    "@confirmPhoneNumberResendOtpButton": {
+        "description": "This is the text label on the resend button on the confirmation screen"
+    },
+    "confirmPhoneNumberNeedHelpLink": "Need help?",
+    "@confirmPhoneNumberNeedHelpLink": {
+        "description": "This is the text label for the Need help link in the dark section of the confirmation screen "
+    },
+    "confirmPhoneNumberContactUs": " Contact us",
+    "@confirmPhoneNumberContactUs": {
+        "description": "This is the text label for the contact us link in the dark section of the confirmation screen"
+    },
+    "saveMoneyWithBucketScreenTitle": "Add to your savings",
+    "@saveMoneyWithBucketScreenTitle": {
+        "description": "This is the main title on the save money with bucket screen screen"
+    },
+    "saveMoneyWithBucketSaveButton": "Save",
+    "@saveMoneyWithBucketSaveButton": {
+        "description": "This is the button label of the save button on the save money with bucket screen screen"
     }
+
 }
  
