@@ -46,7 +46,7 @@ class UserRadioSelect extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '@${username}',
+                        '@${username.trim()}',
                         style: TextStyle(
                           fontSize: box.maxHeight * 0.023,
                           fontWeight: FontWeight.w400,
