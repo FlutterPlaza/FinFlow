@@ -104,64 +104,72 @@ class _SaveMoneyScreenState extends State<SaveMoneyScreen> {
                     SizedBox(
                       height: box.maxHeight * 0.03,
                     ),
-                    Card(
-                      elevation: 2,
-                      color: colors.surface,
-                      // ),
-                      child: Container(
-                        width: box.maxWidth * 1,
-                        child: Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              IconButton(
-                                icon: SvgPicture.asset(
-                                  'assets/fpb-assets/orange-home-icon.svg',
-                                ),
-                                iconSize: 50,
-                                onPressed: () {},
+                    Container(
+                      decoration: BoxDecoration(
+                        color: colors.surface,
+                        borderRadius: BorderRadius.circular(
+                          10,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            spreadRadius: 0,
+                            blurRadius: 23,
+                            offset: Offset(0, 6), // changes position of shadow
+                          )
+                        ],
+                      ),
+                      child: Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            IconButton(
+                              icon: SvgPicture.asset(
+                                'assets/fpb-assets/orange-home-icon.svg',
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: DropdownButtonHideUnderline(
-                                  child: DropdownButton(
-                                    // Initial Value
-                                    value: dropdownValue,
-                                    elevation: 16,
-                                    // Down Arrow Icon
-                                    icon: Row(
-                                      children: [
-                                        SizedBox(
-                                          width: box.maxWidth * 0.37,
-                                        ),
-                                        Icon(
-                                          Icons.keyboard_arrow_down,
-                                          size: 32,
-                                        ),
-                                        SizedBox(
-                                          width: box.maxWidth * 0.01,
-                                        )
-                                      ],
-                                    ),
-                                    onChanged: (String? newValue) {
-                                      setState(() {
-                                        dropdownValue = newValue!.toString();
-                                      });
-                                    },
-                                    // Array list of items
-                                    items: dropDownListItems
-                                        .map<DropdownMenuItem<String>>(
-                                            (String items) {
-                                      return DropdownMenuItem<String>(
-                                        value: items,
-                                        child: Text(items),
-                                      );
-                                    }).toList(),
+                              iconSize: 50,
+                              onPressed: () {},
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton(
+                                  // Initial Value
+                                  value: dropdownValue,
+                                  elevation: 16,
+                                  // Down Arrow Icon
+                                  icon: Row(
+                                    children: [
+                                      SizedBox(
+                                        width: box.maxWidth * 0.37,
+                                      ),
+                                      Icon(
+                                        Icons.keyboard_arrow_down,
+                                        size: 32,
+                                      ),
+                                      SizedBox(
+                                        width: box.maxWidth * 0.01,
+                                      )
+                                    ],
                                   ),
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      dropdownValue = newValue!.toString();
+                                    });
+                                  },
+                                  // Array list of items
+                                  items: dropDownListItems
+                                      .map<DropdownMenuItem<String>>(
+                                          (String items) {
+                                    return DropdownMenuItem<String>(
+                                      value: items,
+                                      child: Text(items),
+                                    );
+                                  }).toList(),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
