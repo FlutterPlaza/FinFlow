@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fpb/core/presentation/widget/my_button.dart';
+import 'package:fpb/core/shared/helpers/extensions.dart';
 import 'package:fpb/l10n/l10n.dart';
-import 'package:fpb/savings/save_money_with_bucket/number_pad.dart';
+import 'package:fpb/savings/save_money_with_bucket/widgets/bucket_account_dropdown_button.dart';
+import 'package:fpb/savings/save_money_with_bucket/widgets/key_pad_number_display.dart';
+import 'package:fpb/savings/save_money_with_bucket/widgets/number_pad.dart';
 
 class SaveMoneyScreen extends StatefulWidget {
   const SaveMoneyScreen({super.key});
@@ -16,18 +19,6 @@ class SaveMoneyScreen extends StatefulWidget {
 class _SaveMoneyScreenState extends State<SaveMoneyScreen> {
   TextEditingController amountController = TextEditingController();
 
-  /// List of items in our dropdown menu
-  final dropDownListItems = [
-    'Mortgage',
-    'Rents',
-    'Budget',
-    'Savings',
-    'Loans',
-  ];
-
-  /// Initial Selected Value
-  String dropdownValue = 'Mortgage';
-
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -37,6 +28,20 @@ class _SaveMoneyScreenState extends State<SaveMoneyScreen> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).cardColor,
+      appBar: AppBar(
+        title: Text(
+          l10n.saveMoneyWithBucketScreenTitle,
+          style: style.titleMedium?.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: SvgPicture.asset('assets/FpbIcons/left_arrow.svg'),
+          onPressed: () {},
+        ),
+        backgroundColor: colors.surface,
+      ),
       body: LayoutBuilder(
         builder: (context, BoxConstraints box) {
           return Stack(
@@ -44,135 +49,12 @@ class _SaveMoneyScreenState extends State<SaveMoneyScreen> {
               SingleChildScrollView(
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: SvgPicture.asset(
-                              'assets/FpbIcons/left_arrow.svg'),
-                          onPressed: () {},
-                        ),
-                        Expanded(
-                          child: Center(
-                            child: Text(
-                              l10n.saveMoneyWithBucketScreenTitle,
-                              style: style.titleMedium?.copyWith(
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: box.maxHeight * 0.05,
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: SvgPicture.asset(
-                              'assets/FpbIcons/dollar_sign.svg'),
-                          onPressed: () {},
-                        ),
-                        Expanded(
-                          child: Center(
-                            child: TextFormField(
-                              controller: amountController,
-                              readOnly: true,
-                              style: style.titleLarge?.copyWith(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 40,
-                              ),
-                              keyboardType: TextInputType.number,
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                enabledBorder: InputBorder.none,
-                                errorBorder: InputBorder.none,
-                                disabledBorder: InputBorder.none,
-                                hintText: "00.0",
-                                hintStyle: style.titleLarge?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 40,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    KeyPadNumberDisplay(
+                        amountController: amountController, style: style),
                     SizedBox(
                       height: box.maxHeight * 0.03,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: colors.surface,
-                        borderRadius: BorderRadius.circular(
-                          10,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, 0.08),
-                            spreadRadius: 0,
-                            blurRadius: 23,
-                            offset: Offset(0, 6), // changes position of shadow
-                          )
-                        ],
-                      ),
-                      child: Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            IconButton(
-                              icon: SvgPicture.asset(
-                                'assets/fpb-assets/orange-home-icon.svg',
-                              ),
-                              iconSize: 50,
-                              onPressed: () {},
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton(
-                                  // Initial Value
-                                  value: dropdownValue,
-                                  elevation: 16,
-                                  // Down Arrow Icon
-                                  icon: Row(
-                                    children: [
-                                      SizedBox(
-                                        width: box.maxWidth * 0.37,
-                                      ),
-                                      Icon(
-                                        Icons.keyboard_arrow_down,
-                                        size: 32,
-                                      ),
-                                      SizedBox(
-                                        width: box.maxWidth * 0.01,
-                                      )
-                                    ],
-                                  ),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      dropdownValue = newValue!.toString();
-                                    });
-                                  },
-                                  // Array list of items
-                                  items: dropDownListItems
-                                      .map<DropdownMenuItem<String>>(
-                                          (String items) {
-                                    return DropdownMenuItem<String>(
-                                      value: items,
-                                      child: Text(items),
-                                    );
-                                  }).toList(),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    BucketAccountWithDropdownButton(),
                     SizedBox(
                       height: box.maxHeight * 0.04,
                     ),
@@ -212,20 +94,6 @@ class _SaveMoneyScreenState extends State<SaveMoneyScreen> {
           );
         },
       ),
-    );
-  }
-}
-
-extension PaddingX on Widget {
-  Widget paddingDefault(BoxConstraints box) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: box.maxHeight * 0.025,
-        right: box.maxHeight * 0.025,
-        top: box.maxHeight * 0.1,
-        bottom: box.maxHeight * 0.025,
-      ),
-      child: this,
     );
   }
 }
