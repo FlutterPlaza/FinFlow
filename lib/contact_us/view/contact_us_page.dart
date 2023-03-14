@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/contact_us/contact_us_page.dart';
-import 'package:fpb/core/presentation/extension/extensions.dart';
+import 'package:fpb/contact_us/view/widgets/message_textfield.dart';
 import 'package:fpb/core/presentation/widget/my_button.dart';
 import 'package:fpb/core/presentation/widget/my_textformfield.dart';
 import 'package:fpb/l10n/l10n.dart';
@@ -19,6 +19,11 @@ class ContactUsPage extends StatefulWidget {
 
 class _ContactUsPageState extends State<ContactUsPage> {
   final _formKey = GlobalKey<FormState>();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  String errorText = '';
+  //IconData errorIcon;
+  double errorContainerHeight = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
     return LayoutBuilder(
       builder: (context, box) {
         return Scaffold(
-            resizeToAvoidBottomInset: false,
+            resizeToAvoidBottomInset: true,
             body: Stack(children: [
               BubblesTopBackGround(
                 cts: box,
@@ -63,8 +68,8 @@ class _ContactUsPageState extends State<ContactUsPage> {
                           SizedBox(
                             height: 0.015 * box.maxHeight,
                           ),
-                          SingleChildScrollView(
-                            child: Flexible(
+                          Flexible(
+                            child: SingleChildScrollView(
                               child: Form(
                                 key: _formKey,
                                 child: Column(
@@ -72,23 +77,37 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     FpbTextFormField(
+                                      onChanged: (value) {
+                                        setState(() {});
+                                      },
+                                      textController: nameController,
                                       label: l10n.contactUsNameTextFieldLabel,
                                       hint: l10n.contactUsNameTextFieldHintText,
                                       box: box,
                                       validator: (val) {
-                                        if (!(val!.isNotEmpty) &&
-                                            !(val.isValidName)) {
+                                        if (val!.isEmpty) {
+                                          return null;
+                                        } else if (val.isValidName) {
+                                          return null;
+                                        } else {
                                           return l10n.contactUsNameErrorText;
                                         }
                                       },
                                     ),
                                     FpbTextFormField(
+                                      onChanged: (value) {
+                                        setState(() {});
+                                      },
+                                      textController: emailController,
                                       label: l10n.signInEmailTextFieldLabel,
                                       hint: l10n.signInEmailTextFieldHintText,
                                       box: box,
                                       validator: (val) {
-                                        if (!(val!.isNotEmpty) &&
-                                            !(val.isValidEmail)) {
+                                        if (val!.isEmpty) {
+                                          return null;
+                                        } else if (val.isValidEmail) {
+                                          return null;
+                                        } else {
                                           return l10n.contactUsEmailErrorText;
                                         }
                                       },
@@ -97,9 +116,14 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                       theme: theme,
                                       box: box,
                                       validator: (val) {
-                                        if (!(val!.isNotEmpty) &&
-                                            !(val.isValidEmail)) {
-                                          return 'Enter Text';
+                                        if (val!.isEmpty) {
+                                          return null;
+                                        } else if (val.length > 30 &&
+                                            val.length < 500) {
+                                          return null;
+                                        } else {
+                                          return l10n
+                                              .contactUsMessageTextFieldErrorText;
                                         }
                                       },
                                     ),
@@ -112,68 +136,26 @@ class _ContactUsPageState extends State<ContactUsPage> {
                             height: box.maxHeight * .05,
                           ),
                           FpbButton(
-                            label: l10n.contactUsSubmitBtnLabel,
-                            onTap: () {
-                              if (_formKey.currentState!.validate()) {
-                                Navigator.of(context).push(
-                                  // ignore: inference_failure_on_instance_creation
-                                  MaterialPageRoute(
-                                    builder: (context) => ContactUsSuccessPage(
-                                      box: box,
+                              label: l10n.contactUsSubmitBtnLabel,
+                              onTap: () {
+                                if (_formKey.currentState!.validate()) {
+                                  Navigator.of(context).push(
+                                    // ignore: inference_failure_on_instance_creation
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          ContactUsSuccessPage(
+                                        box: box,
+                                      ),
                                     ),
-                                  ),
-                                );
-                              }
-                            },
-                          )
+                                  );
+                                } else {}
+                              })
                         ]),
                   ),
                 ),
               )
             ]));
       },
-    );
-  }
-}
-
-class messageTextField extends StatelessWidget {
-  const messageTextField(
-      {super.key,
-      required this.theme,
-      required this.box,
-      required this.validator});
-
-  final ThemeData theme;
-  final BoxConstraints box;
-  final String? Function(String?)? validator;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = context.l10n;
-    final theme = Theme.of(context);
-    final style = theme.textTheme;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l10n.contactUsMessageTextFieldLabel,
-          style: style.titleSmall,
-        ),
-        TextFormField(
-          validator: validator,
-          maxLines: 5,
-          decoration: InputDecoration(
-            hintText: l10n.contactUsMessageTextFieldHintText,
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(box.maxHeight * .025),
-              borderSide: BorderSide(
-                color: theme.colorScheme.onSurface,
-              ),
-            ),
-          ),
-        ).card(padding: EdgeInsets.symmetric(vertical: box.maxHeight * .007)),
-      ],
     );
   }
 }

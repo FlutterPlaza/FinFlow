@@ -71,6 +71,9 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
           style: textTheme
               .titleSmall, //bodyMedium //.copyWith(color: colors.onSurface),
           decoration: InputDecoration(
+            errorStyle: TextStyle(
+              color: theme.colorScheme.secondaryContainer,
+            ),
             errorText: widget.errorText,
             suffixIcon: !widget.isPassword
                 ? null
@@ -113,12 +116,15 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                       ),
             hintText: widget.hint,
           ),
-        ).card(
-          height: widget.box.maxHeight * 0.11,
-          padding: EdgeInsets.symmetric(
-            vertical: widget.box.maxHeight * 0.007,
-          ),
-        ),
+        )
+            .validatorWidget(
+                widget.validator?.call(widget.textController?.text))
+            .card(
+              height: widget.box.maxHeight * 0.12,
+              padding: EdgeInsets.symmetric(
+                vertical: widget.box.maxHeight * 0.007,
+              ),
+            ),
       ],
     );
   }

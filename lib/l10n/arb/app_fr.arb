@@ -267,5 +267,21 @@
     "contactUsEmailErrorText": "Veuillez entrer votre adresse e-mail",
     "@contactUsEmailErrorText": {
         "description": "Il s'agit du texte d'erreur affiché en cas d'échec de la validation du champ de texte email de la page contactez-nous"
+    },
+    "contactUsMessageTextFieldErrorText": "Le texte doit contenir au moins 30 caractères",
+    "@contactUsMessageTextFieldErrorText": {
+        "description": "Il s'agit du texte d'erreur affiché en cas d'échec de la validation du champ textformfield de la page Contactez-nous."
+    },
+    "contactUsSuccessTitle": "Merci de nous contacter !!",
+    "@contactUsSuccessTitle": {
+        "description": "Il s'agit du texte du titre affiché sur la page de succès Contactez-nous"
+    },
+    "contactUsSuccessText": "Nous avons reçu votre message. Nous lisons tous les messages et nous répondons généralement dans les 48 heures si une réponse est nécessaire",
+    "@contactUsSuccessText": {
+        "description": "C'est le texte qui s'affiche sur la page de succès contactez-nous"
+    },
+    "contactUsSuccessBtnText": "Retourner",
+    "@contactUsSuccessBtnText": {
+        "description": "Il s'agit de l'étiquette du bouton affiché sur la page de succès Contactez-nous"
     }
 }

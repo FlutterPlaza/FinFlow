@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/core/presentation/extension/extensions.dart';
 
-class messageTextField extends StatelessWidget {
+class messageTextField extends StatefulWidget {
   const messageTextField(
       {super.key,
       required this.theme,
@@ -13,7 +14,15 @@ class messageTextField extends StatelessWidget {
   final String? Function(String?)? validator;
 
   @override
+  State<messageTextField> createState() => _messageTextFieldState();
+}
+
+class _messageTextFieldState extends State<messageTextField> {
+  final messageController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final theme = Theme.of(context);
     final style = theme.textTheme;
 
@@ -21,22 +30,32 @@ class messageTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Message',
+          l10n.contactUsMessageTextFieldLabel,
           style: style.titleSmall,
         ),
         TextFormField(
-          validator: validator,
-          maxLines: 5,
+          onChanged: (value) {
+            setState(() {});
+          },
+          maxLength: 500,
+          controller: messageController,
+          //validator: widget.validator,
+          maxLines: 3,
           decoration: InputDecoration(
-            hintText: 'leave a message...',
+            hintText: l10n.contactUsMessageTextFieldHintText,
+            errorStyle: TextStyle(
+              color: theme.colorScheme.secondaryContainer,
+            ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(box.maxHeight * .025),
+              borderRadius: BorderRadius.circular(widget.box.maxHeight * .025),
               borderSide: BorderSide(
                 color: theme.colorScheme.onSurface,
               ),
             ),
           ),
-        ).card(padding: EdgeInsets.symmetric(vertical: box.maxHeight * .007)),
+        ).validatorWidget(widget.validator?.call(messageController.text)).card(
+            padding:
+                EdgeInsets.symmetric(vertical: widget.box.maxHeight * .007)),
       ],
     );
   }

@@ -263,5 +263,21 @@
     "contactUsEmailErrorText": "Please enter your email",
     "@contactUsEmailErrorText": {
         "description": "This is the error text displayed when validation for the email textform field, of the contact us page fails"
+    },
+    "contactUsMessageTextFieldErrorText": "Text must be atleast 30 characters",
+    "@contactUsMessageTextFieldErrorText": {
+        "description": "This is the error text displayed when validation of the message textformfield, of the contact us page fails"
+    },
+    "contactUsSuccessTitle": "Thank you for contacting us!!",
+    "@contactUsSuccessTitle": {
+        "description": "This is the title text displayed on the contact us success page"
+    },
+    "contactUsSuccessText": "We've received your message. We read every message and typically respond within 48 hours if a reply is required",
+    "@contactUsSuccessText": {
+        "description": "This is the text displayed on the contact us success page"
+    },
+    "contactUsSuccessBtnText": "Go Back",
+    "@contactUsSuccessBtnText": {
+        "description": "This is the label of the button displayed on the contact us success page"
     }
 }

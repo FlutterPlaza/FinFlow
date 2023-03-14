@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_svg.dart';
-import 'package:fpb/core/presentation/widget/my_button.dart';
+import 'package:fpb/contact_us/view/widgets/contact_us_success_btn.dart';
+import 'package:fpb/contact_us/view/widgets/contact_us_success_image.dart';
+import 'package:fpb/contact_us/view/widgets/contact_us_success_texts.dart';
+import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 
 class ContactUsSuccessPage extends StatelessWidget {
@@ -9,7 +12,7 @@ class ContactUsSuccessPage extends StatelessWidget {
   final BoxConstraints box;
   @override
   Widget build(BuildContext context) {
-    //final l10n = context.l10n;
+    final l10n = context.l10n;
     final theme = Theme.of(context);
     final style = theme.textTheme;
     //final colors = theme.colorScheme;
@@ -45,32 +48,21 @@ class ContactUsSuccessPage extends StatelessWidget {
                     SizedBox(
                       height: box.maxHeight * .1,
                     ),
-                    Image.asset(
-                      'assets/fpb-assets/email_success.png',
-                      width: box.maxWidth * .3,
-                      height: 0.15 * box.maxHeight,
-                    ),
+                    ContactUsSuccessImageWidget(box: box),
                     SizedBox(
                       height: box.maxHeight * .0001,
                     ),
-                    Text(
-                      'Thank you for contacting us!!',
-                      maxLines: 2,
-                      style: style.titleLarge,
-                    ),
+                    ContactUsSuccessTexts(l10n: l10n, style: style, box: box),
                     SizedBox(
-                      height: box.maxHeight * .025,
+                      height: box.maxHeight * .15,
                     ),
-                    Text(
-                        'We\'ve received your message. We read every message and typically respond within 48hrs if a reply is required.',
-                        maxLines: 3,
-                        style: style.titleMedium),
-                    SizedBox(
-                      height: box.maxHeight * .2,
-                    ),
-                    FpbButton(
-                      label: 'Go Back',
-                      onTap: () {},
+                    ContactUsSuccessBtn(
+                      style: style,
+                      box: box,
+                      backgroundColor: theme.colorScheme.background,
+                      borderColor: theme.colorScheme.secondary,
+                      text: l10n.contactUsSuccessBtnText,
+                      textColor: theme.colorScheme.secondary,
                     )
                   ],
                 ),

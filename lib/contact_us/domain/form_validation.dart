@@ -10,11 +10,11 @@ extension extString on String {
     return nameRegExp.hasMatch(this);
   }
 
-  bool get isValidMessage {
-    final messageRegExp =
-        RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
-    return messageRegExp.hasMatch(this);
-  }
+  // bool get isValidMessage {
+  //   final messageRegExp =
+  //       RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
+  //   return messageRegExp.hasMatch(this);
+  // }
 
   bool get isNotNull {
     // ignore: unnecessary_null_comparison
