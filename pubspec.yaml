@@ -85,3 +85,4 @@ flutter:
         - asset: assets/FpbIcons/FpbIcons.ttf
   assets:
     - assets/fpb-assets/
+    - assets/FpbIcons/
