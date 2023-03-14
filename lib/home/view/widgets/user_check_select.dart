@@ -48,7 +48,7 @@ class UserCheckSelect extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '@${username.trim()}',
+                        '@${username}',
                         style: TextStyle(
                           fontSize: box.maxHeight * 0.023,
                           fontWeight: FontWeight.w400,
