@@ -252,7 +252,7 @@
     "@confirmPhoneNumberTitleText": {
         "description": "Il s'agit du titre principal de l'écran de confirmation du numéro de téléphone."
     },
-    "confirmPhoneNumberBodyContentStart": "Nous vous avons envoyé un e-mail de confirmation contenant ",
+    "confirmPhoneNumberBodyContentStart": "Nous vous avons envoyé un sms de confirmation contenant votre ",
     "@confirmPhoneNumberBodyContentStart": {
         "description": "Il s'agit de la première partie du contenu qui se trouve dans le corps de l'écran de confirmation, juste en dessous du titre principal."
     },
@@ -260,7 +260,7 @@
     "@confirmPhoneNumberBodyContentMid": {
         "description": "Il s'agit de la partie centrale en gras du contenu du corps de l'écran de confirmation."
     },
-    "confirmPhoneNumberBodyContentEnd": "Veuillez saisir le code.",
+    "confirmPhoneNumberBodyContentEnd": "Veuillez saisir le code ici.",
     "@confirmPhoneNumberBodyContentEnd": {
         "description": "Il s'agit de la dernière partie du contenu figurant dans le corps de l'écran de confirmation."
     },
@@ -283,6 +283,18 @@
     "saveMoneyWithBucketSaveButton": "Sauvegarder",
     "@saveMoneyWithBucketSaveButton": {
         "description": "Il s'agit de l'intitulé du bouton \"économiser\" de l'écran \"sauvegarder de l'argent avec un seau\"."
+    },
+    "confirmEmailTitleText": "Confirmez votre\nAdresse Email",
+    "@confirmEmailTitleText": {
+        "description": "Il s'agit du titre principal de l'écran de confirmation du courrier électronique."
+    },
+    "confirmEmailBodyContentStart": "Nous vous avons envoyé un e-mail de confirmation contenant votre ",
+    "@confirmEmailBodyContentStart": {
+        "description": "Il s'agit de la première partie du contenu qui se trouve dans le corps de l'écran de confirmation du courrier électronique, juste en dessous du titre principal."
+    },
+    "confirmEmailResendButton": "Renvoyer l'e-mail",
+    "@confirmEmailResendButton": {
+        "description": "Il s'agit du texte de l'étiquette du bouton de renvoi sur l'écran de confirmation du numéro de téléphone."
     }
 }
  
