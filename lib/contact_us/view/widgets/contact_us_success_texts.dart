@@ -20,12 +20,17 @@ class ContactUsSuccessTexts extends StatelessWidget {
         Text(
           l10n.contactUsSuccessTitle,
           maxLines: 2,
+          textAlign: TextAlign.center,
           style: style.titleLarge,
         ),
         SizedBox(
           height: box.maxHeight * .025,
         ),
-        Text(l10n.contactUsSuccessText, maxLines: 3, style: style.titleMedium),
+        Text(
+          l10n.contactUsSuccessText, 
+          maxLines: 3, 
+          textAlign: TextAlign.center,
+          style: style.titleMedium),
       ],
     );
   }

@@ -6,9 +6,9 @@ import 'package:fpb/contact_us/contact_us_page.dart';
 import 'package:fpb/contact_us/view/widgets/message_textfield.dart';
 import 'package:fpb/core/presentation/widget/my_button.dart';
 import 'package:fpb/core/presentation/widget/my_textformfield.dart';
+import 'package:fpb/core/shared/helpers/extensions.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
-import '../domain/form_validation.dart';
 
 class ContactUsPage extends StatefulWidget {
   const ContactUsPage({super.key});
@@ -86,13 +86,16 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                       box: box,
                                       validator: (val) {
                                         if (val!.isEmpty) {
-                                          return null;
+                                          return 'Field is required';
                                         } else if (val.isValidName) {
                                           return null;
                                         } else {
                                           return l10n.contactUsNameErrorText;
                                         }
                                       },
+                                    ),
+                                    SizedBox(
+                                      height: box.maxHeight * .03,
                                     ),
                                     FpbTextFormField(
                                       onChanged: (value) {
@@ -104,7 +107,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                       box: box,
                                       validator: (val) {
                                         if (val!.isEmpty) {
-                                          return null;
+                                          return 'Field is required';
                                         } else if (val.isValidEmail) {
                                           return null;
                                         } else {
@@ -112,12 +115,15 @@ class _ContactUsPageState extends State<ContactUsPage> {
                                         }
                                       },
                                     ),
-                                    messageTextField(
+                                    SizedBox(
+                                      height: box.maxHeight * .03,
+                                    ),
+                                    MessageTextField(
                                       theme: theme,
                                       box: box,
                                       validator: (val) {
                                         if (val!.isEmpty) {
-                                          return null;
+                                          return 'Field is required';
                                         } else if (val.length > 30 &&
                                             val.length < 500) {
                                           return null;

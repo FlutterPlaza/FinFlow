@@ -58,7 +58,8 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
               )
             : SizedBox(),
         TextFormField(
-          validator: widget.validator,
+          autovalidateMode: AutovalidateMode.always,
+          validator: (value) => widget.validator?.call(value) != null ? "" : null,
           controller: widget.textController,
           focusNode: widget.node,
           keyboardType: widget.isEmail
@@ -71,10 +72,8 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
           style: textTheme
               .titleSmall, //bodyMedium //.copyWith(color: colors.onSurface),
           decoration: InputDecoration(
-            errorStyle: TextStyle(
-              color: theme.colorScheme.secondaryContainer,
-            ),
-            errorText: widget.errorText,
+            errorStyle: const TextStyle(height: 0),
+            //errorText: widget.errorText,
             suffixIcon: !widget.isPassword
                 ? null
                 : hidePassword!
@@ -117,14 +116,15 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
             hintText: widget.hint,
           ),
         )
-            .validatorWidget(
-                widget.validator?.call(widget.textController?.text))
             .card(
-              height: widget.box.maxHeight * 0.12,
+              //height: widget.box.maxHeight * 0.14,
               padding: EdgeInsets.symmetric(
-                vertical: widget.box.maxHeight * 0.007,
-              ),
-            ),
+                vertical: widget.box.maxHeight * 0.009,
+              )).validatorWidget(
+                //widget.textController != null && widget.textController!.text.isEmpty ? null :
+                widget.validator?.call(
+                  widget.textController?.text)),
+           
       ],
     );
   }

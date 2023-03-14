@@ -44,6 +44,7 @@ class ContactUsSuccessPage extends StatelessWidget {
                     bottom: box.maxHeight * .005),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  
                   children: [
                     SizedBox(
                       height: box.maxHeight * .1,
@@ -52,7 +53,9 @@ class ContactUsSuccessPage extends StatelessWidget {
                     SizedBox(
                       height: box.maxHeight * .0001,
                     ),
-                    ContactUsSuccessTexts(l10n: l10n, style: style, box: box),
+                    ContactUsSuccessTexts(
+                      
+                      l10n: l10n, style: style, box: box),
                     SizedBox(
                       height: box.maxHeight * .15,
                     ),
