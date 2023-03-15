@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fpb/core/presentation/widget/my_button.dart';
+import 'package:fpb/core/presentation/widget/fpb_button.dart';
 import 'package:fpb/core/shared/helpers/extensions.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/savings/save_money_with_bucket/widgets/bucket_account_dropdown_button.dart';

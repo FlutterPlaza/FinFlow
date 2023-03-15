@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/core/presentation/widget/my_button.dart';
+import 'package:fpb/core/presentation/widget/fpb_button.dart';
 import 'package:fpb/l10n/l10n.dart';
 
 class Actions extends StatelessWidget {
