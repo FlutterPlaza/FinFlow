@@ -1,13 +1,21 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fpb/core/presentation/widget/confirmation_screen_illustration.dart';
 import 'package:fpb/core/presentation/widget/otp_group_text_field.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/core/presentation/widget/confirmation_screen_actions.dart';
+import 'package:fpb/router/app_route.gr.dart';
 
 class EmailConfirmationScreen extends StatefulWidget {
   static const routeName = '/emailConfirmation';
 
-  const EmailConfirmationScreen({super.key});
+  const EmailConfirmationScreen({
+    super.key,
+    required this.emailControllerValue,
+    required this.submitValue,
+  });
+  final String emailControllerValue;
+  final bool submitValue;
 
   @override
   State<EmailConfirmationScreen> createState() =>
@@ -85,7 +93,9 @@ class _EmailConfirmationScreenState extends State<EmailConfirmationScreen> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: ConfirmationScreenAction(
-                  onTapConfirmButton: () {},
+                  onTapConfirmButton: () {
+                    context.router.push(CreateNewPasswordRoute());
+                  },
                   confirmButtonLabel: l10n.confirmEmailResendButton,
                   onTapContactUsButton: () {},
                 ),
