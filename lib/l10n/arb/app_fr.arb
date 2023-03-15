@@ -295,6 +295,50 @@
     "confirmEmailResendButton": "Renvoyer l'e-mail",
     "@confirmEmailResendButton": {
         "description": "Il s'agit du texte de l'étiquette du bouton de renvoi sur l'écran de confirmation du numéro de téléphone."
+    },
+    "createNewPasswordTitle": "Créer un nouveau mot de passe",
+    "@createNewPasswordTitle": {
+        "description": "Il s'agit du titre principal de l'écran de création d'un nouveau mot de passe."
+    },
+    "createNewPasswordBodyContent": "Votre nouveau mot de passe doit être différent du précédent\nmot de passe utilisé",
+    "@createNewPasswordBodyContent": {
+        "description": "Il s'agit du contenu de l'écran de création d'un nouveau mot de passe."
+    },
+    "createNewPasswordConfirmPasswordLabel": "Confirmez votre mot de passe",
+    "@createNewPasswordConfirmPasswordLabel": {
+        "description": "Il s'agit de l'étiquette de confirmation du mot de passe sur l'écran de création d'un nouveau mot de passe."
+    },
+    "createNewPasswordResetButtonLabel": "Réinitialiser le mot de passe",
+    "@createNewPasswordResetButtonLabel": {
+        "description": "Il s'agit du libellé du bouton de réinitialisation dans l'écran de création d'un nouveau mot de passe."
+    },
+    "forgotPasswordTitle": "Mot de passe oublié",
+    "@forgotPasswordTitle": {
+        "description": "Il s'agit du titre principal de l'écran mot de passe oublié."
+    },
+    "forgotPasswordBodyContent": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores !",
+    "@forgotPasswordBodyContent": {
+        "description": "Voici le contenu du corps de l'écran mot de passe oublié."
+    },
+    "forgotPasswordEmailTextFieldLabel": "Adresse email",
+    "@forgotPasswordEmailTextFieldLabel": {
+        "description": "Il s'agit de l'étiquette du champ de texte de l'email sur l'écran du mot de passe oublié."
+    },
+    "forgotPasswordEmailTextFieldHint": "Entrez votre adresse e-mail...",
+    "@forgotPasswordEmailTextFieldHint": {
+        "description": "Il s'agit de l'indice du champ de texte de l'email sur l'écran du mot de passe oublié."
+    },
+    "forgotPasswordSendButtonLabel": "Envoyer",
+    "@forgotPasswordSendButtonLabel": {
+        "description": "Il s'agit de l'étiquette de texte du bouton d'envoi de l'écran \"mot de passe oublié\"."
+    },
+    "newPasswordSuccessTitle": "Hourra !!",
+    "@newPasswordSuccessTitle": {
+        "description": "Il s'agit du titre principal de l'écran de réussite du nouveau mot de passe."
+    },
+    "newPasswordSuccessBodyContent": "Votre mot de passe a été réinitialisé avec succès\nConnectez-vous maintenant avec votre nouveau mot de passe",
+    "@newPasswordSuccessBodyContent": {
+        "description": "Voici le contenu de l'écran de réussite du nouveau mot de passe"
     }
 }
  
