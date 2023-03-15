@@ -15,7 +15,7 @@ class HomeContainer extends StatelessWidget {
       builder: (context, state) {
         return state.map(
           home: (_) => DashBoard(), // -> LatestActivitiesPage(),
-          savings: (_) => SavingsPage(),
+          savings: (_) => SavingsScreen(),
           quickCash: (_) => Container(child: Center(child: Text('budget'))),
           budget: (_) => BudgetScreen(),
           search: (_) => UserSearchScreen(),

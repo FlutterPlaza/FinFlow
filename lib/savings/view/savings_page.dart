@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/router/app_route.gr.dart';
 
-class SavingsPage extends StatefulWidget {
-  const SavingsPage({super.key});
+class SavingsScreen extends StatefulWidget {
+  const SavingsScreen({super.key});
   static const String routeName = '/savings';
 
   @override
-  State<SavingsPage> createState() => _SavingsPageState();
+  State<SavingsScreen> createState() => _SavingsScreenState();
 }
 
-class _SavingsPageState extends State<SavingsPage> {
+class _SavingsScreenState extends State<SavingsScreen> {
   int pageIndex = 1;
 
   void onChanged(int index) {
