@@ -11,108 +11,152 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i8;
-import 'package:flutter/material.dart' as _i9;
+import 'package:auto_route/auto_route.dart' as _i12;
+import 'package:flutter/material.dart' as _i13;
 
-import '../core/domain/user.dart' as _i10;
-import '../home/view/home_screen.dart' as _i4;
-import '../latest_activities/view/latest_activities_screen.dart' as _i7;
-import '../onboarding/view/onboarding_screens.dart' as _i5;
-import '../onboarding/view/splash_screen.dart' as _i1;
-import '../profile/view/profile_page.dart' as _i6;
+import '../contact_us/view/contact_us_page.dart' as _i1;
+import '../core/domain/user.dart' as _i14;
+import '../email_confirmation/email_confirmation.dart' as _i4;
+import '../home/view/home_screen.dart' as _i7;
+import '../latest_activities/view/latest_activities_screen.dart' as _i8;
+import '../onboarding/view/onboarding_screens.dart' as _i10;
+import '../phone_number_confirmation/view/phone_number_confirmation.dart'
+    as _i3;
+import '../profile/view/profile_page.dart' as _i11;
+import '../qr_code_screen/view/qr_code_screen.dart' as _i9;
+import '../savings/save_money_with_bucket/save_money_with_bucket.dart' as _i6;
 import '../sign_in/view/sign_in_page.dart' as _i2;
-import '../sign_up/view/signup_page.dart' as _i3;
+import '../sign_up/view/signup_page.dart' as _i5;
 
-class AppRoute extends _i8.RootStackRouter {
-  AppRoute([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
+class AppRoute extends _i12.RootStackRouter {
+  AppRoute([_i13.GlobalKey<_i13.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i8.PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+  final Map<String, _i12.PageFactory> pagesMap = {
+    ContactUsPage.name: (routeData) {
+      return _i12.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i1.SplashScreen(),
+        child: const _i1.ContactUsPage(),
       );
     },
     SignInRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.SignInScreen(),
       );
     },
-    SignUpRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+    PhoneNumberConfirmationRoute.name: (routeData) {
+      return _i12.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i3.SignUpScreen(),
+        child: const _i3.PhoneNumberConfirmationScreen(),
+      );
+    },
+    EmailConfirmationRoute.name: (routeData) {
+      return _i12.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i4.EmailConfirmationScreen(),
+      );
+    },
+    SignUpRoute.name: (routeData) {
+      return _i12.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i5.SignUpScreen(),
+      );
+    },
+    SaveMoneyRoute.name: (routeData) {
+      return _i12.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i6.SaveMoneyScreen(),
       );
     },
     HomeRouter.name: (routeData) {
       final args = routeData.argsAs<HomeRouterArgs>();
-      return _i8.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i4.HomeScreen(
+        child: _i7.HomeScreen(
           key: args.key,
           user: args.user,
         ),
       );
     },
+    LatestActivitiesPage.name: (routeData) {
+      return _i12.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i8.LatestActivitiesPage(),
+      );
+    },
+    QrCodeRoute.name: (routeData) {
+      return _i12.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i9.QrCodeScreen(),
+      );
+    },
     OnboardingRoute.name: (routeData) {
       final args = routeData.argsAs<OnboardingRouteArgs>(
           orElse: () => const OnboardingRouteArgs());
-      return _i8.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i5.OnboardingScreen(
+        child: _i10.OnboardingScreen(
           onGetStartedPressed: args.onGetStartedPressed,
           key: args.key,
         ),
       );
     },
     ProfileRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i6.ProfileScreen(),
-      );
-    },
-    LatestActivitiesPage.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i7.LatestActivitiesPage(),
+        child: const _i11.ProfileScreen(),
       );
     },
   };
 
   @override
-  List<_i8.RouteConfig> get routes => [
-        _i8.RouteConfig(
-          SplashRoute.name,
+  List<_i12.RouteConfig> get routes => [
+        _i12.RouteConfig(
+          ContactUsPage.name,
           path: '/',
         ),
-        _i8.RouteConfig(
+        _i12.RouteConfig(
           SignInRoute.name,
           path: '/sign-in-screen',
         ),
-        _i8.RouteConfig(
+        _i12.RouteConfig(
+          PhoneNumberConfirmationRoute.name,
+          path: '/phone-number-confirmation-screen',
+        ),
+        _i12.RouteConfig(
+          EmailConfirmationRoute.name,
+          path: '/email-confirmation-screen',
+        ),
+        _i12.RouteConfig(
           SignUpRoute.name,
           path: '/sign-up-screen',
         ),
-        _i8.RouteConfig(
+        _i12.RouteConfig(
+          SaveMoneyRoute.name,
+          path: '/save-money-screen',
+        ),
+        _i12.RouteConfig(
           HomeRouter.name,
           path: '/home-screen',
           children: [
-            _i8.RouteConfig(
+            _i12.RouteConfig(
               ProfileRoute.name,
               path: 'profile',
               parent: HomeRouter.name,
-            ),
-            _i8.RouteConfig(
-              LatestActivitiesPage.name,
-              path: 'latestActivities',
-              parent: HomeRouter.name,
-            ),
+            )
           ],
         ),
-        _i8.RouteConfig(
+        _i12.RouteConfig(
+          LatestActivitiesPage.name,
+          path: 'latestActivities',
+        ),
+        _i12.RouteConfig(
+          QrCodeRoute.name,
+          path: '/qr-code-screen',
+        ),
+        _i12.RouteConfig(
           OnboardingRoute.name,
           path: '/onboarding-screen',
         ),
@@ -120,20 +164,20 @@ class AppRoute extends _i8.RootStackRouter {
 }
 
 /// generated route for
-/// [_i1.SplashScreen]
-class SplashRoute extends _i8.PageRouteInfo<void> {
-  const SplashRoute()
+/// [_i1.ContactUsPage]
+class ContactUsPage extends _i12.PageRouteInfo<void> {
+  const ContactUsPage()
       : super(
-          SplashRoute.name,
+          ContactUsPage.name,
           path: '/',
         );
 
-  static const String name = 'SplashRoute';
+  static const String name = 'ContactUsPage';
 }
 
 /// generated route for
 /// [_i2.SignInScreen]
-class SignInRoute extends _i8.PageRouteInfo<void> {
+class SignInRoute extends _i12.PageRouteInfo<void> {
   const SignInRoute()
       : super(
           SignInRoute.name,
@@ -144,8 +188,32 @@ class SignInRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.SignUpScreen]
-class SignUpRoute extends _i8.PageRouteInfo<void> {
+/// [_i3.PhoneNumberConfirmationScreen]
+class PhoneNumberConfirmationRoute extends _i12.PageRouteInfo<void> {
+  const PhoneNumberConfirmationRoute()
+      : super(
+          PhoneNumberConfirmationRoute.name,
+          path: '/phone-number-confirmation-screen',
+        );
+
+  static const String name = 'PhoneNumberConfirmationRoute';
+}
+
+/// generated route for
+/// [_i4.EmailConfirmationScreen]
+class EmailConfirmationRoute extends _i12.PageRouteInfo<void> {
+  const EmailConfirmationRoute()
+      : super(
+          EmailConfirmationRoute.name,
+          path: '/email-confirmation-screen',
+        );
+
+  static const String name = 'EmailConfirmationRoute';
+}
+
+/// generated route for
+/// [_i5.SignUpScreen]
+class SignUpRoute extends _i12.PageRouteInfo<void> {
   const SignUpRoute()
       : super(
           SignUpRoute.name,
@@ -156,12 +224,24 @@ class SignUpRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.HomeScreen]
-class HomeRouter extends _i8.PageRouteInfo<HomeRouterArgs> {
+/// [_i6.SaveMoneyScreen]
+class SaveMoneyRoute extends _i12.PageRouteInfo<void> {
+  const SaveMoneyRoute()
+      : super(
+          SaveMoneyRoute.name,
+          path: '/save-money-screen',
+        );
+
+  static const String name = 'SaveMoneyRoute';
+}
+
+/// generated route for
+/// [_i7.HomeScreen]
+class HomeRouter extends _i12.PageRouteInfo<HomeRouterArgs> {
   HomeRouter({
-    _i9.Key? key,
-    required _i10.User user,
-    List<_i8.PageRouteInfo>? children,
+    _i13.Key? key,
+    required _i14.User user,
+    List<_i12.PageRouteInfo>? children,
   }) : super(
           HomeRouter.name,
           path: '/home-screen',
@@ -181,9 +261,9 @@ class HomeRouterArgs {
     required this.user,
   });
 
-  final _i9.Key? key;
+  final _i13.Key? key;
 
-  final _i10.User user;
+  final _i14.User user;
 
   @override
   String toString() {
@@ -192,11 +272,35 @@ class HomeRouterArgs {
 }
 
 /// generated route for
-/// [_i5.OnboardingScreen]
-class OnboardingRoute extends _i8.PageRouteInfo<OnboardingRouteArgs> {
+/// [_i8.LatestActivitiesPage]
+class LatestActivitiesPage extends _i12.PageRouteInfo<void> {
+  const LatestActivitiesPage()
+      : super(
+          LatestActivitiesPage.name,
+          path: 'latestActivities',
+        );
+
+  static const String name = 'LatestActivitiesPage';
+}
+
+/// generated route for
+/// [_i9.QrCodeScreen]
+class QrCodeRoute extends _i12.PageRouteInfo<void> {
+  const QrCodeRoute()
+      : super(
+          QrCodeRoute.name,
+          path: '/qr-code-screen',
+        );
+
+  static const String name = 'QrCodeRoute';
+}
+
+/// generated route for
+/// [_i10.OnboardingScreen]
+class OnboardingRoute extends _i12.PageRouteInfo<OnboardingRouteArgs> {
   OnboardingRoute({
     void Function()? onGetStartedPressed,
-    _i9.Key? key,
+    _i13.Key? key,
   }) : super(
           OnboardingRoute.name,
           path: '/onboarding-screen',
@@ -217,7 +321,7 @@ class OnboardingRouteArgs {
 
   final void Function()? onGetStartedPressed;
 
-  final _i9.Key? key;
+  final _i13.Key? key;
 
   @override
   String toString() {
@@ -226,8 +330,8 @@ class OnboardingRouteArgs {
 }
 
 /// generated route for
-/// [_i6.ProfileScreen]
-class ProfileRoute extends _i8.PageRouteInfo<void> {
+/// [_i11.ProfileScreen]
+class ProfileRoute extends _i12.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
           ProfileRoute.name,
@@ -235,16 +339,4 @@ class ProfileRoute extends _i8.PageRouteInfo<void> {
         );
 
   static const String name = 'ProfileRoute';
-}
-
-/// generated route for
-/// [_i7.LatestActivitiesPage]
-class LatestActivitiesPage extends _i8.PageRouteInfo<void> {
-  const LatestActivitiesPage()
-      : super(
-          LatestActivitiesPage.name,
-          path: 'latestActivities',
-        );
-
-  static const String name = 'LatestActivitiesPage';
 }

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/core/application/search_user_bloc/search_user_bloc.dart';
 import 'package:fpb/core/application/search_user_bloc/search_user_state.dart';
 import 'package:fpb/core/domain/user.dart';
-import 'package:fpb/core/presentation/widget/my_textformfield.dart';
+import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 
 class SearchInputWidget extends StatelessWidget {
   const SearchInputWidget({super.key, required this.box, this.textController});
