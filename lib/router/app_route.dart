@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
-import 'package:fpb/contact_us/view/contact_us_page.dart';
+import 'package:fpb/contact_us/contact_us_page.dart';
+import 'package:fpb/contact_us/view/contact_us_screen.dart';
 import 'package:fpb/email_confirmation/email_confirmation.dart';
 import 'package:fpb/home/view/home_screen.dart';
 import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
@@ -15,7 +16,7 @@ import 'package:fpb/sign_up/view/signup_page.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Screen,Route',
   routes: <AutoRoute>[
-    AutoRoute(page: ContactUsPage, initial: true),
+    AutoRoute(page: SplashScreen, initial: true),
     AutoRoute(page: SignInScreen),
     AutoRoute(page: PhoneNumberConfirmationScreen),
     AutoRoute(page: EmailConfirmationScreen),
@@ -39,6 +40,12 @@ import 'package:fpb/sign_up/view/signup_page.dart';
       page: QrCodeScreen,
     ),
     AutoRoute(page: OnboardingScreen),
+    AutoRoute(
+      page: ContactUsScreen,
+    ),
+    AutoRoute(
+      page: ContactUsSuccessScreen,
+    )
   ],
 )
 class $AppRoute {}

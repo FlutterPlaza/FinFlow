@@ -1,23 +1,25 @@
 // ignore_for_file: body_might_complete_normally_nullable
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_svg.dart';
-import 'package:fpb/contact_us/contact_us_page.dart';
+import 'package:fpb/contact_us/contact_us_screen.dart';
 import 'package:fpb/contact_us/view/widgets/message_textfield.dart';
 import 'package:fpb/core/presentation/widget/fpb_button.dart';
 import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 import 'package:fpb/core/shared/helpers/extensions.dart';
 import 'package:fpb/l10n/l10n.dart';
+import 'package:fpb/router/app_route.gr.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 
-class ContactUsPage extends StatefulWidget {
-  const ContactUsPage({super.key});
+class ContactUsScreen extends StatefulWidget {
+  const ContactUsScreen({super.key});
 
   @override
-  State<ContactUsPage> createState() => _ContactUsPageState();
+  State<ContactUsScreen> createState() => _ContactUsScreenState();
 }
 
-class _ContactUsPageState extends State<ContactUsPage> {
+class _ContactUsScreenState extends State<ContactUsScreen> {
   final _formKey = GlobalKey<FormState>();
   final nameController = TextEditingController();
   final emailController = TextEditingController();
@@ -145,14 +147,8 @@ class _ContactUsPageState extends State<ContactUsPage> {
                               label: l10n.contactUsSubmitBtnLabel,
                               onTap: () {
                                 if (_formKey.currentState!.validate()) {
-                                  Navigator.of(context).push(
-                                    // ignore: inference_failure_on_instance_creation
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          ContactUsSuccessPage(
-                                        box: box,
-                                      ),
-                                    ),
+                                  context.router.push(
+                                    ContactUsSuccessRoute()
                                   );
                                 } else {}
                               })
