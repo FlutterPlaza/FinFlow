@@ -54,10 +54,17 @@ class MyCardItem extends StatelessWidget {
                   width: box.maxWidth,
                   child: Wrap(
                     alignment: WrapAlignment.spaceBetween,
+                    crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
                       CardNumberDot(),
                       CardNumberDot(),
                       CardNumberDot(),
+                      Text(
+                        '1234',
+                        style: theme.textTheme.titleSmall?.copyWith(
+                          color: colors.surface,
+                        ),
+                      ),
                     ],
                   ),
                 )

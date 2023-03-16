@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fpb/home/view/widgets/custom_appbar.dart';
+import 'package:fpb/payment_methods/view/widget/link_accounts.dart';
 import 'package:fpb/payment_methods/view/widget/payment_cards_widget.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
@@ -32,20 +33,12 @@ class PaymentMethodScreen extends StatelessWidget {
                     PaymentCardsWidget(
                       box: box,
                     ),
+                    // link accounts
+                    LinkAccounts(
+                      box: box,
+                    ),
                   ],
                 ),
-                // SliverFixedExtentList(
-                //   itemExtent: 50.0,
-                //   delegate: SliverChildBuilderDelegate(
-                //     (BuildContext context, int index) {
-                //       return Container(
-                //         alignment: Alignment.center,
-                //         color: Colors.lightBlue[100 * (index % 9)],
-                //         child: Text('List Item $index'),
-                //       );
-                //     },
-                //   ),
-                // ),
               ),
             ),
           );

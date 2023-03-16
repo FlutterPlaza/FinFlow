@@ -7,26 +7,26 @@ class CardNumberDot extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Wrap(
-      spacing: 5.0,
+      spacing: 2.0,
       children: [
         Icon(
           Icons.circle,
-          size: 12.0,
+          size: 10.0,
           color: theme.cardColor,
         ),
         Icon(
           Icons.circle,
-          size: 12.0,
+          size: 10.0,
           color: theme.cardColor,
         ),
         Icon(
           Icons.circle,
-          size: 12.0,
+          size: 10.0,
           color: theme.cardColor,
         ),
         Icon(
           Icons.circle,
-          size: 12.0,
+          size: 10.0,
           color: theme.cardColor,
         ),
       ],
