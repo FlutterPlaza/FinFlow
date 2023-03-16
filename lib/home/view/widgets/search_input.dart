@@ -5,6 +5,7 @@ import 'package:fpb/core/application/search_user_bloc/search_user_state.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/presentation/widget/custom_search_input.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
+import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 
 class SearchInputWidget extends StatelessWidget {
   const SearchInputWidget({super.key, required this.box, this.textController});

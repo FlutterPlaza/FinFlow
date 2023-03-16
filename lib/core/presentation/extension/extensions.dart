@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fpb/assets/fpb_svg.dart';
 
 extension SvgPictureXX on SvgPicture {
   SvgPicture fpbsvg(String name) {
@@ -14,15 +15,44 @@ mixin SvgPictureX {
 }
 
 extension ContainerX on Widget {
-  AnimatedContainer card(
-      {double? radius,
-      Color? color,
-      double? height,
-      EdgeInsets? padding,
-      EdgeInsets? margin,
-      Duration? animation,
-      double? width,
-      double? radiusTop}) {
+  Widget validatorWidget(String? errorMessage) {
+    return Column(
+      children: [
+        this,
+        SizedBox(
+          height: 5,
+        ),
+        if (errorMessage != null)
+          Row(
+            children: [
+              SvgPicture.asset(SvgNames.error),
+              SizedBox(
+                width: 5,
+              ),
+              Text(
+                errorMessage,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: const Color(0xffDF602F),
+                ),
+              )
+            ],
+          )
+      ],
+    );
+  }
+
+  AnimatedContainer card({
+    double? radius,
+    Color? color,
+    double? height,
+    EdgeInsets? padding,
+    EdgeInsets? margin,
+    Duration? animation,
+    double? width,
+    double? radiusTop,
+  }) {
     return AnimatedContainer(
       duration: animation ?? Duration(milliseconds: 300),
       height: height,
