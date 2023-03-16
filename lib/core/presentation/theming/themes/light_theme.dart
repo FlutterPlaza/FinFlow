@@ -27,10 +27,10 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       secondary: _AppColors.secondaryColorW,
       onSecondary: _AppColors.primaryColorW,
       secondaryContainer: _AppColors.secondaryContainerW,
-      tertiary: _AppColors.onSurfaceW,
-      onTertiary: _AppColors.onSurfaceW, // use for static code (qrCode screen)
-      onTertiaryContainer: Colors
-          .blue, // set to odd color so we can see which component in the UI is affected
+      tertiary: _AppColors.onSurfaceW, // use for static code (qrCode screen)
+      onTertiary: _AppColors.orangePrimary, // use for cards and icon - Orange
+      onTertiaryContainer:
+          _AppColors.orangeDark, // use for cards and icon - OrangeDark
       inverseSurface: Colors
           .green, // set to odd color so we can see which component in the UI is affected
       inversePrimary: Colors

@@ -11,11 +11,13 @@ class _AppColors {
   static Color onBgColorW = Color(0xffD9D9D9);
   // static Color surfaceW = const Color(0xffF5F5F5); // ;
   // static Color surfacerW = Color(0xffFFFFFF);
-  
+
   static Color onSurfaceW = Color(0xfff7f7f7); // const Color(0xff808191);
   static Color greyLight = Color(0xFFABABAB);
 
   static Color lightGrey = Color(0xffA7A7A7);
+  static Color orangePrimary = Color(0xffDF602F);
+  static Color orangeDark = Color(0xffA34420);
 
   static Color getShade(Color color, {bool darker = false, double value = .1}) {
     assert(value >= 0 && value <= 1, 'verify domain interval');

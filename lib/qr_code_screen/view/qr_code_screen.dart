@@ -132,7 +132,7 @@ class _QrCodeScreenState extends State<QrCodeScreen>
                               style: TextStyle(
                                 color: Theme.of(context)
                                     .colorScheme
-                                    .onTertiary,
+                                    .tertiary,
                                 fontSize: box.maxWidth * 0.05,
                               ),
                               textAlign: TextAlign.center,
