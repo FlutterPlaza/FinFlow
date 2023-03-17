@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fpb/assets/fpb_svg.dart';
 
 class UserCheckSelect extends StatelessWidget {
   const UserCheckSelect({
@@ -16,7 +18,7 @@ class UserCheckSelect extends StatelessWidget {
   final String fullName;
   final String userPhoto;
   final bool checked;
-  final void Function(bool?) onChanged;
+  final void Function() onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -69,12 +71,25 @@ class UserCheckSelect extends StatelessWidget {
           ),
 
           // checkbox select button
-          SizedBox(
-            child: Checkbox(
-              value: checked,
-              onChanged: onChanged,
+          if (checked) ...[
+            GestureDetector(
+              onTap: onChanged,
+              child: SizedBox(
+                child: SvgPicture.asset(
+                  SvgNames.activeCheckbox,
+                ),
+              ),
             ),
-          ),
+          ] else ...[
+            GestureDetector(
+              onTap: onChanged,
+              child: SizedBox(
+                child: SvgPicture.asset(
+                  SvgNames.inactiveCheckbox,
+                ),
+              ),
+            ),
+          ]
         ],
       ),
     );

@@ -15,4 +15,7 @@ class SvgNames {
   static String facebook = '${path}facebook.svg';
   static String twitter = '${path}twitter.svg';
   static String error = '${path}Cross.svg';
+  static String activeCheckbox = '${path}active_checkbox.svg';
+  static String inactiveCheckbox = '${path}uncheck_tick.svg';
+
 }
