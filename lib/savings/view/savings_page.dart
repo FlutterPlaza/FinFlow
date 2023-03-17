@@ -16,14 +16,7 @@ class SavingsPage extends StatefulWidget {
 }
 
 class _SavingsPageState extends State<SavingsPage> {
-  int pageIndex = 1;
-
-  void onChanged(int index) {
-    setState(() {
-      pageIndex = index;
-    });
-  }
-
+ 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
