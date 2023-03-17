@@ -32,14 +32,33 @@ class SearchInputWidget extends StatelessWidget {
           VerticalSpacingWidget(box: box),
           Container(
             width: box.maxWidth,
-            child: CustomSearchInput(
+            child: FpbTextFormField(
+              onChanged: (value) {
+                // setState(() {});
+              },
+              // textController: nameController,
+              label: '',
+              showLabelText: false,
+              hint: 'Name, email, identifier',
               box: box,
-              keyboardType: null,
-              labelText: 'Name, email, identifier',
-              onChanged: (search) async {
-                print(search);
+              validator: (val) {
+                // if (val!.isEmpty) {
+                //   return 'Field is required';
+                // } else if (val.isValidName) {
+                //   return null;
+                // } else {
+                //   return l10n.contactUsNameErrorText;
+                // }
               },
             ),
+            // child: CustomSearchInput(
+            //   box: box,
+            //   keyboardType: null,
+            //   labelText: 'Name, email, identifier',
+            //   onChanged: (search) async {
+            //     print(search);
+            //   },
+            // ),
           ),
         ],
       ),

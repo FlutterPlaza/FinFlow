@@ -44,10 +44,7 @@ class SelectedUserItem extends StatelessWidget {
           ),
           Text(
             '${username}',
-            style: TextStyle(
-              fontSize: box.maxHeight * 0.02,
-              fontWeight: FontWeight.w400,
-            ),
+            style: Theme.of(context).textTheme.titleSmall,
           ),
           GestureDetector(
             onTap: onTap,

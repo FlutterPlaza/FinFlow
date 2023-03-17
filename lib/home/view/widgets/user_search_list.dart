@@ -50,6 +50,76 @@ class _UserSearchListState extends State<UserSearchList> {
       email: 'mary@smith.com',
       phoneNumber: '15778783',
     ),
+    User(
+      id: '3',
+      isNewUser: false,
+      photo:
+          'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
+      providerId: '123456789',
+      name: 'Amanda',
+      email: 'mary@smith.com',
+      phoneNumber: '15778783',
+    ),
+    User(
+      id: '3',
+      isNewUser: false,
+      photo:
+          'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
+      providerId: '123456789',
+      name: 'Amanda',
+      email: 'mary@smith.com',
+      phoneNumber: '15778783',
+    ),
+    User(
+      id: '3',
+      isNewUser: false,
+      photo:
+          'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
+      providerId: '123456789',
+      name: 'Amanda',
+      email: 'mary@smith.com',
+      phoneNumber: '15778783',
+    ),
+    User(
+      id: '3',
+      isNewUser: false,
+      photo:
+          'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
+      providerId: '123456789',
+      name: 'Amanda',
+      email: 'mary@smith.com',
+      phoneNumber: '15778783',
+    ),
+    User(
+      id: '3',
+      isNewUser: false,
+      photo:
+          'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
+      providerId: '123456789',
+      name: 'Amanda',
+      email: 'mary@smith.com',
+      phoneNumber: '15778783',
+    ),
+    User(
+      id: '3',
+      isNewUser: false,
+      photo:
+          'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
+      providerId: '123456789',
+      name: 'Amanda',
+      email: 'mary@smith.com',
+      phoneNumber: '15778783',
+    ),
+    User(
+      id: '3',
+      isNewUser: false,
+      photo:
+          'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
+      providerId: '123456789',
+      name: 'Amanda',
+      email: 'mary@smith.com',
+      phoneNumber: '15778783',
+    ),
   ];
 
   // recently sent list
@@ -122,39 +192,37 @@ class _UserSearchListState extends State<UserSearchList> {
           // display user with recent sent transactions
           Container(
             width: widget.box.maxWidth,
-            height: widget.box.maxHeight * 0.2,
+            // height: widget.box.maxHeight * 0.2,
             padding: EdgeInsets.symmetric(
               horizontal: widget.box.maxWidth * 0.01,
             ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: users
-                    .map(
-                      (e) => UserCheckSelect(
-                        box: widget.box,
-                        fullName: e.name,
-                        username: e.name,
-                        userPhoto: '${e.photo}',
-                        checked: userSelected.contains(e) ? true : false,
-                        onChanged: (bool? value) {
-                          // check if item adde - if yes then remove
-                          if (userSelected.contains(e)) {
-                            userSelected.remove(e);
-                            setState(() {
-                              selectUser = value!;
-                            });
-                          } else {
-                            // add use to userSelected
-                            userSelected.add(e);
-                            setState(() {
-                              selectUser = value!;
-                            });
-                          }
-                        },
-                      ),
-                    )
-                    .toList(),
-              ),
+            child: Column(
+              children: users
+                  .map(
+                    (e) => UserCheckSelect(
+                      box: widget.box,
+                      fullName: e.name,
+                      username: e.name,
+                      userPhoto: '${e.photo}',
+                      checked: userSelected.contains(e) ? true : false,
+                      onChanged: (bool? value) {
+                        // check if item adde - if yes then remove
+                        if (userSelected.contains(e)) {
+                          userSelected.remove(e);
+                          setState(() {
+                            selectUser = value!;
+                          });
+                        } else {
+                          // add use to userSelected
+                          userSelected.add(e);
+                          setState(() {
+                            selectUser = value!;
+                          });
+                        }
+                      },
+                    ),
+                  )
+                  .toList(),
             ),
           ),
 
@@ -175,39 +243,36 @@ class _UserSearchListState extends State<UserSearchList> {
           // display user with recent sent transactions
           Container(
             width: widget.box.maxWidth,
-            height: widget.box.maxHeight * 0.5,
             padding: EdgeInsets.symmetric(
               horizontal: widget.box.maxWidth * 0.01,
             ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: users
-                    .map(
-                      (e) => UserCheckSelect(
-                        box: widget.box,
-                        fullName: e.name,
-                        username: e.name,
-                        userPhoto: '${e.photo}',
-                        checked: userSelected.contains(e) ? true : false,
-                        onChanged: (bool? value) {
-                          // check if item adde - if yes then remove
-                          if (userSelected.contains(e)) {
-                            userSelected.remove(e);
-                            setState(() {
-                              selectUser = value!;
-                            });
-                          } else {
-                            // add use to userSelected
-                            userSelected.add(e);
-                            setState(() {
-                              selectUser = value!;
-                            });
-                          }
-                        },
-                      ),
-                    )
-                    .toList(),
-              ),
+            child: Column(
+              children: users
+                  .map(
+                    (e) => UserCheckSelect(
+                      box: widget.box,
+                      fullName: e.name,
+                      username: e.name,
+                      userPhoto: '${e.photo}',
+                      checked: userSelected.contains(e) ? true : false,
+                      onChanged: (bool? value) {
+                        // check if item adde - if yes then remove
+                        if (userSelected.contains(e)) {
+                          userSelected.remove(e);
+                          setState(() {
+                            selectUser = value!;
+                          });
+                        } else {
+                          // add use to userSelected
+                          userSelected.add(e);
+                          setState(() {
+                            selectUser = value!;
+                          });
+                        }
+                      },
+                    ),
+                  )
+                  .toList(),
             ),
           ),
         ],
