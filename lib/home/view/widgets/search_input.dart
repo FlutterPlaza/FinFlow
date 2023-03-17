@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/core/application/search_user_bloc/search_user_bloc.dart';
 import 'package:fpb/core/application/search_user_bloc/search_user_state.dart';
 import 'package:fpb/core/domain/user.dart';
-import 'package:fpb/core/presentation/widget/custom_search_input.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 
@@ -33,32 +32,12 @@ class SearchInputWidget extends StatelessWidget {
           Container(
             width: box.maxWidth,
             child: FpbTextFormField(
-              onChanged: (value) {
-                // setState(() {});
-              },
-              // textController: nameController,
+              onChanged: (value) {},
               label: '',
               showLabelText: false,
-              hint: 'Name, email, identifier',
+              hint: 'Name, email, identifier, number',
               box: box,
-              validator: (val) {
-                // if (val!.isEmpty) {
-                //   return 'Field is required';
-                // } else if (val.isValidName) {
-                //   return null;
-                // } else {
-                //   return l10n.contactUsNameErrorText;
-                // }
-              },
             ),
-            // child: CustomSearchInput(
-            //   box: box,
-            //   keyboardType: null,
-            //   labelText: 'Name, email, identifier',
-            //   onChanged: (search) async {
-            //     print(search);
-            //   },
-            // ),
           ),
         ],
       ),
