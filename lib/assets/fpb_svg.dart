@@ -20,4 +20,7 @@ class SvgNames {
   static String applePay = '${path}apple_pay.svg';
   static String bank = '${path}bank_account.svg';
   static String whiteTickCheckbox = '${path}white_tick_check.svg';
+  static String activeCheckbox = '${path}active_checkbox.svg';
+  static String inactiveCheckbox = '${path}uncheck_tick.svg';
+
 }

@@ -51,7 +51,7 @@ class _UserSearchListState extends State<UserSearchList> {
       phoneNumber: '15778783',
     ),
     User(
-      id: '3',
+      id: '4',
       isNewUser: false,
       photo:
           'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
@@ -61,7 +61,7 @@ class _UserSearchListState extends State<UserSearchList> {
       phoneNumber: '15778783',
     ),
     User(
-      id: '3',
+      id: '5',
       isNewUser: false,
       photo:
           'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
@@ -71,7 +71,7 @@ class _UserSearchListState extends State<UserSearchList> {
       phoneNumber: '15778783',
     ),
     User(
-      id: '3',
+      id: '6',
       isNewUser: false,
       photo:
           'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
@@ -81,7 +81,7 @@ class _UserSearchListState extends State<UserSearchList> {
       phoneNumber: '15778783',
     ),
     User(
-      id: '3',
+      id: '7',
       isNewUser: false,
       photo:
           'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
@@ -91,7 +91,7 @@ class _UserSearchListState extends State<UserSearchList> {
       phoneNumber: '15778783',
     ),
     User(
-      id: '3',
+      id: '8',
       isNewUser: false,
       photo:
           'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
@@ -101,17 +101,7 @@ class _UserSearchListState extends State<UserSearchList> {
       phoneNumber: '15778783',
     ),
     User(
-      id: '3',
-      isNewUser: false,
-      photo:
-          'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
-      providerId: '123456789',
-      name: 'Amanda',
-      email: 'mary@smith.com',
-      phoneNumber: '15778783',
-    ),
-    User(
-      id: '3',
+      id: '9',
       isNewUser: false,
       photo:
           'https://media.istockphoto.com/id/1381221247/photo/beautiful-afro-girl-with-curly-hairstyle.jpg?b=1&s=170667a&w=0&k=20&c=0x91osZOkL8EfhTEEGNa2EeCGN2gdMTNULOsUFW_0i4=',
@@ -205,18 +195,18 @@ class _UserSearchListState extends State<UserSearchList> {
                       username: e.name,
                       userPhoto: '${e.photo}',
                       checked: userSelected.contains(e) ? true : false,
-                      onChanged: (bool? value) {
+                      onChanged: () {
                         // check if item adde - if yes then remove
                         if (userSelected.contains(e)) {
                           userSelected.remove(e);
                           setState(() {
-                            selectUser = value!;
+                            selectUser = false;
                           });
                         } else {
                           // add use to userSelected
                           userSelected.add(e);
                           setState(() {
-                            selectUser = value!;
+                            selectUser = true;
                           });
                         }
                       },
@@ -255,18 +245,18 @@ class _UserSearchListState extends State<UserSearchList> {
                       username: e.name,
                       userPhoto: '${e.photo}',
                       checked: userSelected.contains(e) ? true : false,
-                      onChanged: (bool? value) {
+                      onChanged: () {
                         // check if item adde - if yes then remove
                         if (userSelected.contains(e)) {
                           userSelected.remove(e);
                           setState(() {
-                            selectUser = value!;
+                            selectUser = false;
                           });
                         } else {
                           // add use to userSelected
                           userSelected.add(e);
                           setState(() {
-                            selectUser = value!;
+                            selectUser = true;
                           });
                         }
                       },
