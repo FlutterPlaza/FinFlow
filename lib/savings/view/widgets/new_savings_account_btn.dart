@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/l10n/l10n.dart';
 
-class newSavingsAccountBtn extends StatelessWidget {
-  const newSavingsAccountBtn({
+class NewSavingsAccountBtn extends StatelessWidget {
+  const NewSavingsAccountBtn({
     super.key,
     required this.colors,
     required this.l10n,
