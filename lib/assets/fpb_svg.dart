@@ -14,4 +14,10 @@ class SvgNames {
   static String google = '${path}google.svg';
   static String facebook = '${path}facebook.svg';
   static String twitter = '${path}twitter.svg';
+  static String error = '${path}Cross.svg';
+  static String paypal = '${path}paypal.svg';
+  static String googlePay = '${path}google_pay.svg';
+  static String applePay = '${path}apple_pay.svg';
+  static String bank = '${path}bank_account.svg';
+  static String whiteTickCheckbox = '${path}white_tick_check.svg';
 }

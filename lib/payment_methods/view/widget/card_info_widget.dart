@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:fpb/assets/fpb_svg.dart';
 
 class CardInfoWidget extends StatelessWidget {
   const CardInfoWidget({
@@ -37,7 +39,7 @@ class CardInfoWidget extends StatelessWidget {
                 ),
                 Text(
                   expiryDate ?? '04/2025',
-                  style: theme.textTheme.titleMedium?.copyWith(
+                  style: theme.textTheme.titleSmall?.copyWith(
                     color: colors.surface,
                   ),
                 ),
@@ -57,7 +59,7 @@ class CardInfoWidget extends StatelessWidget {
                 ),
                 Text(
                   cvv ?? '04/2025',
-                  style: theme.textTheme.titleMedium?.copyWith(
+                  style: theme.textTheme.titleSmall?.copyWith(
                     color: colors.surface,
                   ),
                 ),
@@ -66,17 +68,23 @@ class CardInfoWidget extends StatelessWidget {
           ),
           // default payment method
           SizedBox(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            width: box.maxWidth * 0.4,
+            child: Wrap(
+              spacing: 2.0,
+              crossAxisAlignment: WrapCrossAlignment.start,
               children: [
-                Text(
-                  'Expriy',
-                  style: theme.textTheme.titleSmall,
+                SvgPicture.asset(
+                  SvgNames.whiteTickCheckbox,
                 ),
-                Text(
-                  expiryDate ?? '04/2025',
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    color: colors.surface,
+                SizedBox(
+                  width: box.maxWidth * 0.3,
+                  child: Flexible(
+                    child: Text(
+                      'Default payment method',
+                      style: theme.textTheme.titleSmall?.copyWith(
+                        color: colors.surface,
+                      ),
+                    ),
                   ),
                 ),
               ],

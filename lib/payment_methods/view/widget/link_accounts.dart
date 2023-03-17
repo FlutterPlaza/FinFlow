@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:fpb/assets/fpb_svg.dart';
+import 'package:fpb/core/presentation/widget/custom_btn_outline.dart';
+import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 
 class LinkAccounts extends StatelessWidget {
   const LinkAccounts({
@@ -11,6 +15,7 @@ class LinkAccounts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final style = theme.textTheme;
 
     return Container(
       width: box.maxWidth * 0.9,
@@ -23,7 +28,59 @@ class LinkAccounts extends StatelessWidget {
               fontWeight: FontWeight.w400,
             ),
           ),
-          // btn link account
+          VerticalSpacingWidget(box: box),
+          // btn link account - apple pay
+          CustomBtnOutline(
+            style: style,
+            box: box,
+            backgroundColor: theme.colorScheme.background,
+            borderColor: theme.colorScheme.secondary,
+            text: 'Link my Apple Pay',
+            textColor: theme.colorScheme.secondary,
+            leading: SvgPicture.asset(
+              SvgNames.applePay,
+            ),
+            onPressed: () => print('action'),
+          ),
+          VerticalSpacingWidget(box: box),
+          // btn link account - google pay
+          CustomBtnOutline(
+            style: style,
+            box: box,
+            backgroundColor: theme.colorScheme.background,
+            borderColor: theme.colorScheme.secondary,
+            text: 'Link my Google Pay',
+            textColor: theme.colorScheme.secondary,
+            leading: SvgPicture.asset(
+              SvgNames.googlePay,
+            ),
+            onPressed: () => print('action'),
+          ),
+          VerticalSpacingWidget(box: box),
+          // btn link account - paypal
+          CustomBtnOutline(
+            style: style,
+            box: box,
+            backgroundColor: theme.colorScheme.background,
+            borderColor: theme.colorScheme.secondary,
+            text: 'Link Paypal ',
+            textColor: theme.colorScheme.secondary,
+            leading: SvgPicture.asset(
+              SvgNames.paypal,
+            ),
+            onPressed: () => print('action'),
+          ),
+          VerticalSpacingWidget(box: box),
+          // btn link account - bank
+          CustomBtnOutline(
+            style: style,
+            box: box,
+            backgroundColor: theme.colorScheme.background,
+            borderColor: theme.colorScheme.secondary,
+            text: 'Link bank account',
+            textColor: theme.colorScheme.secondary,
+            onPressed: () => print('action'),
+          ),
         ],
       ),
     );
