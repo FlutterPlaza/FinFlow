@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-class UserRadioSelect extends StatelessWidget {
-  const UserRadioSelect({
+class UserCheckSelect extends StatelessWidget {
+  const UserCheckSelect({
     super.key,
     required this.box,
     required this.username,
     required this.fullName,
     required this.onChanged,
+    required this.checked,
     required this.userPhoto,
   });
 
@@ -14,7 +15,8 @@ class UserRadioSelect extends StatelessWidget {
   final String username;
   final String fullName;
   final String userPhoto;
-  final void Function(String?) onChanged;
+  final bool checked;
+  final void Function(bool?) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -66,11 +68,10 @@ class UserRadioSelect extends StatelessWidget {
             ),
           ),
 
-          // radio select button
+          // checkbox select button
           SizedBox(
-            child: Radio(
-              value: 'dezzy',
-              groupValue: username,
+            child: Checkbox(
+              value: checked,
               onChanged: onChanged,
             ),
           ),
