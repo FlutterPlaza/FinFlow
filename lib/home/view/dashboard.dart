@@ -8,8 +8,9 @@ import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
 import 'package:fpb/home/view/widgets/card_stack_widget.dart';
 import 'package:fpb/home/view/widgets/cash_balance_widget.dart';
+import 'package:fpb/home/view/widgets/custom_appbar.dart';
 import 'package:fpb/home/view/widgets/display_latest_activity.dart';
-import 'package:fpb/home/view/widgets/navbar_header.dart';
+import 'package:fpb/home/view/widgets/row_header_icons.dart';
 import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
 
 class DashBoard extends StatelessWidget {
@@ -41,16 +42,21 @@ class DashBoard extends StatelessWidget {
             }
             return true;
           },
-          child: Scaffold(
-            body: SafeArea(
-              child: SingleChildScrollView(
+          child: SafeArea(
+            child: Scaffold(
+              appBar: CustomAppBar(
+                titleChildWidget: CircleAvatar(
+                  backgroundImage: NetworkImage('${user.photo}'),
+                ),
+                actionChildWidget: [
+                  RowHeaderIcons(
+                    showSearchIcon: true,
+                  ),
+                ],
+              ),
+              body: SingleChildScrollView(
                 child: Column(
                   children: [
-                    // NavBar
-                    NavHeader(
-                      box: box,
-                      showSearchIcon: true,
-                    ),
                     CashBalanceWidget(
                       box: box,
                     ),

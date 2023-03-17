@@ -1,5 +1,6 @@
 class VirtualCard {
   const VirtualCard({
+    required this.index,
     required this.balance,
     required this.cardNumber,
     required this.cvv,
@@ -8,6 +9,7 @@ class VirtualCard {
     required this.lastFourDigits,
   });
 
+  final int index;
   final String balance;
   final String cardNumber;
   final String cvv;
