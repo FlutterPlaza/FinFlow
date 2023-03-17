@@ -343,6 +343,50 @@
     "confirmEmailResendButton": "Renvoyer l'e-mail",
     "@confirmEmailResendButton": {
         "description": "Il s'agit du texte de l'étiquette du bouton de renvoi sur l'écran de confirmation du numéro de téléphone."
+    },
+    "createNewPasswordTitle": "Créer un nouveau mot de passe",
+    "@createNewPasswordTitle": {
+        "description": "This is the main title on the create new password screen"
+    },
+    "createNewPasswordBodyContent": "Le nouveau mot de passe doit être différent du précédent \nmot de passe utilisé.",
+    "@createNewPasswordBodyContent": {
+        "description": "This is the body content of the create new password screen"
+    },
+    "createNewPasswordConfirmPasswordLabel": "Confirm Password",
+    "@createNewPasswordConfirmPasswordLabel": {
+        "description": "This is the confirm password label on the create new password screen"
+    },
+    "createNewPasswordResetButtonLabel": "Reset Password",
+    "@createNewPasswordResetButtonLabel": {
+        "description": "This is the text label of the reset button on the create new password screen"
+    },
+    "forgotPasswordTitle": "Forgot password",
+    "@forgotPasswordTitle": {
+        "description": "This is the main title text label on the forgot password screen"
+    },
+    "forgotPasswordBodyContent": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores !",
+    "@forgotPasswordBodyContent": {
+        "description": "This is the body content on the forgot password screen"
+    },
+    "forgotPasswordEmailTextFieldLabel": "Email address",
+    "@forgotPasswordEmailTextFieldLabel": {
+        "description": "This is text label of the email text field on the forgot password screen"
+    },
+    "forgotPasswordEmailTextFieldHint": "Enter your email address...",
+    "@forgotPasswordEmailTextFieldHint": {
+        "description": "This is the hint of the email text field on the forgot password screen"
+    },
+    "forgotPasswordSendButtonLabel": "Send",
+    "@forgotPasswordSendButtonLabel": {
+        "description": "This is the text label of the send button on the forgot password screen"
+    },
+    "newPasswordSuccessTitle": "Yay !!",
+    "@newPasswordSuccessTitle": {
+        "description": "This is the main title on the new password success screen"
+    },
+    "newPasswordSuccessBodyContent": "Your password has been reset successfully\nnow login with your new password",
+    "@newPasswordSuccessBodyContent": {
+        "description": "This is the body content of the new password success screen"
     }
 }
  

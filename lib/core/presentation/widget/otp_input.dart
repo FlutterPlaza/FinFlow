@@ -4,9 +4,13 @@ class OtpInput extends StatelessWidget {
   const OtpInput({
     super.key,
     required this.box,
+    required this.onChanged, required this.enabled,
   });
 
   final BoxConstraints box;
+  final void Function(String value) onChanged;
+  final bool enabled;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -20,6 +24,8 @@ class OtpInput extends StatelessWidget {
         child: Flexible(
           fit: FlexFit.loose,
           child: TextFormField(
+            onChanged: onChanged,
+            enabled: enabled,
             cursorColor: colors.scrim,
             textAlign: TextAlign.center,
             decoration: InputDecoration(
