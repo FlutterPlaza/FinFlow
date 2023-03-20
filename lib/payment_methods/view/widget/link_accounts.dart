@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/presentation/widget/custom_btn_outline.dart';
+import 'package:fpb/core/presentation/widget/custom_dialog_widget.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 
 class LinkAccounts extends StatelessWidget {
@@ -56,7 +57,9 @@ class LinkAccounts extends StatelessWidget {
             ),
             onPressed: () => print('action'),
           ),
-          VerticalSpacingWidget(box: box),
+          VerticalSpacingWidget(
+            box: box,
+          ),
           // btn link account - paypal
           CustomBtnOutline(
             style: style,
@@ -70,7 +73,35 @@ class LinkAccounts extends StatelessWidget {
             ),
             onPressed: () => print('action'),
           ),
-          VerticalSpacingWidget(box: box),
+          // link stripe
+          VerticalSpacingWidget(
+            box: box,
+          ),
+          // btn link account - google pay
+          CustomBtnOutline(
+            style: style,
+            box: box,
+            backgroundColor: theme.colorScheme.background,
+            borderColor: theme.colorScheme.secondary,
+            text: 'Link Stripe account',
+            textColor: theme.colorScheme.secondary,
+            onPressed: () => {
+              showCustomDialog(
+                context,
+                box.maxHeight * 0.4,
+                box.maxWidth * 0.95,
+                Column(
+                  children: [
+                    Text('Hello'),
+                    Text('Hello man'),
+                  ],
+                ),
+              )
+            },
+          ),
+          VerticalSpacingWidget(
+            box: box,
+          ),
           // btn link account - bank
           CustomBtnOutline(
             style: style,
