@@ -71,6 +71,7 @@ class _PaymentCardsWidgetState extends State<PaymentCardsWidget> {
                   width: widget.box.maxWidth * 0.5,
                   height: widget.box.maxHeight * 0.055,
                   label: 'Add Card',
+                  backgroundColor: Theme.of(context).colorScheme.secondary, 
                   onTap: () => print('Add Card'),
                   spaceAround: true,
                   leading: Icon(

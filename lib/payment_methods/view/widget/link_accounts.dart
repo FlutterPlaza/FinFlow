@@ -4,6 +4,7 @@ import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/presentation/widget/custom_btn_outline.dart';
 import 'package:fpb/core/presentation/widget/custom_dialog_widget.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
+import 'package:fpb/payment_methods/view/widget/account_linked.dart';
 import 'package:fpb/payment_methods/view/widget/stripe_payments_form.dart';
 
 class LinkAccounts extends StatelessWidget {
@@ -31,6 +32,16 @@ class LinkAccounts extends StatelessWidget {
             ),
           ),
           VerticalSpacingWidget(box: box),
+          // Paypay linked
+          AccountLinked(
+            assetName: SvgNames.paypal,
+            box: box,
+            onTap: () => print('delete'),
+          ),
+          VerticalSpacingWidget(
+            box: box,
+            height: box.maxHeight * 0.02,
+          ),
           // btn link account - apple pay
           CustomBtnOutline(
             style: style,
@@ -58,22 +69,22 @@ class LinkAccounts extends StatelessWidget {
             ),
             onPressed: () => print('action'),
           ),
-          VerticalSpacingWidget(
-            box: box,
-          ),
+          // VerticalSpacingWidget(
+          //   box: box,
+          // ),
           // btn link account - paypal
-          CustomBtnOutline(
-            style: style,
-            box: box,
-            backgroundColor: theme.colorScheme.background,
-            borderColor: theme.colorScheme.secondary,
-            text: 'Link Paypal ',
-            textColor: theme.colorScheme.secondary,
-            leading: SvgPicture.asset(
-              SvgNames.paypal,
-            ),
-            onPressed: () => print('action'),
-          ),
+          // CustomBtnOutline(
+          //   style: style,
+          //   box: box,
+          //   backgroundColor: theme.colorScheme.background,
+          //   borderColor: theme.colorScheme.secondary,
+          //   text: 'Link Paypal',
+          //   textColor: theme.colorScheme.secondary,
+          //   leading: SvgPicture.asset(
+          //     SvgNames.paypal,
+          //   ),
+          //   onPressed: () => print('action'),
+          // ),
           // link stripe
           VerticalSpacingWidget(
             box: box,
@@ -111,6 +122,7 @@ class LinkAccounts extends StatelessWidget {
             textColor: theme.colorScheme.secondary,
             onPressed: () => print('action'),
           ),
+          VerticalSpacingWidget(box: box),
         ],
       ),
     );
