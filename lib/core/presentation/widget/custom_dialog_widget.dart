@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 Future<Future<void>> showCustomDialog(
   BuildContext context,
-  double height,
-  double width,
+  BoxConstraints box,
+  double? height,
+  double? width,
   Widget? widget,
 ) async {
   return showGeneralDialog(
@@ -20,8 +21,8 @@ Future<Future<void>> showCustomDialog(
       Animation<dynamic> secondaryAnimation,
     ) {
       return CustomDialogWidget(
-        height: height,
-        width: width,
+        height: height ?? box.maxHeight * 0.5,
+        width: width ?? box.maxWidth * 0.4,
         childWidget: widget!,
       );
     },
@@ -45,16 +46,20 @@ class CustomDialogWidget extends StatelessWidget {
     return Center(
       child: Material(
         color: Colors.transparent,
-        child: Container(
-          width: width,
-          height: height,
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surface,
-            borderRadius: BorderRadius.circular(
-              10.0,
+        child: GestureDetector(
+          onTap: () =>
+              FocusScope.of(context).unfocus(), // close keyboard on screen tap
+          child: Container(
+            width: width,
+            height: height,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface,
+              borderRadius: BorderRadius.circular(
+                10.0,
+              ),
             ),
+            child: childWidget,
           ),
-          child: childWidget,
         ),
       ),
     );

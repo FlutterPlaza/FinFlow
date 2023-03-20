@@ -4,6 +4,7 @@ import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/core/presentation/widget/custom_btn_outline.dart';
 import 'package:fpb/core/presentation/widget/custom_dialog_widget.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
+import 'package:fpb/payment_methods/view/widget/stripe_payments_form.dart';
 
 class LinkAccounts extends StatelessWidget {
   const LinkAccounts({
@@ -88,13 +89,11 @@ class LinkAccounts extends StatelessWidget {
             onPressed: () => {
               showCustomDialog(
                 context,
-                box.maxHeight * 0.4,
+                box,
+                box.maxHeight * 0.45,
                 box.maxWidth * 0.95,
-                Column(
-                  children: [
-                    Text('Hello'),
-                    Text('Hello man'),
-                  ],
+                StripePaymentsForm(
+                  box: box,
                 ),
               )
             },
