@@ -23,4 +23,6 @@ class SvgNames {
   static String activeCheckbox = '${path}active_checkbox.svg';
   static String inactiveCheckbox = '${path}uncheck_tick.svg';
 
+  static String timeCircle = '${path}time_circle.svg';
+  static String wallet = '${path}wallet.svg';
 }
