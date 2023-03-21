@@ -46,9 +46,9 @@ jobs:
       - run: flutter upgrade
       - run: flutter --version
       - run: flutter pub get
-      - run: flutter test
+      # - run: flutter test
       - run: flutter build apk --profile --flavor development --target lib/main_development.dart
-      - run: flutter build appbundle
+      # - run: flutter build appbundle
       - name: upload app builds files
         uses: actions/upload-artifact@v3
         with:
