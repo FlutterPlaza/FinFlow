@@ -1,1 +1,1 @@
-export 'view/email_confirmation_page.dart';
+export 'view/email_confirmation_screen.dart';

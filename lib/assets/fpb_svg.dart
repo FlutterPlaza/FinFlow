@@ -14,4 +14,7 @@ class SvgNames {
   static String google = '${path}google.svg';
   static String facebook = '${path}facebook.svg';
   static String twitter = '${path}twitter.svg';
+  static String error = '${path}Cross.svg';
+  static String timeCircle = '${path}time_circle.svg';
+  static String wallet = '${path}wallet.svg';
 }
