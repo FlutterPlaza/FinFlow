@@ -45,6 +45,10 @@ jobs:
           channel: 'stable'
       - run: flutter upgrade
       - run: flutter --version
+      - name: Get DEV_GOOGLE_SERVICES_JSON content write it into app/src/development/google-services.json
+        env: 
+          DEV_GOOGLE_SERVICES_JSON: ${{ secrets.DEV_GOOGLE_SERVICES_JSON }}
+        run: echo "$DEV_GOOGLE_SERVICES_JSON" > android/app/src/development/google-services.json
       - run: flutter pub get
       # - run: flutter test
       - run: flutter build apk --profile --flavor development --target lib/main_development.dart
