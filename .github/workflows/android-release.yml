@@ -47,15 +47,14 @@ jobs:
       - run: flutter --version
       - run: flutter pub get
       - run: flutter test
-      - run: flutter build apk --release --flavor development --target lib/main_development.dart
+      - run: flutter build apk --profile --flavor development --target lib/main_development.dart
       - run: flutter build appbundle
       - name: upload app builds files
         uses: actions/upload-artifact@v3
         with:
           name: flutter-app-builds
           path: |
-            build/app/outputs/flutter-apk/app-development-release.apk
-            build/app/outputs/bundle/release/app-development-release.aab
+            build/app/outputs/flutter-apk/app-development-profile.apk
   github-deploy:
     name: Deploy Build to Github
     needs: [ build, version ]
@@ -81,7 +80,7 @@ jobs:
       - name: Create a Release in GitHub
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "flutter-apk/app-development-release.apk,bundle/release/app-development-release.aab"
+          artifacts: "flutter-apk/app-development-profile.apk"
           token: ${{ secrets.GH_TOKEN }}
           tag: ${{ steps.version.outputs.content }}
           commit: ${{ github.sha }}
@@ -100,4 +99,4 @@ jobs:
           appId: ${{secrets.FIREBASE_ANDROID_APP_ID}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
-          file: flutter-apk/app-development-release.apk
+          file: flutter-apk/app-development-profile.apk
