@@ -25,7 +25,7 @@ class MyQrCode extends StatelessWidget {
             child: Text(
               "My QR Code",
               style: TextStyle(
-                color: Theme.of(context).colorScheme.onTertiary,
+                color: Theme.of(context).colorScheme.tertiary,
                 fontSize: box.maxWidth * 0.056,
               ),
               textAlign: TextAlign.center,
@@ -58,7 +58,7 @@ class MyQrCode extends StatelessWidget {
                 Text(
                   "John Doe",
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.onTertiary,
+                    color: Theme.of(context).colorScheme.tertiary,
                     fontSize: box.maxWidth * 0.056,
                   ),
                   textAlign: TextAlign.center,
@@ -72,7 +72,7 @@ class MyQrCode extends StatelessWidget {
                   child: Text(
                     "@johndoe",
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.onTertiary.withOpacity(0.5),
+                      color: Theme.of(context).colorScheme.tertiary.withOpacity(0.5),
                       fontSize: box.maxWidth * 0.04,
                       fontWeight: FontWeight.normal,
                     ),

@@ -48,7 +48,6 @@ class FpbButton extends StatelessWidget {
               label,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: textColor ?? colors.surface,
-                    // fontWeight: FontWeight.w400,
                   ),
             ),
             if (trailing != null)
