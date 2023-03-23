@@ -16,7 +16,6 @@ class SavingsPage extends StatefulWidget {
 }
 
 class _SavingsPageState extends State<SavingsPage> {
- 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;

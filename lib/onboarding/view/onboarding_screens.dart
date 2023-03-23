@@ -18,13 +18,13 @@ class OnboardingScreen extends HookWidget {
     final listIllustration = [
       Illustration(
         assetName: SvgNames.sendIllustration,
-        illustrationBgColor: colors.primary,
+        illustrationBgColor: colors.onPrimaryContainer,
         title: l10n.onboardingSendTitle,
         description: l10n.onboardingSendDescription,
       ),
       Illustration(
         assetName: SvgNames.saveIllustration,
-        illustrationBgColor: colors.secondaryContainer,
+        illustrationBgColor: colors.tertiary,
         title: l10n.onboardingSaveTitle,
         description: l10n.onboardingSaveDescription,
       ),

@@ -15,8 +15,9 @@ extension extString on String {
   bool get isNotNull {
     // ignore: unnecessary_null_comparison
     return this != null;
- 
-  }}
+  }
+}
+
 /// Padding for screens
 extension PaddingX on Widget {
   Widget paddingDefault(BoxConstraints box) {

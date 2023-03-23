@@ -19,11 +19,11 @@ class UserSearchScreen extends StatelessWidget {
     }
     return LayoutBuilder(builder: (context, box) {
       return AnnotatedRegion<SystemUiOverlayStyle>(
-          value: SystemUiOverlayStyle(
-            statusBarColor: Theme.of(context).colorScheme.surface,
-            statusBarIconBrightness: Brightness.dark, // dark icon for iOS
-            statusBarBrightness: Brightness.dark, // set dark icon for android
-          ),
+        value: SystemUiOverlayStyle(
+          statusBarColor: Theme.of(context).colorScheme.surface,
+          statusBarIconBrightness: Brightness.dark, // dark icon for iOS
+          statusBarBrightness: Brightness.dark, // set dark icon for android
+        ),
         child: SafeArea(
           child: GestureDetector(
             onTap: () {

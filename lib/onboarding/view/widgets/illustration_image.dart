@@ -22,7 +22,7 @@ class IllustrationImage extends StatelessWidget {
       width: cts.maxWidth,
       child: Container(
         padding: EdgeInsets.all(cts.maxWidth * 0.1),
-        color: color ?? Colors.black,
+        color: color ?? Theme.of(context).colorScheme.secondary,
         child: SvgPicture.asset(illustration),
       ),
     );

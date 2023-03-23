@@ -147,9 +147,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                               label: l10n.contactUsSubmitBtnLabel,
                               onTap: () {
                                 if (_formKey.currentState!.validate()) {
-                                  context.router.push(
-                                    ContactUsSuccessRoute()
-                                  );
+                                  context.router.push(ContactUsSuccessRoute());
                                 } else {}
                               })
                         ]),

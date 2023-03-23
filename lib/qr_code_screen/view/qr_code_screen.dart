@@ -130,9 +130,7 @@ class _QrCodeScreenState extends State<QrCodeScreen>
                             child: Text(
                               "Cancel",
                               style: TextStyle(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .tertiary,
+                                color: Theme.of(context).colorScheme.tertiary,
                                 fontSize: box.maxWidth * 0.05,
                               ),
                               textAlign: TextAlign.center,

@@ -72,7 +72,10 @@ class MyQrCode extends StatelessWidget {
                   child: Text(
                     "@johndoe",
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.tertiary.withOpacity(0.5),
+                      color: Theme.of(context)
+                          .colorScheme
+                          .tertiary
+                          .withOpacity(0.5),
                       fontSize: box.maxWidth * 0.04,
                       fontWeight: FontWeight.normal,
                     ),

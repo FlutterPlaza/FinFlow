@@ -221,7 +221,10 @@ class _SignInBodyState extends State<SignInBody>
                                     ),
                                     TextButton(
                                       onPressed: () {
-                                        context.router.push(SignUpRoute());
+                                        // context.router.push(SignUpRoute());
+
+                                        // test
+                                        context.router.push(OnboardingRoute());
                                       },
                                       child: Text(
                                         l10n.signInSignUpLabel,
