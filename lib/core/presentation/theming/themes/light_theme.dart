@@ -20,32 +20,43 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       ),
     ),
     colorScheme: ColorScheme.light(
-      primary: _AppColors.primaryColorW,
-      onPrimary: _AppColors.onSurfaceW,
+      primary: _AppColors.primaryColorW, // main blue color
+      onPrimary: _AppColors.primaryColorW2,
+
       primaryContainer: _AppColors.primaryColorW,
-      onPrimaryContainer: _AppColors.onSurfaceW,
-      secondary: _AppColors.secondaryColorW,
-      onSecondary: _AppColors.primaryColorW,
-      secondaryContainer: _AppColors.secondaryContainerW,
-      tertiary: _AppColors.onSurfaceW, // use for static code (qrCode screen)
-      onTertiary: _AppColors.orangePrimary, // use for cards and icon - Orange
+      onPrimaryContainer: _AppColors.primaryColorW3,
+
+      secondary: _AppColors.secondaryColorW, // black color (Text, btn etc)
+      onSecondary: _AppColors.secondaryColorW2,
+
+      secondaryContainer: _AppColors.secondaryColorW3,
+      onSecondaryContainer: _AppColors.secondaryColorW4,
+
+      tertiary: _AppColors.orangePrimary, // use orange
+      onTertiary: _AppColors.orangePrimaryW2, // use for cards and icon - Orange
+
+      tertiaryContainer: _AppColors.orangePrimaryW3,
       onTertiaryContainer:
-          _AppColors.orangeDark, // use for cards and icon - OrangeDark
-      inverseSurface: Colors
-          .green, // set to odd color so we can see which component in the UI is affected
-      inversePrimary: Colors
-          .yellow, // set to odd color so we can see which component in the UI is affected
-      outline: _AppColors
-          .lightGrey, // set to odd color so we can see which component in the UI is affected
-      surface: _AppColors.bgColorW,
-      onSurface: _AppColors.onSurfaceW,
-      background: _AppColors.bgColorW,
-      onBackground: _AppColors.onBgColorW,
-      error: _AppColors.primaryColorW,
+          _AppColors.orangePrimaryW4, // use for cards and icon - OrangeDark
+
+      inverseSurface: _AppColors.successColor, // success color
+      inversePrimary: _AppColors.warningColor, // warning color
+
+      outline:
+          _AppColors.greyOutline, // use for input borders - container borders
+      outlineVariant: _AppColors.greyMedium,
+      onInverseSurface: _AppColors.greyDark,
+
+      surface: _AppColors.bgColorW, // white bg
+      onSurface: _AppColors.onSurfaceW, // darkGrey bg
+      onSurfaceVariant: _AppColors.onBgColorW,
+
+      background: _AppColors.greyWhite, // used on tabBar bgColor, some text
+      onBackground: _AppColors.lightGrey,
+
+      error: _AppColors.onErrorW, // error display
       onError: _AppColors.onErrorW,
       errorContainer: _AppColors.errorContainerW,
-
-      // onError: AppColors.errorColor,
 
       brightness: Brightness.light,
     ),
@@ -72,7 +83,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       ),
       titleSmall: style.titleSmall?.copyWith(
         fontSize: cts.maxWidth * 0.04,
-        color: _AppColors.greyLight,
+        color: _AppColors.lightGrey,
       ),
       bodyLarge: style.bodyLarge?.copyWith(
         fontSize: cts.maxWidth * 0.042,
@@ -158,7 +169,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
           .purple, // _AppColors.onSurfaceW, // theme.colorScheme.onSurface,
       labelStyle: style.bodySmall,
       unselectedLabelStyle: style.bodySmall,
-      unselectedLabelColor: theme.colorScheme.onSurface,
+      unselectedLabelColor: theme.colorScheme.background,
       labelColor: theme.colorScheme.onBackground,
       dividerColor: Colors.purple,
       indicator: BoxDecoration(
@@ -170,7 +181,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
     ),
 
     iconTheme: IconThemeData(
-      color: _AppColors.greyLight,
+      color: _AppColors.lightGrey,
       size: cts.maxWidth * 0.07,
     ),
   );
