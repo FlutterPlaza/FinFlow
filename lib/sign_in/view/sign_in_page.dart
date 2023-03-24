@@ -127,7 +127,7 @@ class _SignInBodyState extends State<SignInBody>
                                 ),
                                 TabBar(
                                   padding:
-                                      EdgeInsets.all(cts.maxHeight * 0.008),
+                                      EdgeInsets.all(cts.maxHeight * 0.01),
                                   controller: tabController,
                                   unselectedLabelColor:
                                       theme.colorScheme.secondary,
@@ -311,7 +311,7 @@ class FaceIDIcon extends StatelessWidget {
         color: Colors.white,
         size: 0.074 * cts.maxWidth,
       ).card(
-        color: Theme.of(context).colorScheme.secondaryContainer,
+        color: Theme.of(context).colorScheme.tertiary,
         radius: cts.maxWidth * 0.02,
         height: cts.maxHeight * 0.06,
         width: cts.maxHeight * 0.06,
