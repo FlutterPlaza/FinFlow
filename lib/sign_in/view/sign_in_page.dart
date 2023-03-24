@@ -243,10 +243,14 @@ class _SignInBodyState extends State<SignInBody>
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Text(
                                         l10n.signInNotAMemberYetText,
-                                        style: style.labelMedium,
+                                        style: style.titleSmall?.copyWith(
+                                          color: theme.colorScheme.secondary,
+                                        ),
                                       ),
                                       TextButton(
                                         onPressed: () {
@@ -254,7 +258,9 @@ class _SignInBodyState extends State<SignInBody>
                                         },
                                         child: Text(
                                           l10n.signInSignUpLabel,
-                                          style: style.titleMedium,
+                                          style: style.titleMedium?.copyWith(
+                                            color: theme.colorScheme.primary,
+                                          ),
                                         ),
                                       ),
                                     ],
