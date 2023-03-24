@@ -218,8 +218,9 @@ class _SignInBodyState extends State<SignInBody>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      const Expanded(child: Divider(
-                                        color: Colors.red,
+                                      Expanded(
+                                          child: Divider(
+                                        color: theme.colorScheme.outlineVariant,
                                       )),
                                       Padding(
                                         padding: EdgeInsets.symmetric(
@@ -227,7 +228,10 @@ class _SignInBodyState extends State<SignInBody>
                                         ),
                                         child: Text(l10n.signInOrLogInWithText),
                                       ),
-                                      const Expanded(child: Divider())
+                                      Expanded(
+                                          child: Divider(
+                                        color: theme.colorScheme.outlineVariant,
+                                      ))
                                     ],
                                   ),
                                 ),
