@@ -34,8 +34,7 @@ class _PhoneNumberConfirmationScreenState
               SingleChildScrollView(
                 child: Padding(
                   padding: EdgeInsets.only(
-                      left: box.maxHeight * .025,
-                      right: box.maxHeight * .025),
+                      left: box.maxHeight * .025, right: box.maxHeight * .025),
                   child: Column(
                     children: [
                       SizedBox(
