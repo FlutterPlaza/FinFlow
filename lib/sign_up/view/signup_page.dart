@@ -60,6 +60,8 @@ class _SignUpBodyState extends State<SignUpBody>
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
+    final style = theme.textTheme;
+
     final textTheme = theme.textTheme;
     return BlocConsumer<GoogleSignInBloc, GoogleSignInState>(
       listener: (context, state) {
@@ -248,12 +250,11 @@ class _SignUpBodyState extends State<SignUpBody>
                                                     MainAxisAlignment
                                                         .spaceEvenly,
                                                 children: [
-                                                   Expanded(
+                                                  Expanded(
                                                       child: Divider(
-
-                                        color: theme.colorScheme.outlineVariant,
-
-                                                      )),
+                                                    color: theme.colorScheme
+                                                        .outlineVariant,
+                                                  )),
                                                   Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
@@ -264,12 +265,11 @@ class _SignUpBodyState extends State<SignUpBody>
                                                       l10n.signUpOrSignupWithText,
                                                     ),
                                                   ),
-                                                   Expanded(
+                                                  Expanded(
                                                       child: Divider(
-
-                                        color: theme.colorScheme.outlineVariant,
-
-                                                      ))
+                                                    color: theme.colorScheme
+                                                        .outlineVariant,
+                                                  ))
                                                 ],
                                               ),
                                             ),
@@ -283,9 +283,11 @@ class _SignUpBodyState extends State<SignUpBody>
                                                 children: [
                                                   Text(
                                                     'Already a member?',
-                                                 style: style.titleSmall?.copyWith(
-                                          color: theme.colorScheme.secondary,
-                                        ),
+                                                    style: style.titleSmall
+                                                        ?.copyWith(
+                                                      color: theme.colorScheme
+                                                          .secondary,
+                                                    ),
                                                   ),
                                                   TextButton(
                                                     onPressed: () {
@@ -295,9 +297,11 @@ class _SignUpBodyState extends State<SignUpBody>
                                                     },
                                                     child: Text(
                                                       'Login',
-                                                       style: style.titleMedium?.copyWith(
-                                            color: theme.colorScheme.primary,
-                                          ),
+                                                      style: style.titleMedium
+                                                          ?.copyWith(
+                                                        color: theme.colorScheme
+                                                            .primary,
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
