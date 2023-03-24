@@ -95,160 +95,186 @@ class _SignInBodyState extends State<SignInBody>
           builder: (context, cts) {
             return state.isLoading
                 ? LoadingIndicator()
-                : Scaffold(
-                    resizeToAvoidBottomInset: false,
-                    body: Stack(
-                      children: [
-                        BubblesTopBackGround(
-                          cts: cts,
-                          svgName: SvgNames.authBackground,
-                        ),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  PageTitle(
-                                    title: l10n.signInLogInTitle,
-                                    box: cts,
-                                  ),
-                                  FaceIDIcon(
-                                    cts: cts,
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 0.015 * cts.maxHeight,
-                              ),
-                              TabBar(
-                                padding: EdgeInsets.all(cts.maxHeight * 0.008),
-                                controller: tabController,
-                                onTap: (_) {
-                                  setState(() {
-                                    tabController.index = _;
-                                  });
-                                },
-                                tabs: [
-                                  Tab(
-                                    child: Text(
-                                      l10n.signInEmailLogInLabel,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
+                : GestureDetector(
+                    onTap: () => FocusScope.of(context).unfocus(),
+                    child: Scaffold(
+                      resizeToAvoidBottomInset: false,
+                      body: Stack(
+                        children: [
+                          BubblesTopBackGround(
+                            cts: cts,
+                            svgName: SvgNames.authBackground,
+                          ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    PageTitle(
+                                      title: l10n.signInLogInTitle,
+                                      box: cts,
                                     ),
+                                    FaceIDIcon(
+                                      cts: cts,
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 0.015 * cts.maxHeight,
+                                ),
+                                TabBar(
+                                  padding:
+                                      EdgeInsets.all(cts.maxHeight * 0.008),
+                                  controller: tabController,
+                                  unselectedLabelColor:
+                                      theme.colorScheme.secondary,
+                                  unselectedLabelStyle:
+                                      theme.textTheme.titleSmall?.copyWith(
+                                    color: theme.colorScheme.surface,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                  Tab(
-                                    child: Text(
-                                      l10n.signInPhoneNumberLogInLabel,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  )
-                                ],
-                              ).card(
-                                color: theme.cardColor,
-                                margin: EdgeInsets.symmetric(
-                                    vertical: cts.maxHeight * 0.008),
-                                radius: cts.maxWidth * 0.02,
-                                height: cts.maxHeight * 0.07,
-                              ),
-                              SizedBox(
-                                height: 0.011 * cts.maxHeight,
-                              ),
-                              Flexible(
-                                child: Form(
-                                  child: TabBarView(
-                                    physics: const BouncingScrollPhysics(),
-                                    controller: tabController,
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.end,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          EmailInput(box: cts),
-                                          PasswordInput(box: cts),
-                                          Text(l10n.signInForgotPasswordText),
-                                        ],
+                                  labelStyle:
+                                      theme.textTheme.titleSmall?.copyWith(
+                                    color: theme.colorScheme.surface,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  onTap: (_) {
+                                    setState(() {
+                                      tabController.index = _;
+                                    });
+                                  },
+                                  tabs: [
+                                    Tab(
+                                      child: Text(
+                                        l10n.signInEmailLogInLabel,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          PhoneNumberInput(
-                                              l10n: l10n, cts: cts),
-                                          PasswordInput(box: cts),
-                                        ],
+                                    ),
+                                    Tab(
+                                      child: Text(
+                                        l10n.signInPhoneNumberLogInLabel,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    )
+                                  ],
+                                ).card(
+                                  color: theme.colorScheme.background,
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: cts.maxHeight * 0.008),
+                                  radius: cts.maxWidth * 0.02,
+                                  height: cts.maxHeight * 0.07,
+                                ),
+                                SizedBox(
+                                  height: 0.015 * cts.maxHeight,
+                                ),
+                                Flexible(
+                                  child: Form(
+                                    child: TabBarView(
+                                      physics: const BouncingScrollPhysics(),
+                                      controller: tabController,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            EmailInput(box: cts),
+                                            PasswordInput(box: cts),
+                                            Text(
+                                              l10n.signInForgotPasswordText,
+                                              style: theme.textTheme.bodyMedium
+                                                  ?.copyWith(
+                                                color:
+                                                    theme.colorScheme.secondary,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            PhoneNumberInput(
+                                                l10n: l10n, cts: cts),
+                                            PasswordInput(box: cts),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const LoginButton(),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: cts.maxHeight * 0.012,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Expanded(child: Divider(
+                                        color: Colors.red,
+                                      )),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: cts.maxWidth * 0.015,
+                                        ),
+                                        child: Text(l10n.signInOrLogInWithText),
+                                      ),
+                                      const Expanded(child: Divider())
+                                    ],
+                                  ),
+                                ),
+                                AlternativeAuth(box: cts),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    top: cts.maxHeight * 0.001,
+                                    bottom: cts.maxHeight * 0.0001,
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        l10n.signInNotAMemberYetText,
+                                        style: style.labelMedium,
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          context.router.push(SignUpRoute());
+                                        },
+                                        child: Text(
+                                          l10n.signInSignUpLabel,
+                                          style: style.titleMedium,
+                                        ),
                                       ),
                                     ],
                                   ),
                                 ),
-                              ),
-                              const LoginButton(),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: cts.maxHeight * 0.012,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    const Expanded(child: Divider()),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: cts.maxWidth * 0.015,
-                                      ),
-                                      child: Text(l10n.signInOrLogInWithText),
-                                    ),
-                                    const Expanded(child: Divider())
-                                  ],
-                                ),
-                              ),
-                              AlternativeAuth(box: cts),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                  top: cts.maxHeight * 0.001,
-                                  bottom: cts.maxHeight * 0.0001,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      l10n.signInNotAMemberYetText,
-                                      style: style.labelMedium,
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        context.router.push(SignUpRoute());
-                                      },
-                                      child: Text(
-                                        l10n.signInSignUpLabel,
-                                        style: style.titleMedium,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              TermsOfUse(box: cts),
-                              if (isKeyboardVisible(context))
-                                SizedBox(height: 0.1 * cts.maxHeight),
-                            ],
-                          ).card(
-                            height: (isKeyboardVisible(context) ? .95 : .8) *
-                                cts.maxHeight,
-                            radiusTop: cts.maxWidth * 0.05,
-                            color: theme.colorScheme.background,
-                            padding: EdgeInsets.all(cts.maxHeight * 0.025),
-                          ),
-                        )
-                      ],
-                    ).card(
-                      // height: (isKeyboardVisible(context) ? .95 : .8) *
-                      //     cts.maxHeight,
-                      radiusTop: cts.maxWidth * 0.05,
-                      color: theme.colorScheme.background,
+                                TermsOfUse(box: cts),
+                                if (isKeyboardVisible(context))
+                                  SizedBox(height: 0.1 * cts.maxHeight),
+                              ],
+                            ).card(
+                              height: (isKeyboardVisible(context) ? .95 : .8) *
+                                  cts.maxHeight,
+                              radiusTop: cts.maxWidth * 0.05,
+                              color: theme.colorScheme.onSurface,
+                              padding: EdgeInsets.all(cts.maxHeight * 0.025),
+                            ),
+                          )
+                        ],
+                      ).card(
+                        // height: (isKeyboardVisible(context) ? .95 : .8) *
+                        //     cts.maxHeight,
+                        radiusTop: cts.maxWidth * 0.05,
+                        color: theme.colorScheme.background,
+                      ),
                     ),
                   );
           },
