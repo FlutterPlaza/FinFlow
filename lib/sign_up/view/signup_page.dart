@@ -248,8 +248,12 @@ class _SignUpBodyState extends State<SignUpBody>
                                                     MainAxisAlignment
                                                         .spaceEvenly,
                                                 children: [
-                                                  const Expanded(
-                                                      child: Divider()),
+                                                   Expanded(
+                                                      child: Divider(
+
+                                        color: theme.colorScheme.outlineVariant,
+
+                                                      )),
                                                   Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
@@ -260,8 +264,12 @@ class _SignUpBodyState extends State<SignUpBody>
                                                       l10n.signUpOrSignupWithText,
                                                     ),
                                                   ),
-                                                  const Expanded(
-                                                      child: Divider())
+                                                   Expanded(
+                                                      child: Divider(
+
+                                        color: theme.colorScheme.outlineVariant,
+
+                                                      ))
                                                 ],
                                               ),
                                             ),
@@ -275,8 +283,9 @@ class _SignUpBodyState extends State<SignUpBody>
                                                 children: [
                                                   Text(
                                                     'Already a member?',
-                                                    style:
-                                                        textTheme.headlineSmall,
+                                                 style: style.titleSmall?.copyWith(
+                                          color: theme.colorScheme.secondary,
+                                        ),
                                                   ),
                                                   TextButton(
                                                     onPressed: () {
@@ -286,12 +295,9 @@ class _SignUpBodyState extends State<SignUpBody>
                                                     },
                                                     child: Text(
                                                       'Login',
-                                                      style: textTheme
-                                                          .headlineSmall
-                                                          ?.copyWith(
-                                                        color:
-                                                            theme.primaryColor,
-                                                      ),
+                                                       style: style.titleMedium?.copyWith(
+                                            color: theme.colorScheme.primary,
+                                          ),
                                                     ),
                                                   ),
                                                 ],
