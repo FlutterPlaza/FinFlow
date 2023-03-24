@@ -61,10 +61,10 @@ class FpbButton extends StatelessWidget {
         ),
         style: ButtonStyle(
           backgroundColor:
-              MaterialStateProperty.all<Color>(backgroundColor ?? colors.error),
+              MaterialStateProperty.all<Color>(backgroundColor ?? colors.primary),
           side: MaterialStateProperty.all(
             BorderSide(
-                color: borderSideColor ?? colors.error,
+                color: borderSideColor ?? colors.primary,
                 width: 1.0,
                 style: BorderStyle.solid),
           ),
