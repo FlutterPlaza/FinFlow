@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
   final Widget titleChildWidget;
-  final List<Widget> actionChildWidget;
+  final List<Widget>? actionChildWidget;
   final bool showArrow;
   final Color? backgroundColor;
   final Color? foregroundColor;
@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar({
     this.height = kToolbarHeight,
     required this.titleChildWidget,
-    required this.actionChildWidget,
+    this.actionChildWidget,
     this.showArrow = false,
     this.backgroundColor,
     this.foregroundColor,

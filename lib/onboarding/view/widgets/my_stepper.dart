@@ -19,8 +19,9 @@ class MyStepper extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, cts) {
         return Container(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.symmetric(vertical: 5),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[const Spacer()] +
                 [
                   ...List.generate(length - 1, (_) => StepDot(cts: cts))
@@ -50,7 +51,9 @@ class StepBar extends StatelessWidget {
           width: cts.maxWidth * 0.08,
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.secondary,
-            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderRadius: BorderRadius.all(
+              Radius.circular(5),
+            ),
           ),
         ),
       ),
@@ -74,7 +77,7 @@ class StepDot extends StatelessWidget {
         height: cts.maxWidth * 0.027,
         width: cts.maxWidth * 0.027,
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.onSurface,
+          color: Theme.of(context).colorScheme.onBackground,
           borderRadius: const BorderRadius.all(Radius.circular(5)),
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/core/application/search_user_bloc/search_user_bloc.dart';
 import 'package:fpb/core/application/search_user_bloc/search_user_state.dart';
 import 'package:fpb/core/domain/user.dart';
+import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 
 class SearchInputWidget extends StatelessWidget {
@@ -16,10 +17,6 @@ class SearchInputWidget extends StatelessWidget {
     // final l10n = context.l10n;
     return Container(
       width: box.maxWidth,
-      padding: EdgeInsets.symmetric(
-        horizontal: box.maxWidth * 0.04,
-        vertical: box.maxHeight * 0.01,
-      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,22 +28,15 @@ class SearchInputWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
-            height: box.maxHeight * 0.02,
-          ),
+          VerticalSpacingWidget(box: box),
           Container(
             width: box.maxWidth,
             child: FpbTextFormField(
-              key: const Key('SearchUserForPayments'),
-              box: box,
+              onChanged: (value) {},
               label: '',
-              hint: 'Name, email, identifier',
-              isEmail: false,
-              onChanged: (search) async {
-                print(search);
-              },
               showLabelText: false,
-              errorText: null,
+              hint: 'Name, email, identifier, number',
+              box: box,
             ),
           ),
         ],

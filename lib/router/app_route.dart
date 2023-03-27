@@ -6,6 +6,7 @@ import 'package:fpb/home/view/home_screen.dart';
 import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
 import 'package:fpb/onboarding/view/onboarding_screens.dart';
 import 'package:fpb/onboarding/view/splash_screen.dart';
+import 'package:fpb/payment_methods/payment_method_screen.dart';
 import 'package:fpb/phone_number_confirmation/view/phone_number_confirmation.dart';
 import 'package:fpb/profile/view/profile_page.dart';
 import 'package:fpb/qr_code_screen/view/qr_code_screen.dart';
@@ -23,6 +24,7 @@ import 'package:fpb/sign_up/view/signup_page.dart';
     AutoRoute(page: EmailConfirmationScreen),
     AutoRoute(page: SignUpScreen),
     AutoRoute(page: SaveMoneyScreen),
+    AutoRoute(page: PaymentMethodScreen),
     AutoRoute(
       name: 'HomeRouter',
       page: HomeScreen,
