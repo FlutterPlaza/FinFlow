@@ -7,7 +7,9 @@ import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 
 class ContactUsSuccessScreen extends StatelessWidget {
-  const ContactUsSuccessScreen({super.key, });
+  const ContactUsSuccessScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +18,7 @@ class ContactUsSuccessScreen extends StatelessWidget {
     final style = theme.textTheme;
     //final colors = theme.colorScheme;
 
-    return LayoutBuilder(
-      builder: (context, box){
+    return LayoutBuilder(builder: (context, box) {
       return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Stack(children: [
@@ -45,7 +46,6 @@ class ContactUsSuccessScreen extends StatelessWidget {
                       bottom: box.maxHeight * .005),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    
                     children: [
                       SizedBox(
                         height: box.maxHeight * .1,
@@ -54,9 +54,7 @@ class ContactUsSuccessScreen extends StatelessWidget {
                       SizedBox(
                         height: box.maxHeight * .0001,
                       ),
-                      ContactUsSuccessTexts(
-                        
-                        l10n: l10n, style: style, box: box),
+                      ContactUsSuccessTexts(l10n: l10n, style: style, box: box),
                       SizedBox(
                         height: box.maxHeight * .15,
                       ),
@@ -74,6 +72,6 @@ class ContactUsSuccessScreen extends StatelessWidget {
               ))
         ]),
       );
-  });
+    });
   }
 }

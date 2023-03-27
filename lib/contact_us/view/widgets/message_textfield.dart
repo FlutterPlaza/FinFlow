@@ -40,7 +40,8 @@ class _MessageTextFieldState extends State<MessageTextField> {
           },
           maxLength: 500,
           controller: messageController,
-          validator: (value) => widget.validator?.call(value) != null ? "" : null,
+          validator: (value) =>
+              widget.validator?.call(value) != null ? "" : null,
           maxLines: 3,
           decoration: InputDecoration(
             hintText: l10n.contactUsMessageTextFieldHintText,
@@ -53,12 +54,13 @@ class _MessageTextFieldState extends State<MessageTextField> {
               ),
             ),
           ),
-        ).card(
-            padding:
-                EdgeInsets.symmetric(vertical: widget.box.maxHeight * .007)).
-                validatorWidget(
-                  //messageController.text.isEmpty ? null :
-                  widget.validator?.call(messageController.text)),
+        )
+            .card(
+                padding:
+                    EdgeInsets.symmetric(vertical: widget.box.maxHeight * .007))
+            .validatorWidget(
+                //messageController.text.isEmpty ? null :
+                widget.validator?.call(messageController.text)),
       ],
     );
   }

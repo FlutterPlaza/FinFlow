@@ -1,18 +1,18 @@
 // ignore_for_file: inference_failure_on_untyped_parameter
 
 import 'package:bloc/bloc.dart';
-import 'package:fpb/core/settings/app_settings_helper.dart';
+import 'package:fpb/core/settings/cached.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+part 'home_view_bloc.freezed.dart';
 part 'home_view_event.dart';
 part 'home_view_state.dart';
-part 'home_view_bloc.freezed.dart';
 
 @injectable
 class HomeViewBloc extends Bloc<HomeViewEvent, HomeViewState> {
-  final AppSettingsHelper _appSettingsHelper;
-  HomeViewBloc(this._appSettingsHelper) : super(HomeViewState.home()) {
+  final Cached _cached;
+  HomeViewBloc(this._cached) : super(HomeViewState.home()) {
     on<_HomeE>(_home);
     on<_SavingsE>(_savings);
     on<_QuickCashE>(_quickCash);
@@ -21,33 +21,41 @@ class HomeViewBloc extends Bloc<HomeViewEvent, HomeViewState> {
     on<_SearchE>(_search);
   }
 
+  int? lastView;
+
   void _search(event, Emitter<HomeViewState> emit) {
     emit(HomeViewState.search());
-    _appSettingsHelper.appCache.setLastView = 4;
+    lastView = 4;
   }
 
   void _home(event, Emitter<HomeViewState> emit) {
     emit(HomeViewState.home());
-    _appSettingsHelper.appCache.setLastView = 0;
+    lastView = 0;
   }
 
   void _savings(event, Emitter<HomeViewState> emit) {
     emit(HomeViewState.savings());
-    _appSettingsHelper.appCache.setLastView = 1;
+    lastView = 1;
   }
 
   void _quickCash(event, Emitter<HomeViewState> emit) {
     emit(HomeViewState.quickCash());
-    _appSettingsHelper.appCache.setLastView = 2;
+    lastView = 2;
   }
 
   void _budget(event, Emitter<HomeViewState> emit) {
     emit(HomeViewState.budget());
-    _appSettingsHelper.appCache.setLastView = 3;
+    lastView = 3;
   }
 
   void _lastState(event, Emitter<HomeViewState> emit) {
-    final lastState = _appSettingsHelper.appCache.getLastView;
+    late int lastState;
+    if (lastView != null) {
+      lastState = lastView!;
+    } else {
+      lastState = _cached.getLastView;
+    }
+
     switch (lastState) {
       case 0:
         _home(event, emit);
@@ -68,5 +76,11 @@ class HomeViewBloc extends Bloc<HomeViewEvent, HomeViewState> {
         _home(event, emit);
         break;
     }
+  }
+
+  @override
+  Future<void> close() {
+    if (lastView != null) _cached.setLastView = lastView!;
+    return super.close();
   }
 }

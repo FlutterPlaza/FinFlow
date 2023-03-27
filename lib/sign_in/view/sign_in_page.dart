@@ -1,9 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/authenticate_with_biometrics/application/bloc/biometric_auth_bloc.dart';
@@ -60,7 +58,6 @@ class SignInBody extends StatefulWidget {
 class _SignInBodyState extends State<SignInBody>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
-  final user = FirebaseAuth.instance.currentUser;
 
   @override
   void initState() {
@@ -163,15 +160,17 @@ class _SignInBodyState extends State<SignInBody>
                                     physics: const BouncingScrollPhysics(),
                                     controller: tabController,
                                     children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.end,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          EmailInput(box: cts),
-                                          PasswordInput(box: cts),
-                                          Text(l10n.signInForgotPasswordText),
-                                        ],
+                                      SingleChildScrollView(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            EmailInput(box: cts),
+                                            PasswordInput(box: cts),
+                                            Text(l10n.signInForgotPasswordText),
+                                          ],
+                                        ),
                                       ),
                                       Column(
                                         mainAxisAlignment:
