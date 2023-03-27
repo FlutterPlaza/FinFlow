@@ -16,18 +16,27 @@ class OnboardingScreen extends HookWidget {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final colors = theme.colorScheme;
+    final pageController = PageController();
     final listIllustration = [
       Illustration(
         assetName: SvgNames.sendIllustration,
         illustrationBgColor: colors.onPrimaryContainer,
         title: l10n.onboardingSendTitle,
         description: l10n.onboardingSendDescription,
+        onNextPressed: () => pageController.nextPage(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
+        ),
       ),
       Illustration(
         assetName: SvgNames.saveIllustration,
         illustrationBgColor: colors.tertiary,
         title: l10n.onboardingSaveTitle,
         description: l10n.onboardingSaveDescription,
+        onNextPressed: () => pageController.nextPage(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
+        ),
       ),
       Illustration(
         assetName: SvgNames.transIllustration,
@@ -48,6 +57,7 @@ class OnboardingScreen extends HookWidget {
     return Scaffold(
       body: PageView.builder(
         scrollDirection: Axis.horizontal,
+        controller: pageController,
         onPageChanged: (value) {
           currentIndex.value = value;
         },
