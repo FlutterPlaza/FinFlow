@@ -124,95 +124,7 @@ class _SignInBodyState extends State<SignInBody>
                                 ),
                                 TabBar(
                                   padding:
-                                      EdgeInsets.all(cts.maxHeight * 0.008),
-                                  controller: tabController,
-                                  onTap: (_) {
-                                    setState(() {
-                                      tabController.index = _;
-                                    });
-                                  },
-                                  tabs: [
-                                    Tab(
-                                      child: Text(
-                                        l10n.signInEmailLogInLabel,
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                    Tab(
-                                      child: Text(
-                                        l10n.signInPhoneNumberLogInLabel,
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    )
-                                  ],
-                                ).card(
-                                  color: theme.cardColor,
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: cts.maxHeight * 0.008),
-                                  radius: cts.maxWidth * 0.02,
-                                  height: cts.maxHeight * 0.07,
-                                ),
-                                SizedBox(
-                                  height: 0.011 * cts.maxHeight,
-                                ),
-                                Flexible(
-                                  child: Form(
-                                    child: TabBarView(
-                                      physics: const BouncingScrollPhysics(),
-                                      controller: tabController,
-                                      children: [
-                                        SingleChildScrollView(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              EmailInput(box: cts),
-                                              PasswordInput(box: cts),
-                                              Text(l10n
-                                                  .signInForgotPasswordText),
-                                            ],
-                                          ),
-                                        ),
-                                        Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            PhoneNumberInput(
-                                                l10n: l10n, cts: cts),
-                                            PasswordInput(box: cts),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                const LoginButton(),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: cts.maxHeight * 0.012,
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      PageTitle(
-                                        title: l10n.signInLogInTitle,
-                                        box: cts,
-                                      ),
-                                      FaceIDIcon(
-                                        cts: cts,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 0.015 * cts.maxHeight,
-                                ),
-                                TabBar(
-                                  padding: EdgeInsets.all(cts.maxHeight * 0.01),
+                                      EdgeInsets.all(cts.maxHeight * 0.01),
                                   controller: tabController,
                                   unselectedLabelColor:
                                       theme.colorScheme.secondary,
@@ -355,14 +267,14 @@ class _SignInBodyState extends State<SignInBody>
                                 if (isKeyboardVisible(context))
                                   SizedBox(height: 0.1 * cts.maxHeight),
                               ],
+                            ).card(
+                              height: (isKeyboardVisible(context) ? .95 : .8) *
+                                  cts.maxHeight,
+                              radiusTop: cts.maxWidth * 0.05,
+                              color: theme.colorScheme.onSurface,
+                              padding: EdgeInsets.all(cts.maxHeight * 0.025),
                             ),
-                          ).card(
-                            height: (isKeyboardVisible(context) ? .95 : .8) *
-                                cts.maxHeight,
-                            radiusTop: cts.maxWidth * 0.05,
-                            color: theme.colorScheme.onSurface,
-                            padding: EdgeInsets.all(cts.maxHeight * 0.025),
-                          ),
+                          )
                         ],
                       ).card(
                         // height: (isKeyboardVisible(context) ? .95 : .8) *
