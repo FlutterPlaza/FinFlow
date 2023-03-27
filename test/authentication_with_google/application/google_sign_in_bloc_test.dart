@@ -30,13 +30,7 @@ void main() {
     blocTest<GoogleSignInBloc, GoogleSignInState>(
       "should emit [loading, failed] with proper message for the error when google auth fails",
       build: () {
-        when(
-          () => googleRepositoryFacade.signInWithGoogle(),
-        ).thenAnswer(
-          (invocation) async => left(
-            AuthFailure.cancelledByUser(),
-          ),
-        );
+        arrangeGoogleRepositoryReturnsFailureOnSignin(googleRepositoryFacade);
         return bloc;
       },
       act: (_) {
@@ -63,13 +57,7 @@ void main() {
     blocTest<GoogleSignInBloc, GoogleSignInState>(
       "should sign in the user with his google account",
       build: () {
-        when(
-          () => googleRepositoryFacade.signInWithGoogle(),
-        ).thenAnswer(
-          (invocation) async => right(
-            testUser,
-          ),
-        );
+        arrangeGoogleRepositoryReturnsSuccessOnSignin(googleRepositoryFacade);
         return bloc;
       },
       act: (_) {
@@ -98,13 +86,7 @@ void main() {
     blocTest<GoogleSignInBloc, GoogleSignInState>(
       "should emit [loading, failed] with proper message for the error when google logout fails",
       build: () {
-        when(
-          () => googleRepositoryFacade.signOut(),
-        ).thenAnswer(
-          (invocation) async => left(
-            AuthFailure.logoutFailed(),
-          ),
-        );
+        arrangeGoogleRepositoryReturnsFailureOnSignout(googleRepositoryFacade);
         return bloc;
       },
       act: (_) {
@@ -131,13 +113,7 @@ void main() {
     blocTest<GoogleSignInBloc, GoogleSignInState>(
       "should sign out the user with google",
       build: () {
-        when(
-          () => googleRepositoryFacade.signOut(),
-        ).thenAnswer(
-          (invocation) async => right(
-            unit,
-          ),
-        );
+        arrangeGoogleRepositoryReturnsSuccessOnSignout(googleRepositoryFacade);
         return bloc;
       },
       act: (_) {

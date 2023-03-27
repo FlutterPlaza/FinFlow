@@ -1,9 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formz/formz.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
-import 'package:fpb/core/failures/auth_failure.dart';
 import 'package:fpb/sign_in/domain/email.dart';
 import 'package:fpb/sign_in/domain/password.dart';
 import 'package:mocktail/mocktail.dart';
@@ -104,18 +102,7 @@ void main() {
     blocTest<EmailPasswordBloc, EmailPasswordState>(
       "should emit [loading, failed] with proper message for the error when Email&Password password sign in fails",
       build: () {
-        when(
-          () => authFacade.signInWithEmailAndPassword(
-            email: validEmail,
-            password: validPassword,
-          ),
-        ).thenAnswer(
-          (invocation) async {
-            return left(
-              AuthFailure.invalidEmailAndPasswordCombination(),
-            );
-          },
-        );
+        arrangeAuthRepositoryReturnsFailureOnSignin(authFacade);
         return bloc;
       },
       act: (_) {
@@ -147,16 +134,7 @@ void main() {
     blocTest<EmailPasswordBloc, EmailPasswordState>(
       "should sign in the user with his email and password",
       build: () {
-        when(
-          () => authFacade.signInWithEmailAndPassword(
-            email: validEmail,
-            password: validPassword,
-          ),
-        ).thenAnswer(
-          (invocation) async => right(
-            testUser,
-          ),
-        );
+        arrangeAuthRepositoryReturnsSuccessOnSignin(authFacade);
         return bloc;
       },
       act: (_) {

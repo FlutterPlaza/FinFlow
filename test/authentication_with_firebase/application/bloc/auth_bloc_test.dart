@@ -14,13 +14,7 @@ void main() {
   setUp(() {
     authFacade = MockIAuthFacade();
 
-    when(
-      () => authFacade.user,
-    ).thenAnswer(
-      (_) async* {
-        yield User.empty;
-      },
-    );
+    arrangeAuthRepositoryReturnsStreamWithEmptyUser(authFacade);
 
     bloc = AuthBloc(authFacade);
   });
@@ -33,11 +27,7 @@ void main() {
   blocTest<AuthBloc, AuthState>(
     "Trigger auth request",
     build: () {
-      when(
-        () => authFacade.currentUser,
-      ).thenReturn(
-        User.empty,
-      );
+      arrangeAuthRepositoryReturnsCurrentUserAsEmpty(authFacade);
 
       return bloc;
     },

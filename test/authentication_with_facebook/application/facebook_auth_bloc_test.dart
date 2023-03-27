@@ -2,15 +2,11 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart';
-import 'package:fpb/authentication_with_facebook/facebook_auth.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/failures/auth_failure.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/helpers.dart';
-
-class MockIFacebookRepositoryFacade extends Mock
-    implements IFacebookRepositoryFacade {}
 
 void main() {
   late FacebookAuthBloc bloc;
@@ -34,13 +30,8 @@ void main() {
     blocTest<FacebookAuthBloc, FacebookAuthState>(
       "should emit [loading, failed] with proper message for the error when facebook auth fails",
       build: () {
-        when(
-          () => facebookRepositoryFacade.signInWithFacebook(),
-        ).thenAnswer(
-          (invocation) async => left(
-            AuthFailure.cancelledByUser(),
-          ),
-        );
+        arrangeFacebookRepositoryReturnsFailureOnSignin(
+            facebookRepositoryFacade);
         return bloc;
       },
       act: (_) {
@@ -67,13 +58,8 @@ void main() {
     blocTest<FacebookAuthBloc, FacebookAuthState>(
       "should sign in the user with his facebook account",
       build: () {
-        when(
-          () => facebookRepositoryFacade.signInWithFacebook(),
-        ).thenAnswer(
-          (invocation) async => right(
-            testUser,
-          ),
-        );
+        arrangeFacebookRepositoryReturnsSuccessOnSignin(
+            facebookRepositoryFacade);
         return bloc;
       },
       act: (_) {
@@ -102,13 +88,8 @@ void main() {
     blocTest<FacebookAuthBloc, FacebookAuthState>(
       "should emit [loading, failed] with proper message for the error when facebook logout fails",
       build: () {
-        when(
-          () => facebookRepositoryFacade.signOut(),
-        ).thenAnswer(
-          (invocation) async => left(
-            AuthFailure.logoutFailed(),
-          ),
-        );
+        arrangeFacebookRepositoryReturnsFailureOnSignout(
+            facebookRepositoryFacade);
         return bloc;
       },
       act: (_) {
@@ -135,13 +116,8 @@ void main() {
     blocTest<FacebookAuthBloc, FacebookAuthState>(
       "should sign out the user with facebook",
       build: () {
-        when(
-          () => facebookRepositoryFacade.signOut(),
-        ).thenAnswer(
-          (invocation) async => right(
-            unit,
-          ),
-        );
+        arrangeFacebookRepositoryReturnsSuccessOnSignout(
+            facebookRepositoryFacade);
         return bloc;
       },
       act: (_) {
