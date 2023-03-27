@@ -25,6 +25,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               padding: EdgeInsets.zero,
+              key: Key("BNB-home-page-button"),
               onPressed: () {
                 setState(() {
                   pageIndex = 0;
@@ -56,6 +57,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               padding: EdgeInsets.zero,
+              key: Key("BNB-savings-page-button"),
               onPressed: () {
                 setState(() {
                   pageIndex = 1;
@@ -86,6 +88,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               padding: EdgeInsets.zero,
+              key: Key("BNB-quickCash-page-button"),
               onPressed: () {
                 setState(() {
                   pageIndex = 2;
@@ -116,6 +119,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               padding: EdgeInsets.zero,
+              key: Key("BNB-budget-page-button"),
               onPressed: () {
                 setState(() {
                   pageIndex = 3;
@@ -147,6 +151,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               padding: EdgeInsets.zero,
+              key: Key("BNB-userSearch-page-button"),
               onPressed: () {
                 setState(() {
                   pageIndex = 4;

@@ -5,4 +5,10 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+export 'arrange_auth_repository.dart';
+export 'arrange_cached.dart';
+export 'arrange_facebook_repository.dart';
+export 'arrange_google_repository.dart';
+export 'mocks.dart';
 export 'pump_app.dart';
+export 'test_data.dart';
