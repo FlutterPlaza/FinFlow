@@ -6,6 +6,8 @@ import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/onboarding.dart';
 
+import '../../../integration_test/app_test.dart';
+
 import '../../../test/helpers/helpers.dart';
 
 void onboardingFlowTest() {
@@ -13,6 +15,9 @@ void onboardingFlowTest() {
 
   group('onboarding flow', () {
     testWidgets('displays the onboarding flow', (tester) async {
+
+      main();
+
       await tester.pumpApp(OnboardingScreen(),);
       await tester.pumpAndSettle();
 
