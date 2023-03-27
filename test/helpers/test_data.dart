@@ -16,3 +16,10 @@ const String validEmail = "devflutter@flutterplaza.com";
 
 const String invalidPassword = "3e2fcw";
 const String validPassword = "32rfrfeQds";
+
+const String invalidName = "jeff";
+const String validName = "JeffreyKen";
+
+const String invalidMessage = "Lorem Ipsum is simply";
+const String validMessage =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
