@@ -11,35 +11,35 @@ class ErrorToastWidget extends StatelessWidget {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     return Material(
+      type: MaterialType.transparency,
+      //color: theme.colorScheme.onError,
       child: LayoutBuilder(builder: (context, box) {
-        return ClipRRect(
-          child: Padding(
-            padding: EdgeInsets.all(box.maxHeight * .025),
-            child: Container(
-              width: box.maxWidth,
-              height: box.maxHeight * .04,
-              color: theme.colorScheme.errorContainer,
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.cancel,
-                      size: box.maxHeight * .02,
-                      color: theme.colorScheme.onError,
-                    ),
+        return Padding(
+          padding: EdgeInsets.all(box.maxHeight * .025),
+          child: Container(
+            width: box.maxWidth,
+            height: box.maxHeight * .04,
+            color: theme.colorScheme.errorContainer,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.cancel,
+                    size: box.maxHeight * .02,
+                    color: theme.colorScheme.onError,
                   ),
-                  SizedBox(
-                    height: box.maxWidth * .02,
+                ),
+                SizedBox(
+                  height: box.maxWidth * .02,
+                ),
+                Text(
+                  l10n.formSubmissionErrorAlertText,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.colorScheme.onError,
                   ),
-                  Text(
-                    l10n.formSubmissionErrorAlertText,
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: theme.colorScheme.onError,
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
         );
