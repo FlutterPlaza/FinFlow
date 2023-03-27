@@ -343,6 +343,10 @@
     "confirmEmailResendButton": "Renvoyer l'e-mail",
     "@confirmEmailResendButton": {
         "description": "Il s'agit du texte de l'étiquette du bouton de renvoi sur l'écran de confirmation du numéro de téléphone."
+    },
+    "formSubmissionErrorAlertText": "Oups, quelque chose n'a pas fonctionné. Réessayez plus tard",
+    "@formSubmissionErrorAlertText": {
+        "description": "Il s'agit du texte d'erreur affiché lorsque la soumission d'un formulaire échoue."
     }
 }
  
