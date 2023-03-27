@@ -29,6 +29,7 @@ class Actions extends StatelessWidget {
         if (!isLastPage) const SizedBox(),
         if (!isLastPage)
           TextButton(
+            key: Key("skip_button"),
             onPressed: onSkipPressed,
             child: Text(
               l10n.onboardingSkipLabel,
@@ -36,6 +37,7 @@ class Actions extends StatelessWidget {
             ),
           ),
         FpbButton(
+          key:  !isLastPage ? Key("next_button") : Key('get_started_button'),
           label: !isLastPage
               ? l10n.onboardingNextLabel
               : l10n.onboardingGetStartedLabel,
@@ -44,7 +46,8 @@ class Actions extends StatelessWidget {
           height: cts.maxHeight * 0.07,
           trailing: !isLastPage
               ? Icon(
-                  FpbIcons.arrow_right,
+            key:  Key("next_icon"),
+            FpbIcons.arrow_right,
                   size: cts.maxHeight * 0.02,
                   color: colors.background,
                 )
