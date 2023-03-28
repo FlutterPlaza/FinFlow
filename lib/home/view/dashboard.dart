@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
 import 'package:fpb/core/domain/user.dart';
+import 'package:fpb/core/domain/virtualCard.dart';
 import 'package:fpb/core/presentation/animations/slide_up_route_transition.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 import 'package:fpb/core/shared/helpers/value_injector.dart';
@@ -64,7 +65,55 @@ class DashBoard extends StatelessWidget {
                       height: box.maxHeight * 0.02,
                     ),
                     // virtual card display
-                    CardStackWidget(),
+                    CardStackWidget(
+                      cards: [
+                        const VirtualCard(
+                          index: 0,
+                          balance: '200',
+                          cardNumber: '1234 6565 6577',
+                          expiry: '04/25',
+                          cvv: '123',
+                          type: 'visa',
+                          lastFourDigits: '1232',
+                        ),
+                        const VirtualCard(
+                          index: 0,
+                          balance: '1000',
+                          cardNumber: '1234 6565 6577',
+                          expiry: '04/25',
+                          cvv: '123',
+                          type: 'visa',
+                          lastFourDigits: '5050',
+                        ),
+                        const VirtualCard(
+                          index: 0,
+                          balance: '550.50',
+                          cardNumber: '1234 6565 6577',
+                          expiry: '04/25',
+                          cvv: '123',
+                          type: 'visa',
+                          lastFourDigits: '7070',
+                        ),
+                        const VirtualCard(
+                          index: 0,
+                          balance: '240.50',
+                          cardNumber: '1234 6565 6577',
+                          expiry: '04/25',
+                          cvv: '123',
+                          type: 'visa',
+                          lastFourDigits: '7070',
+                        ),
+                        const VirtualCard(
+                          index: 0,
+                          balance: '35.50',
+                          cardNumber: '1234 6565 6577',
+                          expiry: '04/25',
+                          cvv: '123',
+                          type: 'visa',
+                          lastFourDigits: '7070',
+                        ),
+                      ],
+                    ),
                     VerticalSpacingWidget(
                       box: box,
                       height: box.maxHeight * 0.02,
