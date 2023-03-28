@@ -57,7 +57,9 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
         showLabel == true
             ? Text(
                 widget.label,
-                style: textTheme.titleSmall,
+                style: textTheme.titleSmall?.copyWith(
+                  color: theme.colorScheme.onInverseSurface,
+                ),
               )
             : SizedBox(),
         TextFormField(
@@ -73,10 +75,17 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
                   : widget.keyboardType,
           onChanged: widget.onChanged,
           obscureText: hidePassword ?? false,
-          style: textTheme
-              .titleSmall, //bodyMedium //.copyWith(color: colors.onSurface),
+          style: textTheme.titleSmall?.copyWith(
+            color: theme.colorScheme.secondary,
+            fontFamily: 'Open Sans',
+          ),
           decoration: InputDecoration(
             errorStyle: const TextStyle(height: 0),
+            // fillColor: Colors.black,
+            // focusedBorder: OutlineInputBorder(
+            //   borderSide: const BorderSide(color: Colors.red, width: 2.0),
+            //   borderRadius: BorderRadius.circular(25.0),
+            // ),
             //errorText: widget.errorText,
             suffixIcon: !widget.isPassword
                 ? null

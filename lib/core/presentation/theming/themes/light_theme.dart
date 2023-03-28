@@ -67,41 +67,53 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
       headlineSmall: style.headlineSmall,
       displayLarge: style.displayLarge?.copyWith(
         fontSize: cts.maxWidth * 0.064,
+        fontFamily: 'Open Sans',
       ),
       displayMedium: style.displayMedium?.copyWith(
         fontSize: cts.maxWidth * 0.056,
+        fontFamily: 'Open Sans',
       ),
       displaySmall: style.displaySmall?.copyWith(
         fontSize: cts.maxWidth * 0.048,
+        fontFamily: 'Open Sans',
       ),
       titleLarge: style.titleLarge?.copyWith(
         fontWeight: FontWeight.w700,
         fontSize: cts.maxWidth * 0.056,
+        fontFamily: 'Open Sans',
       ),
       titleMedium: style.titleMedium?.copyWith(
         fontSize: cts.maxWidth * 0.048,
+        fontFamily: 'Open Sans',
       ),
       titleSmall: style.titleSmall?.copyWith(
         fontSize: cts.maxWidth * 0.04,
         color: _AppColors.lightGrey,
+        fontFamily: 'Open Sans',
       ),
       bodyLarge: style.bodyLarge?.copyWith(
         fontSize: cts.maxWidth * 0.042,
+        fontFamily: 'Open Sans',
       ),
       bodyMedium: style.bodyMedium?.copyWith(
         fontSize: cts.maxWidth * 0.035,
+        fontFamily: 'Open Sans',
       ),
       bodySmall: style.bodySmall?.copyWith(
         fontSize: cts.maxWidth * 0.028,
+        fontFamily: 'Open Sans',
       ),
       labelLarge: style.labelLarge?.copyWith(
         fontSize: cts.maxWidth * 0.028,
+        fontFamily: 'Open Sans',
       ),
       labelMedium: style.labelMedium?.copyWith(
         fontSize: cts.maxWidth * 0.028,
+        fontFamily: 'Open Sans',
       ),
       labelSmall: style.labelSmall?.copyWith(
         fontSize: cts.maxWidth * 0.028,
+        fontFamily: 'Open Sans',
       ),
     ),
     buttonTheme: ButtonThemeData(
@@ -131,31 +143,38 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
     ),
 
     inputDecorationTheme: InputDecorationTheme(
-      focusColor: Colors.red,
+      // focusColor: _AppColors.secondaryColorW,
       labelStyle: style.bodySmall?.copyWith(
-        color: _AppColors.onSurfaceW,
+        color: _AppColors.secondaryColorW,
       ),
       hintStyle: style.bodySmall,
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(cts.maxWidth * borderRaduis),
-        borderSide: BorderSide(color: _AppColors.onSurfaceW, width: 1.5),
+        borderSide: BorderSide(
+          color: _AppColors.greyOutline,
+          width: 1.5,
+        ),
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(cts.maxWidth * borderRaduis),
-        borderSide: BorderSide(color: _AppColors.onSurfaceW),
+        borderSide: BorderSide(
+          // color: _AppColors.greyOutline,
+          color: Colors.red,
+          width: 1.5,
+        ),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(cts.maxWidth * borderRaduis),
         borderSide: BorderSide(
-          color: theme.colorScheme.error,
+          color: _AppColors.onErrorW,
           width: 1.5,
         ),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(cts.maxWidth * borderRaduis),
         borderSide: BorderSide(
-          color: theme.colorScheme.onSurface,
-          width: 1.2,
+          color: _AppColors.secondaryColorW,
+          width: 1.0,
         ),
       ),
       errorMaxLines: 1,

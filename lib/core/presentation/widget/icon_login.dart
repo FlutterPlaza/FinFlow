@@ -21,7 +21,7 @@ class IconLogin extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(box.maxWidth * 0.03),
         border: Border.all(
-          color: Theme.of(context).colorScheme.onSurface,
+          color: Theme.of(context).colorScheme.outline,
         ),
       ),
       child: IconButton(
