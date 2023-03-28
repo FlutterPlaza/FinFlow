@@ -8,6 +8,8 @@ environment:
   flutter: 3.3.7
  
 dependencies:
+  fluttertoast: ^8.2.1
+  oktoast: ^3.3.1
   webview_flutter: ^4.0.5
   intl_phone_field: ^3.1.0
   bloc: ^8.1.1
@@ -56,6 +58,8 @@ dev_dependencies:
   widgetbook_generator:
   bloc_test: ^9.1.1
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
   freezed: ^2.2.0
   mocktail: ^0.3.0

@@ -22,6 +22,7 @@ class Actions extends StatelessWidget {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
+    final colors = theme.colorScheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -41,7 +42,13 @@ class Actions extends StatelessWidget {
           onTap: onNextPressed,
           width: isLastPage ? cts.maxWidth * 0.65 : cts.maxWidth * 0.6,
           height: cts.maxHeight * 0.07,
-          trailing: !isLastPage ? Icon(FpbIcons.arrow_right) : null,
+          trailing: !isLastPage
+              ? Icon(
+                  FpbIcons.arrow_right,
+                  size: cts.maxHeight * 0.02,
+                  color: colors.background,
+                )
+              : null,
         )
       ],
     );

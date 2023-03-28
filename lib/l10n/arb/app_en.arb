@@ -343,6 +343,10 @@
     "confirmEmailResendButton": "Resend confirmation email",
     "@confirmEmailResendButton": {
         "description": "This is the text label on the resend button on the phone number confirmation screen"
+    },
+    "formSubmissionErrorAlertText": "Oops, something went wrong. Try again",
+    "@formSubmissionErrorAlertText": {
+        "description": "This is the error text displayed when a form fails submission"
     }
 }
  

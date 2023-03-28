@@ -24,17 +24,11 @@ class _BudgetScreenState extends State<BudgetScreen> {
 
   final baseColor = Color.fromRGBO(223, 96, 47, 1);
 
-  late int initTime;
-  late int endTime;
+  late int initBudget;
+  late int endBudget;
 
-  // amount of money
-  // late int initTime;
-  // late int endTime;
-
-
-
-  late int inBedTime;
-  late int outBedTime;
+  late int inFinalBudget;
+  late int outFinalBudget;
   int days = 0;
 
   @override
@@ -45,19 +39,19 @@ class _BudgetScreenState extends State<BudgetScreen> {
 
   void _shuffle() {
     setState(() {
-      initTime = _generateRandomTime();
-      endTime = _generateRandomTime();
+      initBudget = _generateRandomAmount();
+      // endBudget = __generateRandomAmount();
       // print({'Gen': _generateRandomTime()});
       // print({'Time': _generateRandomTime()});
-      inBedTime = initTime;
-      outBedTime = endTime;
+      inFinalBudget = initBudget;
+      outFinalBudget = endBudget;
     });
   }
 
   void _updateLabels(int init, int end, int laps) {
     setState(() {
-      inBedTime = init;
-      outBedTime = end;
+      inFinalBudget = init;
+      outFinalBudget = end;
       days = laps;
     });
   }
@@ -151,5 +145,5 @@ class _BudgetScreenState extends State<BudgetScreen> {
     );
   }
 
-  int _generateRandomTime() => Random().nextInt(288);
+  int _generateRandomAmount() => Random().nextInt(288);
 }

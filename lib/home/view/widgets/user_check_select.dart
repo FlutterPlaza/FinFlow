@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fpb/assets/fpb_svg.dart';
 
-class UserRadioSelect extends StatelessWidget {
-  const UserRadioSelect({
+class UserCheckSelect extends StatelessWidget {
+  const UserCheckSelect({
     super.key,
     required this.box,
     required this.username,
     required this.fullName,
     required this.onChanged,
+    required this.checked,
     required this.userPhoto,
   });
 
@@ -14,7 +17,8 @@ class UserRadioSelect extends StatelessWidget {
   final String username;
   final String fullName;
   final String userPhoto;
-  final void Function(String?) onChanged;
+  final bool checked;
+  final void Function() onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -66,14 +70,26 @@ class UserRadioSelect extends StatelessWidget {
             ),
           ),
 
-          // radio select button
-          SizedBox(
-            child: Radio(
-              value: 'dezzy',
-              groupValue: username,
-              onChanged: onChanged,
+          // checkbox select button
+          if (checked) ...[
+            GestureDetector(
+              onTap: onChanged,
+              child: SizedBox(
+                child: SvgPicture.asset(
+                  SvgNames.activeCheckbox,
+                ),
+              ),
             ),
-          ),
+          ] else ...[
+            GestureDetector(
+              onTap: onChanged,
+              child: SizedBox(
+                child: SvgPicture.asset(
+                  SvgNames.inactiveCheckbox,
+                ),
+              ),
+            ),
+          ]
         ],
       ),
     );

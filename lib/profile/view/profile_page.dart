@@ -17,7 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final theme = Theme.of(context); 
+    final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.onBackground,
       body: LayoutBuilder(
@@ -32,39 +32,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                    TitleText(
-                      box: box,
-                      l10n: l10n), 
+                  TitleText(box: box, l10n: l10n),
                   SizedBox(
                     height: box.maxHeight * 0.03,
                   ),
-                  UserPic(
-                    box: box),
+                  UserPic(box: box),
                   SizedBox(
                     height: box.maxHeight * 0.01,
                   ),
                   Center(
-                    child: UserName(
-                      box: box),
+                    child: UserName(box: box),
                   ),
                   SizedBox(
                     height: box.maxHeight * 0.03,
                   ),
-                  UserProfileOptions(
-                    box: box,
-                    l10n: l10n),
+                  UserProfileOptions(box: box, l10n: l10n),
                   SizedBox(
                     height: box.maxHeight * 0.02,
                   ),
-                  LogOutOption(
-                    box:box,
-                    l10n: l10n),
+                  LogOutOption(box: box, l10n: l10n),
                   SizedBox(
                     height: box.maxHeight * 0.1,
                   ),
-                  AppVersion(
-                    box: box,
-                    l10n: l10n)
+                  AppVersion(box: box, l10n: l10n)
                 ],
               ),
             ),
@@ -76,11 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 }
 
 class AppVersion extends StatelessWidget {
-  const AppVersion({
-    super.key,
-    required this.l10n,
-    required this.box
-  });
+  const AppVersion({super.key, required this.l10n, required this.box});
 
   final AppLocalizations l10n;
   final BoxConstraints box;
@@ -91,7 +77,7 @@ class AppVersion extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Version 10.2', 
+            'Version 10.2',
             style: Theme.of(context).textTheme.titleSmall,
           ),
           SizedBox(
@@ -112,11 +98,7 @@ class AppVersion extends StatelessWidget {
 }
 
 class LogOutOption extends StatelessWidget {
-  const LogOutOption({
-    super.key,
-    required this.l10n,
-    required this.box
-  });
+  const LogOutOption({super.key, required this.l10n, required this.box});
 
   final AppLocalizations l10n;
   final BoxConstraints box;
@@ -124,24 +106,22 @@ class LogOutOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(box.maxHeight * 0.025),
-        color: Colors.white,
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: box.maxHeight * 0.03,
-          top: box.maxHeight * 0.01,
-          bottom: box.maxHeight * 0.01,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(box.maxHeight * 0.025),
+          color: Colors.white,
         ),
-        child:   
-         ProfileInfoOptions(
-          text: l10n.profileLogOutText,
-          icon: FpbIcons.logout,
-          box: box,
-        ),
-      )
-    );
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: box.maxHeight * 0.03,
+            top: box.maxHeight * 0.01,
+            bottom: box.maxHeight * 0.01,
+          ),
+          child: ProfileInfoOptions(
+            text: l10n.profileLogOutText,
+            icon: FpbIcons.logout,
+            box: box,
+          ),
+        ));
   }
 }
 
@@ -169,23 +149,23 @@ class UserProfileOptions extends StatelessWidget {
           bottom: box.maxHeight * 0.03,
         ),
         child: Column(
-          children:   [
+          children: [
             ProfileInfoOptions(
               text: l10n.profileAccountText,
               icon: FpbIcons.profile,
               box: box,
-            ), 
+            ),
             ProfileInfoOptions(
               text: l10n.profileSettingsText,
               icon: FpbIcons.setting,
               box: box,
-            ), 
+            ),
             ProfileInfoOptions(
               text: l10n.profileNotificationsText,
               icon: Icons.notifications,
               box: box,
-            ), 
-            ProfileInfoOptions( 
+            ),
+            ProfileInfoOptions(
               text: l10n.profilePaymentMethodsText,
               icon: FpbIcons.credit_card,
               box: box,
@@ -197,43 +177,42 @@ class UserProfileOptions extends StatelessWidget {
   }
 }
 
-class UserPic extends StatelessWidget{
-const UserPic({
+class UserPic extends StatelessWidget {
+  const UserPic({
     super.key,
     required this.box,
   });
 
-final BoxConstraints box;
+  final BoxConstraints box;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: box.maxWidth,
       child: Stack(
-        alignment: Alignment(0.0, -1.5), 
-         children: [ 
-          Positioned( 
+        alignment: Alignment(0.0, -1.5),
+        children: [
+          Positioned(
             child: CircleAvatar(
               radius: box.maxHeight * 0.060,
               child: FlutterLogo(size: box.maxHeight * 0.1),
             ),
           ),
-         Positioned(
-          //top: 0,
-          right: box.maxWidth * .001,
-           child: IconButton(
-            onPressed: () { },
-            icon: Icon(
-              FpbIcons.edit,
-              size: box.maxHeight * 0.028,
+          Positioned(
+            //top: 0,
+            right: box.maxWidth * .001,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                FpbIcons.edit,
+                size: box.maxHeight * 0.028,
               ),
             ),
-         ),
+          ),
         ],
       ),
     );
   }
 }
-
 
 class UserName extends StatelessWidget {
   const UserName({
@@ -250,17 +229,15 @@ class UserName extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-    Text(
-    'John Merry',
-    style: style.titleMedium?.copyWith(
-      fontWeight: FontWeight.w600
-    ),
-    ),
-    Text(
-    '@john.merry',
-    style: style.titleSmall,
-    ),
-    ],
+        Text(
+          'John Merry',
+          style: style.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+        ),
+        Text(
+          '@john.merry',
+          style: style.titleSmall,
+        ),
+      ],
     );
   }
 }
@@ -277,15 +254,13 @@ class TitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // final l10n = context.l10n;
+    // final l10n = context.l10n;
     final theme = Theme.of(context);
     final style = theme.textTheme;
     return Text(
       l10n.profileTitle,
       style: style.displayLarge?.copyWith(
-        color: theme.colorScheme.secondary,
-        fontWeight: FontWeight.w600
-      ),
+          color: theme.colorScheme.secondary, fontWeight: FontWeight.w600),
     );
   }
 }

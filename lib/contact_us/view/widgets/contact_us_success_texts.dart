@@ -26,11 +26,8 @@ class ContactUsSuccessTexts extends StatelessWidget {
         SizedBox(
           height: box.maxHeight * .025,
         ),
-        Text(
-          l10n.contactUsSuccessText, 
-          maxLines: 3, 
-          textAlign: TextAlign.center,
-          style: style.titleMedium),
+        Text(l10n.contactUsSuccessText,
+            maxLines: 3, textAlign: TextAlign.center, style: style.titleMedium),
       ],
     );
   }
