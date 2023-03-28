@@ -7,26 +7,26 @@ on:
 
 jobs:
   version:
-    name: Create version number # using GitVersion
-    runs-on: ubuntu-latest #macos-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Fetch all history for all tags and branches
-      run: git fetch --prune --depth=10000
-    - name: Install GitVersion
-      uses: gittools/actions/gitversion/setup@v0.9.15
-      with:
-        versionSpec: '5.x'
-    - name: Use GitVersion
-      id: gitversion
-      uses: gittools/actions/gitversion/execute@v0.9.15
-    - name: Create android-version.txt with nuGetVersion
-      run: echo ${{ steps.gitversion.outputs.nuGetVersion  }} > android-version.txt
-    - name: Upload android-version.txt
-      uses: actions/upload-artifact@v3
-      with:
-        name: gitversion
-        path: android-version.txt
+    # name: Create version number # using GitVersion
+    # runs-on: ubuntu-latest #macos-latest
+    # steps:
+    # - uses: actions/checkout@v3
+    # - name: Fetch all history for all tags and branches
+    #   run: git fetch --prune --depth=10000
+    # - name: Install GitVersion
+    #   uses: gittools/actions/gitversion/setup@v0.9.15
+    #   with:
+    #     versionSpec: '5.x'
+    # - name: Use GitVersion
+    #   id: gitversion
+    #   uses: gittools/actions/gitversion/execute@v0.9.15
+    # - name: Create android-version.txt with nuGetVersion
+    #   run: echo ${{ steps.gitversion.outputs.nuGetVersion  }} > android-version.txt
+    # - name: Upload android-version.txt
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: gitversion
+    #     path: android-version.txt
   build:
     name: Build Appbundle and Apks
     needs: [ version ]
@@ -59,35 +59,35 @@ jobs:
           name: flutter-app-builds
           path: |
             build/app/outputs/flutter-apk/app-development-profile.apk
-  github-deploy:
-    name: Deploy Build to Github
-    needs: [ build, version ]
-    runs-on: ubuntu-latest #macos-latest
-    steps:
-      - name: Get android-version.txt
-        uses: actions/download-artifact@v3
-        with:
-          name: gitversion
-      - name: Read version
-        id: version
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: android-version.txt
-      - name: Get app builds
-        uses: actions/download-artifact@v3
-        with:
-          name: flutter-app-builds
-      - name: Echo android-version.txt
-        run: echo "${{ steps.version.outputs.content }}"
-      - name: Display structure of downloaded files
-        run: ls -R
-      - name: Create a Release in GitHub
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "flutter-apk/app-development-profile.apk"
-          token: ${{ secrets.GH_TOKEN }}
-          tag: ${{ steps.version.outputs.content }}
-          commit: ${{ github.sha }}
+  # github-deploy:
+  #   name: Deploy Build to Github
+  #   needs: [ build, version ]
+  #   runs-on: ubuntu-latest #macos-latest
+  #   steps:
+  #     - name: Get android-version.txt
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: gitversion
+  #     - name: Read version
+  #       id: version
+  #       uses: juliangruber/read-file-action@v1
+  #       with:
+  #         path: android-version.txt
+  #     - name: Get app builds
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: flutter-app-builds
+  #     - name: Echo android-version.txt
+  #       run: echo "${{ steps.version.outputs.content }}"
+  #     - name: Display structure of downloaded files
+  #       run: ls -R
+  #     - name: Create a Release in GitHub
+  #       uses: ncipollo/release-action@v1
+  #       with:
+  #         artifacts: "flutter-apk/app-development-profile.apk"
+  #         token: ${{ secrets.GH_TOKEN }}
+  #         tag: ${{ steps.version.outputs.content }}
+  #         commit: ${{ github.sha }}
   firebase-deploy:
     name: Deploy Build to Firebase App Distribution
     needs: [ build ]
