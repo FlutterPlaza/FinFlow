@@ -83,4 +83,14 @@ extension PumpApp on WidgetTester {
       ),
     );
   }
+
+  Future<void> pumpAppWithoutDependencies(Widget widget) {
+    return pumpWidget(
+      MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: widget,
+      ),
+    );
+  }
 }
