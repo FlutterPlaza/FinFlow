@@ -4,23 +4,20 @@ import 'circular_slider_paint.dart';
 
 /// Returns a widget which displays a circle to be used as a slider.
 ///
-/// Required arguments are init and end to set the initial selection.
+/// Required arguments are position and divisions to set the initial selection.
 /// onSelectionChange is a callback function which returns new values as the user
 /// changes the interval.
 /// The rest of the params are used to change the look and feel.
 ///
-///     DoubleCircularSlider(5, 10, onSelectionChange: () => {});
-class DoubleCircularSlider extends StatefulWidget {
-  /// the selection will be values between 0..divisions; max value is user totalBudget amountmax value is user totalBudget amount
+///     SingleCircularSlider(5, 10, onSelectionChange: () => {});
+class SingleCircularSlider extends StatefulWidget {
+  /// the selection will be values between 0..divisions; max value is user totalBudget amount
   final int divisions;
 
   /// the initial value in the selection
-  final int init;
+  final int position;
 
-  /// the end value in the selection
-  final int end;
-
-  /// the number of primary sectors to be painted
+   /// the number of primary sectors to be painted
   /// will be painted using selectionColor
   final int? primarySectors;
 
@@ -57,6 +54,9 @@ class DoubleCircularSlider extends StatefulWidget {
   /// outter radius for the handlers
   final double? handlerOutterRadius;
 
+   /// if true will paint a rounded cap in the selection slider start
+  final bool? showRoundedCapInSelection;
+
   /// if true an extra handler ring will be displayed in the handler
   final bool? showHandlerOutter;
 
@@ -67,10 +67,9 @@ class DoubleCircularSlider extends StatefulWidget {
   /// otherwise, everytime the user completes a full lap, the selection restarts from 0
   final bool? shouldCountLaps;
 
-  DoubleCircularSlider(
+  SingleCircularSlider(
     this.divisions,
-    this.init,
-    this.end, {
+    this.position, {
     this.height,
     this.width,
     this.child,
@@ -82,68 +81,63 @@ class DoubleCircularSlider extends StatefulWidget {
     this.onSelectionChange,
     this.onSelectionEnd,
     this.handlerOutterRadius,
+    this.showRoundedCapInSelection,
     this.showHandlerOutter,
     this.sliderStrokeWidth,
     this.shouldCountLaps,
-  })  : assert(init >= 0 && init <= divisions,
+  })  : assert(position >= 0 && position <= divisions,
             'init has to be > 0 and < divisions value'),
-        assert(end >= 0 && end <= divisions,
-            'end has to be > 0 and < divisions value');
-  // assert(divisions >= 0 && divisions <= 300,
-  //     'divisions has to be > 0 and <= 300');
+        assert(divisions >= 0 && divisions <= 300,
+            'divisions has to be > 0 and <= 300');
 
   @override
-  _DoubleCircularSliderState createState() => _DoubleCircularSliderState();
+  _SingleCircularSliderState createState() => _SingleCircularSliderState();
 }
 
-class _DoubleCircularSliderState extends State<DoubleCircularSlider> {
-  late int _init;
+class _SingleCircularSliderState extends State<SingleCircularSlider> {
   late int _end;
 
   @override
   void initState() {
     super.initState();
-    _init = widget.init;
-    _end = widget.end;
+    _end = widget.position;
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: widget.height ?? 220,
-      width: widget.width ?? 220,
-      child: CircularSliderPaint(
-        mode: CircularSliderMode.doubleHandler,
-        init: _init,
-        end: _end,
-        divisions: widget.divisions,
-        primarySectors: widget.primarySectors ?? 0,
-        secondarySectors: widget.secondarySectors ?? 0,
-        child: widget.child,
-        onSelectionChange: (newInit, newEnd, laps) {
-          if (widget.onSelectionChange != null) {
-            widget.onSelectionChange!(newInit, newEnd, laps);
-          }
-          setState(() {
-            _init = newInit;
-            _end = newEnd;
-          });
-        },
-        onSelectionEnd: (newInit, newEnd, laps) {
-          if (widget.onSelectionEnd != null) {
-            widget.onSelectionEnd!(newInit, newEnd, laps);
-          }
-        },
-        sliderStrokeWidth: widget.sliderStrokeWidth ?? 12.0,
-        baseColor: widget.baseColor ?? Color.fromRGBO(255, 255, 255, 0.1),
-        selectionColor:
-            widget.selectionColor ?? Color.fromRGBO(255, 255, 255, 0.3),
-        handlerColor: widget.handlerColor ?? Colors.white,
-        handlerOutterRadius: widget.handlerOutterRadius ?? 12.0,
-        showRoundedCapInSelection: false,
-        showHandlerOutter: widget.showHandlerOutter ?? true,
-        shouldCountLaps: widget.shouldCountLaps ?? false, 
-      ),
-    );
+        height: widget.height ?? 220,
+        width: widget.width ?? 220,
+        child: CircularSliderPaint(
+          mode: CircularSliderMode.singleHandler,
+          init: 0,
+          end: _end,
+          divisions: widget.divisions,
+          primarySectors: widget.primarySectors ?? 0,
+          secondarySectors: widget.secondarySectors ?? 0,
+          child: widget.child,
+          onSelectionChange: (newInit, newEnd, laps) {
+            if (widget.onSelectionChange != null) {
+              widget.onSelectionChange!(newInit, newEnd, laps);
+            }
+            setState(() {
+              _end = newEnd;
+            });
+          },
+          onSelectionEnd: (newInit, newEnd, laps) {
+            if (widget.onSelectionEnd != null) {
+              widget.onSelectionEnd!(newInit, newEnd, laps);
+            }
+          },
+          sliderStrokeWidth: widget.sliderStrokeWidth ?? 12.0,
+          baseColor: widget.baseColor ?? Color.fromRGBO(255, 255, 255, 0.1),
+          selectionColor:
+              widget.selectionColor ?? Color.fromRGBO(255, 255, 255, 0.3),
+          handlerColor: widget.handlerColor ?? Colors.white,
+          handlerOutterRadius: widget.handlerOutterRadius ?? 12.0,
+          showRoundedCapInSelection: widget.showRoundedCapInSelection ?? false,
+          showHandlerOutter: widget.showHandlerOutter ?? true,
+          shouldCountLaps: widget.shouldCountLaps ?? false,
+        ));
   }
 }

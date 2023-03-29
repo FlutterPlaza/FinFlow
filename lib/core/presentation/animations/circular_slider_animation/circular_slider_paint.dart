@@ -174,7 +174,7 @@ class _CircularSliderState extends State<CircularSliderPaint> {
       }
     }
 
-    _painter = SliderPainter(
+    _painter = SliderPainter( 
       mode: widget.mode,
       startAngle: _startAngle,
       endAngle: _endAngle,

@@ -50,8 +50,8 @@ class SliderPainter extends CustomPainter {
     Paint handler = _getPaint(color: handlerColor, style: PaintingStyle.fill);
     Paint handlerOutter = _getPaint(color: handlerColor, width: 10.0);
 
-    // draw handlers
-    if (mode == CircularSliderMode.doubleHandler) {
+    // draw handlers - show handler on both end of the slider
+    if (mode == CircularSliderMode.singleHandler) {
       initHandler = radiansToCoordinates(center, -pi / 2 + startAngle, radius);
       canvas.drawCircle(initHandler, 8.0, handler);
       canvas.drawCircle(initHandler, handlerOutterRadius, handlerOutter);

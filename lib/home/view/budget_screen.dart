@@ -24,11 +24,11 @@ class _BudgetScreenState extends State<BudgetScreen> {
 
   final baseColor = Color.fromRGBO(223, 96, 47, 1);
 
-  late int initBudget;
-  late int endBudget;
+  int initBudget = 0;
+  int endBudget = 0;
 
-  late int inFinalBudget;
-  late int outFinalBudget;
+  int inFinalBudget = 0;
+  int outFinalBudget = 0;
   int days = 0;
 
   @override
@@ -40,9 +40,6 @@ class _BudgetScreenState extends State<BudgetScreen> {
   void _shuffle() {
     setState(() {
       initBudget = _generateRandomAmount();
-      // endBudget = __generateRandomAmount();
-      // print({'Gen': _generateRandomTime()});
-      // print({'Time': _generateRandomTime()});
       inFinalBudget = initBudget;
       outFinalBudget = endBudget;
     });
@@ -92,13 +89,11 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   // graph widget
                   Container(
                     height: box.maxHeight * 0.35,
-                    width: box.maxWidth,
+                    width: box.maxWidth, 
                     child: DoubleCircularSlider(
+                      360, // entire pie-circle amount - totalAmt
+                      0,
                       288,
-                      0,
-                      0,
-                      // initTime,
-                      // endTime,
                       height: box.maxHeight * 0.3,
                       width: box.maxWidth * 0.4,
                       primarySectors: 6,
