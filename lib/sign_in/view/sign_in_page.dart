@@ -124,8 +124,7 @@ class _SignInBodyState extends State<SignInBody>
                                 ),
                                 TabBar(
                                   key: Key('EmailLogIn'),
-                                  padding:
-                                      EdgeInsets.all(cts.maxHeight * 0.01),
+                                  padding: EdgeInsets.all(cts.maxHeight * 0.01),
                                   controller: tabController,
                                   unselectedLabelColor:
                                       theme.colorScheme.secondary,
@@ -186,10 +185,11 @@ class _SignInBodyState extends State<SignInBody>
                                               PasswordInput(box: cts),
                                               Text(
                                                 l10n.signInForgotPasswordText,
-                                                style: theme.textTheme.bodyMedium
+                                                style: theme
+                                                    .textTheme.bodyMedium
                                                     ?.copyWith(
-                                                  color:
-                                                      theme.colorScheme.secondary,
+                                                  color: theme
+                                                      .colorScheme.secondary,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                               ),
@@ -202,11 +202,10 @@ class _SignInBodyState extends State<SignInBody>
                                                 MainAxisAlignment.center,
                                             children: [
                                               PhoneNumberInput(
-                                                 
                                                   l10n: l10n, cts: cts),
                                               PasswordInput(
-                                                key: Key('PhoneNumberInput'),
-                                                box: cts),
+                                                  key: Key('PhoneNumberInput'),
+                                                  box: cts),
                                             ],
                                           ),
                                         ),
@@ -225,7 +224,7 @@ class _SignInBodyState extends State<SignInBody>
                                     children: [
                                       Expanded(
                                           child: Divider(
-                                            key: Key('Divider'),
+                                        key: Key('Divider'),
                                         color: theme.colorScheme.outlineVariant,
                                       )),
                                       Padding(
@@ -235,7 +234,7 @@ class _SignInBodyState extends State<SignInBody>
                                         child: Text(
                                           l10n.signInOrLogInWithText,
                                           key: Key('OrLogInWith'),
-                                          ),
+                                        ),
                                       ),
                                       Expanded(
                                           child: Divider(
