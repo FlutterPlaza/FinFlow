@@ -123,8 +123,8 @@ class _SignInBodyState extends State<SignInBody>
                                   height: 0.015 * cts.maxHeight,
                                 ),
                                 TabBar(
-                                  padding:
-                                      EdgeInsets.all(cts.maxHeight * 0.01),
+                                  key: Key('EmailLogIn'),
+                                  padding: EdgeInsets.all(cts.maxHeight * 0.01),
                                   controller: tabController,
                                   unselectedLabelColor:
                                       theme.colorScheme.secondary,
@@ -175,32 +175,39 @@ class _SignInBodyState extends State<SignInBody>
                                       physics: const BouncingScrollPhysics(),
                                       controller: tabController,
                                       children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.end,
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            EmailInput(box: cts),
-                                            PasswordInput(box: cts),
-                                            Text(
-                                              l10n.signInForgotPasswordText,
-                                              style: theme.textTheme.bodyMedium
-                                                  ?.copyWith(
-                                                color:
-                                                    theme.colorScheme.secondary,
-                                                fontWeight: FontWeight.w600,
+                                        SingleChildScrollView(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              EmailInput(box: cts),
+                                              PasswordInput(box: cts),
+                                              Text(
+                                                l10n.signInForgotPasswordText,
+                                                style: theme
+                                                    .textTheme.bodyMedium
+                                                    ?.copyWith(
+                                                  color: theme
+                                                      .colorScheme.secondary,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                        Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            PhoneNumberInput(
-                                                l10n: l10n, cts: cts),
-                                            PasswordInput(box: cts),
-                                          ],
+                                        SingleChildScrollView(
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              PhoneNumberInput(
+                                                  l10n: l10n, cts: cts),
+                                              PasswordInput(
+                                                  key: Key('PhoneNumberInput'),
+                                                  box: cts),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -217,13 +224,17 @@ class _SignInBodyState extends State<SignInBody>
                                     children: [
                                       Expanded(
                                           child: Divider(
+                                        key: Key('Divider'),
                                         color: theme.colorScheme.outlineVariant,
                                       )),
                                       Padding(
                                         padding: EdgeInsets.symmetric(
                                           horizontal: cts.maxWidth * 0.015,
                                         ),
-                                        child: Text(l10n.signInOrLogInWithText),
+                                        child: Text(
+                                          l10n.signInOrLogInWithText,
+                                          key: Key('OrLogInWith'),
+                                        ),
                                       ),
                                       Expanded(
                                           child: Divider(

@@ -3,7 +3,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_svg.dart';
-import 'package:fpb/contact_us/contact_us_screen.dart';
 import 'package:fpb/contact_us/view/widgets/message_textfield.dart';
 import 'package:fpb/core/presentation/widget/fpb_button.dart';
 import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
@@ -64,6 +63,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           PageTitle(
+                            key: Key('ContactusPageTitle'),
                             title: l10n.contactUsTitle,
                             box: box,
                           ),
@@ -79,6 +79,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     FpbTextFormField(
+                                      key: Key('NameField'),
                                       onChanged: (value) {
                                         setState(() {});
                                       },
@@ -100,6 +101,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                       height: box.maxHeight * .03,
                                     ),
                                     FpbTextFormField(
+                                      key: Key('EmailField'),
                                       onChanged: (value) {
                                         setState(() {});
                                       },
@@ -121,6 +123,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                       height: box.maxHeight * .03,
                                     ),
                                     MessageTextField(
+                                      key: Key('MessageField'),
                                       theme: theme,
                                       box: box,
                                       validator: (val) {
@@ -144,6 +147,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                             height: box.maxHeight * .05,
                           ),
                           FpbButton(
+                              key: Key('SubmitButton'),
                               label: l10n.contactUsSubmitBtnLabel,
                               onTap: () {
                                 if (_formKey.currentState!.validate()) {
