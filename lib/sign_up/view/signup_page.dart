@@ -13,7 +13,6 @@ import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
-import 'package:fpb/sign_in/view/widgets/password_input.dart';
 import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -106,7 +105,6 @@ class _SignUpBodyState extends State<SignUpBody>
                                   topRight: Radius.circular(20),
                                 ),
                               ),
-
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -164,55 +162,62 @@ class _SignUpBodyState extends State<SignUpBody>
                                     radius: box.maxWidth * 0.02,
                                     height: box.maxHeight * 0.07,
                                   ),
-
                                   Flexible(
                                     child: Form(
                                       child: TabBarView(
                                         physics: const BouncingScrollPhysics(),
                                         controller: tabController,
                                         children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              FpbTextFormField(
-                                                label: l10n
-                                                    .signUpFullNameTextFieldLabel,
-                                                hint: l10n
-                                                    .signUpFullNameTextFieldHintText,
-                                                box: box,
-                                              ),
-                                              FpbTextFormField(
-                                                label: l10n
-                                                    .signInEmailTextFieldLabel,
-                                                hint: l10n
-                                                    .signInEmailTextFieldHintText,
-                                                isEmail: true,
-                                                box: box,
-                                              ),
-                                              FpbTextFormField(
-                                                label: l10n
-                                                    .signInPasswordFieldLabel,
-                                                hint: l10n
-                                                    .signInPasswordFieldHintText,
-                                                isPassword: true,
-                                                box: box,
-                                              ),
-                                            ],
+                                          SingleChildScrollView(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                FpbTextFormField(
+                                                  key: Key('FullnameField'),
+                                                  label: l10n
+                                                      .signUpFullNameTextFieldLabel,
+                                                  hint: l10n
+                                                      .signUpFullNameTextFieldHintText,
+                                                  box: box,
+                                                ),
+                                                FpbTextFormField(
+                                                  key: Key('EmailField'),
+                                                  label: l10n
+                                                      .signInEmailTextFieldLabel,
+                                                  hint: l10n
+                                                      .signInEmailTextFieldHintText,
+                                                  isEmail: true,
+                                                  box: box,
+                                                ),
+                                                FpbTextFormField(
+                                                  key: Key('PasswordField'),
+                                                  label: l10n
+                                                      .signInPasswordFieldLabel,
+                                                  hint: l10n
+                                                      .signInPasswordFieldHintText,
+                                                  isPassword: true,
+                                                  box: box,
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                          Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              PhoneNumberInput(
-                                                l10n: l10n,
-                                                cts: box,
-                                              ),
-                                              PasswordInput(
-                                                box: box,
-                                              ),
-                                            ],
+                                          SingleChildScrollView(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                SizedBox(
+                                                  height: box.maxHeight * .12,
+                                                ),
+                                                PhoneNumberInput(
+                                                  key: Key('IntlPhoneInput'),
+                                                  l10n: l10n,
+                                                  cts: box,
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -232,6 +237,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                       children: [
                                         Expanded(
                                             child: Divider(
+                                          key: Key('Divider'),
                                           color:
                                               theme.colorScheme.outlineVariant,
                                         )),
@@ -240,11 +246,13 @@ class _SignUpBodyState extends State<SignUpBody>
                                             horizontal: box.maxHeight * .015,
                                           ),
                                           child: Text(
+                                            key: Key('OrSignUpWith'),
                                             l10n.signUpOrSignupWithText,
                                           ),
                                         ),
                                         Expanded(
                                             child: Divider(
+                                          key: Key('Divider'),
                                           color:
                                               theme.colorScheme.outlineVariant,
                                         ))
@@ -263,6 +271,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                       children: [
                                         Text(
                                           'Already a member?',
+                                          key: Key('AlreadyAMember'),
                                           style: style.titleSmall?.copyWith(
                                             color: theme.colorScheme.secondary,
                                           ),
@@ -270,8 +279,6 @@ class _SignUpBodyState extends State<SignUpBody>
                                         TextButton(
                                           onPressed: () {
                                             context.router.pop();
-                                            // context.router
-                                            //     .push(SignInRoute());
                                           },
                                           child: Text(
                                             'Login',
