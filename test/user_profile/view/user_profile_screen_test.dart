@@ -40,7 +40,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-         ProfileScreen(),
+        ProfileScreen(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -70,7 +70,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-         ProfileScreen(),
+        ProfileScreen(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
