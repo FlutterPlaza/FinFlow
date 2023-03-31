@@ -3,7 +3,11 @@ import 'package:fpb/core/domain/virtualCard.dart';
 import 'package:fpb/home/view/widgets/virtual_card_widget.dart';
 
 class CardStackWidget extends StatefulWidget {
-  const CardStackWidget({super.key});
+  final List<VirtualCard> cards;
+  const CardStackWidget({
+    super.key,
+    required this.cards,
+  });
 
   @override
   State<CardStackWidget> createState() => _CardStackWidgetState();
@@ -11,52 +15,8 @@ class CardStackWidget extends StatefulWidget {
 
 class _CardStackWidgetState extends State<CardStackWidget>
     with SingleTickerProviderStateMixin {
-  List<VirtualCard> cardItems = [
-    const VirtualCard(
-      index: 0,
-      balance: '200',
-      cardNumber: '1234 6565 6577',
-      expiry: '04/25',
-      cvv: '123',
-      type: 'visa',
-      lastFourDigits: '1232',
-    ),
-    const VirtualCard(
-      index: 0,
-      balance: '1000',
-      cardNumber: '1234 6565 6577',
-      expiry: '04/25',
-      cvv: '123',
-      type: 'visa',
-      lastFourDigits: '5050',
-    ),
-    const VirtualCard(
-      index: 0,
-      balance: '550.50',
-      cardNumber: '1234 6565 6577',
-      expiry: '04/25',
-      cvv: '123',
-      type: 'visa',
-      lastFourDigits: '7070',
-    ),
-    const VirtualCard(
-      index: 0,
-      balance: '240.50',
-      cardNumber: '1234 6565 6577',
-      expiry: '04/25',
-      cvv: '123',
-      type: 'visa',
-      lastFourDigits: '7070',
-    ),
-    const VirtualCard(
-      index: 0,
-      balance: '35.50',
-      cardNumber: '1234 6565 6577',
-      expiry: '04/25',
-      cvv: '123',
-      type: 'visa',
-      lastFourDigits: '7070',
-    ),
+  late List<VirtualCard> cardItems = [
+    ...widget.cards,
   ];
 
   final borderRadius = BorderRadius.circular(10.0);

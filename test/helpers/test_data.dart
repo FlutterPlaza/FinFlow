@@ -1,4 +1,5 @@
 import 'package:fpb/core/domain/user.dart';
+import 'package:fpb/core/domain/virtualCard.dart';
 
 const User testUser = User(
   id: "dede",
@@ -10,6 +11,54 @@ const User testUser = User(
   email: "darrelntangu@gmail.com",
   phoneNumber: "+237652432246",
 );
+
+final listOfVirtualCards = [
+  const VirtualCard(
+    index: 0,
+    balance: '200',
+    cardNumber: '1234 6565 6577',
+    expiry: '04/25',
+    cvv: '123',
+    type: 'visa',
+    lastFourDigits: '1232',
+  ),
+  const VirtualCard(
+    index: 0,
+    balance: '1000',
+    cardNumber: '1234 6565 6577',
+    expiry: '04/25',
+    cvv: '123',
+    type: 'visa',
+    lastFourDigits: '5050',
+  ),
+  const VirtualCard(
+    index: 0,
+    balance: '550.50',
+    cardNumber: '1234 6565 6577',
+    expiry: '04/25',
+    cvv: '123',
+    type: 'visa',
+    lastFourDigits: '7070',
+  ),
+  const VirtualCard(
+    index: 0,
+    balance: '240.50',
+    cardNumber: '1234 6565 6577',
+    expiry: '04/25',
+    cvv: '123',
+    type: 'visa',
+    lastFourDigits: '7070',
+  ),
+  const VirtualCard(
+    index: 0,
+    balance: '35.50',
+    cardNumber: '1234 6565 6577',
+    expiry: '04/25',
+    cvv: '123',
+    type: 'visa',
+    lastFourDigits: '7070',
+  ),
+];
 
 const String invalidEmail = "dev.flutter@flu";
 const String validEmail = "devflutter@flutterplaza.com";

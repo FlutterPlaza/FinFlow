@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
+import 'package:fpb/core/presentation/widget/fpb_button.dart';
 import 'package:fpb/core/presentation/widget/icon_login.dart';
 import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
-import 'package:fpb/sign_in/sign_in.dart';
-import 'package:fpb/sign_in/view/widgets/login_button.dart';
-import 'package:fpb/sign_in/view/widgets/password_input.dart';
-import 'package:fpb/sign_in/view/widgets/email_input.dart';
 import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
+import 'package:fpb/sign_up/view/signup_page.dart';
 
 import '../../helpers/helpers.dart';
 
@@ -22,13 +20,13 @@ void main() {
     mockIGoogleRepositoryFacade = MockIGoogleRepositoryFacade();
   });
 
-  group("Sign in screen widget test", () {
-    testWidgets("check for login button", (widgetTester) async {
+  group("Sign up screen widget test", () {
+    testWidgets("check for signup button", (widgetTester) async {
       arrangeAuthRepositoryReturnsStreamWithEmptyUser(mockIAuthFacade);
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        SignInBody(),
+        SignUpBody(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -36,32 +34,16 @@ void main() {
 
       await widgetTester.pump();
 
-      expect(find.byType(LoginButton), findsOneWidget);
-      expect(find.byKey(Key('Divider')), findsOneWidget);
-      expect(find.byKey(Key('OrLogInWith')), findsOneWidget);
-    });
-    testWidgets("check for face ID icon", (widgetTester) async {
-      arrangeAuthRepositoryReturnsStreamWithEmptyUser(mockIAuthFacade);
-      arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
-
-      await widgetTester.pumpApp(
-        SignInBody(),
-        mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
-        mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
-        mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
-      );
-
-      await widgetTester.pump();
-
-      expect(find.byType(FaceIDIcon), findsOneWidget);
-      expect(find.byIcon(FpbIcons.face_id), findsOneWidget);
+      expect(find.byType(FpbButton), findsOneWidget);
+      expect(find.byKey(Key('Divider')), findsWidgets);
+      expect(find.byKey(Key('OrSignUpWith')), findsOneWidget);
     });
     testWidgets("check for Email tab background color", (widgetTester) async {
       arrangeAuthRepositoryReturnsStreamWithEmptyUser(mockIAuthFacade);
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        SignInBody(),
+        SignUpBody(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -80,7 +62,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        SignInBody(),
+        SignUpBody(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -88,30 +70,27 @@ void main() {
 
       await widgetTester.pump();
 
-      expect(find.byType(EmailInput), findsOneWidget);
-      expect(find.byType(PasswordInput), findsOneWidget);
+      expect(find.byKey(Key('FullnameField')), findsOneWidget);
+      expect(find.byKey(Key('EmailField')), findsOneWidget);
+      expect(find.byKey(Key('PasswordField')), findsOneWidget);
     });
-    testWidgets("check for passwordfield eye icon and forgot password text",
-        (widgetTester) async {
+    testWidgets("check for passwordfield eye icon", (widgetTester) async {
       arrangeAuthRepositoryReturnsStreamWithEmptyUser(mockIAuthFacade);
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
-      var passwordField = find.byType(PasswordInput);
+      var passwordField = find.byKey(Key('PasswordField'));
 
       await widgetTester.pumpApp(
-        SignInBody(),
+        SignUpBody(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
       );
       await widgetTester.ensureVisible(passwordField);
 
-      //TextFormField pswdField = widgetTester.firstState(passwordField);
       await widgetTester.pump();
 
-      expect(find.byType(PasswordInput), findsOneWidget);
       expect(find.byIcon(FpbIcons.eye_open), findsOneWidget);
-      expect(find.byKey(Key('forgotPassword')), findsOneWidget);
     });
     testWidgets("check for Phone number tab textform fields",
         (widgetTester) async {
@@ -119,7 +98,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        SignInBody(),
+        SignUpBody(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -127,16 +106,15 @@ void main() {
 
       await widgetTester.pump();
 
-      // Test for phone number input
-      //expect(find.byKey(Key('PhoneNumberInput')), findsOneWidget);
-      expect(find.byType(PasswordInput), findsOneWidget);
+      // Test for phone number input presence
+      expect(find.byKey(Key('IntlPhoneInput')), findsOneWidget);
     });
     testWidgets("check for already a member text", (widgetTester) async {
       arrangeAuthRepositoryReturnsStreamWithEmptyUser(mockIAuthFacade);
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        SignInBody(),
+        SignUpBody(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -144,7 +122,7 @@ void main() {
 
       await widgetTester.pump();
 
-      expect(find.byKey(Key('alreadyAmember')), findsOneWidget);
+      expect(find.byKey(Key('AlreadyAMember')), findsOneWidget);
       expect(find.byType(TextButton), findsOneWidget);
       //expect(find.byType(Divider), findsWidgets);
     });
@@ -154,7 +132,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        SignInBody(),
+        SignUpBody(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -166,12 +144,12 @@ void main() {
       expect(find.byType(AlternativeAuth), findsOneWidget);
       expect(find.byType(IconLogin), findsWidgets);
     });
-    testWidgets("check for phone number input", (widgetTester) async {
+    testWidgets("check for phone number input style", (widgetTester) async {
       arrangeAuthRepositoryReturnsStreamWithEmptyUser(mockIAuthFacade);
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        SignInBody(),
+        SignUpBody(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
