@@ -23,14 +23,14 @@ class ProfileInfoOptions extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(
                   icon,
-                  color: theme.colorScheme.secondaryContainer,
+                  color: theme.colorScheme.error,
                 )),
             SizedBox(
               width: box.maxWidth * .03,
             ),
             Text(
               text,
-              style: style.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+              style: style.titleMedium?.copyWith(fontWeight: FontWeight.w400),
             )
           ],
         ),
