@@ -38,7 +38,7 @@ dependencies:
   google_sign_in: ^5.4.4
   dartz: ^0.10.1
   shared_preferences: ^2.0.17
-  firebase_auth: ^4.2.8
+  firebase_auth: ^4.4.0
   firebase_core: ^2.6.1
   equatable: ^2.0.5
   ntp: ^2.0.0
