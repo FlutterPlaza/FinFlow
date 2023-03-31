@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:fpb/core/presentation/animations/circular_slider_animation/double_circular_slider.dart';
 import 'package:fpb/core/presentation/widget/fpb_button.dart';
 import 'package:fpb/home/view/widgets/custom_appbar.dart';
-import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart';
-import 'package:fpb/core/domain/user.dart';
-import 'package:fpb/core/shared/helpers/value_injector.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/home/view/widgets/different_categories.dart';
 import 'package:fpb/home/view/widgets/latest_budget_activity.dart';
 
@@ -55,16 +51,22 @@ class _BudgetScreenState extends State<BudgetScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final user = ValueInjector.of<User>(context)?.value ?? User.empty;
-    if (user == User.empty) {
-      context.read<AuthBloc>()..add(AuthEvent.logoutRequest());
-    }
+    // final user = ValueInjector.of<User>(context)?.value ?? User.empty;
+    // if (user == User.empty) {
+    //   context.read<AuthBloc>()..add(AuthEvent.logoutRequest());
+    // }
+    final theme = Theme.of(context);
     return LayoutBuilder(
       builder: (context, box) {
         return SafeArea(
           child: Scaffold(
             appBar: CustomAppBar(
-              titleChildWidget: Text('Budget'),
+              titleChildWidget: Text(
+                'Budget',
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: theme.colorScheme.secondary,
+                ),
+              ),
               height: box.maxHeight * 0.09,
               actionChildWidget: [
                 Padding(
@@ -75,6 +77,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                     width: box.maxWidth * 0.5,
                     label: 'New Category',
                     onTap: () => print('New Category'),
+                    backgroundColor: theme.colorScheme.secondary,
                     spaceAround: true,
                     leading: Icon(
                       Icons.add,
@@ -89,7 +92,7 @@ class _BudgetScreenState extends State<BudgetScreen> {
                   // graph widget
                   Container(
                     height: box.maxHeight * 0.35,
-                    width: box.maxWidth, 
+                    width: box.maxWidth,
                     child: DoubleCircularSlider(
                       360, // entire pie-circle amount - totalAmt
                       0,
