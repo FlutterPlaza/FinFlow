@@ -62,6 +62,7 @@ class ActivityCard extends StatelessWidget {
             ),
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 // r'- $ 14.99',
@@ -79,7 +80,7 @@ class ActivityCard extends StatelessWidget {
                 size: 16,
               )
             ],
-          )
+          ),
         ],
       ),
     );

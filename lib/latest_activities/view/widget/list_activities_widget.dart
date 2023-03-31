@@ -27,24 +27,18 @@ class _ListActivitiesWidgetState extends State<ListActivitiesWidget> {
       itemCount: activityCardItems.length,
       itemBuilder: (context, index) {
         return Column(
-          children: activityCardItems.map((e) {
-            return ActivityCard(
+          children: [
+            ActivityCard(
               context: context,
               box: widget.box,
-              dateTime: e.dateTime,
-              isFavorite: e.isFavorite,
-              transactionAmt: e.transactionAmt,
-              type: e.type,
-              username: e.username,
-            );
-          }).toList(),
-          // children: [
-          // ActivityCard(
-          //   context: context,
-          //   box: widget.box,
-          // ),
-          //   const Divider(),
-          // ],
+              dateTime: activityCardItems[index].dateTime,
+              isFavorite: activityCardItems[index].isFavorite,
+              transactionAmt: activityCardItems[index].transactionAmt,
+              type: activityCardItems[index].type,
+              username: activityCardItems[index].username,
+            ),
+            const Divider(),
+          ],
         );
       },
     );
