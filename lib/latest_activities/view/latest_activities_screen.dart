@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/home/view/widgets/activity_card.dart';
+import 'package:fpb/core/domain/ActivityCardModel.dart';
 import 'package:fpb/home/view/widgets/custom_appbar.dart';
 import 'package:fpb/l10n/l10n.dart';
+import 'package:fpb/latest_activities/view/widget/list_activities_widget.dart';
 
 class LatestActivitiesPage extends StatelessWidget {
   const LatestActivitiesPage({super.key});
@@ -60,20 +61,42 @@ class LatestActivitiesPage extends StatelessWidget {
                           height: box.maxHeight * 0.025,
                         ),
                         Expanded(
-                          child: ListView.builder(
-                            itemCount: 15,
-                            itemBuilder: (context, index) {
-                              // ignore: avoid_unnecessary_containers
-                              return Column(
-                                children: [
-                                  ActivityCard(
-                                    context: context,
-                                    box: box,
-                                  ),
-                                  const Divider(),
-                                ],
-                              );
-                            },
+                          child: ListActivitiesWidget(
+                            box: box,
+                            activities: [
+                              ActivityCardModel(
+                                id: 1,
+                                dateTime: 'August 3, 3: 45pm',
+                                isFavorite: false,
+                                transactionAmt: '',
+                                username: '@john_merry',
+                                type: 'debit',
+                              ),
+                              ActivityCardModel(
+                                id: 2,
+                                dateTime: 'August 3, 3: 45pm',
+                                isFavorite: false,
+                                transactionAmt: '',
+                                username: '@amanda',
+                                type: 'credit',
+                              ),
+                              ActivityCardModel(
+                                id: 3,
+                                dateTime: 'August 3, 3: 45pm',
+                                isFavorite: false,
+                                transactionAmt: '',
+                                username: '@dezzy',
+                                type: 'debit',
+                              ),
+                              ActivityCardModel(
+                                id: 4,
+                                dateTime: 'August 3, 3: 45pm',
+                                isFavorite: false,
+                                transactionAmt: '',
+                                username: '@jeff',
+                                type: 'debit',
+                              ),
+                            ],
                           ),
                         ),
                       ],
