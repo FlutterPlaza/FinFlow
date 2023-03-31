@@ -4,7 +4,6 @@ import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
 import 'package:fpb/profile/view/profile_page.dart';
 import 'package:fpb/profile/view/widgets/log_out_option.dart';
 import 'package:fpb/profile/view/widgets/profileInfoOptions.dart';
-import 'package:fpb/profile/view/widgets/title_text.dart';
 import 'package:fpb/profile/view/widgets/user_profile_options.dart';
 
 import '../../helpers/helpers.dart';
@@ -26,14 +25,14 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        LocalizationsHelper(child: ProfileScreen()),
+        ProfileScreen(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
       );
 
       await widgetTester.pump();
-      expect(find.byType(TitleText), findsWidgets);
+      expect(find.text('Profile'), findsWidgets);
     });
     testWidgets("check for user profile picture and name",
         (widgetTester) async {
@@ -41,7 +40,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        LocalizationsHelper(child: ProfileScreen()),
+         ProfileScreen(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -57,7 +56,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        LocalizationsHelper(child: ProfileScreen()),
+        ProfileScreen(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -71,7 +70,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        LocalizationsHelper(child: ProfileScreen()),
+         ProfileScreen(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -95,7 +94,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        LocalizationsHelper(child: ProfileScreen()),
+        ProfileScreen(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
@@ -114,7 +113,7 @@ void main() {
       arrangeAuthRepositoryReturnsCurrentUserAsEmpty(mockIAuthFacade);
 
       await widgetTester.pumpApp(
-        LocalizationsHelper(child: ProfileScreen()),
+        ProfileScreen(),
         mockIAuthFacadeFroEmailPasswordBloc: mockIAuthFacade,
         mockIFacebookRepositoryFacade: mockIFacebookRepositoryFacade,
         mockIGoogleRepositoryFacade: mockIGoogleRepositoryFacade,
