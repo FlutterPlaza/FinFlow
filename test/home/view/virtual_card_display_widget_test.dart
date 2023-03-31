@@ -51,7 +51,8 @@ void main() {
       await widgetTester.pump();
 
       //Test should fail because 4 assets are used for the 'VISA' type, which is not the only type to be displayed.
-      //expect(find.byType(VirtualCardNetworkText), findsOneWidget);
+      //Key value should be included to widget when correctly implemented
+      expect(find.byKey(Key('VirtualCardNetworkText')), findsOneWidget);
     });
     testWidgets("check for card number visibility", (widgetTester) async {
       arrangeAuthRepositoryReturnsStreamWithEmptyUser(mockIAuthFacade);
