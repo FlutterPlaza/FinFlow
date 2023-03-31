@@ -113,7 +113,7 @@ class _DoubleCircularSliderState extends State<DoubleCircularSlider> {
       height: widget.height ?? 220,
       width: widget.width ?? 220,
       child: CircularSliderPaint(
-        mode: CircularSliderMode.doubleHandler,
+        mode: CircularSliderMode.singleHandler,
         init: _init,
         end: _end,
         divisions: widget.divisions,
