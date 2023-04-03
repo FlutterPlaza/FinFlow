@@ -12,6 +12,16 @@ const User testUser = User(
   phoneNumber: "+237652432246",
 );
 
+final cardItem = VirtualCard(
+  index: 0,
+  balance: '200',
+  cardNumber: '1234 6565 6577',
+  expiry: '04/25',
+  cvv: '123',
+  type: 'visa',
+  lastFourDigits: '1232',
+);
+
 final listOfVirtualCards = [
   const VirtualCard(
     index: 0,

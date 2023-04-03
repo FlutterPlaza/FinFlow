@@ -116,8 +116,8 @@
     "@homeScreenCardNumber": {
         "description": "This is the text displayed on the home screen on the second card widget"
     },
-    "homeScreenEmpty": "Empty",
-    "@homeScreenEmpty": {
+    "homeScreenExpiry": "Expiry",
+    "@homeScreenExpiry": {
         "description": "This is the text displayed on the home screen on the second card widget"
     },
     "homeScreenCCV": "CCV",

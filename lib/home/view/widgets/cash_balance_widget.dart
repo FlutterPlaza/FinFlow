@@ -11,7 +11,7 @@ class CashBalanceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return SizedBox(
-      height: box.maxHeight * 0.22,
+      height: box.maxHeight * 0.25,
       width: box.maxWidth * 0.95,
       child: Card(
         color: Colors.white,
