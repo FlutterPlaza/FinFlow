@@ -113,8 +113,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    // l10n.signUpRegisterTitle,
-                                    'Join Us!',
+                                    l10n.signUpRegisterTitle,
                                     style: textTheme.titleLarge,
                                   ),
                                   SizedBox(
@@ -274,7 +273,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Already a member?',
+                                          l10n.signUpAlreadyAMemberText,
                                           key: Key('AlreadyAMember'),
                                           style: style.titleSmall?.copyWith(
                                             color: theme.colorScheme.secondary,
@@ -286,7 +285,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                             context.router.pop();
                                           },
                                           child: Text(
-                                            'Login',
+                                            l10n.signInLogInTitle,
                                             style: style.titleMedium?.copyWith(
                                               color: theme.colorScheme.primary,
                                               fontWeight: FontWeight.bold,
