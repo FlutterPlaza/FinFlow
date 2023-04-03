@@ -212,7 +212,7 @@
     "@sendersProfileHistoryText": {
         "description": "C'est le texte qui montre l'historique de l'expéditeur sur la page de profil de l'expéditeur."
     },
-    "signUpRegisterTitle": "S'inscrire avec",
+    "signUpRegisterTitle": "Rejoignez-nous",
     "@signUpRegisterTitle": {
         "description": "Il s'agit du titre affiché sur l'écran d'inscription."
     },

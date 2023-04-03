@@ -212,11 +212,11 @@
     "@sendersProfileHistoryText": {
         "description": "This is the text showing the sender's history on the senders profile page"
     },
-    "signUpRegisterTitle": "Register With",
+    "signUpRegisterTitle": "Join us !",
     "@signUpRegisterTitle": {
         "description": "This is the title displayed on the sign up screen"
     }, 
-    "signUpFullNameTextFieldLabel": "Full Name",
+    "signUpFullNameTextFieldLabel": "Full name",
     "@signUpFullNameTextFieldLabel": {
         "description": "This is the label displayed on the sign up screen for the name textfield"
     },
