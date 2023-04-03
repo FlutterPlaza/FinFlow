@@ -89,43 +89,31 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
             //errorText: widget.errorText,
             suffixIcon: !widget.isPassword
                 ? null
-                : hidePassword!
-                    ? Padding(
-                        padding:
-                            EdgeInsets.only(right: widget.box.maxWidth * 0.05),
-                        child: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              hidePassword = !hidePassword!;
-                            });
-                          },
-                          icon: const Icon(FpbIcons.eye_closed),
-                          color: widget.node != null
-                              ? widget.node!.hasFocus
-                                  ? theme.colorScheme.onSurface
-                                  : null
-                              : theme.colorScheme.onSurface,
-                        ),
-                      )
-                    : Padding(
-                        padding:
-                            EdgeInsets.only(right: widget.box.maxWidth * 0.05),
-                        child: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              hidePassword = !hidePassword!;
-                            });
-                          },
-                          icon: const Icon(
-                            FpbIcons.eye_open,
-                          ),
-                          color: widget.node != null
-                              ? widget.node!.hasFocus
-                                  ? theme.colorScheme.onSurface
-                                  : null
-                              : theme.colorScheme.onSurface,
-                        ),
+                : Padding(
+                    padding:
+                        EdgeInsets.only(right: widget.box.maxWidth * 0.015),
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          hidePassword = !hidePassword!;
+                        });
+                      },
+                      icon: Icon(
+                        hidePassword == true
+                            ? FpbIcons.eye_open
+                            : FpbIcons.eye_closed,
+                        color: theme.colorScheme.secondary,
+                        size: hidePassword == true
+                            ? widget.box.maxHeight * 0.02
+                            : widget.box.maxHeight * 0.03,
                       ),
+                      color: widget.node != null
+                          ? widget.node!.hasFocus
+                              ? theme.colorScheme.onSurface
+                              : null
+                          : theme.colorScheme.onSurface,
+                    ),
+                  ),
             hintText: widget.hint,
           ),
         )

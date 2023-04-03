@@ -183,14 +183,18 @@ class _SignInBodyState extends State<SignInBody>
                                             children: [
                                               EmailInput(box: cts),
                                               PasswordInput(box: cts),
-                                              Text(
-                                                l10n.signInForgotPasswordText,
-                                                style: theme
-                                                    .textTheme.bodyMedium
-                                                    ?.copyWith(
-                                                  color: theme
-                                                      .colorScheme.secondary,
-                                                  fontWeight: FontWeight.w600,
+                                              GestureDetector(
+                                                onTap: () =>
+                                                    print('Forgot pass'),
+                                                child: Text(
+                                                  l10n.signInForgotPasswordText,
+                                                  style: theme
+                                                      .textTheme.bodyMedium
+                                                      ?.copyWith(
+                                                    color: theme
+                                                        .colorScheme.secondary,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -258,6 +262,7 @@ class _SignInBodyState extends State<SignInBody>
                                         l10n.signInNotAMemberYetText,
                                         style: style.titleSmall?.copyWith(
                                           color: theme.colorScheme.secondary,
+                                          fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       TextButton(
@@ -266,8 +271,9 @@ class _SignInBodyState extends State<SignInBody>
                                         },
                                         child: Text(
                                           l10n.signInSignUpLabel,
-                                          style: style.titleMedium?.copyWith(
+                                          style: style.titleSmall?.copyWith(
                                             color: theme.colorScheme.primary,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                       ),
