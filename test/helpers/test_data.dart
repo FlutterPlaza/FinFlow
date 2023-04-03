@@ -1,3 +1,4 @@
+import 'package:fpb/core/domain/ActivityCardModel.dart';
 import 'package:fpb/core/domain/user.dart';
 import 'package:fpb/core/domain/virtualCard.dart';
 
@@ -57,6 +58,42 @@ final listOfVirtualCards = [
     cvv: '123',
     type: 'visa',
     lastFourDigits: '7070',
+  ),
+];
+
+// activities test data
+final activitiestTestData = [
+  const ActivityCardModel(
+    id: 1,
+    dateTime: 'August 3, 3: 45pm',
+    isFavorite: true,
+    transactionAmt: '500',
+    username: '@john_merry',
+    type: 'debit',
+  ),
+  const ActivityCardModel(
+    id: 2,
+    dateTime: 'August 3, 3: 45pm',
+    isFavorite: false,
+    transactionAmt: '120',
+    username: '@amanda',
+    type: 'credit',
+  ),
+  const ActivityCardModel(
+    id: 3,
+    dateTime: 'August 3, 3: 45pm',
+    isFavorite: false,
+    transactionAmt: '350',
+    username: '@dezzy',
+    type: 'debit',
+  ),
+  const ActivityCardModel(
+    id: 4,
+    dateTime: 'August 3, 3: 45pm',
+    isFavorite: false,
+    transactionAmt: '300',
+    username: '@jeff',
+    type: 'debit',
   ),
 ];
 
