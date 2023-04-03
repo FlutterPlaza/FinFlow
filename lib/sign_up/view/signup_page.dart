@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart';
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
@@ -13,6 +12,7 @@ import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
+import 'package:fpb/sign_in/view/sign_in_page.dart';
 import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -84,13 +84,17 @@ class _SignUpBodyState extends State<SignUpBody>
                       resizeToAvoidBottomInset: false,
                       body: Stack(
                         children: [
-                          Positioned(
-                            top: -box.maxHeight * .03,
-                            child: SvgPicture.asset(
-                              SvgNames.authBackground,
-                              width: box.maxWidth,
-                              height: box.maxHeight * 0.3,
-                            ),
+                          // Positioned(
+                          //   top: -box.maxHeight * .03,
+                          //   child: SvgPicture.asset(
+                          //     SvgNames.authBackground,
+                          //     width: box.maxWidth,
+                          //     height: box.maxHeight * 0.3,
+                          //   ),
+                          // ),
+                          BubblesTopBackGround(
+                            cts: box,
+                            svgName: SvgNames.authBackground,
                           ),
                           Align(
                             alignment: Alignment.bottomCenter,
@@ -126,7 +130,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                     unselectedLabelStyle:
                                         theme.textTheme.titleSmall?.copyWith(
                                       color: theme.colorScheme.surface,
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                     labelStyle:
                                         theme.textTheme.titleSmall?.copyWith(
@@ -261,9 +265,9 @@ class _SignUpBodyState extends State<SignUpBody>
                                   ),
                                   AlternativeAuth(box: box),
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                      top: 25,
-                                      bottom: 8,
+                                    padding: EdgeInsets.only(
+                                      top: box.maxHeight * 0.001,
+                                      bottom: box.maxHeight * 0.0001,
                                     ),
                                     child: Row(
                                       mainAxisAlignment:
@@ -274,6 +278,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                           key: Key('AlreadyAMember'),
                                           style: style.titleSmall?.copyWith(
                                             color: theme.colorScheme.secondary,
+                                            fontWeight: FontWeight.w400,
                                           ),
                                         ),
                                         TextButton(
@@ -284,6 +289,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                             'Login',
                                             style: style.titleMedium?.copyWith(
                                               color: theme.colorScheme.primary,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),

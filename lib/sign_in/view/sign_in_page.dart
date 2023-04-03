@@ -131,12 +131,12 @@ class _SignInBodyState extends State<SignInBody>
                                   unselectedLabelStyle:
                                       theme.textTheme.titleSmall?.copyWith(
                                     color: theme.colorScheme.surface,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                   labelStyle:
                                       theme.textTheme.titleSmall?.copyWith(
                                     color: theme.colorScheme.surface,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                   onTap: (_) {
                                     setState(() {
@@ -183,14 +183,18 @@ class _SignInBodyState extends State<SignInBody>
                                             children: [
                                               EmailInput(box: cts),
                                               PasswordInput(box: cts),
-                                              Text(
-                                                l10n.signInForgotPasswordText,
-                                                style: theme
-                                                    .textTheme.bodyMedium
-                                                    ?.copyWith(
-                                                  color: theme
-                                                      .colorScheme.secondary,
-                                                  fontWeight: FontWeight.w600,
+                                              GestureDetector(
+                                                onTap: () =>
+                                                    print('Forgot pass'),
+                                                child: Text(
+                                                  l10n.signInForgotPasswordText,
+                                                  style: theme
+                                                      .textTheme.bodyMedium
+                                                      ?.copyWith(
+                                                    color: theme
+                                                        .colorScheme.secondary,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                                 ),
                                               ),
                                             ],
@@ -198,14 +202,29 @@ class _SignInBodyState extends State<SignInBody>
                                         ),
                                         SingleChildScrollView(
                                           child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            mainAxisSize: MainAxisSize.min,
                                             children: [
                                               PhoneNumberInput(
                                                   l10n: l10n, cts: cts),
                                               PasswordInput(
                                                   key: Key('PhoneNumberInput'),
                                                   box: cts),
+                                              GestureDetector(
+                                                onTap: () =>
+                                                    print('Forgot pass'),
+                                                child: Text(
+                                                  l10n.signInForgotPasswordText,
+                                                  style: theme
+                                                      .textTheme.bodyMedium
+                                                      ?.copyWith(
+                                                    color: theme
+                                                        .colorScheme.secondary,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -258,6 +277,7 @@ class _SignInBodyState extends State<SignInBody>
                                         l10n.signInNotAMemberYetText,
                                         style: style.titleSmall?.copyWith(
                                           color: theme.colorScheme.secondary,
+                                          fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       TextButton(
@@ -266,8 +286,9 @@ class _SignInBodyState extends State<SignInBody>
                                         },
                                         child: Text(
                                           l10n.signInSignUpLabel,
-                                          style: style.titleMedium?.copyWith(
+                                          style: style.titleSmall?.copyWith(
                                             color: theme.colorScheme.primary,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                       ),

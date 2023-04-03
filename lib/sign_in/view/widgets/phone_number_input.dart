@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fpb/core/presentation/extension/extensions.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -28,9 +29,6 @@ class PhoneNumberInput extends StatelessWidget {
           l10n.signInPhoneNumberFieldLabel,
           style: style.titleSmall,
         ),
-        SizedBox(
-          height: cts.maxHeight * 0.01,
-        ),
         IntlPhoneField(
           disableLengthCheck: true,
           flagsButtonPadding: EdgeInsets.all(
@@ -51,10 +49,9 @@ class PhoneNumberInput extends StatelessWidget {
             ),
           ),
           initialCountryCode: 'US',
+        ).card(
+          height: cts.maxHeight * 0.08,
         ),
-        SizedBox(
-          height: cts.maxHeight * .02,
-        )
       ],
     );
   }
