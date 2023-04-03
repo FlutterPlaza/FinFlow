@@ -13,6 +13,7 @@ class VirtualCardsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final box = MediaQuery.of(context).size;
     final l10n = context.l10n;
+    final theme = Theme.of(context);
 
     return Container(
       child: Stack(
@@ -47,136 +48,128 @@ class VirtualCardsWidget extends StatelessWidget {
                 bottom: box.height * 0.025,
                 right: box.height * 0.025,
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '\$ ${cardItem.balance}',
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            // color: _AppColors.onSurfaceW,
-                            ),
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/fpb-assets/visa_v_icon.png',
-                            // color: _AppColors.onSurfaceW,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '\$ ${cardItem.balance}',
+                          key: Key('CardBalance'),
+                          style: theme.textTheme.titleLarge?.copyWith(
+                            color: theme.colorScheme.background,
                           ),
-                          Image.asset(
-                            'assets/fpb-assets/visa_i_icon.png',
-                            // color: _AppColors.onSurfaceW,
-                          ),
-                          Image.asset(
-                            'assets/fpb-assets/visa_s_icon.png',
-                            // color: _AppColors.onSurfaceW,
-                          ),
-                          Image.asset(
-                            'assets/fpb-assets/visa_a_icon.png',
-                            // color: _AppColors.onSurfaceW,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: box.height * 0.02,
-                  ),
-                  Text(
-                    l10n.homeScreenCardNumber,
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        // color: _AppColors.onSurfaceW,
                         ),
-                  ),
-                  SizedBox(
-                    height: box.height * 0.008,
-                  ),
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          FourDots(),
-                          FourDots(),
-                          FourDots(),
-                          Text(
-                            cardItem.lastFourDigits,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium
-                                ?.copyWith(
-                                    // color: _AppColors.onSurfaceW,
-                                    ),
-                          ),
-                        ],
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/fpb-assets/visa_v_icon.png',
+                              // color: _AppColors.onSurfaceW,
+                            ),
+                            Image.asset(
+                              'assets/fpb-assets/visa_i_icon.png',
+                              // color: _AppColors.onSurfaceW,
+                            ),
+                            Image.asset(
+                              'assets/fpb-assets/visa_s_icon.png',
+                              // color: _AppColors.onSurfaceW,
+                            ),
+                            Image.asset(
+                              'assets/fpb-assets/visa_a_icon.png',
+                              // color: _AppColors.onSurfaceW,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: box.height * 0.02,
+                    ),
+                    Text(
+                      l10n.homeScreenCardNumber,
+                      style: theme.textTheme.labelMedium?.copyWith(
+                        color: theme.colorScheme.background,
                       ),
-                      SizedBox(
-                        height: box.height * 0.015,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            l10n.homeScreenEmpty,
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium
-                                ?.copyWith(
-                                    // color: _AppColors.onSurfaceW,
-                                    ),
+                    ),
+                    SizedBox(
+                      height: box.height * 0.008,
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            FourDots(),
+                            FourDots(),
+                            FourDots(),
+                            Text(
+                              cardItem.lastFourDigits,
+                              key: Key('LastFourDigits'),
+                              style: theme.textTheme.titleMedium?.copyWith(
+                                color: theme.colorScheme.background,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: box.height * 0.015,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              l10n.homeScreenExpiry,
+                              style: theme.textTheme.labelMedium?.copyWith(
+                                color: theme.colorScheme.background,
+                              ),
+                            ),
+                            Text(
+                              'CCV',
+                              style: theme.textTheme.labelMedium?.copyWith(
+                                color: theme.colorScheme.background,
+                              ),
+                            ),
+                            const Text('        '),
+                            const Text('  '),
+                          ],
+                        ),
+                        SizedBox(
+                          height: box.height * 0.001,
+                        ),
+                        SingleChildScrollView(
+                          //scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                cardItem.expiry,
+                                style: theme.textTheme.titleSmall?.copyWith(
+                                  color: theme.colorScheme.background,
+                                ),
+                              ),
+                              Text(
+                                cardItem.cvv,
+                                style: theme.textTheme.titleSmall?.copyWith(
+                                  color: theme.colorScheme.background,
+                                ),
+                              ),
+                              const Text('     '),
+                              Icon(
+                                FpbIcons.eye_open,
+                                color: theme.colorScheme.background,
+                                size: 15,
+                              )
+                            ],
                           ),
-                          Text(
-                            'CCV',
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium
-                                ?.copyWith(
-                                    // color: _AppColors.onSurfaceW,
-                                    ),
-                          ),
-                          const Text('        '),
-                          const Text('  '),
-                        ],
-                      ),
-                      SizedBox(
-                        height: box.height * 0.001,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            cardItem.expiry,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall
-                                ?.copyWith(
-                                    // color: _AppColors.onSurfaceW,
-                                    ),
-                          ),
-                          Text(
-                            cardItem.cvv,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall
-                                ?.copyWith(
-                                    // color: _AppColors.onSurfaceW,
-                                    ),
-                          ),
-                          const Text('             '),
-                          Icon(
-                            FpbIcons.eye_open,
-                            // color: _AppColors.onSurfaceW,
-                            size: 18,
-                          )
-                        ],
-                      )
-                    ],
-                  )
-                ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),
