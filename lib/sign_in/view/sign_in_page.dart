@@ -166,9 +166,6 @@ class _SignInBodyState extends State<SignInBody>
                                   radius: cts.maxWidth * 0.02,
                                   height: cts.maxHeight * 0.07,
                                 ),
-                                SizedBox(
-                                  height: 0.015 * cts.maxHeight,
-                                ),
                                 Flexible(
                                   child: Form(
                                     child: TabBarView(
@@ -181,8 +178,17 @@ class _SignInBodyState extends State<SignInBody>
                                                 CrossAxisAlignment.end,
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
+                                              SizedBox(
+                                                height: cts.maxHeight * 0.02,
+                                              ),
                                               EmailInput(box: cts),
+                                              SizedBox(
+                                                height: cts.maxHeight * 0.02,
+                                              ),
                                               PasswordInput(box: cts),
+                                              SizedBox(
+                                                height: cts.maxHeight * 0.01,
+                                              ),
                                               GestureDetector(
                                                 onTap: () =>
                                                     print('Forgot pass'),
@@ -206,11 +212,20 @@ class _SignInBodyState extends State<SignInBody>
                                                 CrossAxisAlignment.end,
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
+                                              SizedBox(
+                                                height: cts.maxHeight * 0.02,
+                                              ),
                                               PhoneNumberInput(
                                                   l10n: l10n, cts: cts),
+                                              SizedBox(
+                                                height: cts.maxHeight * 0.02,
+                                              ),
                                               PasswordInput(
                                                   key: Key('PhoneNumberInput'),
                                                   box: cts),
+                                              SizedBox(
+                                                height: cts.maxHeight * 0.01,
+                                              ),
                                               GestureDetector(
                                                 onTap: () =>
                                                     print('Forgot pass'),
@@ -379,12 +394,11 @@ class BubblesTopBackGround extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: -.035 * cts.maxHeight,
+    return Align(
+      alignment: Alignment.topCenter,
       child: SvgPicture.asset(
         svgName,
         width: cts.maxWidth,
-        height: 0.4 * cts.maxHeight,
       ),
     );
   }

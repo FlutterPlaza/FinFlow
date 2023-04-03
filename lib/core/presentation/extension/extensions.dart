@@ -15,13 +15,14 @@ mixin SvgPictureX {
 }
 
 extension ContainerX on Widget {
-  Widget validatorWidget(String? errorMessage) {
+  Widget inputErrorMessage(String? errorMessage) {
     return Column(
       children: [
         this,
-        SizedBox(
-          height: 5,
-        ),
+        if (errorMessage != null)
+          SizedBox(
+            height: 5,
+          ),
         if (errorMessage != null)
           Row(
             children: [

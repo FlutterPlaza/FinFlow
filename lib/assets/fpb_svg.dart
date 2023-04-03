@@ -5,6 +5,7 @@ const path = 'assets/fpb-assets/';
 class SvgNames {
   const SvgNames._();
   static String authBackground = '${path}auth_background.svg';
+  static String authSignupBackground = '${path}auth_signup_background.png';
   static String circle = '${path}circle.svg';
   static String emailConfirmation = '${path}email_confirmation.svg';
   static String saveIllustration = '${path}save_illustration.svg';
