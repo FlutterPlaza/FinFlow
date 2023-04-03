@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/core/presentation/extension/extensions.dart';
+import 'package:fpb/l10n/l10n.dart';
 
 class MessageTextField extends StatefulWidget {
   const MessageTextField(
@@ -56,11 +56,12 @@ class _MessageTextFieldState extends State<MessageTextField> {
           ),
         )
             .card(
-                padding:
-                    EdgeInsets.symmetric(vertical: widget.box.maxHeight * .007))
-            .validatorWidget(
-                //messageController.text.isEmpty ? null :
-                widget.validator?.call(messageController.text)),
+              padding:
+                  EdgeInsets.symmetric(vertical: widget.box.maxHeight * .007),
+            )
+            .inputErrorMessage(
+              widget.validator?.call(messageController.text),
+            ),
       ],
     );
   }

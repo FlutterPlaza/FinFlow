@@ -8,11 +8,11 @@ import 'package:fpb/authentication_with_google/view/loading_indicator.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
 import 'package:fpb/core/presentation/extension/extensions.dart';
 import 'package:fpb/core/presentation/widget/fpb_button.dart';
-import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
+import 'package:fpb/core/presentation/widget/fpb_text_form_field_v2.dart';
+import 'package:fpb/core/shared/helpers/is_keyboard_visible.dart';
 import 'package:fpb/injection.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/onboarding/view/widgets/alternative_auth.dart';
-import 'package:fpb/sign_in/view/sign_in_page.dart';
 import 'package:fpb/sign_in/view/widgets/phone_number_input.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -84,31 +84,26 @@ class _SignUpBodyState extends State<SignUpBody>
                       resizeToAvoidBottomInset: false,
                       body: Stack(
                         children: [
-                          // Positioned(
-                          //   top: -box.maxHeight * .03,
-                          //   child: SvgPicture.asset(
-                          //     SvgNames.authBackground,
-                          //     width: box.maxWidth,
-                          //     height: box.maxHeight * 0.3,
-                          //   ),
-                          // ),
-                          BubblesTopBackGround(
-                            cts: box,
-                            svgName: SvgNames.authBackground,
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Image.asset(
+                              SvgNames.authSignupBackground,
+                              width: box.maxWidth,
+                            ),
                           ),
                           Align(
                             alignment: Alignment.bottomCenter,
                             child: Container(
-                              height: box.maxHeight * .85,
-                              padding: const EdgeInsets.all(18),
-                              decoration: BoxDecoration(
-                                color: theme.colorScheme.background,
-                                // color: Colors.red,
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
-                                ),
-                              ),
+                              // height: box.maxHeight * .85,
+                              // padding: const EdgeInsets.all(18),
+                              // decoration: BoxDecoration(
+                              //   color: theme.colorScheme.background,
+                              //   // color: Colors.red,
+                              //   borderRadius: const BorderRadius.only(
+                              //     topLeft: Radius.circular(20),
+                              //     topRight: Radius.circular(20),
+                              //   ),
+                              // ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -177,30 +172,41 @@ class _SignUpBodyState extends State<SignUpBody>
                                                   CrossAxisAlignment.end,
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
+                                                SizedBox(
+                                                  height: box.maxHeight * 0.02,
+                                                ),
                                                 FpbTextFormField(
                                                   key: Key('FullnameField'),
                                                   label: l10n
                                                       .signUpFullNameTextFieldLabel,
-                                                  hint: l10n
+                                                  hintText: l10n
                                                       .signUpFullNameTextFieldHintText,
                                                   box: box,
+                                                ),
+                                                SizedBox(
+                                                  height: box.maxHeight * 0.02,
                                                 ),
                                                 FpbTextFormField(
                                                   key: Key('EmailField'),
                                                   label: l10n
                                                       .signInEmailTextFieldLabel,
-                                                  hint: l10n
+                                                  hintText: l10n
                                                       .signInEmailTextFieldHintText,
-                                                  isEmail: true,
+                                                  keyboardType: TextInputType
+                                                      .emailAddress,
                                                   box: box,
+                                                ),
+                                                SizedBox(
+                                                  height: box.maxHeight * 0.02,
                                                 ),
                                                 FpbTextFormField(
                                                   key: Key('PasswordField'),
                                                   label: l10n
                                                       .signInPasswordFieldLabel,
-                                                  hint: l10n
+                                                  hintText: l10n
                                                       .signInPasswordFieldHintText,
-                                                  isPassword: true,
+                                                  keyboardType: TextInputType
+                                                      .visiblePassword,
                                                   box: box,
                                                 ),
                                               ],
@@ -296,10 +302,22 @@ class _SignUpBodyState extends State<SignUpBody>
                                     ),
                                   ),
                                 ],
+                              ).card(
+                                height:
+                                    (isKeyboardVisible(context) ? .95 : .85) *
+                                        box.maxHeight,
+                                radiusTop: box.maxWidth * 0.05,
+                                color: theme.colorScheme.onSurface,
+                                padding: EdgeInsets.all(box.maxHeight * 0.025),
                               ),
                             ),
                           )
                         ],
+                      ).card(
+                        // height: (isKeyboardVisible(context) ? .95 : .8) *
+                        //     cts.maxHeight,
+                        radiusTop: box.maxWidth * 0.05,
+                        color: theme.colorScheme.background,
                       ),
                     ),
                   );

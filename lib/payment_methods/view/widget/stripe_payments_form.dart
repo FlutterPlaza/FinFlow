@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/core/presentation/widget/fpb_button.dart';
-import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
+import 'package:fpb/core/presentation/widget/fpb_text_form_field_v2.dart';
 import 'package:fpb/core/presentation/widget/vertical_spacing_widget.dart';
 
 class StripePaymentsForm extends StatefulWidget {
@@ -32,7 +32,7 @@ class _StripePaymentsFormState extends State<StripePaymentsForm> {
           FpbTextFormField(
             onChanged: (value) {},
             label: 'Card Number',
-            hint: '**** **** **** 1234',
+            hintText: '**** **** **** 1234',
             box: widget.box,
             keyboardType: TextInputType.number,
           ),
@@ -47,7 +47,7 @@ class _StripePaymentsFormState extends State<StripePaymentsForm> {
                   child: FpbTextFormField(
                     onChanged: (value) {},
                     label: 'Expiry Date',
-                    hint: 'DD.MM.YY',
+                    hintText: 'DD.MM.YY',
                     box: widget.box,
                   ),
                 ),
@@ -56,7 +56,7 @@ class _StripePaymentsFormState extends State<StripePaymentsForm> {
                   child: FpbTextFormField(
                     onChanged: (value) {},
                     label: 'CVV',
-                    hint: '000',
+                    hintText: '000',
                     box: widget.box,
                     keyboardType: TextInputType.number,
                   ),

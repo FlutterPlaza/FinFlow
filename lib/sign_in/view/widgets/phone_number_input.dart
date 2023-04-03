@@ -29,6 +29,9 @@ class PhoneNumberInput extends StatelessWidget {
           l10n.signInPhoneNumberFieldLabel,
           style: style.titleSmall,
         ),
+        SizedBox(
+          height: cts.maxHeight * 0.00945,
+        ),
         IntlPhoneField(
           disableLengthCheck: true,
           flagsButtonPadding: EdgeInsets.all(
@@ -50,7 +53,7 @@ class PhoneNumberInput extends StatelessWidget {
           ),
           initialCountryCode: 'US',
         ).card(
-          height: cts.maxHeight * 0.08,
+          height: cts.maxHeight * 0.07,
         ),
       ],
     );

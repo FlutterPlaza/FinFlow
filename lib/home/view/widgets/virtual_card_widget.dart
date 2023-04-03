@@ -122,7 +122,8 @@ class VirtualCardsWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              l10n.homeScreenExpiry,
+                              //TODO: add this to the localization file (homeScreenExpiry)
+                              "l10n.homeScreenExpiry",
                               style: theme.textTheme.labelMedium?.copyWith(
                                 color: theme.colorScheme.background,
                               ),

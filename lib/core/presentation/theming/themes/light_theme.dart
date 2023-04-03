@@ -178,8 +178,7 @@ ThemeData whiteTheme(BuildContext context, BoxConstraints cts) {
         ),
       ),
       errorMaxLines: 1,
-      contentPadding: EdgeInsets.symmetric(
-          horizontal: cts.maxWidth * 0.035, vertical: cts.maxWidth * 0.05),
+      contentPadding: EdgeInsets.symmetric(horizontal: cts.maxWidth * 0.04),
     ),
     scaffoldBackgroundColor: _AppColors.onSurfaceW,
     // scaffoldBackgroundColor: _AppColors.dark,

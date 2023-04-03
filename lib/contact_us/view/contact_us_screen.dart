@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_svg.dart';
 import 'package:fpb/contact_us/view/widgets/message_textfield.dart';
 import 'package:fpb/core/presentation/widget/fpb_button.dart';
-import 'package:fpb/core/presentation/widget/fpb_text_form_field.dart';
+import 'package:fpb/core/presentation/widget/fpb_text_form_field_v2.dart';
 import 'package:fpb/core/shared/helpers/extensions.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/router/app_route.gr.dart';
@@ -85,17 +85,19 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                       },
                                       textController: nameController,
                                       label: l10n.contactUsNameTextFieldLabel,
-                                      hint: l10n.contactUsNameTextFieldHintText,
+                                      hintText:
+                                          l10n.contactUsNameTextFieldHintText,
                                       box: box,
-                                      validator: (val) {
-                                        if (val!.isEmpty) {
+                                      errorMsg: () {
+                                        if (nameController.text.isEmpty) {
                                           return 'Field is required';
-                                        } else if (val.isValidName) {
+                                        } else if (nameController
+                                            .text.isValidName) {
                                           return null;
                                         } else {
                                           return l10n.contactUsNameErrorText;
                                         }
-                                      },
+                                      }(),
                                     ),
                                     SizedBox(
                                       height: box.maxHeight * .03,
@@ -107,17 +109,19 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                       },
                                       textController: emailController,
                                       label: l10n.signInEmailTextFieldLabel,
-                                      hint: l10n.signInEmailTextFieldHintText,
+                                      hintText:
+                                          l10n.signInEmailTextFieldHintText,
                                       box: box,
-                                      validator: (val) {
-                                        if (val!.isEmpty) {
+                                      errorMsg: () {
+                                        if (nameController.text.isEmpty) {
                                           return 'Field is required';
-                                        } else if (val.isValidEmail) {
+                                        } else if (nameController
+                                            .text.isValidEmail) {
                                           return null;
                                         } else {
                                           return l10n.contactUsEmailErrorText;
                                         }
-                                      },
+                                      }(),
                                     ),
                                     SizedBox(
                                       height: box.maxHeight * .03,
