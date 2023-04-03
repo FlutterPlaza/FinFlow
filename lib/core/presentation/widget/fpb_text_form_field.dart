@@ -118,10 +118,8 @@ class _FpbTextFormFieldState extends State<FpbTextFormField> {
           ),
         )
             .card(
-                //height: widget.box.maxHeight * 0.14,
-                padding: EdgeInsets.symmetric(
-              vertical: widget.box.maxHeight * 0.009,
-            ))
+              height: widget.box.maxHeight * 0.08,
+            )
             .validatorWidget(
                 //widget.textController != null && widget.textController!.text.isEmpty ? null :
                 widget.validator?.call(widget.textController?.text)),
