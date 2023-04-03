@@ -59,6 +59,7 @@ class _CircularSliderState extends State<CircularSliderPaint> {
   bool _isEndHandlerSelected = false;
 
   late SliderPainter _painter;
+  late SliderPainter _painterOne;
 
   /// start angle in radians where we need to locate the init handler
   double _startAngle = 0.0;
@@ -120,18 +121,43 @@ class _CircularSliderState extends State<CircularSliderPaint> {
           (CustomPanGestureRecognizer instance) {},
         ),
       },
-      child: CustomPaint(
-        painter: BasePainter(
-          baseColor: widget.baseColor,
-          selectionColor: widget.selectionColor,
-          primarySectors: widget.primarySectors,
-          secondarySectors: widget.secondarySectors,
-          sliderStrokeWidth: widget.sliderStrokeWidth,
-        ),
-        foregroundPainter: _painter,
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: widget.child,
+      child: Container(
+        alignment: Alignment.center,
+        child: 
+            Stack(
+              children: [
+                CustomPaint(
+                  // full circle - unallocated budget
+                  painter: BasePainter(
+                    baseColor: widget.baseColor,
+                    selectionColor: widget.selectionColor,
+                    primarySectors: widget.primarySectors,
+                    secondarySectors: widget.secondarySectors,
+                    sliderStrokeWidth: widget.sliderStrokeWidth,
+                  ),
+                  // foregroundPainter: _painter, // slider for budget
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: widget.child,
+                  ),
+                ),
+             
+            CustomPaint(
+              // full circle - unallocated budget
+              // painter: BasePainter(
+              //   baseColor: Colors.blue,
+              //   selectionColor: widget.selectionColor,
+              //   primarySectors: widget.primarySectors,
+              //   secondarySectors: widget.secondarySectors,
+              //   sliderStrokeWidth: widget.sliderStrokeWidth,
+              // ),
+              foregroundPainter: _painter, // slider for budget
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: widget.child,
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -173,8 +199,8 @@ class _CircularSliderState extends State<CircularSliderPaint> {
         }
       }
     }
-
-    _painter = SliderPainter(
+ 
+    _painterOne = SliderPainter(
       mode: widget.mode,
       startAngle: _startAngle,
       endAngle: _endAngle,
@@ -185,6 +211,21 @@ class _CircularSliderState extends State<CircularSliderPaint> {
       showRoundedCapInSelection: widget.showRoundedCapInSelection,
       showHandlerOutter: widget.showHandlerOutter,
       sliderStrokeWidth: widget.sliderStrokeWidth,
+    );
+
+    _painter = SliderPainter(
+      mode: widget.mode,
+      startAngle: _startAngle,
+      endAngle: _endAngle,
+      sweepAngle: _sweepAngle,
+      selectionColor: widget.selectionColor,
+      // selectionColor: Colors.yellow,
+      handlerColor: widget.handlerColor,
+      handlerOutterRadius: widget.handlerOutterRadius,
+      showRoundedCapInSelection: widget.showRoundedCapInSelection,
+      showHandlerOutter: widget.showHandlerOutter,
+      sliderStrokeWidth: widget.sliderStrokeWidth,
+      // sliderStrokeWidth: 12.0,
     );
   }
 

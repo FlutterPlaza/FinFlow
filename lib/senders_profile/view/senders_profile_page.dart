@@ -135,10 +135,20 @@ class SendersProfilePage extends StatelessWidget {
               ActivityCard(
                 context: context,
                 box: box,
+                dateTime: 'August 3, 3: 45pm',
+                isFavorite: false,
+                transactionAmt: '',
+                username: '@john_merry',
+                type: 'debit',
               ),
               ActivityCard(
                 context: context,
                 box: box,
+                dateTime: 'August 3, 3: 45pm',
+                isFavorite: false,
+                transactionAmt: '',
+                username: '@john_merry',
+                type: 'debit',
               ),
             ],
           ).paddingDefault(box);

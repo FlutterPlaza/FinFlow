@@ -15,7 +15,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart' as _i5;
 import 'package:fpb/authentication_mock_without_backend/application/bloc/authentication_bloc.dart'
     as _i19;
 import 'package:fpb/authentication_mock_without_backend/infrastructure/authentication_mock_module_injection.dart'
-    as _i33;
+    as _i31;
 import 'package:fpb/authentication_with_facebook/application/facebook_auth_bloc.dart'
     as _i22;
 import 'package:fpb/authentication_with_facebook/domain/i_facebook_repository_facade.dart'
@@ -23,7 +23,7 @@ import 'package:fpb/authentication_with_facebook/domain/i_facebook_repository_fa
 import 'package:fpb/authentication_with_facebook/infrastructure/facebook_auth_repository.dart'
     as _i13;
 import 'package:fpb/authentication_with_facebook/infrastructure/facebook_authentication_injectable_module.dart'
-    as _i35;
+    as _i32;
 import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart'
     as _i28;
 import 'package:fpb/authentication_with_firebase/domain/i_auth_facade.dart'
@@ -31,13 +31,13 @@ import 'package:fpb/authentication_with_firebase/domain/i_auth_facade.dart'
 import 'package:fpb/authentication_with_firebase/infrastructure/firebase_auth_facade_impl.dart'
     as _i26;
 import 'package:fpb/authentication_with_firebase/infrastructure/firebase_auth_injectable_module.dart'
-    as _i34;
+    as _i33;
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart'
     as _i23;
 import 'package:fpb/authentication_with_google/domain/i_google_repository_facade.dart'
     as _i14;
 import 'package:fpb/authentication_with_google/infrastructure/google_authentication_injectable_module.dart'
-    as _i31;
+    as _i34;
 import 'package:fpb/authentication_with_google/infrastructure/google_authentication_repository.dart'
     as _i15;
 import 'package:fpb/contact_us/application/contact_us_bloc/contact_us_bloc.dart'
@@ -50,7 +50,7 @@ import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dar
     as _i29;
 import 'package:fpb/core/application/internet_and_time_bloc/internet_and_time_bloc.dart'
     as _i30;
-import 'package:fpb/core/infrastructure/core_injectable_module.dart' as _i32;
+import 'package:fpb/core/infrastructure/core_injectable_module.dart' as _i35;
 import 'package:fpb/core/settings/app_settings_helper.dart' as _i27;
 import 'package:fpb/core/settings/cached.dart' as _i20;
 import 'package:fpb/home/application/home_view_bloc/home_view_bloc.dart'
@@ -147,16 +147,16 @@ extension GetItInjectableX on _i1.GetIt {
   }
 }
 
-class _$GoogleAuthenticationInjectableModule
-    extends _i31.GoogleAuthenticationInjectableModule {}
-
-class _$CoreInjectableModule extends _i32.CoreInjectableModule {}
-
 class _$AuthenticationMockModuleInjection
-    extends _i33.AuthenticationMockModuleInjection {}
-
-class _$FirebaseAuthInjectableModule
-    extends _i34.FirebaseAuthInjectableModule {}
+    extends _i31.AuthenticationMockModuleInjection {}
 
 class _$FacebookAuthenticationInjectableModule
-    extends _i35.FacebookAuthenticationInjectableModule {}
+    extends _i32.FacebookAuthenticationInjectableModule {}
+
+class _$FirebaseAuthInjectableModule
+    extends _i33.FirebaseAuthInjectableModule {}
+
+class _$GoogleAuthenticationInjectableModule
+    extends _i34.GoogleAuthenticationInjectableModule {}
+
+class _$CoreInjectableModule extends _i35.CoreInjectableModule {}

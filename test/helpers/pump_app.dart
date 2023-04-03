@@ -13,6 +13,7 @@ import 'package:fpb/authentication_with_firebase/application/bloc/auth_bloc.dart
 import 'package:fpb/authentication_with_google/application/google_auth_bloc/google_sign_in_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
 import 'package:fpb/core/application/internet_and_time_bloc/internet_and_time_bloc.dart';
+import 'package:fpb/core/presentation/theming/themes/theme.dart';
 import 'package:fpb/home/application/home_view_bloc/home_view_bloc.dart';
 import 'package:fpb/l10n/l10n.dart';
 

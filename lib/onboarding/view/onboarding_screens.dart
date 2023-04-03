@@ -27,6 +27,11 @@ class OnboardingScreen extends HookWidget {
           duration: Duration(milliseconds: 300),
           curve: Curves.ease,
         ),
+        onSkipPressed: () => pageController.animateToPage(
+          2,
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
+        ),
       ),
       Illustration(
         assetName: SvgNames.saveIllustration,
@@ -37,6 +42,10 @@ class OnboardingScreen extends HookWidget {
           duration: Duration(milliseconds: 300),
           curve: Curves.ease,
         ),
+        onSkipPressed: () => pageController.nextPage(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
+        ),
       ),
       Illustration(
         assetName: SvgNames.transIllustration,
@@ -44,8 +53,8 @@ class OnboardingScreen extends HookWidget {
         description: l10n.onboardingTransactionDescription,
         onNextPressed: onGetStartedPressed ??
             () {
-              context.router.popUntil((route) => route.isFirst);
-              context.router.push(SignInRoute());
+              // context.router.popUntil((route) => route.isFirst);
+              context.router.replace(SignInRoute());
             },
       ),
     ];

@@ -42,25 +42,41 @@ class SliderPainter extends CustomPainter {
     Paint progress = _getPaint(color: selectionColor);
 
     center = Offset(size.width / 2, size.height / 2);
-    radius = min(size.width / 3, size.height / 2) - sliderStrokeWidth;
+    radius = min(size.width / 1, size.height / 2) - sliderStrokeWidth;
 
-    canvas.drawArc(Rect.fromCircle(center: center, radius: radius),
-        -pi / 2 + startAngle, sweepAngle, false, progress);
+    canvas.drawArc(
+      Rect.fromCircle(center: center, radius: radius),
+      -pi / 2 + startAngle,
+      sweepAngle,
+      false,
+      progress,
+    );
 
-    Paint handler = _getPaint(color: handlerColor, style: PaintingStyle.fill);
-    Paint handlerOutter = _getPaint(color: handlerColor, width: 10.0);
+    Paint handler = _getPaint(
+      color: handlerColor,
+      // color: Colors.blue,
+      style: PaintingStyle.stroke,
+    );
+    Paint handlerOutter = _getPaint(
+      color: handlerColor,
+      width: 8.0,
+    );
 
-    // draw handlers
-    if (mode == CircularSliderMode.doubleHandler) {
-      initHandler = radiansToCoordinates(center, -pi / 2 + startAngle, radius);
-      canvas.drawCircle(initHandler, 8.0, handler);
-      canvas.drawCircle(initHandler, handlerOutterRadius, handlerOutter);
-    }
+    // draw handlers - show handler on both end of the slider
+    // if (mode == CircularSliderMode.singleHandler) {
+    //   initHandler = radiansToCoordinates(center, -pi / 2 + startAngle, radius);
+    //   canvas.drawCircle(initHandler, 8.0, handler);
+    //   canvas.drawCircle(initHandler, handlerOutterRadius, handlerOutter);
+    // }
 
     endHandler = radiansToCoordinates(center, -pi / 2 + endAngle, radius);
-    canvas.drawCircle(endHandler, 8.0, handler);
+    canvas.drawCircle(endHandler, 6.0, handler);
     if (showHandlerOutter) {
-      canvas.drawCircle(endHandler, handlerOutterRadius, handlerOutter);
+      canvas.drawCircle(
+        endHandler,
+        handlerOutterRadius,
+        handlerOutter,
+      );
     }
   }
 
