@@ -72,7 +72,7 @@
     "@signInTermsOfUseLabel": {
         "description": "This is the label displayed on the sign in screen for the Terms of use text button"
     },
-    "signInLogInButtonLabel": "Log In",
+    "signInLogInButtonLabel": "Log in",
     "@signInLogInButtonLabel": {
         "description": "This is the label displayed on the sign in screen for the log in button"
     },
@@ -296,7 +296,7 @@
     "@termsOfUseSubmitBtn": {
         "description": "This is the text displayed on the submit button of the terms of use screen"
     },
-    "confirmPhoneNumberTitleText": "Enter OTP\nCode",
+    "confirmPhoneNumberTitleText": "Enter OTP",
     "@confirmPhoneNumberTitleText": {
         "description": "This is the main title on the phone number confirmation screen"
     },
@@ -304,7 +304,7 @@
     "@confirmPhoneNumberBodyContentStart": {
         "description": "This is the first part of the content found on the body of the confirmation screen, just below the main title"
     },
-    "confirmPhoneNumberBodyContentMid": "validation code. ",
+    "confirmPhoneNumberBodyContentMid": "email verification code.\n",
     "@confirmPhoneNumberBodyContentMid": {
         "description": "This is the middle part in bold of the content found on the body of the confirmation screen"
     },
@@ -312,7 +312,7 @@
     "@confirmPhoneNumberBodyContentEnd": {
         "description": "This is the last part of the content found on the body of the confirmation screen"
     },
-    "confirmPhoneNumberResendOtpButton": "Resend OTP Code",
+    "confirmPhoneNumberResendOtpButton": "Resend OTP",
     "@confirmPhoneNumberResendOtpButton": {
         "description": "This is the text label on the resend button on the confirmation screen"
     },
@@ -343,6 +343,46 @@
     "confirmEmailResendButton": "Resend confirmation email",
     "@confirmEmailResendButton": {
         "description": "This is the text label on the resend button on the phone number confirmation screen"
+    },
+    "createNewPasswordTitle": "Create new password",
+    "@createNewPasswordTitle": {
+        "description": "This is the main title on the create new password screen"
+    },
+    "createNewPasswordBodyContent": "Your new password must be different from the previous used password.",
+    "@createNewPasswordBodyContent": {
+        "description": "This is the body content of the create new password screen"
+    },
+    "createNewPasswordConfirmPasswordLabel": "Confirm Password",
+    "@createNewPasswordConfirmPasswordLabel": {
+        "description": "This is the confirm password label on the create new password screen"
+    },
+    "createNewPasswordResetButtonLabel": "Reset Password",
+    "@createNewPasswordResetButtonLabel": {
+        "description": "This is the text label of the reset button on the create new password screen"
+    },
+    "forgotPasswordTitle": "Forgot password",
+    "@forgotPasswordTitle": {
+        "description": "This is the main title text label on the forgot password screen"
+    },
+    "forgotPasswordBodyContent": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores !",
+    "@forgotPasswordBodyContent": {
+        "description": "This is the body content on the forgot password screen"
+    },
+    "forgotPasswordSendButtonLabel": "Send",
+    "@forgotPasswordSendButtonLabel": {
+        "description": "This is the text label of the send button on the forgot password screen"
+    },
+    "forgotPasswordEmailTextFieldHint": "Enter your email...",
+    "@forgotPasswordEmailTextFieldHint": {
+        "description": "This is the hint of the email text field on the forgot password screen"
+    },
+    "newPasswordSuccessTitle": "Yay !!",
+    "@newPasswordSuccessTitle": {
+        "description": "This is the main title on the new password success screen"
+    },
+    "newPasswordSuccessBodyContent": "Your password has been reset successfully\nnow login with your new password",
+    "@newPasswordSuccessBodyContent": {
+        "description": "This is the body content of the new password success screen"
     }
 }
  

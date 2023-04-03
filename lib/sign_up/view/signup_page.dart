@@ -238,7 +238,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                   ),
                                   Padding(
                                     padding: EdgeInsets.symmetric(
-                                      vertical: box.maxHeight * 0.012,
+                                      vertical: box.maxHeight * 0.02,
                                     ),
                                     child: Row(
                                       mainAxisAlignment:
@@ -271,7 +271,7 @@ class _SignUpBodyState extends State<SignUpBody>
                                   AlternativeAuth(box: box),
                                   Padding(
                                     padding: EdgeInsets.only(
-                                      top: box.maxHeight * 0.001,
+                                      top: box.maxHeight * 0.03,
                                       bottom: box.maxHeight * 0.0001,
                                     ),
                                     child: Row(
@@ -286,15 +286,18 @@ class _SignUpBodyState extends State<SignUpBody>
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
-                                        TextButton(
-                                          onPressed: () {
+                                        InkWell(
+                                          onTap: () {
                                             context.router.pop();
                                           },
-                                          child: Text(
-                                            l10n.signInLogInTitle,
-                                            style: style.titleMedium?.copyWith(
-                                              color: theme.colorScheme.primary,
-                                              fontWeight: FontWeight.bold,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(left: 4.0),
+                                            child: Text(
+                                              l10n.signInLogInTitle,
+                                              style: style.titleSmall?.copyWith(
+                                                color: theme.colorScheme.primary,
+                                                fontWeight: FontWeight.w700,
+                                              ),
                                             ),
                                           ),
                                         ),

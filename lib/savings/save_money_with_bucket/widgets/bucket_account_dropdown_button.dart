@@ -86,6 +86,8 @@ class _BucketAccountWithDropdownButtonState
                         child: Text(items),
                       );
                     }).toList(),
+                    style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ],

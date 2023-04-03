@@ -87,6 +87,7 @@ class _SaveMoneyScreenState extends State<SaveMoneyScreen> {
                   child: FpbButton(
                     label: l10n.saveMoneyWithBucketSaveButton,
                     onTap: () {},
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

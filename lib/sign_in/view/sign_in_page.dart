@@ -191,7 +191,7 @@ class _SignInBodyState extends State<SignInBody>
                                               ),
                                               GestureDetector(
                                                 onTap: () =>
-                                                    print('Forgot pass'),
+                                                    context.router.push(ResetPasswordRoute()),
                                                 child: Text(
                                                   l10n.signInForgotPasswordText,
                                                   style: theme
@@ -228,7 +228,7 @@ class _SignInBodyState extends State<SignInBody>
                                               ),
                                               GestureDetector(
                                                 onTap: () =>
-                                                    print('Forgot pass'),
+                                                    context.router.push(ResetPasswordRoute()),
                                                 child: Text(
                                                   l10n.signInForgotPasswordText,
                                                   style: theme
@@ -250,7 +250,7 @@ class _SignInBodyState extends State<SignInBody>
                                 const LoginButton(),
                                 Padding(
                                   padding: EdgeInsets.symmetric(
-                                    vertical: cts.maxHeight * 0.012,
+                                    vertical: cts.maxHeight * 0.02,
                                   ),
                                   child: Row(
                                     mainAxisAlignment:
@@ -280,8 +280,8 @@ class _SignInBodyState extends State<SignInBody>
                                 AlternativeAuth(box: cts),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                    top: cts.maxHeight * 0.001,
-                                    bottom: cts.maxHeight * 0.0001,
+                                    top: cts.maxHeight * 0.025,
+                                    bottom: cts.maxHeight * 0.01,
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -295,15 +295,18 @@ class _SignInBodyState extends State<SignInBody>
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),
-                                      TextButton(
-                                        onPressed: () {
+                                      InkWell(
+                                        onTap: () {
                                           context.router.push(SignUpRoute());
                                         },
-                                        child: Text(
-                                          l10n.signInSignUpLabel,
-                                          style: style.titleSmall?.copyWith(
-                                            color: theme.colorScheme.primary,
-                                            fontWeight: FontWeight.bold,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(left: 4.0),
+                                          child: Text(
+                                            l10n.signInSignUpLabel,
+                                            style: style.titleSmall?.copyWith(
+                                              color: theme.colorScheme.primary,
+                                              fontWeight: FontWeight.w700,
+                                            ),
                                           ),
                                         ),
                                       ),

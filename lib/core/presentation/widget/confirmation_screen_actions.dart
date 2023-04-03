@@ -39,7 +39,8 @@ class ConfirmationScreenAction extends StatelessWidget {
                 onTap: onTapConfirmButton,
                 backgroundColor: colors.scrim,
                 borderSideColor: colors.outline,
-                textColor: colors.outline,
+                textColor: colors.onInverseSurface,
+                fontWeight: FontWeight.w600,
               ),
               SizedBox(
                 height: box.maxHeight * .03,

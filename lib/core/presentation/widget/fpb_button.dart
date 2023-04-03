@@ -13,6 +13,7 @@ class FpbButton extends StatelessWidget {
     this.backgroundColor,
     this.borderSideColor,
     this.textColor,
+    this.fontWeight,
   });
 
   final String label;
@@ -25,6 +26,7 @@ class FpbButton extends StatelessWidget {
   final Color? backgroundColor;
   final Color? borderSideColor;
   final Color? textColor;
+  final FontWeight? fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +49,8 @@ class FpbButton extends StatelessWidget {
             Text(
               label,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: textColor ?? colors.surface,
-                  ),
+                  color: textColor ?? colors.surface,
+                  fontWeight: fontWeight,),
             ),
             if (trailing != null)
               Transform.translate(
@@ -60,8 +62,8 @@ class FpbButton extends StatelessWidget {
           ],
         ),
         style: ButtonStyle(
-          backgroundColor:
-              MaterialStateProperty.all<Color>(backgroundColor ?? colors.primary),
+          backgroundColor: MaterialStateProperty.all<Color>(
+              backgroundColor ?? colors.primary),
           side: MaterialStateProperty.all(
             BorderSide(
                 color: borderSideColor ?? colors.primary,
