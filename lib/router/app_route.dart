@@ -15,6 +15,7 @@ import 'package:fpb/savings/save_money_with_bucket/save_money_with_bucket.dart';
 import 'package:fpb/savings/view/savings_page.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 import 'package:fpb/sign_up/view/signup_page.dart';
+import 'package:fpb/terms_of_use/terms%20_of_use_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Screen,Route',
@@ -56,6 +57,9 @@ import 'package:fpb/sign_up/view/signup_page.dart';
     ),
     AutoRoute(
       page: UserSearchScreen,
+    ),
+    AutoRoute(
+      page: TermsOfUseScreen,
     ),
   ],
 )
