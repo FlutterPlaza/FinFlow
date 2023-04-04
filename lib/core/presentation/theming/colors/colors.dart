@@ -11,7 +11,7 @@ class _AppColors {
   static Color secondaryColorW4 = const Color(0xff0B0B0B); 
 
   static Color greyWhite = Color(0xFFF0F0F0);
-  static Color lightGrey = Color(0xFFABABAB);
+  static Color lightGrey = Color(0xFFEAEAEA);
   static Color greyMedium = Color(0xFFB2B3BD);
   static Color greyOutline = Color(0xFFE4E4E4);
   static Color greyDark = Color(0xFF808080);
