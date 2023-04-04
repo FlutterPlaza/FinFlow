@@ -3,6 +3,7 @@ import 'package:fpb/contact_us/view/contact_us_screen.dart';
 import 'package:fpb/contact_us/view/contact_us_success_screen.dart';
 import 'package:fpb/email_confirmation/email_confirmation.dart';
 import 'package:fpb/home/view/home_screen.dart';
+import 'package:fpb/home/view/user_search_screen.dart';
 import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
 import 'package:fpb/onboarding/view/onboarding_screens.dart';
 import 'package:fpb/onboarding/view/splash_screen.dart';
@@ -52,7 +53,10 @@ import 'package:fpb/sign_up/view/signup_page.dart';
     ),
     AutoRoute(
       page: ContactUsSuccessScreen,
-    )
+    ),
+    AutoRoute(
+      page: UserSearchScreen,
+    ),
   ],
 )
 class $AppRoute {}

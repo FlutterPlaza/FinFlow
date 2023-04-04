@@ -22,7 +22,7 @@ mixin _$HomeViewEvent {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
     required TResult Function() lastState,
   }) =>
       throw _privateConstructorUsedError;
@@ -32,7 +32,7 @@ mixin _$HomeViewEvent {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
     TResult? Function()? lastState,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ mixin _$HomeViewEvent {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     TResult Function()? lastState,
     required TResult orElse(),
   }) =>
@@ -53,7 +53,7 @@ mixin _$HomeViewEvent {
     required TResult Function(_SavingsE value) savings,
     required TResult Function(_QuickCashE value) quickCash,
     required TResult Function(_BudgetE value) budget,
-    required TResult Function(_SearchE value) search,
+    required TResult Function(_ProfileE value) profile,
     required TResult Function(_LastStateE value) lastState,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ mixin _$HomeViewEvent {
     TResult? Function(_SavingsE value)? savings,
     TResult? Function(_QuickCashE value)? quickCash,
     TResult? Function(_BudgetE value)? budget,
-    TResult? Function(_SearchE value)? search,
+    TResult? Function(_ProfileE value)? profile,
     TResult? Function(_LastStateE value)? lastState,
   }) =>
       throw _privateConstructorUsedError;
@@ -73,7 +73,7 @@ mixin _$HomeViewEvent {
     TResult Function(_SavingsE value)? savings,
     TResult Function(_QuickCashE value)? quickCash,
     TResult Function(_BudgetE value)? budget,
-    TResult Function(_SearchE value)? search,
+    TResult Function(_ProfileE value)? profile,
     TResult Function(_LastStateE value)? lastState,
     required TResult orElse(),
   }) =>
@@ -138,7 +138,7 @@ class _$_HomeE implements _HomeE {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
     required TResult Function() lastState,
   }) {
     return home();
@@ -151,7 +151,7 @@ class _$_HomeE implements _HomeE {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
     TResult? Function()? lastState,
   }) {
     return home?.call();
@@ -164,7 +164,7 @@ class _$_HomeE implements _HomeE {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     TResult Function()? lastState,
     required TResult orElse(),
   }) {
@@ -181,7 +181,7 @@ class _$_HomeE implements _HomeE {
     required TResult Function(_SavingsE value) savings,
     required TResult Function(_QuickCashE value) quickCash,
     required TResult Function(_BudgetE value) budget,
-    required TResult Function(_SearchE value) search,
+    required TResult Function(_ProfileE value) profile,
     required TResult Function(_LastStateE value) lastState,
   }) {
     return home(this);
@@ -194,7 +194,7 @@ class _$_HomeE implements _HomeE {
     TResult? Function(_SavingsE value)? savings,
     TResult? Function(_QuickCashE value)? quickCash,
     TResult? Function(_BudgetE value)? budget,
-    TResult? Function(_SearchE value)? search,
+    TResult? Function(_ProfileE value)? profile,
     TResult? Function(_LastStateE value)? lastState,
   }) {
     return home?.call(this);
@@ -207,7 +207,7 @@ class _$_HomeE implements _HomeE {
     TResult Function(_SavingsE value)? savings,
     TResult Function(_QuickCashE value)? quickCash,
     TResult Function(_BudgetE value)? budget,
-    TResult Function(_SearchE value)? search,
+    TResult Function(_ProfileE value)? profile,
     TResult Function(_LastStateE value)? lastState,
     required TResult orElse(),
   }) {
@@ -264,7 +264,7 @@ class _$_SavingsE implements _SavingsE {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
     required TResult Function() lastState,
   }) {
     return savings();
@@ -277,7 +277,7 @@ class _$_SavingsE implements _SavingsE {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
     TResult? Function()? lastState,
   }) {
     return savings?.call();
@@ -290,7 +290,7 @@ class _$_SavingsE implements _SavingsE {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     TResult Function()? lastState,
     required TResult orElse(),
   }) {
@@ -307,7 +307,7 @@ class _$_SavingsE implements _SavingsE {
     required TResult Function(_SavingsE value) savings,
     required TResult Function(_QuickCashE value) quickCash,
     required TResult Function(_BudgetE value) budget,
-    required TResult Function(_SearchE value) search,
+    required TResult Function(_ProfileE value) profile,
     required TResult Function(_LastStateE value) lastState,
   }) {
     return savings(this);
@@ -320,7 +320,7 @@ class _$_SavingsE implements _SavingsE {
     TResult? Function(_SavingsE value)? savings,
     TResult? Function(_QuickCashE value)? quickCash,
     TResult? Function(_BudgetE value)? budget,
-    TResult? Function(_SearchE value)? search,
+    TResult? Function(_ProfileE value)? profile,
     TResult? Function(_LastStateE value)? lastState,
   }) {
     return savings?.call(this);
@@ -333,7 +333,7 @@ class _$_SavingsE implements _SavingsE {
     TResult Function(_SavingsE value)? savings,
     TResult Function(_QuickCashE value)? quickCash,
     TResult Function(_BudgetE value)? budget,
-    TResult Function(_SearchE value)? search,
+    TResult Function(_ProfileE value)? profile,
     TResult Function(_LastStateE value)? lastState,
     required TResult orElse(),
   }) {
@@ -390,7 +390,7 @@ class _$_QuickCashE implements _QuickCashE {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
     required TResult Function() lastState,
   }) {
     return quickCash();
@@ -403,7 +403,7 @@ class _$_QuickCashE implements _QuickCashE {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
     TResult? Function()? lastState,
   }) {
     return quickCash?.call();
@@ -416,7 +416,7 @@ class _$_QuickCashE implements _QuickCashE {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     TResult Function()? lastState,
     required TResult orElse(),
   }) {
@@ -433,7 +433,7 @@ class _$_QuickCashE implements _QuickCashE {
     required TResult Function(_SavingsE value) savings,
     required TResult Function(_QuickCashE value) quickCash,
     required TResult Function(_BudgetE value) budget,
-    required TResult Function(_SearchE value) search,
+    required TResult Function(_ProfileE value) profile,
     required TResult Function(_LastStateE value) lastState,
   }) {
     return quickCash(this);
@@ -446,7 +446,7 @@ class _$_QuickCashE implements _QuickCashE {
     TResult? Function(_SavingsE value)? savings,
     TResult? Function(_QuickCashE value)? quickCash,
     TResult? Function(_BudgetE value)? budget,
-    TResult? Function(_SearchE value)? search,
+    TResult? Function(_ProfileE value)? profile,
     TResult? Function(_LastStateE value)? lastState,
   }) {
     return quickCash?.call(this);
@@ -459,7 +459,7 @@ class _$_QuickCashE implements _QuickCashE {
     TResult Function(_SavingsE value)? savings,
     TResult Function(_QuickCashE value)? quickCash,
     TResult Function(_BudgetE value)? budget,
-    TResult Function(_SearchE value)? search,
+    TResult Function(_ProfileE value)? profile,
     TResult Function(_LastStateE value)? lastState,
     required TResult orElse(),
   }) {
@@ -515,7 +515,7 @@ class _$_BudgetE implements _BudgetE {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
     required TResult Function() lastState,
   }) {
     return budget();
@@ -528,7 +528,7 @@ class _$_BudgetE implements _BudgetE {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
     TResult? Function()? lastState,
   }) {
     return budget?.call();
@@ -541,7 +541,7 @@ class _$_BudgetE implements _BudgetE {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     TResult Function()? lastState,
     required TResult orElse(),
   }) {
@@ -558,7 +558,7 @@ class _$_BudgetE implements _BudgetE {
     required TResult Function(_SavingsE value) savings,
     required TResult Function(_QuickCashE value) quickCash,
     required TResult Function(_BudgetE value) budget,
-    required TResult Function(_SearchE value) search,
+    required TResult Function(_ProfileE value) profile,
     required TResult Function(_LastStateE value) lastState,
   }) {
     return budget(this);
@@ -571,7 +571,7 @@ class _$_BudgetE implements _BudgetE {
     TResult? Function(_SavingsE value)? savings,
     TResult? Function(_QuickCashE value)? quickCash,
     TResult? Function(_BudgetE value)? budget,
-    TResult? Function(_SearchE value)? search,
+    TResult? Function(_ProfileE value)? profile,
     TResult? Function(_LastStateE value)? lastState,
   }) {
     return budget?.call(this);
@@ -584,7 +584,7 @@ class _$_BudgetE implements _BudgetE {
     TResult Function(_SavingsE value)? savings,
     TResult Function(_QuickCashE value)? quickCash,
     TResult Function(_BudgetE value)? budget,
-    TResult Function(_SearchE value)? search,
+    TResult Function(_ProfileE value)? profile,
     TResult Function(_LastStateE value)? lastState,
     required TResult orElse(),
   }) {
@@ -600,34 +600,35 @@ abstract class _BudgetE implements HomeViewEvent {
 }
 
 /// @nodoc
-abstract class _$$_SearchECopyWith<$Res> {
-  factory _$$_SearchECopyWith(
-          _$_SearchE value, $Res Function(_$_SearchE) then) =
-      __$$_SearchECopyWithImpl<$Res>;
+abstract class _$$_ProfileECopyWith<$Res> {
+  factory _$$_ProfileECopyWith(
+          _$_ProfileE value, $Res Function(_$_ProfileE) then) =
+      __$$_ProfileECopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SearchECopyWithImpl<$Res>
-    extends _$HomeViewEventCopyWithImpl<$Res, _$_SearchE>
-    implements _$$_SearchECopyWith<$Res> {
-  __$$_SearchECopyWithImpl(_$_SearchE _value, $Res Function(_$_SearchE) _then)
+class __$$_ProfileECopyWithImpl<$Res>
+    extends _$HomeViewEventCopyWithImpl<$Res, _$_ProfileE>
+    implements _$$_ProfileECopyWith<$Res> {
+  __$$_ProfileECopyWithImpl(
+      _$_ProfileE _value, $Res Function(_$_ProfileE) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SearchE implements _SearchE {
-  const _$_SearchE();
+class _$_ProfileE implements _ProfileE {
+  const _$_ProfileE();
 
   @override
   String toString() {
-    return 'HomeViewEvent.search()';
+    return 'HomeViewEvent.profile()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SearchE);
+        (other.runtimeType == runtimeType && other is _$_ProfileE);
   }
 
   @override
@@ -640,10 +641,10 @@ class _$_SearchE implements _SearchE {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
     required TResult Function() lastState,
   }) {
-    return search();
+    return profile();
   }
 
   @override
@@ -653,10 +654,10 @@ class _$_SearchE implements _SearchE {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
     TResult? Function()? lastState,
   }) {
-    return search?.call();
+    return profile?.call();
   }
 
   @override
@@ -666,12 +667,12 @@ class _$_SearchE implements _SearchE {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     TResult Function()? lastState,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search();
+    if (profile != null) {
+      return profile();
     }
     return orElse();
   }
@@ -683,10 +684,10 @@ class _$_SearchE implements _SearchE {
     required TResult Function(_SavingsE value) savings,
     required TResult Function(_QuickCashE value) quickCash,
     required TResult Function(_BudgetE value) budget,
-    required TResult Function(_SearchE value) search,
+    required TResult Function(_ProfileE value) profile,
     required TResult Function(_LastStateE value) lastState,
   }) {
-    return search(this);
+    return profile(this);
   }
 
   @override
@@ -696,10 +697,10 @@ class _$_SearchE implements _SearchE {
     TResult? Function(_SavingsE value)? savings,
     TResult? Function(_QuickCashE value)? quickCash,
     TResult? Function(_BudgetE value)? budget,
-    TResult? Function(_SearchE value)? search,
+    TResult? Function(_ProfileE value)? profile,
     TResult? Function(_LastStateE value)? lastState,
   }) {
-    return search?.call(this);
+    return profile?.call(this);
   }
 
   @override
@@ -709,19 +710,19 @@ class _$_SearchE implements _SearchE {
     TResult Function(_SavingsE value)? savings,
     TResult Function(_QuickCashE value)? quickCash,
     TResult Function(_BudgetE value)? budget,
-    TResult Function(_SearchE value)? search,
+    TResult Function(_ProfileE value)? profile,
     TResult Function(_LastStateE value)? lastState,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search(this);
+    if (profile != null) {
+      return profile(this);
     }
     return orElse();
   }
 }
 
-abstract class _SearchE implements HomeViewEvent {
-  const factory _SearchE() = _$_SearchE;
+abstract class _ProfileE implements HomeViewEvent {
+  const factory _ProfileE() = _$_ProfileE;
 }
 
 /// @nodoc
@@ -766,7 +767,7 @@ class _$_LastStateE implements _LastStateE {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
     required TResult Function() lastState,
   }) {
     return lastState();
@@ -779,7 +780,7 @@ class _$_LastStateE implements _LastStateE {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
     TResult? Function()? lastState,
   }) {
     return lastState?.call();
@@ -792,7 +793,7 @@ class _$_LastStateE implements _LastStateE {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     TResult Function()? lastState,
     required TResult orElse(),
   }) {
@@ -809,7 +810,7 @@ class _$_LastStateE implements _LastStateE {
     required TResult Function(_SavingsE value) savings,
     required TResult Function(_QuickCashE value) quickCash,
     required TResult Function(_BudgetE value) budget,
-    required TResult Function(_SearchE value) search,
+    required TResult Function(_ProfileE value) profile,
     required TResult Function(_LastStateE value) lastState,
   }) {
     return lastState(this);
@@ -822,7 +823,7 @@ class _$_LastStateE implements _LastStateE {
     TResult? Function(_SavingsE value)? savings,
     TResult? Function(_QuickCashE value)? quickCash,
     TResult? Function(_BudgetE value)? budget,
-    TResult? Function(_SearchE value)? search,
+    TResult? Function(_ProfileE value)? profile,
     TResult? Function(_LastStateE value)? lastState,
   }) {
     return lastState?.call(this);
@@ -835,7 +836,7 @@ class _$_LastStateE implements _LastStateE {
     TResult Function(_SavingsE value)? savings,
     TResult Function(_QuickCashE value)? quickCash,
     TResult Function(_BudgetE value)? budget,
-    TResult Function(_SearchE value)? search,
+    TResult Function(_ProfileE value)? profile,
     TResult Function(_LastStateE value)? lastState,
     required TResult orElse(),
   }) {
@@ -858,7 +859,7 @@ mixin _$HomeViewState {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -867,7 +868,7 @@ mixin _$HomeViewState {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -876,7 +877,7 @@ mixin _$HomeViewState {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -886,7 +887,7 @@ mixin _$HomeViewState {
     required TResult Function(_Savings value) savings,
     required TResult Function(_QuickCash value) quickCash,
     required TResult Function(_Budget value) budget,
-    required TResult Function(_Search value) search,
+    required TResult Function(_Profile value) profile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -895,7 +896,7 @@ mixin _$HomeViewState {
     TResult? Function(_Savings value)? savings,
     TResult? Function(_QuickCash value)? quickCash,
     TResult? Function(_Budget value)? budget,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_Profile value)? profile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -904,7 +905,7 @@ mixin _$HomeViewState {
     TResult Function(_Savings value)? savings,
     TResult Function(_QuickCash value)? quickCash,
     TResult Function(_Budget value)? budget,
-    TResult Function(_Search value)? search,
+    TResult Function(_Profile value)? profile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -968,7 +969,7 @@ class _$_Home implements _Home {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
   }) {
     return home();
   }
@@ -980,7 +981,7 @@ class _$_Home implements _Home {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
   }) {
     return home?.call();
   }
@@ -992,7 +993,7 @@ class _$_Home implements _Home {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -1008,7 +1009,7 @@ class _$_Home implements _Home {
     required TResult Function(_Savings value) savings,
     required TResult Function(_QuickCash value) quickCash,
     required TResult Function(_Budget value) budget,
-    required TResult Function(_Search value) search,
+    required TResult Function(_Profile value) profile,
   }) {
     return home(this);
   }
@@ -1020,7 +1021,7 @@ class _$_Home implements _Home {
     TResult? Function(_Savings value)? savings,
     TResult? Function(_QuickCash value)? quickCash,
     TResult? Function(_Budget value)? budget,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_Profile value)? profile,
   }) {
     return home?.call(this);
   }
@@ -1032,7 +1033,7 @@ class _$_Home implements _Home {
     TResult Function(_Savings value)? savings,
     TResult Function(_QuickCash value)? quickCash,
     TResult Function(_Budget value)? budget,
-    TResult Function(_Search value)? search,
+    TResult Function(_Profile value)? profile,
     required TResult orElse(),
   }) {
     if (home != null) {
@@ -1087,7 +1088,7 @@ class _$_Savings implements _Savings {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
   }) {
     return savings();
   }
@@ -1099,7 +1100,7 @@ class _$_Savings implements _Savings {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
   }) {
     return savings?.call();
   }
@@ -1111,7 +1112,7 @@ class _$_Savings implements _Savings {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     required TResult orElse(),
   }) {
     if (savings != null) {
@@ -1127,7 +1128,7 @@ class _$_Savings implements _Savings {
     required TResult Function(_Savings value) savings,
     required TResult Function(_QuickCash value) quickCash,
     required TResult Function(_Budget value) budget,
-    required TResult Function(_Search value) search,
+    required TResult Function(_Profile value) profile,
   }) {
     return savings(this);
   }
@@ -1139,7 +1140,7 @@ class _$_Savings implements _Savings {
     TResult? Function(_Savings value)? savings,
     TResult? Function(_QuickCash value)? quickCash,
     TResult? Function(_Budget value)? budget,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_Profile value)? profile,
   }) {
     return savings?.call(this);
   }
@@ -1151,7 +1152,7 @@ class _$_Savings implements _Savings {
     TResult Function(_Savings value)? savings,
     TResult Function(_QuickCash value)? quickCash,
     TResult Function(_Budget value)? budget,
-    TResult Function(_Search value)? search,
+    TResult Function(_Profile value)? profile,
     required TResult orElse(),
   }) {
     if (savings != null) {
@@ -1207,7 +1208,7 @@ class _$_QuickCash implements _QuickCash {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
   }) {
     return quickCash();
   }
@@ -1219,7 +1220,7 @@ class _$_QuickCash implements _QuickCash {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
   }) {
     return quickCash?.call();
   }
@@ -1231,7 +1232,7 @@ class _$_QuickCash implements _QuickCash {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     required TResult orElse(),
   }) {
     if (quickCash != null) {
@@ -1247,7 +1248,7 @@ class _$_QuickCash implements _QuickCash {
     required TResult Function(_Savings value) savings,
     required TResult Function(_QuickCash value) quickCash,
     required TResult Function(_Budget value) budget,
-    required TResult Function(_Search value) search,
+    required TResult Function(_Profile value) profile,
   }) {
     return quickCash(this);
   }
@@ -1259,7 +1260,7 @@ class _$_QuickCash implements _QuickCash {
     TResult? Function(_Savings value)? savings,
     TResult? Function(_QuickCash value)? quickCash,
     TResult? Function(_Budget value)? budget,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_Profile value)? profile,
   }) {
     return quickCash?.call(this);
   }
@@ -1271,7 +1272,7 @@ class _$_QuickCash implements _QuickCash {
     TResult Function(_Savings value)? savings,
     TResult Function(_QuickCash value)? quickCash,
     TResult Function(_Budget value)? budget,
-    TResult Function(_Search value)? search,
+    TResult Function(_Profile value)? profile,
     required TResult orElse(),
   }) {
     if (quickCash != null) {
@@ -1325,7 +1326,7 @@ class _$_Budget implements _Budget {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
   }) {
     return budget();
   }
@@ -1337,7 +1338,7 @@ class _$_Budget implements _Budget {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
   }) {
     return budget?.call();
   }
@@ -1349,7 +1350,7 @@ class _$_Budget implements _Budget {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     required TResult orElse(),
   }) {
     if (budget != null) {
@@ -1365,7 +1366,7 @@ class _$_Budget implements _Budget {
     required TResult Function(_Savings value) savings,
     required TResult Function(_QuickCash value) quickCash,
     required TResult Function(_Budget value) budget,
-    required TResult Function(_Search value) search,
+    required TResult Function(_Profile value) profile,
   }) {
     return budget(this);
   }
@@ -1377,7 +1378,7 @@ class _$_Budget implements _Budget {
     TResult? Function(_Savings value)? savings,
     TResult? Function(_QuickCash value)? quickCash,
     TResult? Function(_Budget value)? budget,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_Profile value)? profile,
   }) {
     return budget?.call(this);
   }
@@ -1389,7 +1390,7 @@ class _$_Budget implements _Budget {
     TResult Function(_Savings value)? savings,
     TResult Function(_QuickCash value)? quickCash,
     TResult Function(_Budget value)? budget,
-    TResult Function(_Search value)? search,
+    TResult Function(_Profile value)? profile,
     required TResult orElse(),
   }) {
     if (budget != null) {
@@ -1404,33 +1405,34 @@ abstract class _Budget implements HomeViewState {
 }
 
 /// @nodoc
-abstract class _$$_SearchCopyWith<$Res> {
-  factory _$$_SearchCopyWith(_$_Search value, $Res Function(_$_Search) then) =
-      __$$_SearchCopyWithImpl<$Res>;
+abstract class _$$_ProfileCopyWith<$Res> {
+  factory _$$_ProfileCopyWith(
+          _$_Profile value, $Res Function(_$_Profile) then) =
+      __$$_ProfileCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SearchCopyWithImpl<$Res>
-    extends _$HomeViewStateCopyWithImpl<$Res, _$_Search>
-    implements _$$_SearchCopyWith<$Res> {
-  __$$_SearchCopyWithImpl(_$_Search _value, $Res Function(_$_Search) _then)
+class __$$_ProfileCopyWithImpl<$Res>
+    extends _$HomeViewStateCopyWithImpl<$Res, _$_Profile>
+    implements _$$_ProfileCopyWith<$Res> {
+  __$$_ProfileCopyWithImpl(_$_Profile _value, $Res Function(_$_Profile) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Search implements _Search {
-  const _$_Search();
+class _$_Profile implements _Profile {
+  const _$_Profile();
 
   @override
   String toString() {
-    return 'HomeViewState.search()';
+    return 'HomeViewState.profile()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Search);
+        (other.runtimeType == runtimeType && other is _$_Profile);
   }
 
   @override
@@ -1443,9 +1445,9 @@ class _$_Search implements _Search {
     required TResult Function() savings,
     required TResult Function() quickCash,
     required TResult Function() budget,
-    required TResult Function() search,
+    required TResult Function() profile,
   }) {
-    return search();
+    return profile();
   }
 
   @override
@@ -1455,9 +1457,9 @@ class _$_Search implements _Search {
     TResult? Function()? savings,
     TResult? Function()? quickCash,
     TResult? Function()? budget,
-    TResult? Function()? search,
+    TResult? Function()? profile,
   }) {
-    return search?.call();
+    return profile?.call();
   }
 
   @override
@@ -1467,11 +1469,11 @@ class _$_Search implements _Search {
     TResult Function()? savings,
     TResult Function()? quickCash,
     TResult Function()? budget,
-    TResult Function()? search,
+    TResult Function()? profile,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search();
+    if (profile != null) {
+      return profile();
     }
     return orElse();
   }
@@ -1483,9 +1485,9 @@ class _$_Search implements _Search {
     required TResult Function(_Savings value) savings,
     required TResult Function(_QuickCash value) quickCash,
     required TResult Function(_Budget value) budget,
-    required TResult Function(_Search value) search,
+    required TResult Function(_Profile value) profile,
   }) {
-    return search(this);
+    return profile(this);
   }
 
   @override
@@ -1495,9 +1497,9 @@ class _$_Search implements _Search {
     TResult? Function(_Savings value)? savings,
     TResult? Function(_QuickCash value)? quickCash,
     TResult? Function(_Budget value)? budget,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_Profile value)? profile,
   }) {
-    return search?.call(this);
+    return profile?.call(this);
   }
 
   @override
@@ -1507,16 +1509,16 @@ class _$_Search implements _Search {
     TResult Function(_Savings value)? savings,
     TResult Function(_QuickCash value)? quickCash,
     TResult Function(_Budget value)? budget,
-    TResult Function(_Search value)? search,
+    TResult Function(_Profile value)? profile,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search(this);
+    if (profile != null) {
+      return profile(this);
     }
     return orElse();
   }
 }
 
-abstract class _Search implements HomeViewState {
-  const factory _Search() = _$_Search;
+abstract class _Profile implements HomeViewState {
+  const factory _Profile() = _$_Profile;
 }
