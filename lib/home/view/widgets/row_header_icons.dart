@@ -24,7 +24,6 @@ class RowHeaderIcons extends StatelessWidget {
             showSearchIcon
                 ? InkWell(
                     onTap: () {
-                      print('Search Screen');
                       context.pushRoute(UserSearchRoute());
                     },
                     child: Icon(

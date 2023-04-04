@@ -14,9 +14,9 @@ class UserSearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = ValueInjector.of<User>(context)?.value ?? User.empty;
-    if (user == User.empty) {
-      context.read<AuthBloc>()..add(AuthEvent.logoutRequest());
-    }
+    // if (user == User.empty) {
+    //   context.read<AuthBloc>()..add(AuthEvent.logoutRequest());
+    // }
     return LayoutBuilder(builder: (context, box) {
       return AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
