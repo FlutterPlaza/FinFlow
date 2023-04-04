@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/l10n/l10n.dart';
 import 'package:fpb/terms_of_use/view/widgets/cancel_and_submit_btn.dart';
+import 'package:fpb/terms_of_use/view/widgets/terms_of_use_title_text.dart';
+import 'package:fpb/terms_of_use/view/widgets/terms_of_use_webcontainer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 //import 'package:device_preview/device_preview.dart';
 
-class TermsOfUsePage extends StatefulWidget {
-  const TermsOfUsePage({super.key});
+class TermsOfUseScreen extends StatefulWidget {
+  const TermsOfUseScreen({super.key});
 
   @override
-  State<TermsOfUsePage> createState() => _TermsOfUsePageState();
+  State<TermsOfUseScreen> createState() => _TermsOfUseScreenState();
 }
 
-class _TermsOfUsePageState extends State<TermsOfUsePage> {
+class _TermsOfUseScreenState extends State<TermsOfUseScreen> {
   late final WebViewController controller;
 
   @override
@@ -67,36 +69,3 @@ class _TermsOfUsePageState extends State<TermsOfUsePage> {
   }
 }
 
-class WebviewContainer extends StatelessWidget {
-  const WebviewContainer(
-      {super.key, required this.controller, required this.box});
-
-  final WebViewController controller;
-  final BoxConstraints box;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: box.maxHeight * .75,
-      width: box.maxWidth,
-      child: WebViewWidget(controller: controller),
-    );
-  }
-}
-
-class TitleText extends StatelessWidget {
-  const TitleText({super.key, required this.style, required this.text});
-
-  final TextTheme style;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        text,
-        style: style.titleLarge,
-      ),
-    );
-  }
-}
