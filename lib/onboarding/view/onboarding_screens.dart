@@ -17,63 +17,65 @@ class OnboardingScreen extends HookWidget {
     final theme = Theme.of(context);
     final colors = theme.colorScheme;
     final pageController = PageController();
-    final listIllustration = [
-      Illustration(
-        assetName: SvgNames.sendIllustration,
-        illustrationBgColor: colors.onPrimaryContainer,
-        title: l10n.onboardingSendTitle,
-        description: l10n.onboardingSendDescription,
-        onNextPressed: () => pageController.nextPage(
-          duration: Duration(milliseconds: 300),
-          curve: Curves.ease,
-        ),
-        onSkipPressed: () => pageController.animateToPage(
-          2,
-          duration: Duration(milliseconds: 300),
-          curve: Curves.ease,
-        ),
-      ),
-      Illustration(
-        assetName: SvgNames.saveIllustration,
-        illustrationBgColor: colors.tertiary,
-        title: l10n.onboardingSaveTitle,
-        description: l10n.onboardingSaveDescription,
-        onNextPressed: () => pageController.nextPage(
-          duration: Duration(milliseconds: 300),
-          curve: Curves.ease,
-        ),
-        onSkipPressed: () => pageController.nextPage(
-          duration: Duration(milliseconds: 300),
-          curve: Curves.ease,
-        ),
-      ),
-      Illustration(
-        assetName: SvgNames.transIllustration,
-        title: l10n.onboardingTransactionTitle,
-        description: l10n.onboardingTransactionDescription,
-        onNextPressed: onGetStartedPressed ??
-            () {
-              // context.router.popUntil((route) => route.isFirst);
-              context.router.replace(SignInRoute());
-            },
-      ),
-    ];
     final currentIndex = useState(0);
-    final illustration = listIllustration.elementAt(currentIndex.value)
-      ..setLength = listIllustration.length
-      ..currentIndex = currentIndex;
+    final length = 3;
 
     return Scaffold(
-      body: PageView.builder(
+      body: PageView(
         scrollDirection: Axis.horizontal,
         controller: pageController,
         onPageChanged: (value) {
           currentIndex.value = value;
         },
-        itemCount: listIllustration.length,
-        itemBuilder: (context, index) {
-          return illustration;
-        },
+        children: [
+          Illustration(
+            key: ValueKey(("onboarding-screen-0")),
+            assetName: SvgNames.sendIllustration,
+            illustrationBgColor: colors.onPrimaryContainer,
+            title: l10n.onboardingSendTitle,
+            description: l10n.onboardingSendDescription,
+            currentIndex: currentIndex,
+            length: length,
+            onNextPressed: () => pageController.nextPage(
+              duration: Duration(milliseconds: 300),
+              curve: Curves.ease,
+            ),
+            onSkipPressed: () => pageController.animateToPage(
+              2,
+              duration: Duration(milliseconds: 300),
+              curve: Curves.ease,
+            ),
+          ),
+          Illustration(
+            key: ValueKey(("onboarding-screen-1")),
+            assetName: SvgNames.saveIllustration,
+            illustrationBgColor: colors.tertiary,
+            title: l10n.onboardingSaveTitle,
+            currentIndex: currentIndex,
+            length: length,
+            description: l10n.onboardingSaveDescription,
+            onNextPressed: () => pageController.nextPage(
+              duration: Duration(milliseconds: 300),
+              curve: Curves.ease,
+            ),
+            onSkipPressed: () => pageController.nextPage(
+              duration: Duration(milliseconds: 300),
+              curve: Curves.ease,
+            ),
+          ),
+          Illustration(
+            key: ValueKey(("onboarding-screen-2")),
+            assetName: SvgNames.transIllustration,
+            title: l10n.onboardingTransactionTitle,
+            currentIndex: currentIndex,
+            length: length,
+            description: l10n.onboardingTransactionDescription,
+            onNextPressed: onGetStartedPressed ??
+                () {
+                  context.router.replace(SignInRoute());
+                },
+          ),
+        ],
       ),
     );
   }
