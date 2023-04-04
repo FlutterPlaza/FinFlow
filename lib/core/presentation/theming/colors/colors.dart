@@ -3,7 +3,7 @@ part of 'package:fpb/core/presentation/theming/themes/theme.dart';
 class _AppColors {
   static Color primaryColorW = const Color(0xFF5db1eb);
   static Color primaryColorW2 = const Color(0xFF4285F4);
-  static Color primaryColorW3 = const Color(0xFF5eb1eb);
+  static Color primaryColorW3 = const Color(0xFFEEF8FF);
 
   static Color secondaryColorW = const Color(0xff000000);
   static Color secondaryColorW2 = const Color(0xff181818);
