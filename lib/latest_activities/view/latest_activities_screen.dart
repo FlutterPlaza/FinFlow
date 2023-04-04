@@ -12,6 +12,8 @@ class LatestActivitiesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final theme = Theme.of(context);
+
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints box) {
         return Scaffold(
@@ -51,7 +53,7 @@ class LatestActivitiesPage extends StatelessWidget {
                               width: box.maxHeight * 0.03,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
-                                color: Colors.grey,
+                                color: theme.colorScheme.onBackground,
                               ),
                               child: const Center(child: Text('5')),
                             )
@@ -66,7 +68,7 @@ class LatestActivitiesPage extends StatelessWidget {
                             activities: [
                               ActivityCardModel(
                                 id: 1,
-                                dateTime: 'August 3, 3: 45pm',
+                                dateTime: 'August 3, 3:45pm',
                                 isFavorite: true,
                                 transactionAmt: '500',
                                 username: '@john_merry',
@@ -74,7 +76,7 @@ class LatestActivitiesPage extends StatelessWidget {
                               ),
                               ActivityCardModel(
                                 id: 2,
-                                dateTime: 'August 3, 3: 45pm',
+                                dateTime: 'August 3, 3:45pm',
                                 isFavorite: false,
                                 transactionAmt: '120',
                                 username: '@amanda',
@@ -82,7 +84,7 @@ class LatestActivitiesPage extends StatelessWidget {
                               ),
                               ActivityCardModel(
                                 id: 3,
-                                dateTime: 'August 3, 3: 45pm',
+                                dateTime: 'August 3, 3:45pm',
                                 isFavorite: false,
                                 transactionAmt: '350',
                                 username: '@dezzy',
@@ -90,7 +92,7 @@ class LatestActivitiesPage extends StatelessWidget {
                               ),
                               ActivityCardModel(
                                 id: 4,
-                                dateTime: 'August 3, 3: 45pm',
+                                dateTime: 'August 3, 3:45pm',
                                 isFavorite: false,
                                 transactionAmt: '300',
                                 username: '@jeff',

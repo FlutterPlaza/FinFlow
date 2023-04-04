@@ -46,7 +46,10 @@ class ActivityCard extends StatelessWidget {
                   children: [
                     Text(
                       username,
-                      style: Theme.of(context).textTheme.titleSmall,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium
+                          ?.copyWith(fontWeight: FontWeight.w400),
                     ),
                     SizedBox(
                       height: box.maxHeight * 0.009,
@@ -54,7 +57,7 @@ class ActivityCard extends StatelessWidget {
                     Text(
                       // l10n.homeScreenDateAndTime,
                       dateTime,
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ],
                 ),
@@ -66,7 +69,7 @@ class ActivityCard extends StatelessWidget {
             children: [
               Text(
                 // r'- $ 14.99',
-                type == 'debit' ? ' -\$ ${transactionAmt}' : transactionAmt,
+                type == 'debit' ? ' -\$${transactionAmt}' : transactionAmt,
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               SizedBox(
