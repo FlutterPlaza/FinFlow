@@ -10,23 +10,42 @@ class OnboardingScreen extends HookWidget {
   const OnboardingScreen({this.onGetStartedPressed, super.key});
   static const routeName = '/getStarted';
   final void Function()? onGetStartedPressed;
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final colors = theme.colorScheme;
+    final pageController = PageController();
     final listIllustration = [
       Illustration(
         assetName: SvgNames.sendIllustration,
-        illustrationBgColor: colors.primary,
+        illustrationBgColor: colors.onPrimaryContainer,
         title: l10n.onboardingSendTitle,
         description: l10n.onboardingSendDescription,
+        onNextPressed: () => pageController.nextPage(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
+        ),
+        onSkipPressed: () => pageController.animateToPage(
+          2,
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
+        ),
       ),
       Illustration(
         assetName: SvgNames.saveIllustration,
-        illustrationBgColor: colors.secondaryContainer,
+        illustrationBgColor: colors.tertiary,
         title: l10n.onboardingSaveTitle,
         description: l10n.onboardingSaveDescription,
+        onNextPressed: () => pageController.nextPage(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
+        ),
+        onSkipPressed: () => pageController.nextPage(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
+        ),
       ),
       Illustration(
         assetName: SvgNames.transIllustration,
@@ -34,8 +53,8 @@ class OnboardingScreen extends HookWidget {
         description: l10n.onboardingTransactionDescription,
         onNextPressed: onGetStartedPressed ??
             () {
-              context.router.popUntil((route) => route.isFirst);
-              context.router.push(SignInRoute());
+              // context.router.popUntil((route) => route.isFirst);
+              context.router.replace(SignInRoute());
             },
       ),
     ];
@@ -45,23 +64,16 @@ class OnboardingScreen extends HookWidget {
       ..currentIndex = currentIndex;
 
     return Scaffold(
-      body: GestureDetector(
-        onPanUpdate: (details) async {
-          // Swiping in right direction. -> Back
-          const sensitivity = 12;
-          if (details.delta.dx > sensitivity) {
-            if (currentIndex.value - 1 >= 0) {
-              currentIndex.value -= 1;
-            }
-          }
-          // Swiping in left direction.-> Forward
-          if (details.delta.dx < -sensitivity) {
-            if (currentIndex.value + 1 < listIllustration.length) {
-              currentIndex.value += 1;
-            }
-          }
+      body: PageView.builder(
+        scrollDirection: Axis.horizontal,
+        controller: pageController,
+        onPageChanged: (value) {
+          currentIndex.value = value;
         },
-        child: illustration,
+        itemCount: listIllustration.length,
+        itemBuilder: (context, index) {
+          return illustration;
+        },
       ),
     );
   }

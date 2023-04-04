@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fpb/assets/fpb_icons/fpb_icons_icons.dart';
-import 'package:fpb/core/presentation/widget/my_button.dart';
+import 'package:fpb/core/presentation/widget/fpb_button.dart';
 import 'package:fpb/l10n/l10n.dart';
 
 class Actions extends StatelessWidget {
@@ -22,6 +22,7 @@ class Actions extends StatelessWidget {
     final l10n = context.l10n;
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
+    final colors = theme.colorScheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -41,7 +42,13 @@ class Actions extends StatelessWidget {
           onTap: onNextPressed,
           width: isLastPage ? cts.maxWidth * 0.65 : cts.maxWidth * 0.6,
           height: cts.maxHeight * 0.07,
-          trailing: !isLastPage ? Icon(FpbIcons.arrow_right) : null,
+          trailing: !isLastPage
+              ? Icon(
+                  FpbIcons.arrow_right,
+                  size: cts.maxHeight * 0.02,
+                  color: colors.background,
+                )
+              : null,
         )
       ],
     );

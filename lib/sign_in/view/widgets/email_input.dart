@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpb/core/application/email_password_bloc/email_password_bloc.dart';
-import 'package:fpb/core/presentation/widget/my_textformfield.dart';
+import 'package:fpb/core/presentation/widget/fpb_text_form_field_v2.dart';
 import 'package:fpb/l10n/l10n.dart';
 
 class EmailInput extends StatelessWidget {
@@ -25,14 +25,14 @@ class EmailInput extends StatelessWidget {
         key: const Key('Email_password_form_emailInput_textField'),
         box: box,
         label: l10n.signInEmailTextFieldLabel,
-        hint: l10n.signInEmailTextFieldHintText,
-        node: node,
-        isEmail: true,
+        hintText: l10n.signInEmailTextFieldHintText,
+        focusNode: node,
+        keyboardType: TextInputType.emailAddress,
         textController: textController,
         onChanged: (email) => context
             .read<EmailPasswordBloc>()
             .add(EmailPasswordEvent.emailChanged(email)),
-        errorText: state.email.invalid ? 'Invalid Email' : null,
+        errorMsg: state.email.invalid ? 'Invalid Email' : null,
       ),
     );
   }

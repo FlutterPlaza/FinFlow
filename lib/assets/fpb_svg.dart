@@ -5,6 +5,7 @@ const path = 'assets/fpb-assets/';
 class SvgNames {
   const SvgNames._();
   static String authBackground = '${path}auth_background.svg';
+  static String authSignupBackground = '${path}auth_signup_background.png';
   static String circle = '${path}circle.svg';
   static String emailConfirmation = '${path}email_confirmation.svg';
   static String saveIllustration = '${path}save_illustration.svg';
@@ -14,4 +15,15 @@ class SvgNames {
   static String google = '${path}google.svg';
   static String facebook = '${path}facebook.svg';
   static String twitter = '${path}twitter.svg';
+  static String error = '${path}Cross.svg';
+  static String paypal = '${path}paypal.svg';
+  static String googlePay = '${path}google_pay.svg';
+  static String applePay = '${path}apple_pay.svg';
+  static String bank = '${path}bank_account.svg';
+  static String whiteTickCheckbox = '${path}white_tick_check.svg';
+  static String activeCheckbox = '${path}active_checkbox.svg';
+  static String inactiveCheckbox = '${path}uncheck_tick.svg';
+
+  static String timeCircle = '${path}time_circle.svg';
+  static String wallet = '${path}wallet.svg';
 }

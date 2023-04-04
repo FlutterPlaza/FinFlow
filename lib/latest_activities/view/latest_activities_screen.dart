@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fpb/home/view/widgets/activity_card.dart';
+import 'package:fpb/core/domain/ActivityCardModel.dart';
+import 'package:fpb/home/view/widgets/custom_appbar.dart';
 import 'package:fpb/l10n/l10n.dart';
+import 'package:fpb/latest_activities/view/widget/list_activities_widget.dart';
 
 class LatestActivitiesPage extends StatelessWidget {
   const LatestActivitiesPage({super.key});
@@ -13,27 +15,15 @@ class LatestActivitiesPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints box) {
         return Scaffold(
-          body: Padding(
-            padding: EdgeInsets.all(box.maxHeight * 0.025),
+          appBar: CustomAppBar(
+            showArrow: true,
+            titleChildWidget: Text(''),
+            actionChildWidget: [],
+          ),
+          body: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: box.maxHeight * 0.1,
-                ),
-                InkWell(
-                  // onTap: () {
-                  //   context.go('/savings');
-                  // },
-                  child: Icon(
-                    Icons.arrow_back,
-                    // color: AppColors.secondaryColorW,
-                    size: 25,
-                  ),
-                ),
-                SizedBox(
-                  height: box.maxHeight * 0.025,
-                ),
                 Container(
                   height: box.maxHeight * .75,
                   width: box.maxHeight * .9,
@@ -71,20 +61,42 @@ class LatestActivitiesPage extends StatelessWidget {
                           height: box.maxHeight * 0.025,
                         ),
                         Expanded(
-                          child: ListView.builder(
-                            itemCount: 15,
-                            itemBuilder: (context, index) {
-                              // ignore: avoid_unnecessary_containers
-                              return Column(
-                                children: [
-                                  ActivityCard(
-                                    context: context,
-                                    box: box,
-                                  ),
-                                  const Divider(),
-                                ],
-                              );
-                            },
+                          child: ListActivitiesWidget(
+                            box: box,
+                            activities: [
+                              ActivityCardModel(
+                                id: 1,
+                                dateTime: 'August 3, 3: 45pm',
+                                isFavorite: true,
+                                transactionAmt: '500',
+                                username: '@john_merry',
+                                type: 'debit',
+                              ),
+                              ActivityCardModel(
+                                id: 2,
+                                dateTime: 'August 3, 3: 45pm',
+                                isFavorite: false,
+                                transactionAmt: '120',
+                                username: '@amanda',
+                                type: 'credit',
+                              ),
+                              ActivityCardModel(
+                                id: 3,
+                                dateTime: 'August 3, 3: 45pm',
+                                isFavorite: false,
+                                transactionAmt: '350',
+                                username: '@dezzy',
+                                type: 'debit',
+                              ),
+                              ActivityCardModel(
+                                id: 4,
+                                dateTime: 'August 3, 3: 45pm',
+                                isFavorite: false,
+                                transactionAmt: '300',
+                                username: '@jeff',
+                                type: 'debit',
+                              ),
+                            ],
                           ),
                         ),
                       ],
