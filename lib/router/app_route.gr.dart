@@ -11,78 +11,79 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i16;
-import 'package:flutter/material.dart' as _i17;
+import 'package:auto_route/auto_route.dart' as _i17;
+import 'package:flutter/material.dart' as _i18;
 
 import '../contact_us/view/contact_us_screen.dart' as _i12;
 import '../contact_us/view/contact_us_success_screen.dart' as _i13;
-import '../core/domain/user.dart' as _i18;
+import '../core/domain/user.dart' as _i19;
 import '../email_confirmation/email_confirmation.dart' as _i4;
 import '../home/view/home_screen.dart' as _i8;
+import '../home/view/user_search_screen.dart' as _i14;
 import '../latest_activities/view/latest_activities_screen.dart' as _i9;
 import '../onboarding/view/onboarding_screens.dart' as _i11;
 import '../onboarding/view/splash_screen.dart' as _i1;
 import '../payment_methods/payment_method_screen.dart' as _i7;
 import '../phone_number_confirmation/view/phone_number_confirmation.dart'
     as _i3;
-import '../profile/view/profile_page.dart' as _i15;
+import '../profile/view/profile_page.dart' as _i16;
 import '../qr_code_screen/view/qr_code_screen.dart' as _i10;
 import '../savings/save_money_with_bucket/save_money_with_bucket.dart' as _i6;
-import '../savings/view/savings_page.dart' as _i14;
+import '../savings/view/savings_page.dart' as _i15;
 import '../sign_in/view/sign_in_page.dart' as _i2;
 import '../sign_up/view/signup_page.dart' as _i5;
 
-class AppRoute extends _i16.RootStackRouter {
-  AppRoute([_i17.GlobalKey<_i17.NavigatorState>? navigatorKey])
+class AppRoute extends _i17.RootStackRouter {
+  AppRoute([_i18.GlobalKey<_i18.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i16.PageFactory> pagesMap = {
+  final Map<String, _i17.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.SplashScreen(),
       );
     },
     SignInRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.SignInScreen(),
       );
     },
     PhoneNumberConfirmationRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i3.PhoneNumberConfirmationScreen(),
       );
     },
     EmailConfirmationRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i4.EmailConfirmationScreen(),
       );
     },
     SignUpRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i5.SignUpScreen(),
       );
     },
     SaveMoneyRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i6.SaveMoneyScreen(),
       );
     },
     PaymentMethodRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i7.PaymentMethodScreen(),
       );
     },
     HomeRouter.name: (routeData) {
       final args = routeData.argsAs<HomeRouterArgs>();
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i8.HomeScreen(
           key: args.key,
@@ -91,13 +92,13 @@ class AppRoute extends _i16.RootStackRouter {
       );
     },
     LatestActivitiesPage.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i9.LatestActivitiesPage(),
       );
     },
     QrCodeRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i10.QrCodeScreen(),
       );
@@ -105,7 +106,7 @@ class AppRoute extends _i16.RootStackRouter {
     OnboardingRoute.name: (routeData) {
       final args = routeData.argsAs<OnboardingRouteArgs>(
           orElse: () => const OnboardingRouteArgs());
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i11.OnboardingScreen(
           onGetStartedPressed: args.onGetStartedPressed,
@@ -114,103 +115,113 @@ class AppRoute extends _i16.RootStackRouter {
       );
     },
     ContactUsRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i12.ContactUsScreen(),
       );
     },
     ContactUsSuccessRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i13.ContactUsSuccessScreen(),
       );
     },
-    SavingsPage.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+    UserSearchRoute.name: (routeData) {
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i14.SavingsPage(),
+        child: const _i14.UserSearchScreen(),
+      );
+    },
+    SavingsPage.name: (routeData) {
+      return _i17.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i15.SavingsPage(),
       );
     },
     ProfileRoute.name: (routeData) {
-      return _i16.MaterialPageX<dynamic>(
+      return _i17.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i15.ProfileScreen(),
+        child: const _i16.ProfileScreen(),
       );
     },
   };
 
   @override
-  List<_i16.RouteConfig> get routes => [
-        _i16.RouteConfig(
+  List<_i17.RouteConfig> get routes => [
+        _i17.RouteConfig(
           SplashRoute.name,
           path: '/',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           SignInRoute.name,
           path: '/sign-in-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           PhoneNumberConfirmationRoute.name,
           path: '/phone-number-confirmation-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           EmailConfirmationRoute.name,
           path: '/email-confirmation-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           SignUpRoute.name,
           path: '/sign-up-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           SaveMoneyRoute.name,
           path: '/save-money-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           PaymentMethodRoute.name,
           path: '/payment-method-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           HomeRouter.name,
           path: '/home-screen',
           children: [
-            _i16.RouteConfig(
+            _i17.RouteConfig(
               SavingsPage.name,
               path: 'savings',
               parent: HomeRouter.name,
             ),
-            _i16.RouteConfig(
+            _i17.RouteConfig(
               ProfileRoute.name,
               path: 'profile',
               parent: HomeRouter.name,
             ),
           ],
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           LatestActivitiesPage.name,
           path: 'latestActivities',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           QrCodeRoute.name,
           path: '/qr-code-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           OnboardingRoute.name,
           path: '/onboarding-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           ContactUsRoute.name,
           path: '/contact-us-screen',
         ),
-        _i16.RouteConfig(
+        _i17.RouteConfig(
           ContactUsSuccessRoute.name,
           path: '/contact-us-success-screen',
+        ),
+        _i17.RouteConfig(
+          UserSearchRoute.name,
+          path: '/user-search-screen',
         ),
       ];
 }
 
 /// generated route for
 /// [_i1.SplashScreen]
-class SplashRoute extends _i16.PageRouteInfo<void> {
+class SplashRoute extends _i17.PageRouteInfo<void> {
   const SplashRoute()
       : super(
           SplashRoute.name,
@@ -222,7 +233,7 @@ class SplashRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.SignInScreen]
-class SignInRoute extends _i16.PageRouteInfo<void> {
+class SignInRoute extends _i17.PageRouteInfo<void> {
   const SignInRoute()
       : super(
           SignInRoute.name,
@@ -234,7 +245,7 @@ class SignInRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.PhoneNumberConfirmationScreen]
-class PhoneNumberConfirmationRoute extends _i16.PageRouteInfo<void> {
+class PhoneNumberConfirmationRoute extends _i17.PageRouteInfo<void> {
   const PhoneNumberConfirmationRoute()
       : super(
           PhoneNumberConfirmationRoute.name,
@@ -246,7 +257,7 @@ class PhoneNumberConfirmationRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.EmailConfirmationScreen]
-class EmailConfirmationRoute extends _i16.PageRouteInfo<void> {
+class EmailConfirmationRoute extends _i17.PageRouteInfo<void> {
   const EmailConfirmationRoute()
       : super(
           EmailConfirmationRoute.name,
@@ -258,7 +269,7 @@ class EmailConfirmationRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.SignUpScreen]
-class SignUpRoute extends _i16.PageRouteInfo<void> {
+class SignUpRoute extends _i17.PageRouteInfo<void> {
   const SignUpRoute()
       : super(
           SignUpRoute.name,
@@ -270,7 +281,7 @@ class SignUpRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i6.SaveMoneyScreen]
-class SaveMoneyRoute extends _i16.PageRouteInfo<void> {
+class SaveMoneyRoute extends _i17.PageRouteInfo<void> {
   const SaveMoneyRoute()
       : super(
           SaveMoneyRoute.name,
@@ -282,7 +293,7 @@ class SaveMoneyRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.PaymentMethodScreen]
-class PaymentMethodRoute extends _i16.PageRouteInfo<void> {
+class PaymentMethodRoute extends _i17.PageRouteInfo<void> {
   const PaymentMethodRoute()
       : super(
           PaymentMethodRoute.name,
@@ -294,11 +305,11 @@ class PaymentMethodRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i8.HomeScreen]
-class HomeRouter extends _i16.PageRouteInfo<HomeRouterArgs> {
+class HomeRouter extends _i17.PageRouteInfo<HomeRouterArgs> {
   HomeRouter({
-    _i17.Key? key,
-    required _i18.User user,
-    List<_i16.PageRouteInfo>? children,
+    _i18.Key? key,
+    required _i19.User user,
+    List<_i17.PageRouteInfo>? children,
   }) : super(
           HomeRouter.name,
           path: '/home-screen',
@@ -318,9 +329,9 @@ class HomeRouterArgs {
     required this.user,
   });
 
-  final _i17.Key? key;
+  final _i18.Key? key;
 
-  final _i18.User user;
+  final _i19.User user;
 
   @override
   String toString() {
@@ -330,7 +341,7 @@ class HomeRouterArgs {
 
 /// generated route for
 /// [_i9.LatestActivitiesPage]
-class LatestActivitiesPage extends _i16.PageRouteInfo<void> {
+class LatestActivitiesPage extends _i17.PageRouteInfo<void> {
   const LatestActivitiesPage()
       : super(
           LatestActivitiesPage.name,
@@ -342,7 +353,7 @@ class LatestActivitiesPage extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i10.QrCodeScreen]
-class QrCodeRoute extends _i16.PageRouteInfo<void> {
+class QrCodeRoute extends _i17.PageRouteInfo<void> {
   const QrCodeRoute()
       : super(
           QrCodeRoute.name,
@@ -354,10 +365,10 @@ class QrCodeRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i11.OnboardingScreen]
-class OnboardingRoute extends _i16.PageRouteInfo<OnboardingRouteArgs> {
+class OnboardingRoute extends _i17.PageRouteInfo<OnboardingRouteArgs> {
   OnboardingRoute({
     void Function()? onGetStartedPressed,
-    _i17.Key? key,
+    _i18.Key? key,
   }) : super(
           OnboardingRoute.name,
           path: '/onboarding-screen',
@@ -378,7 +389,7 @@ class OnboardingRouteArgs {
 
   final void Function()? onGetStartedPressed;
 
-  final _i17.Key? key;
+  final _i18.Key? key;
 
   @override
   String toString() {
@@ -388,7 +399,7 @@ class OnboardingRouteArgs {
 
 /// generated route for
 /// [_i12.ContactUsScreen]
-class ContactUsRoute extends _i16.PageRouteInfo<void> {
+class ContactUsRoute extends _i17.PageRouteInfo<void> {
   const ContactUsRoute()
       : super(
           ContactUsRoute.name,
@@ -400,7 +411,7 @@ class ContactUsRoute extends _i16.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i13.ContactUsSuccessScreen]
-class ContactUsSuccessRoute extends _i16.PageRouteInfo<void> {
+class ContactUsSuccessRoute extends _i17.PageRouteInfo<void> {
   const ContactUsSuccessRoute()
       : super(
           ContactUsSuccessRoute.name,
@@ -411,8 +422,20 @@ class ContactUsSuccessRoute extends _i16.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i14.SavingsPage]
-class SavingsPage extends _i16.PageRouteInfo<void> {
+/// [_i14.UserSearchScreen]
+class UserSearchRoute extends _i17.PageRouteInfo<void> {
+  const UserSearchRoute()
+      : super(
+          UserSearchRoute.name,
+          path: '/user-search-screen',
+        );
+
+  static const String name = 'UserSearchRoute';
+}
+
+/// generated route for
+/// [_i15.SavingsPage]
+class SavingsPage extends _i17.PageRouteInfo<void> {
   const SavingsPage()
       : super(
           SavingsPage.name,
@@ -423,8 +446,8 @@ class SavingsPage extends _i16.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i15.ProfileScreen]
-class ProfileRoute extends _i16.PageRouteInfo<void> {
+/// [_i16.ProfileScreen]
+class ProfileRoute extends _i17.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
           ProfileRoute.name,

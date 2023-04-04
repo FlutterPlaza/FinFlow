@@ -151,18 +151,20 @@ class _BottomNavBarState extends State<BottomNavBar> {
             IconButton(
               enableFeedback: false,
               padding: EdgeInsets.zero,
+              //TODO: Change key name accordingly in test which it was used
               key: Key("BNB-userSearch-page-button"),
               onPressed: () {
                 setState(() {
                   pageIndex = 4;
                 });
-                readBloc.add(HomeViewEvent.search());
+                readBloc.add(HomeViewEvent.profile());
               },
               icon: pageIndex == 4
                   ? Column(
                       children: [
                         const Icon(
-                          FpbIcons.search_selected,
+                          Icons.person_outline_sharp,
+                          //FpbIcons.profile,
                           color: Colors.black,
                         ),
                         Container(
@@ -177,7 +179,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       ],
                     )
                   : Icon(
-                      FpbIcons.search,
+                      Icons.person_outline_sharp,
+                      //FpbIcons.profile,
                     ),
             ),
           ],
