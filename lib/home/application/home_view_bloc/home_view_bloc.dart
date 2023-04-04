@@ -18,13 +18,13 @@ class HomeViewBloc extends Bloc<HomeViewEvent, HomeViewState> {
     on<_QuickCashE>(_quickCash);
     on<_LastStateE>(_lastState);
     on<_BudgetE>(_budget);
-    on<_SearchE>(_search);
+    on<_ProfileE>(_profile);
   }
 
   int? lastView;
 
-  void _search(event, Emitter<HomeViewState> emit) {
-    emit(HomeViewState.search());
+  void _profile(event, Emitter<HomeViewState> emit) {
+    emit(HomeViewState.profile());
     lastView = 4;
   }
 
@@ -70,7 +70,7 @@ class HomeViewBloc extends Bloc<HomeViewEvent, HomeViewState> {
         _budget(event, emit);
         break;
       case 4:
-        _search(event, emit);
+        _profile(event, emit);
         break;
       default:
         _home(event, emit);

@@ -6,9 +6,9 @@ import 'package:fpb/core/domain/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
-part 'auth_bloc.freezed.dart';
 
 @injectable
 @singleton
@@ -34,9 +34,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   late final StreamSubscription<User> _userSubscription;
 
   void _triggerAuth(_TriggerAuth event, Emitter<AuthState> emit) {
-    _authFacade.currentUser == User.empty
+    emit(_authFacade.currentUser == User.empty
         ? AuthState.unauthenticated()
-        : AuthState.authenticated(user: _authFacade.currentUser);
+        : AuthState.authenticated(user: _authFacade.currentUser));
   }
 
   void _authenticated(_UserChanged event, Emitter<AuthState> emit) {

@@ -3,6 +3,7 @@ import 'package:fpb/contact_us/view/contact_us_screen.dart';
 import 'package:fpb/contact_us/view/contact_us_success_screen.dart';
 import 'package:fpb/email_confirmation/email_confirmation.dart';
 import 'package:fpb/home/view/home_screen.dart';
+import 'package:fpb/home/view/user_search_screen.dart';
 import 'package:fpb/latest_activities/view/latest_activities_screen.dart';
 import 'package:fpb/onboarding/view/onboarding_screens.dart';
 import 'package:fpb/onboarding/view/splash_screen.dart';
@@ -14,6 +15,7 @@ import 'package:fpb/savings/save_money_with_bucket/save_money_with_bucket.dart';
 import 'package:fpb/savings/view/savings_page.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
 import 'package:fpb/sign_up/view/signup_page.dart';
+import 'package:fpb/terms_of_use/terms%20_of_use_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Screen,Route',
@@ -52,7 +54,13 @@ import 'package:fpb/sign_up/view/signup_page.dart';
     ),
     AutoRoute(
       page: ContactUsSuccessScreen,
-    )
+    ),
+    AutoRoute(
+      page: UserSearchScreen,
+    ),
+    AutoRoute(
+      page: TermsOfUseScreen,
+    ),
   ],
 )
 class $AppRoute {}

@@ -6,6 +6,6 @@ class HomeViewEvent with _$HomeViewEvent {
   const factory HomeViewEvent.savings() = _SavingsE;
   const factory HomeViewEvent.quickCash() = _QuickCashE;
   const factory HomeViewEvent.budget() = _BudgetE;
-  const factory HomeViewEvent.search() = _SearchE;
+  const factory HomeViewEvent.profile() = _ProfileE;
   const factory HomeViewEvent.lastState() = _LastStateE;
 }

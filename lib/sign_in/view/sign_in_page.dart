@@ -427,9 +427,14 @@ class TermsOfUse extends StatelessWidget {
         SizedBox(
           width: box.maxWidth * 0.009,
         ),
-        Text(
-          l10n.signInTermsOfUseLabel,
-          style: style.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+        InkWell(
+          onTap: () {
+            context.router.push(TermsOfUseRoute());
+          },
+          child: Text(
+            l10n.signInTermsOfUseLabel,
+            style: style.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
         )
       ],
     );

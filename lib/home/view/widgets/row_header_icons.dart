@@ -24,8 +24,7 @@ class RowHeaderIcons extends StatelessWidget {
             showSearchIcon
                 ? InkWell(
                     onTap: () {
-                      print('Activity screen');
-                      context.pushRoute(PaymentMethodRoute());
+                      context.pushRoute(UserSearchRoute());
                     },
                     child: Icon(
                       FpbIcons.search,
