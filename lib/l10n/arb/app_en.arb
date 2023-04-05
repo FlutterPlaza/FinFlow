@@ -88,7 +88,7 @@
     "@signInPasswordFieldLabel": {
         "description": "This is the label displayed on the sign in screen for the Password field"
     },
-    "signInPhoneNumberFieldLabel": "Phone Number",
+    "signInPhoneNumberFieldLabel": "Phone number",
     "@signInPhoneNumberFieldLabel": {
         "description": "This is the label displayed on the sign in screen for the Phone number field"
     },

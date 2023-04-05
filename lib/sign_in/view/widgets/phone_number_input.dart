@@ -25,6 +25,9 @@ class PhoneNumberInput extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(
+          height: cts.maxHeight * .045,
+        ),
         Text(
           l10n.signInPhoneNumberFieldLabel,
           style: style.titleSmall,

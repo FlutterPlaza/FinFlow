@@ -212,95 +212,92 @@ class _SignUpBodyState extends State<SignUpBody>
                                               ],
                                             ),
                                           ),
-                                          SingleChildScrollView(
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                SizedBox(
-                                                  height: box.maxHeight * .12,
-                                                ),
-                                                PhoneNumberInput(
-                                                  key: Key('IntlPhoneInput'),
-                                                  l10n: l10n,
-                                                  cts: box,
-                                                ),
-                                              ],
-                                            ),
+
+                                          PhoneNumberInput(
+                                            key: Key('IntlPhoneInput'),
+                                            l10n: l10n,
+                                            cts: box,
                                           ),
                                         ],
                                       ),
                                     ),
                                   ),
-                                  FpbButton(
-                                    label: l10n.signInSignUpLabel,
-                                    onTap: () {},
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: box.maxHeight * 0.012,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Expanded(
-                                            child: Divider(
-                                          key: Key('Divider'),
-                                          color:
-                                              theme.colorScheme.outlineVariant,
-                                        )),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: box.maxHeight * .015,
-                                          ),
-                                          child: Text(
-                                            key: Key('OrSignUpWith'),
-                                            l10n.signUpOrSignupWithText,
-                                          ),
-                                        ),
-                                        Expanded(
-                                            child: Divider(
-                                          key: Key('Divider'),
-                                          color:
-                                              theme.colorScheme.outlineVariant,
-                                        ))
-                                      ],
+                                    FpbButton(
+                                      label: l10n.signInSignUpLabel,
+                                      onTap: () {},
                                     ),
-                                  ),
-                                  AlternativeAuth(box: box),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      top: box.maxHeight * 0.001,
-                                      bottom: box.maxHeight * 0.0001,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          l10n.signUpAlreadyAMemberText,
-                                          key: Key('AlreadyAMember'),
-                                          style: style.titleSmall?.copyWith(
-                                            color: theme.colorScheme.secondary,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                        TextButton(
-                                          onPressed: () {
-                                            context.router.pop();
-                                          },
-                                          child: Text(
-                                            l10n.signInLogInTitle,
-                                            style: style.titleMedium?.copyWith(
-                                              color: theme.colorScheme.primary,
-                                              fontWeight: FontWeight.bold,
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: box.maxHeight * 0.012,
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Expanded(
+                                              child: Divider(
+                                            key: Key('Divider'),
+                                            color:
+                                                theme.colorScheme.outlineVariant,
+                                          )),
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: box.maxHeight * .015,
+                                            ),
+                                            child: Text(
+                                              key: Key('OrSignUpWith'),
+                                              l10n.signUpOrSignupWithText,
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                          Expanded(
+                                              child: Divider(
+                                            key: Key('Divider'),
+                                            color:
+                                                theme.colorScheme.outlineVariant,
+                                          ))
+                                        ],
+                                      ),
                                     ),
+                                    AlternativeAuth(box: box),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        top: box.maxHeight * 0.001,
+                                        bottom: box.maxHeight * 0.0001,
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            l10n.signUpAlreadyAMemberText,
+                                            key: Key('AlreadyAMember'),
+                                            style: style.titleSmall?.copyWith(
+                                              color: theme.colorScheme.secondary,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                          TextButton(
+                                            onPressed: () {
+                                              context.router.pop();
+                                            },
+                                            child: Text(
+                                              l10n.signInLogInTitle,
+                                              style: style.titleMedium?.copyWith(
+                                                color: theme.colorScheme.primary,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    ],),
                                   ),
+                                  tabController.index == 1 ? SizedBox(height: box.maxHeight * 0.15 ,) : SizedBox(),
                                 ],
                               ).card(
                                 height:
