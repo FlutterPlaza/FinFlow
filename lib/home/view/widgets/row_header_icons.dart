@@ -39,6 +39,7 @@ class RowHeaderIcons extends StatelessWidget {
               child: Icon(
                 FpbIcons.scan_code,
                 size: 30,
+                color: Theme.of(context).colorScheme.background,
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,

@@ -15,14 +15,22 @@ class TabbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final l10n = context.l10n;
+    final theme = Theme.of(context);
     return TabBar(
       padding: EdgeInsets.all(box.maxHeight * 0.008),
-      labelColor: Colors.black,
-      unselectedLabelColor: Colors.white,
+      labelColor: theme.colorScheme.secondary,
+      unselectedLabelColor: theme.colorScheme.surface,
+      unselectedLabelStyle: theme.textTheme.titleSmall?.copyWith(
+        // color: theme.colorScheme.secondary,
+        color: Colors.red,
+      ),
+      labelStyle: TextStyle(
+        color: theme.colorScheme.secondary,
+      ),
       controller: tabController,
       onTap: onTap,
       indicator: BoxDecoration(
-        color: Theme.of(context).cardColor,
+        color: theme.colorScheme.onSurface,
         borderRadius: BorderRadius.circular(
           box.maxWidth * 0.01,
         ),
@@ -33,6 +41,7 @@ class TabbarWidget extends StatelessWidget {
             'Scan Code',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
+            // style: theme.textTheme.titleSmall,
           ),
         ),
         Tab(
@@ -40,6 +49,7 @@ class TabbarWidget extends StatelessWidget {
             'My Code',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
+            // style: theme.textTheme.titleSmall,
           ),
         )
       ],

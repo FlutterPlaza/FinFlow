@@ -17,6 +17,7 @@ class ScanQrCodeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       child: Column(
         children: [
@@ -24,9 +25,9 @@ class ScanQrCodeWidget extends StatelessWidget {
             width: box.maxWidth,
             child: Text(
               "Scan a code",
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.tertiary,
-                fontSize: box.maxWidth * 0.056,
+              style: theme.textTheme.titleLarge?.copyWith(
+                color: Theme.of(context).colorScheme.surface,
+                fontWeight: FontWeight.w400,
               ),
               textAlign: TextAlign.center,
             ),
@@ -40,14 +41,14 @@ class ScanQrCodeWidget extends StatelessWidget {
               onQRViewCreated: onCodeCreated,
               cameraFacing: CameraFacing.back,
               overlay: QrScannerOverlayShape(
-                borderColor: Theme.of(context).primaryColor,
+                borderColor: theme.colorScheme.primary,
                 borderRadius: 10,
                 borderLength: 30,
-                borderWidth: 10,
-                cutOutSize: (MediaQuery.of(context).size.width < 400 ||
-                        MediaQuery.of(context).size.height < 400)
-                    ? 260.0
-                    : 260.0,
+                borderWidth: 3,
+                // cutOutSize: (MediaQuery.of(context).size.width < 400 ||
+                //         MediaQuery.of(context).size.height < 400)
+                //     ? 260.0
+                //     : 260.0,
               ),
               onPermissionSet: (ctrl, p) => qrCodePermissionCheck(
                 context,

@@ -16,6 +16,7 @@ class MyQrCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -24,9 +25,9 @@ class MyQrCode extends StatelessWidget {
             width: box.maxWidth,
             child: Text(
               "My QR Code",
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.tertiary,
-                fontSize: box.maxWidth * 0.056,
+              style: theme.textTheme.titleLarge?.copyWith(
+                color: Theme.of(context).colorScheme.surface,
+                fontWeight: FontWeight.w400,
               ),
               textAlign: TextAlign.center,
             ),
@@ -38,8 +39,8 @@ class MyQrCode extends StatelessWidget {
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Theme.of(context).primaryColor,
-                  width: 3,
+                  color: theme.colorScheme.primary,
+                  width: 1,
                 ),
               ),
               child: QrImage(
@@ -47,7 +48,7 @@ class MyQrCode extends StatelessWidget {
                 version: QrVersions.auto,
                 size: box.maxHeight * 0.3,
                 gapless: false,
-                foregroundColor: Colors.white,
+                foregroundColor: theme.colorScheme.surface,
               ),
             ),
           ),
@@ -57,9 +58,10 @@ class MyQrCode extends StatelessWidget {
               children: [
                 Text(
                   "John Doe",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.tertiary,
-                    fontSize: box.maxWidth * 0.056,
+                  style: theme.textTheme.bodyLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.surface,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.italic,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -71,13 +73,11 @@ class MyQrCode extends StatelessWidget {
                   },
                   child: Text(
                     "@johndoe",
-                    style: TextStyle(
-                      color: Theme.of(context)
-                          .colorScheme
-                          .tertiary
-                          .withOpacity(0.5),
-                      fontSize: box.maxWidth * 0.04,
-                      fontWeight: FontWeight.normal,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.onInverseSurface,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.italic,
+                      fontSize: box.maxWidth * 0.030,
                     ),
                     textAlign: TextAlign.center,
                   ),
