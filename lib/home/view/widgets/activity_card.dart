@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fpb/latest_activities/view/widget/svg_icon.dart';
 
 class ActivityCard extends StatelessWidget {
   const ActivityCard({
@@ -23,6 +24,8 @@ class ActivityCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final l10n = context.l10n;
+    final theme = Theme.of(context);
+
     return Container(
       height: box.maxHeight * 0.08,
       width: box.maxWidth,
@@ -75,13 +78,15 @@ class ActivityCard extends StatelessWidget {
               SizedBox(
                 height: box.maxHeight * 0.009,
               ),
-              Icon(
-                isFavorite == true
-                    ? Icons.favorite
-                    : Icons.favorite_border_sharp,
-                color: Color(0xffC5C5C5),
-                size: 16,
-              )
+              isFavorite == true
+                  ? svg_icon(
+                      assetName: 'assets/FpbIcons/heart_filled.svg',
+                      theme: theme,
+                    )
+                  : svg_icon(
+                      assetName: 'assets/FpbIcons/heart_border.svg',
+                      theme: theme,
+                    ),
             ],
           ),
         ],
