@@ -11,6 +11,9 @@ import 'package:fpb/payment_methods/payment_method_screen.dart';
 import 'package:fpb/phone_number_confirmation/view/phone_number_confirmation.dart';
 import 'package:fpb/profile/view/profile_page.dart';
 import 'package:fpb/qr_code_screen/view/qr_code_screen.dart';
+import 'package:fpb/reset_password/create_new_password.dart';
+import 'package:fpb/reset_password/new_password_success.dart';
+import 'package:fpb/reset_password/reset_password.dart';
 import 'package:fpb/savings/save_money_with_bucket/save_money_with_bucket.dart';
 import 'package:fpb/savings/view/savings_page.dart';
 import 'package:fpb/sign_in/view/sign_in_page.dart';
@@ -27,6 +30,9 @@ import 'package:fpb/terms_of_use/terms%20_of_use_page.dart';
     AutoRoute(page: SignUpScreen),
     AutoRoute(page: SaveMoneyScreen),
     AutoRoute(page: PaymentMethodScreen),
+    AutoRoute(page: ResetPasswordScreen),
+    AutoRoute(page: CreateNewPasswordScreen),
+    AutoRoute(page: NewPasswordSuccessScreen),   
     AutoRoute(
       name: 'HomeRouter',
       page: HomeScreen,
