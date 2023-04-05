@@ -53,7 +53,7 @@ class LatestActivitiesPage extends StatelessWidget {
                               width: box.maxHeight * 0.03,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
-                                color: theme.colorScheme.onBackground,
+                                color: theme.iconTheme.color,
                               ),
                               child: const Center(child: Text('5')),
                             )

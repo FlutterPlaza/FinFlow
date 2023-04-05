@@ -124,7 +124,7 @@
     "@homeScreenCCV": {
         "description": "This is the text displayed on the home screen on the second card widget"
     },
-    "homeScreenLatestActivitiesTitle": "Latest Activity",
+    "homeScreenLatestActivitiesTitle": "Latest Activities",
     "@homeScreenLatestActivitiesTitle": {
         "description": "This is the title of the latest activities card"
     },
